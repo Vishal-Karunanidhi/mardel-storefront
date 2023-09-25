@@ -1,0 +1,808 @@
+@import '../variables';
+@import '../breakpoints';
+@import '../globals';
+
+// DETAIL PAGE
+.detailPage {
+  max-width: $hl-xxl;
+
+  @include mobile {
+    margin: $margin-card-short auto 0 auto;
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include tablet {
+    margin: $margin-card-tall auto 0 auto;
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    margin: $margin-card-tall auto 0 auto;
+    padding: 0 $padding-framing-desktop;
+  }
+
+  &Alert {
+    padding: 8px 16px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $hl-red;
+    &Text {
+      @include hl-font-700;
+      font-size: 14px;
+      line-height: 20px;
+      margin-left: 18px;
+      color: $hl-white;
+      text-transform: uppercase;
+    }
+    &Icon {
+      display: flex;
+      align-items: center;
+      color: $hl-white;
+    }
+  }
+}
+
+// INFO AND MAP
+.infoAndMap {
+  padding-bottom: 35px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 4px solid $hl-gray-shadow;
+}
+
+// STORE INFO
+
+.storeStatus {
+  @include hl-font-700;
+  color: $color-green-1;
+  text-transform: uppercase;
+
+  &+.storeInfoAddressHeader {
+    margin-top: calc($font-size-p * 0.5);
+  }
+}
+
+.storeInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+  margin-right: 65px;
+
+  &Address {
+    @include hl-font-300;
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 20px;
+    &Header {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+      margin: 0px;
+    }
+    &Street {
+      margin: 0px;
+    }
+    &City {
+      margin: 0px;
+    }
+  }
+
+  &Distance {
+    margin: 8px 0px 0px 0px;
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &PhoneNumber {
+    &Container {
+      display: flex;
+      align-items: left;
+      margin-top: 24px;
+    }
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+  }
+
+  &Button {
+    &Directions {
+      &Anchor {
+        width: 157px;
+        border-radius: 25px;
+        margin-top: 16px;
+      }
+      width: 157px;
+      height: 48px;
+      padding: 10px 25px;
+      background-color: $hl-blue-dark;
+      border-radius: 25px;
+      border: none;
+      color: $hl-white;
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+      &:hover {
+        background-color: $hl-blue-light;
+        cursor: pointer;
+      }
+    }
+
+    &Share {
+      margin-top: 32px;
+      padding: 10px 24px;
+      border-radius: 25px;
+      border: 1px solid $hl-black;
+      background-color: $hl-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 122px;
+      height: 38px;
+      @include hl-font-700;
+      font-size: 16px;
+      &:hover {
+        border-color: $hl-blue-light;
+        background-color: $hl-blue-light;
+        color: $hl-white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &Hours {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    &List {
+      padding: 0px;
+      margin: 0px;
+    }
+    &Header {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+      margin: 26px 0px 0px 0px;
+    }
+
+    &Text {
+      @include hl-font-300;
+      font-size: 14px;
+      line-height: 20px;
+      &Highlight {
+        color: $hl-blue-dark;
+        @include hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &FollowUs {
+    margin: 16px 0px 0px 0px;
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &SocialMedia {
+    display: flex;
+    justify-content: left;
+    margin-top: 8px;
+
+    &Icon {
+      display: flex;
+      width: 31px;
+      margin-right: 16px;
+
+      > img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// SHARE BUTTON
+.shareButton {
+  margin-top: 32px;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: 1px solid $hl-black;
+  background-color: $hl-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  @include hl-font-700;
+  font-size: 16px;
+
+  &:hover {
+    border-color: $hl-blue-light;
+    background-color: $hl-blue-light;
+    color: $hl-white;
+    cursor: pointer;
+  }
+}
+
+// STORE MAP
+.storeMap {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+// NEARBY STORES
+.nearbyStores {
+  padding-bottom: 35px;
+  border-bottom: 4px solid $hl-gray-shadow;
+
+  &Mobile {
+    display: none;
+  }
+  &Header {
+    margin-top: 35px;
+    margin-bottom: 24px;
+    @include hl-font-700;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+
+    &Icon {
+      margin-right: 12px;
+    }
+  }
+
+  &Container {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &Info {
+    display: flex;
+    flex-direction: column;
+
+    &Details {
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 10px 25px;
+      border-radius: 25px;
+      border: 1px solid $hl-black;
+      background-color: $hl-white;
+
+      &Link {
+        width: fit-content;
+        border-radius: 25px;
+      }
+
+      &:hover {
+        border-color: $hl-blue-light;
+        background-color: $hl-blue-light;
+        color: $hl-white;
+        cursor: pointer;
+      }
+    }
+
+    &Phone {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+
+      &Number {
+        @include hl-font-300;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: underline;
+        margin-left: 10px;
+      }
+    }
+
+    &Distance {
+      @include hl-font-300;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+
+      &Miles {
+        margin-left: 10px;
+      }
+
+      &Icon {
+        color: $hl-red;
+      }
+    }
+
+    &Name {
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+
+    &Directions {
+      @include hl-font-700;
+      font-size: 14px;
+      line-height: 20px;
+      color: $hl-blue;
+      text-decoration: underline;
+      margin-left: 10px;
+
+      &:hover {
+        color: $hl-black;
+        text-decoration: none;
+      }
+
+      &Link {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &Hours {
+      @include hl-font-700;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 8px;
+      color: $hl-blue;
+    }
+
+    &Address {
+      @include hl-font-300;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// EXTRA INFO SECTION
+.extraInfoSection {
+  display: flex;
+  flex-direction: row;
+
+  &Holiday {
+    &Header {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &Status {
+      @include hl-font-300;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      line-height: 24px;
+
+      &Container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 24px;
+        border-bottom: 2px solid $hl-gray-shadow;
+      }
+
+      &Header {
+        @include hl-font-700;
+        color: $hl-blue;
+      }
+    }
+
+    h3 {
+      margin: 0px;
+    }
+
+    h2 {
+      margin-top: 35px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &About {
+    &Header {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 35px;
+      margin-bottom: 16px;
+    }
+
+    &Text {
+      position: relative;
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-black;
+      max-height: 364px;
+      border-bottom: 2px solid $hl-gray-shadow;
+
+      &NoBorder {
+        position: relative;
+        @include hl-font-300;
+        font-size: 16px;
+        line-height: 24px;
+        color: $hl-black;
+        max-height: 364px;
+      }
+
+      &Container {
+        overflow: hidden;
+        max-height: 100%;
+      }
+    }
+
+    &Fade {
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      bottom: 0px;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 1) 100%
+      );
+    }
+
+    &See {
+      &More {
+        border-radius: 30px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        bottom: -18px;
+        @include hl-font-700;
+        font-size: 12px;
+        line-height: 16px;
+        background-color: $hl-white;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &Deals {
+    &Header {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+
+    &Text {
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &Link {
+      width: fit-content;
+      outline: none;
+    }
+
+    &Button {
+      @include hl-font-700;
+      padding: 10px 25px;
+      background-color: $hl-blue-dark;
+      color: $hl-white;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+      line-height: 24px;
+      &:hover {
+        cursor: pointer;
+        background-color: $hl-blue-light;
+      }
+    }
+  }
+
+  &Column {
+    &One {
+      display: flex;
+      flex-direction: column;
+      min-width: 302px;
+      max-width: 302px;
+    }
+
+    &Two {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      margin-left: 133px;
+    }
+  }
+}
+
+// CAREER SECTION
+.careerSection {
+  margin-top: 138px;
+  display: flex;
+  gap: 50px;
+  &Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &Container {
+      width: 737px;
+      height: 430px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+  &Info {
+    width: 300px;
+    &Container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+    &Header {
+      @include hl-font-700;
+      font-size: 32px;
+      line-height: 40px;
+      margin-top: 0px;
+      margin-bottom: 16px;
+    }
+    &Text {
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-black;
+      margin-top: 0px;
+      margin-bottom: 24px;
+    }
+    &Button {
+      padding: 10px 25px;
+      border-radius: 25px;
+      border: none;
+      color: $hl-white;
+      background-color: $hl-blue-dark;
+      font-size: 16px;
+      line-height: 24px;
+      @include hl-font-700;
+      &:hover {
+        background-color: $hl-blue-light;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// DEPARTMENT SECTION
+.departmentSection {
+  max-width: $hl-xxl;
+
+  @include mobile {
+    margin: 0;
+    padding: 0 $padding-framing-mobile $padding-framing-mobile $padding-framing-mobile;
+  }
+  @include tablet {
+    margin: 0 auto;
+    padding: $padding-framing-tablet;
+  }
+  @include desktop {
+    margin: 0 auto $font-size-p auto;
+    padding: $padding-framing-desktop;
+  }
+
+  &Header {
+    @include hl-font-700;
+    font-size: $font-size-h3;
+    line-height: 32px;
+    margin-top: 0;
+  }
+
+  div[class*='_sliderContainer'] {
+    @include mobile {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    @include tablet {
+      margin: 0 calc($padding-framing-tablet * -1);
+      width: calc(100% + calc($padding-framing-tablet * 2));
+    }
+    @include desktop {
+      margin: 0 calc($padding-framing-desktop * -1);
+      width: calc(100% + calc($padding-framing-desktop * 2));
+    }
+  }
+}
+
+@include tablet {
+  .detailPage {
+    padding: 24px;
+  }
+  .careerSection {
+    flex-direction: column;
+    &Image {
+      &Container {
+        max-width: 100%;
+        margin: auto;
+      }
+    }
+    &Info {
+      &Container {
+        margin-top: 25px;
+        text-align: center;
+      }
+      &Link {
+        width: 100%;
+      }
+      &Button {
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 4px;
+      }
+    }
+  }
+
+  .extraInfoSection {
+    flex-direction: column;
+    &About {
+      &Text {
+        &Container {
+          overflow: hidden;
+          max-height: inherit;
+        }
+      }
+    }
+    &ColumnTwo {
+      margin: 0px;
+    }
+  }
+}
+
+@include mobile {
+  .detailPage {
+    padding: 24px;
+    &Alert {
+      &Text {
+        font-size: 10px;
+        line-height: 14px;
+      }
+    }
+  }
+  .infoAndMap {
+    justify-content: start;
+  }
+  .storeMap {
+    display: none;
+  }
+  .shareButton {
+    height: 28px;
+    font-size: 14px;
+  }
+  .nearbyStores {
+    display: none;
+    &Mobile {
+      display: block;
+      border-bottom: 4px solid $hl-gray-shadow;
+    }
+    &Container {
+      flex-direction: column;
+    }
+    &Info {
+      &Distance {
+        &Mobile {
+          margin-right: 21px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          &Icon {
+            color: $hl-red;
+          }
+          &Miles {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  .storeInfo {
+    min-width: 272px;
+    margin-right: 0px;
+    &SocialMedia {
+      &Icon {
+        width: 23px;
+      }
+    }
+    &FollowUs {
+      @include hl-font-700;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 16.5px;
+      margin-top: 24px;
+    }
+    &Button {
+      &Directions {
+        width: 100%;
+        height: 28px;
+        padding: 0;
+        font-size: 14px;
+        line-height: 20px;
+        &Anchor {
+          width: 100%;
+          height: 28px;
+        }
+      }
+    }
+    &Share {
+      &Follow {
+        &Container {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: end;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  .extraInfoSection {
+    flex-direction: column;
+    &About {
+      &Text {
+        &Container {
+          overflow: hidden;
+          max-height: inherit;
+        }
+      }
+    }
+    &ColumnTwo {
+      margin: 0px;
+    }
+  }
+  .careerSection {
+    flex-direction: column;
+    margin-top: 58px;
+    &Image {
+      &Container {
+        width: 272px;
+        height: 180px;
+        margin: auto;
+      }
+    }
+    &Info {
+      &Container {
+        margin-top: 25px;
+        text-align: center;
+      }
+      &Link {
+        width: 100%;
+      }
+      &Button {
+        width: 100%;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 4px;
+      }
+    }
+  }
+  .departmentSection {
+    margin-top: 64px;
+  }
+}

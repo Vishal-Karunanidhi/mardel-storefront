@@ -1,0 +1,83 @@
+@import '../variables';
+@import '../breakpoints';
+
+.card {
+  width: 230px;
+  height: 270px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  img {
+    transform: none;
+    transition: all 0.1s ease-in-out;
+  }
+  &:hover {
+    img {
+      transform: scale(1.01);
+      transition: all 0.1s ease-in-out;
+    }
+    .image {
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.image {
+  height: 230px;
+  width: 230px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  transition: box-shadow 0.1s ease-out;
+  &:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  will-change: transform;
+}
+
+.text {
+  margin-top: 10px;
+  font-size: 16px;
+  @include vars.hl-font-700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.header {
+  @include vars.hl-font-700;
+  font-size: 40px;
+  line-height: 50px;
+  width: 100%;
+  padding-left: 80px;
+  padding-top: 35px;
+  margin: 0px auto 0px;
+}
+
+@media screen and (min-width: $hl-break-xl) {
+  .image {
+    &:hover {
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+@media screen and (max-width: $hl-break-xl) {
+  .header {
+    width: 100%;
+    padding-left: 80px;
+  }
+}
+
+@media screen and (max-width: $hl-break-lg) {
+  .header {
+    padding-left: 40px;
+  }
+}
+
+@media screen and (max-width: $hl-break-sm) {
+  .header {
+    padding-left: 24px;
+  }
+}

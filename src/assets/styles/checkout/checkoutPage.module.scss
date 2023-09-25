@@ -1,0 +1,673 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.readError {
+  background: white;
+  display: inline-block;
+  line-height: 1.25;
+  vertical-align: middle;
+  z-index: 4;
+}
+
+.checkoutMainContainer {
+  @include desktop {
+    background: linear-gradient(to right, $color-canvas 50%, white 50%);
+  }
+}
+
+.checkoutParentGrid {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  @include mobileAndTablet {
+    padding: 8px;
+    background-color: $hl-gray-shadow;
+  }
+
+  .formGrid {
+    background-color: $hl-gray-shadow;
+    padding-top: 24px;
+
+    @include desktop {
+      padding: 80px;
+      width: 60%;
+      padding-top: 24px;
+    }
+
+    @include mobileAndTablet {
+      width: 99vw;
+    }
+
+    .viewContactForm {
+      margin-bottom: 16px;
+
+      label {
+        @include hl-font-700;
+        color: $hl-gray;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+
+        @include mobileAndTablet {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+
+      a {
+        float: right;
+        text-decoration: underline;
+        cursor: pointer;
+
+        @include hl-font-300;
+        font-size: 14px;
+        line-height: 20px;
+
+        @include mobileAndTablet {
+          font-size: 12px;
+          line-height: 16px;
+        }
+
+        &:hover {
+          color: $hl-blue;
+          text-decoration: none;
+        }
+
+        &:active {
+          color: $hl-black;
+          text-decoration: underline;
+        }
+
+        &:focus-visible {
+          outline: 2px dashed $hl-blue;
+          outline-offset: 5px;
+        }
+      }
+    }
+
+    .header {
+      @include hl-font-700;
+    }
+
+    .paymentOverview {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .paymentTotal {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .editContactForm {
+      margin: $font-size-p 0 0 0;
+
+      //Text area wrap
+      .inputTextAreaWrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+        margin-bottom: -10px;
+
+        @include mobileAndTablet {
+          flex-direction: column;
+        }
+
+        .textAreaInfoLabel {
+          @include hl-font-300;
+          font-size: 12px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          color: $hl-gray;
+          flex: none;
+          margin-top: 8px;
+          margin-bottom: 10px;
+        }
+
+        .textInput {
+          width: 50%;
+          border-radius: 5px;
+
+          @include mobileAndTablet {
+            width: 100%;
+          }
+
+          :global(.MuiInputLabel-shrink.Mui-focused) {
+            color: $hl-black;
+          }
+
+          :global(.MuiInputLabel-shrink) {
+            text-transform: uppercase;
+            color: $hl-black;
+            @include hl-font-300;
+            font-size: 11px;
+            line-height: 14px;
+            left: 1px;
+          }
+
+          :global(.MuiFilledInput-root) {
+            background-color: $hl-white;
+            border-radius: 5px;
+            height: 128px;
+            padding-top: 36px;
+            border: 1.25px solid $hl-input-border-grey;
+
+            &:hover,
+            &:active {
+              border: 1.25px solid $hl-blue;
+            }
+
+            &:after,
+            &:before {
+              border-bottom: none;
+            }
+
+            input {
+              @include hl-font-300;
+              font-size: 16px;
+              line-height: 24px;
+
+              &:focus-visible {
+                outline: none;
+              }
+            }
+          }
+        }
+
+        :global(.MuiSelect-filled) {
+          background: transparent;
+        }
+
+        .errorInput {
+          :global(.MuiFilledInput-root) {
+            border: 1.25px solid $hl-error;
+          }
+        }
+      }
+
+      .inputFieldWrapper {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        @include mobileAndTablet {
+          flex-direction: column;
+        }
+
+        .textInput {
+          width: 50%;
+          border-radius: 5px;
+
+          @include mobileAndTablet {
+            width: 100%;
+          }
+
+          :global(.MuiInputLabel-shrink.Mui-focused) {
+            color: $hl-black;
+          }
+
+          :global(.MuiInputLabel-shrink) {
+            text-transform: uppercase;
+            color: $hl-black;
+            @include hl-font-300;
+            font-size: 11px;
+            line-height: 14px;
+            left: 1px;
+          }
+
+          :global(.MuiFilledInput-root) {
+            background-color: $hl-white;
+            border-radius: 5px;
+            height: 50px;
+            border: 1.25px solid $hl-input-border-grey;
+
+            &:hover,
+            &:active {
+              border: 1.25px solid $hl-blue;
+            }
+
+            &:after,
+            &:before {
+              border-bottom: none;
+            }
+
+            input {
+              @include hl-font-300;
+              font-size: 16px;
+              line-height: 24px;
+
+              &:focus-visible {
+                outline: none;
+              }
+            }
+          }
+
+          .selectIconHide {
+            :global(.MuiSelect-icon.MuiSelect-iconFilled) {
+              display: none;
+            }
+          }
+        }
+
+        :global(.MuiSelect-filled) {
+          background: transparent;
+        }
+
+        :global(.MuiSelect-filled[aria-expanded='true']) {
+          border-radius: 5px 5px 0px 0px;
+        }
+
+        :global(.MuiSelect-icon.MuiSelect-iconFilled) {
+          color: $hl-black;
+        }
+
+        .errorInput {
+          :global(.MuiFilledInput-root) {
+            border: 1.25px solid $hl-error;
+          }
+        }
+      }
+    }
+    .shippingSection {
+      display: flex;
+      flex-direction: column;
+      .viewLabels {
+        @include hl-font-300;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include mobileAndTablet {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .individualFormBoxes {
+      display: flex;
+      flex-direction: column;
+      background: $hl-white;
+      padding: 24px;
+      box-shadow: 0px 2.6155px 7.24134px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      margin-bottom: 24px;
+
+      .paymentSection {
+        margin-bottom: 24px;
+
+        .editPaymentForm {
+          margin-top: 26px;
+          margin-bottom: 24px;
+
+          .paymentFieldWrapper {
+            display: flex;
+            flex-direction: row;
+          }
+        }
+
+        .creditCardTitleSection {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      .formBoxHeader {
+        width: 100%;
+        height: 32px;
+        background: $hl-blue;
+        border-radius: 10px 10px 0px 0px;
+
+        padding: 0px;
+      }
+      .signUpWrapper {
+        padding: 24px;
+        form[class*='signUpForm'] {
+          margin-top: 24px;
+        }
+      }
+
+      .selectOptionDescription {
+        padding-top: 8px;
+      }
+      .secureOptionsDescription {
+        padding-top: 24px;
+        font-size: 14px;
+      }
+      .paymentOptionDivider {
+        padding-top: 16px;
+      }
+    }
+
+    .orderSummarryMobile {
+      .individualFormBoxes {
+        @include mobileAndTablet {
+          display: block;
+          div[class*='orderSummarySection'] {
+            div[class*='summaryBorder'] {
+              padding: 0px;
+            }
+          }
+        }
+        @include desktop {
+          display: none;
+        }
+      }
+    }
+
+    .signUpFormBoxHeader {
+      padding: 0px;
+    }
+
+    .submitWrapper {
+      margin-top: 14px;
+
+      &:active {
+        outline: none;
+      }
+
+      .submitButton {
+        border: none;
+        border-radius: 25px;
+        width: 100%;
+        height: 48px;
+
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include mobileAndTablet {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        @include mobile {
+          height: 28px;
+        }
+
+        color: $hl-white;
+        background: $hl-blue-dark;
+
+        &:active {
+          background: $hl-blue-dark;
+        }
+
+        &:hover,
+        &:focus-visible {
+          background: $hl-blue-light;
+        }
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .needHelpSection {
+    @include desktop {
+      display: none;
+    }
+    div[class*='infoSectionMobile'] {
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 24px;
+
+      label[class*='helpTitle'] {
+        @include hl-font-700;
+        font-size: 12px;
+        line-height: 16px;
+      }
+      span[class*='contactTitle'] {
+        color: $hl-blue;
+        margin-left: 2px;
+        display: inline-flex;
+
+        a {
+          text-decoration: underline;
+
+          &:hover {
+            color: $hl-black;
+            text-decoration: none;
+            text-decoration-line: none;
+          }
+
+          &:focus-visible {
+            text-decoration: none;
+            text-decoration-line: none;
+            outline: 2px dashed $hl-blue;
+            outline-offset: 1px;
+            color: $hl-black;
+          }
+        }
+      }
+      label[class*='cartTitle'] {
+        @include hl-font-300;
+        font-size: 14px;
+        margin-left: 4px;
+      }
+    }
+
+    label[class*='numberTitle'] {
+      @include hl-font-700;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+
+  .orderSummaryGrid {
+    background-color: $hl-white;
+
+    div[class*='orderSummarySection'] {
+      margin-right: 0px;
+      margin-top: 24px;
+    }
+
+    div[class*='errorSection'] {
+      margin: 24px 0px;
+    }
+
+    @include desktop {
+      display: block;
+      width: 38%;
+      padding: 24px;
+      padding-top: 0px;
+      max-width: 520px;
+      background: transparent;
+    }
+
+    @include mobileAndTablet {
+      display: none;
+    }
+
+    .productTileWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .productTileTitle {
+      @include hl-font-500;
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 16px;
+      text-transform: uppercase;
+      color: $hl-black;
+    }
+  }
+
+  //Common css properties for all checkbox in the checkout page
+  .checkoutCheckboxWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @include mobileAndTablet {
+      margin-bottom: 30px;
+    }
+
+    .checkoutCheckbox {
+      width: 20px;
+      height: 20px;
+      background: $hl-white;
+      border: 1.25px solid $hl-darkest-gray;
+      border-radius: 2.5px;
+      margin-left: 0px;
+
+      @include checkboxProperties;
+    }
+    .checkboxLabel {
+      position: absolute;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      color: $hl-black;
+      margin-left: 28px;
+      margin-top: 2px;
+      vertical-align: text-bottom;
+    }
+  }
+
+  .paymentErrorSection {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+
+    .errorInfoImage {
+      display: flex;
+      align-items: center;
+    }
+
+    .paymentErrorLabel {
+      padding-top: 2px;
+      color: $hl-error;
+    }
+  }
+
+  .pinInfo {
+    display: flex;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.orderSummaryMobileSection {
+  @include desktop {
+    display: none;
+  }
+
+  @include mobileAndTablet {
+    position: relative;
+
+    width: 100%;
+    z-index: 5;
+    border-top: 2px solid $hl-gray-line;
+    box-shadow: none;
+  }
+
+  &:global(.MuiAccordion-root.Mui-expanded) {
+    margin: 0px;
+    box-shadow: 0px 9px 8px rgb(0 0 0 / 15%);
+  }
+
+  div {
+    &:global(.MuiAccordionSummary-content) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0px;
+    }
+  }
+
+  div {
+    &:global(.MuiAccordionSummary-root.Mui-expanded) {
+      min-height: 32px;
+      box-shadow: none;
+    }
+  }
+
+  div {
+    &:global(.MuiAccordionSummary-root) {
+      min-height: 32px;
+      box-shadow: 0px 9px 8px rgb(0 0 0 / 15%);
+    }
+  }
+
+  div {
+    &:global(.MuiAccordionSummary-expandIconWrapper) {
+      color: $hl-black;
+    }
+  }
+
+  .orderSummaryDivider {
+    border: 1px solid $hl-gray-line;
+  }
+
+  .orderSummaryTotalPrice {
+    @include hl-font-700;
+    color: $hl-black;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $hl-blue;
+    padding-left: 24px;
+  }
+
+  .viewOrderSummaryLabel {
+    @include hl-font-300;
+    font-size: 10px;
+    line-height: 14px;
+    color: $hl-black;
+  }
+}
+
+.timeoutModalTitle {
+  background-color: $hl-blue;
+  border-radius: 10px 10px 0px 0px;
+  height: 35px;
+  outline: $hl-blue-outline;
+  outline-color: $hl-blue;
+  .closeIconStyle {
+    float: right;
+    color: $hl-white;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: -7px;
+  }
+}
+
+.divider {
+  margin-bottom: 24px;
+}
+
+.billingAddressTitle {
+  margin-bottom: 16px;
+}
+
+.addressSpinner {
+  width: 50%;
+  position: absolute;
+  margin-top: 25%;
+}
+
+.error {
+  color: $hl-error;
+  display: block;
+}
+
+.errorWrapper {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: $font-size-cite;
+}

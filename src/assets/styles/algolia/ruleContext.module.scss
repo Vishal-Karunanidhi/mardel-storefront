@@ -1,0 +1,175 @@
+@import '../breakpoints';
+@import '../globals';
+@import '../variables';
+
+.hidden {
+  display: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 24px;
+}
+
+.mobileWidgetMenu {
+  min-width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+  background-color: $hl-white;
+  overflow-y: scroll;
+
+  &Close {
+    background: $color-canvas;
+    width: 100%;
+    height: 35px;
+    padding-top: 5px;
+    svg {
+      float: right;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.ruleContext {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-width: $hl-xxl;
+  width: 100%;
+
+  @include mobile {
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include mobileAndTablet {
+    margin: 0 auto $margin-card-short auto;
+  }
+
+  @include tablet {
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    gap: $font-size-p;
+    margin: 0 auto $margin-card-tall auto;
+    padding: 0 $padding-framing-desktop;
+  }
+
+  &Widgets {
+    height: calc(100vh - 25px);
+    overflow: auto;
+    position: sticky;
+    top: 0px;
+
+    &::-webkit-scrollbar {
+      background-color: $hl-white;
+      border-radius: 20px;
+      cursor: grab;
+      height: 4px;
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: $color-canvas;
+      border-radius: 20px;
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $hl-blue;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $hl-blue-light;
+    }
+  }
+
+  &Hits {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      background-color: $hl-white;
+      border-radius: 20px;
+      cursor: grab;
+      height: 4px;
+      width: 4px;
+      visibility: hidden;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: $color-canvas;
+      border-radius: 20px;
+      visibility: hidden;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $hl-blue;
+      border-radius: 20px;
+      visibility: hidden;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $hl-blue-light;
+    }
+
+    @include mobileAndTablet {
+      margin-right: 10px;
+      width: 100%;
+    }
+
+    &Pagination {
+      ul[class*='ais-Pagination-list'] {
+        margin-top: 40px;
+      }
+
+      a[class*='ais-Pagination-link'] {
+        color: $hl-black;
+      }
+
+      li[class*='ais-Pagination-item--page'] {
+        @include hl-font-300;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.5em;
+      }
+
+      li[class*='ais-Pagination-item--firstPage'] {
+        padding-right: 10px;
+
+        a {
+          color: $color-body;
+        }
+      }
+
+      li[class*='ais-Pagination-item--lastPage'] {
+        padding-left: 10px;
+
+        a {
+          color: $color-body;
+        }
+      }
+
+      li[class*='ais-Pagination-item--previousPage'] {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../variables';
+@import '../../globals';
+
+.oosOnline {
+  @include hl-font-700;
+  font-size: 12px;
+
+  @include mobile {
+    font-size: 10px;
+  }
+
+  a {
+    @include href-blue-underlined;
+  }
+}

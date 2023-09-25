@@ -1,0 +1,125 @@
+@import '../../variables';
+@import '../../globals';
+@import '../../breakpoints';
+
+.wrapper {
+  background-color: $hl-breadcrumb-background;
+  width: 100%;
+
+  .breadcrumbs {
+    margin: 0 auto;
+    max-width: $hl-xxl;
+
+    @include mobile {
+      font-size: 0.7rem;
+      padding: 1rem 1.5rem;
+    }
+
+    @include tablet {
+      font-size: 0.8rem;
+      padding: 1.05rem 2.5rem 1rem 2.5rem;
+    }
+
+    @include desktop {
+      font-size: 1rem;
+      line-height: 1.5em;
+      padding: 1.8rem 5rem 1.9rem 5rem;
+    }
+
+    &Title {
+      @include hl-font-700;
+      margin: 0;
+
+      @include mobile {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding-top: 0.5rem;
+      }
+
+      @include tablet {
+        font-size: 1.5rem;
+        padding-top: 0.5rem;
+      }
+
+      @include desktop {
+        letter-spacing: 0.02rem;
+        line-height: 2.5rem;
+        padding-top: 1rem;
+      }
+    }
+
+    &Subheader {
+      @include hl-font-700;
+
+      @include mobileAndTablet {
+        font-size: 1rem;
+        padding-top: 0.25rem;
+      }
+
+      @include desktop {
+        font-size: 1.25rem;
+        margin: 0;
+        padding-top: 0.5rem;
+      }
+    }
+
+    a {
+      color: $hl-blue;
+      text-decoration: underline;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:focus {
+        color: $hl-black;
+        outline-offset: 5px;
+        outline: 2px dashed $hl-blue;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: $hl-black;
+        text-decoration: none;
+      }
+
+      @include mobile {
+        padding: 0 0.4rem;
+      }
+
+      @include tablet {
+        padding: 0 0.6rem;
+      }
+
+      @include desktop {
+        padding: 0 0.75rem;
+      }
+    }
+
+    span {
+      &:focus {
+        color: $hl-black;
+        outline-offset: 5px;
+        outline: 2px dashed $hl-blue;
+        text-decoration: none;
+      }
+
+      @include mobile {
+        padding: 0 0.4rem;
+      }
+
+      @include tablet {
+        padding: 0 0.6rem;
+      }
+
+      @include desktop {
+        padding: 0 0.75rem;
+      }
+    }
+
+    label {
+      @include hl-font-300;
+      font-size: 16px;
+    }
+  }
+}

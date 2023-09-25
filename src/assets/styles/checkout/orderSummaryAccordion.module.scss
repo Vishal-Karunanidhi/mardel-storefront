@@ -1,0 +1,52 @@
+@import '../variables';
+@import '../globals';
+
+.drawerOrderSummary {
+  .checkoutOrderSummaryMobileSection {
+    font-size: 12px;
+    line-height: 16px;
+    color: $hl-black;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .checkoutOrderSummaryTitle {
+      @include hl-font-700;
+
+      text-transform: uppercase;
+    }
+    .checkoutOrderSummaryContent {
+      @include hl-font-300;
+    }
+  }
+  div[class*='orderSummarySection'] {
+    width: 100%;
+
+    div[class*='summaryBorder'] {
+      border: 0px solid $hl-input-border-grey;
+      padding: 0px;
+      padding-left: 24px;
+      padding-right: 24px;
+
+      p[class*='summaryTitle'] {
+        display: none;
+      }
+    }
+  }
+}
+
+.productTileTitle {
+  @include hl-font-700;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 32px;
+  margin-left: 24px;
+  text-transform: uppercase;
+  color: $hl-black;
+}
+
+.productTileWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}

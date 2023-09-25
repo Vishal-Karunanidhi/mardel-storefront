@@ -1,0 +1,358 @@
+// MONOTYPE FONT
+//// Museo Sans
+
+@import '5a9bf8e0-2251-11ed-aaf7-06b70d83f6b0';
+
+@mixin hl-font-100 {
+  font-family: MuseoSans100, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@mixin hl-font-100-italic {
+  font-family: MuseoSans100Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: italic;
+}
+
+@mixin hl-font-300 {
+  font-family: MuseoSans300, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@mixin hl-font-300-italic {
+  font-family: MuseoSans300Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: italic;
+}
+
+@mixin hl-font-500 {
+  font-family: MuseoSans500, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@mixin hl-font-500-italic {
+  font-family: MuseoSans500Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: italic;
+}
+
+@mixin hl-font-700 {
+  font-family: MuseoSans700, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@mixin hl-font-700-italic {
+  font-family: MuseoSans700Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: italic;
+}
+
+@mixin hl-font-900 {
+  font-family: MuseoSans900, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+@mixin hl-font-900-italic {
+  font-family: MuseoSans900Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-stretch: normal;
+  font-style: italic;
+}
+
+// END MONOTYPE
+
+// VARIABLES
+// These are the foundation of the site. Use these variables to define other commonly-used settings to avoid having to find+replace in future edits.
+
+/* Global Variables */
+$border-radius-light: 0.25rem;
+$border-radius: 0.625rem;
+$border-size: 0.1rem;
+$box-shadow-1: 0rem 0.1875rem 0.5rem 0rem rgba(0, 0, 0, 0.15);
+$box-shadow-2: 0rem 0.5rem 0.5rem 0rem rgba(0, 0, 0, 0.15);
+$box-shadow-hover: 0rem 0.1875rem 1rem 0rem rgba(0, 0, 0, 0.25);
+$box-shadow-standard: rgba(0, 0, 0, 0.15);
+$button-border-radius: 1.5625rem;
+$button-icon-arrow-left-black: url(../icons/button-arrow-left-black.svg);
+$button-icon-arrow-left-white: url(../icons/button-arrow-left-white.svg);
+$button-icon-arrow-right-black: url(../icons/button-arrow-right-black.svg);
+$button-icon-arrow-right-white: url(../icons/button-arrow-right-white.svg);
+$button-icon-cart-black: url(../icons/cart-black.svg);
+$button-icon-cart-white: url(../icons/cart-white.svg);
+$button-icon-transition-active: #{'background-position 0.5s, background-size 0.25s'};
+$button-icon-transition-hover: #{'background-position 0.5s, background-size 0.25s'};
+$button-icon-transition: #{' background-position 0.5s, background-size 0.25s'};
+$button-min-height: 3rem;
+$button-padding-height: 0.25rem;
+$button-padding-width: 1.5rem;
+$button-transition-active: #{'background-color 0.1s, background-position 0.1s, box-shadow 0.1s, transform 0.1s'};
+$button-transition-hover: #{'background-color 0.1s, background-position 0.1s, box-shadow 0.25s, transform 0.1s'};
+$button-transition: #{'background-color 0.15s, box-shadow 0.1s, transform 0.5s'};
+$font-family-emoji: #{'"Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji"'};
+$font-family-mono: #{'ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace'};
+$font-family-sans-100-italic: #{'MuseoSans100Italic, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-100: #{'MuseoSans100, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-300-italic: #{'MuseoSans300Italic, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-300: #{'MuseoSans300, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-500-italic: #{'MuseoSans500Italic, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-500: #{'MuseoSans500, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-700-italic: #{'MuseoSans700Italic, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-700: #{'MuseoSans700, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-900-italic: #{'MuseoSans900Italic, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-sans-900: #{'MuseoSans900, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
+$font-family-serif: #{'Iowan, Baskerville, "EB Garamond", Palatino, Cambria, Georgia, "Times New Roman", Times, serif'};
+$font-family-system: #{'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, Helvetica, sans-serif'};
+
+$font-resize: calc(4vw + 4vh + 2vmin);
+$font-size-body: 16px;
+$font-size-cite: 0.75rem;
+$font-size-displayHeader: 4rem;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.5rem;
+$font-size-h4: 1.25rem;
+$font-size-h5: 1rem;
+$font-size-h6: 0.75rem;
+$font-size-p: 1rem;
+$font-weight-black: 900;
+$font-weight-body: 300;
+$font-weight-bold: 700;
+$font-weight-button: 500;
+$font-weight-light: 100;
+$letter-spacing-wide: 0.05rem;
+$line-height: 1.25;
+$margin-body: 1rem;
+$margin-card-short: 1.25rem;
+$margin-card-tall: 2.1875rem;
+$margin-framing-short: 2.5rem;
+$margin-framing-tall: 4.375rem;
+$outline-offset: 0.25rem;
+$outline-size: 0.125rem;
+$padding-meganav-mobile: 1.5rem;
+$padding-card-big: 0.5rem 5rem 2.5rem 5rem;
+$padding-card-small: 0.25rem 2.25rem 1.25rem 2.25rem;
+$padding-framing-mobile: 1.25rem;
+$padding-framing-tablet: 2.5rem;
+$padding-framing-desktop: 5rem;
+
+/* Hobby Lobby Color Codes */
+
+// Version One
+$hl-orange: #ef4317;
+$hl-orange-dark: #b40000;
+
+$hl-blue-light: #4a59b8;
+$hl-thin-blue: #bdc1d9;
+$hl-blue: #003087;
+$hl-blue-dark: #000c59;
+
+$hl-red: #b53315;
+
+$hl-white: #ffffff;
+$hl-black: #000000;
+
+$hl-gray-shadow: #ededed;
+$hl-light-gray-shadow: #eaeaea;
+$hl-gray: #5f5f5f;
+$hl-dark-gray: #555555;
+$hl-darkest-gray: #333333;
+$hl-gray-line: #bfbfbf;
+$hl-gray-lin-for-listing-page-drawers: #b7b7b7b7;
+$hl-gray-light: #ece7de;
+$hl-error: #7e0000;
+$hl-blue-outline: #003087;
+
+$hl-breadcrumb-background: #e4e6f4;
+
+$hl-disabled: #ece7de;
+$hl-input-border-grey: #444444;
+
+// Version Two
+$color-body: #333333;
+$color-canvas: #ededed;
+$color-border: #666666;
+$color-error: #c50000;
+$color-error-light: #e34242;
+$color-gray-1: #444444;
+$color-gray-2: #5f5f5f;
+$color-gray-3: #bfbfbf;
+$color-gray-4: #cccccc;
+$color-gray-5: #d6d6d6;
+$color-gray-6: #e6e6e6;
+$color-gray-7: #f1f1f1;
+$color-gray-8: #f8f8f8;
+$color-gray-9: #4444;
+$color-highlight: #4f79c8;
+$color-highlight-dark: #2152af;
+$color-highlight-light: #a0c1ff;
+$color-highlight-faded: #f7fafd;
+$color-href: #003087;
+$color-href-visited: #003087;
+$color-href-hover: #4a59b8;
+$color-href-active: #000c59;
+$color-outline: #003087;
+$color-primary: #ef4317;
+$color-primary-light: #ff7846;
+$color-primary-dark: #b40000;
+$color-ribbon: #ca312b;
+$color-ribbon-light: #ee6440;
+$color-ribbon-dark: #7e0000;
+$color-secondary: #003087;
+$color-secondary-light: #4a59b8;
+$color-secondary-dark: #000c59;
+$color-sun-yellow: #e6b446;
+$color-sun-yellow-light: #ffe676;
+$color-sun-yellow-dark: #b9850f;
+$color-green-1: #0d7b00;
+
+// ASSORTED VARIABLES
+
+@mixin checkboxProperties {
+  &:focus-visible {
+    outline: 1.215px dashed $hl-blue;
+    outline-offset: 5px;
+  }
+
+  @include desktop {
+    &:hover {
+      background: $hl-thin-blue;
+
+      &:after {
+        color: $hl-thin-blue;
+      }
+    }
+  }
+
+  &:active {
+    color: $hl-thin-blue;
+
+    &:after {
+      color: $hl-blue;
+    }
+
+    @include mobile {
+      box-shadow: 0px 0px 6px 6px $hl-light-gray-shadow;
+    }
+  }
+
+  &:checked {
+    background: $hl-white;
+
+    &:after {
+      color: $hl-blue;
+    }
+  }
+}
+
+@mixin checkboxProperties {
+  &:focus-visible {
+    outline: 1.215px dashed $hl-blue;
+    outline-offset: 5px;
+  }
+
+  @include desktop {
+    &:hover {
+      background: $hl-thin-blue;
+
+      &:after {
+        color: $hl-thin-blue;
+      }
+    }
+  }
+
+  &:active {
+    color: $hl-thin-blue;
+
+    &:after {
+      color: $hl-blue;
+    }
+
+    @include mobile {
+      box-shadow: 0px 0px 6px 6px $hl-light-gray-shadow;
+    }
+  }
+
+  &:checked {
+    background: $hl-white;
+
+    &:after {
+      color: $hl-blue;
+    }
+  }
+}
+
+@mixin rowFlexWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@mixin columnFlexWrap {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@mixin hl-descriptor {
+  font-size: calc($font-size-p * 0.875);
+}
+
+@mixin hl-callout {
+  text-transform: uppercase;
+}
+
+@mixin productFavoriteModal {
+  div[class*='modal_modal__'] {
+    overflow-y: scroll;
+    position: relative;
+
+    @include mobile {
+      max-height: 40vh;
+    }
+
+    @include tabletAndDesktop {
+      max-height: 80vh;
+    }
+  }
+  
+  div[class*='modal_modalTop__'] {
+    position: fixed;
+    z-index: 3;
+
+    @include mobile {
+      width: 279px;
+    }
+
+    @include tabletAndDesktop {
+      width: 519px;
+    }
+  }
+
+  div[class*='productFavoriteComponent_modalBody__'] {
+    padding-top: calc($font-size-p * 3.54);
+  }
+}

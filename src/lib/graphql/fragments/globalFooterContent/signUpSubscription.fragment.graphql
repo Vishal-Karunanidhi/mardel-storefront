@@ -1,0 +1,11 @@
+fragment SignUpSubscription on SignupComponent {
+        _meta {
+          name
+        }
+        description
+        button
+        successMessageHeading
+        successMessage
+        errorMessageHeading
+        errorMessage
+      }

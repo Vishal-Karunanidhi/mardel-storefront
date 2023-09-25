@@ -1,0 +1,25 @@
+query GetAddressSuggestions($address: AddressValidation!) {
+  getAddressSuggestions(address: $address) {
+    CustomerAddress {
+      ...AddressFragment
+    }
+    CandidateAddresses {
+      ...AddressFragment
+    }
+    Status
+    Message
+  }
+}
+
+fragment AddressFragment on Address {
+  Name
+  Company
+  Address1
+  Address2
+  Address3
+  City
+  State
+  Zip
+  CountryCode
+  PhoneNumber
+}

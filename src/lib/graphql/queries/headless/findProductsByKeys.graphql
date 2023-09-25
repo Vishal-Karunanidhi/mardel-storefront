@@ -1,0 +1,67 @@
+#import '@GqlFragments/pdp/ratings.fragment.graphql';
+
+query FindProductsByKeys($keys: [String!]!) {
+  findProductsByKeys(keys: $keys) {
+    total
+    products {
+      name
+      productKey
+      productType
+      commercetoolsId
+      description
+      pdpUrl
+      slug
+      variants {
+        id
+        sku
+        isMasterVariant
+        key
+        imageSet
+        inStock
+        attributes {
+          description
+          backInStockEligible
+          approvalStatus
+          productOnlineDate
+          offlineDate
+          onlineDate
+          productUnit {
+            key
+          }
+          onlineStatus {
+            key
+            label
+          }
+          yourPrice
+          availability {
+            key
+            label
+          }
+          productWarnings {
+            key
+            label
+          }
+          productHazards {
+            key
+            label
+          }
+        }
+        price {
+          variantPrice
+          discountedPrice {
+            discountedPrice
+            discountName
+            discountKey
+            discountId
+          }
+        }
+        isMasterVariant
+        isMatchingVariant
+      }
+      rating {
+        ...RatingsFragment
+      }
+    }
+    productsNotFound
+  }
+}

@@ -1,0 +1,38 @@
+query getStoreFinderPage($deliveryKey: String!) {
+  getStoreFinderPage(deliveryKey: $deliveryKey) {
+    header
+    richText
+    image {
+      id
+      name
+      defaultHost
+      endpoint
+      url
+      _meta {
+        deliveryId
+        deliveryKey
+        name
+        schema
+      }
+    }
+    _meta {
+      deliveryId
+      deliveryKey
+      name
+      schema
+    }
+    breadcrumbs {
+      _meta {
+        deliveryId
+        deliveryKey
+        name
+        schema
+      }
+      links {
+        label
+        openInNewTab
+        value
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import '../variables';
+@import '../globals';
+
+.headerSignUpMobile {
+  @include mobileAndTablet {
+    display: block;
+  }
+  @include desktop {
+    display: none;
+  }
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: $hl-white;
+  width: 100%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.8);
+  .modalHeaderSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 25px;
+    background-color: $hl-blue;
+    .iconButton {
+      background-color: transparent;
+      .icon {
+        color: $hl-white;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        margin-right: 6px;
+      }
+    }
+  }
+  .emailWrapper {
+    div[class*='emailCompWrapper'] {
+      flex-direction: column;
+    }
+    div[class*='emailSubWrapper'] {
+      padding: 15px;
+    }
+    div {
+      div[class*='signUpButtonWrapper'] {
+        div[class*='submitWrapper'] {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .popoverDivider {
+    border: 0.5px solid $hl-gray-line;
+  }
+  .popoverFooterSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 25px 25px 25px;
+    align-items: center;
+    gap: 10px;
+
+    .accountAndIcon {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+
+      .registerLabel {
+        @include hl-font-300;
+        text-decoration: underline;
+        font-size: 14px;
+        line-height: 20px;
+        color: $hl-black;
+      }
+      .icon {
+        height: 20px;
+        width: 20px;
+        color: $hl-black;
+      }
+    }
+    .alreadyRegisterLabel {
+      @include hl-font-300;
+      font-size: 14px;
+      line-height: 20px;
+      color: $hl-black;
+      .loginLabel {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+query GetAccountsReceivableCardBalance(
+  $accountNumber: String
+  $cardNumber: String
+  $zipCode: String
+) {
+  getAccountsReceivableCardBalance(
+    accountNumber: $accountNumber
+    cardNumber: $cardNumber
+    zipCode: $zipCode
+  ) {
+    amountDue
+    cardBalance
+    creditLimit
+    paymentTransactionResponse {
+      transactionMessage
+      transactionStatus
+    }
+    transactionHistory {
+      date
+      transactionId
+      amount
+      action
+    }
+  }
+}

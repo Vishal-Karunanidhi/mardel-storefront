@@ -1,0 +1,74 @@
+@import '../variables';
+@import '../breakpoints';
+
+.productDetails {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &Brand {
+    @include hl-font-300-italic;
+    color: $hl-black;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &Name {
+    @include hl-font-700;
+    color: $hl-black;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    padding: 8px 0 16px 0;
+    text-align: center;
+  }
+
+  &More {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 18.5px;
+    width: 100%;
+    font-size: 14px;
+
+    &SkuAndShipping {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &SKU {
+      @include hl-font-500;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+    &Shipping {
+      color: $hl-orange-dark;
+    }
+  }
+
+  &Recipient {
+    margin: 16px 0px;
+  }
+
+  &Assorted {
+    &Label {
+      color: $hl-orange-dark;
+    }
+  }
+}
+
+@media screen and (min-width: $hl-lg) {
+  .productDetails {
+    align-items: flex-start;
+    padding: 24px 0;
+
+    &More {
+      gap: 40px;
+      justify-content: unset;
+    }
+
+    &Recipient {
+      margin: 24px 0px;
+    }
+  }
+}

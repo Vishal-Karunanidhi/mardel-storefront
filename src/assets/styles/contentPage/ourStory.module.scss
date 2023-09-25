@@ -1,0 +1,72 @@
+@import '../globals';
+@import '../variables';
+@import '../breakpoints';
+
+.ourStory {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  img {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  &Sections {
+    padding: 0 24px 20px 24px;
+  }
+
+  &Section {
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 20px;
+
+    &Title {
+      @include hl-font-700;
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    a {
+      color: $hl-blue;
+      text-decoration: underline;
+
+      &:focus {
+        text-decoration: none;
+        color: $hl-black;
+        outline-offset: 5px;
+        outline: 2px dashed $hl-blue;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: $hl-black;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .ourStory {
+    img {
+      padding: 35px 80px 0 80px;
+    }
+
+    &Sections {
+      padding: 0 80px;
+      display: flex;
+      gap: 24px;
+    }
+
+    &Section {
+      padding: 70px 0;
+      width: 50%;
+      font-size: 16px;
+      line-height: 24px;
+
+      &Title {
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+}

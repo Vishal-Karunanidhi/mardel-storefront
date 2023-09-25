@@ -1,0 +1,243 @@
+fragment ProductEnumFragment on ProductEnum {
+  key
+  label
+}
+
+fragment VariantAttributesFragment on ProductAttributes {
+  approvalStatus
+  productOnlineDate
+  assorted
+  backInStockEligible
+  description
+  additionalShipping
+  ormd
+  excludeFreeShipping
+  yourPrice
+  downloadableMedias
+  offlineDate
+  onlineDate
+  vendorName
+  vendorSku
+  excludedStates {
+    ...ProductEnumFragment
+  }
+  onlineStatus {
+    ...ProductEnumFragment
+  }
+  availability {
+    ...ProductEnumFragment
+  }
+  brand {
+    ...ProductEnumFragment
+  }
+  collection {
+    ...ProductEnumFragment
+  }
+  color {
+    ...ProductEnumFragment
+  }
+  colorFamily {
+    ...ProductEnumFragment
+  }
+  dimensions {
+    ...ProductEnumFragment
+  }
+  lettersNumbers {
+    ...ProductEnumFragment
+  }
+  material {
+    ...ProductEnumFragment
+  }
+  paperFinish {
+    ...ProductEnumFragment
+  }
+  paperType {
+    ...ProductEnumFragment
+  }
+  pattern {
+    ...ProductEnumFragment
+  }
+  productHazards {
+    ...ProductEnumFragment
+  }
+  productUnit {
+    ...ProductEnumFragment
+  }
+  productWarnings {
+    ...ProductEnumFragment
+  }
+  ribbonContent {
+    ...ProductEnumFragment
+  }
+  ribbonType {
+    ...ProductEnumFragment
+  }
+  ribbonWidth {
+    ...ProductEnumFragment
+  }
+  saleType {
+    ...ProductEnumFragment
+  }
+  seasonCode {
+    ...ProductEnumFragment
+  }
+  size {
+    ...ProductEnumFragment
+  }
+  theme {
+    ...ProductEnumFragment
+  }
+  vinylFinish {
+    ...ProductEnumFragment
+  }
+  vinylType {
+    ...ProductEnumFragment
+  }
+  volume {
+    ...ProductEnumFragment
+  }
+  knobShape {
+    ...ProductEnumFragment
+  }
+  lampHeight {
+    ...ProductEnumFragment
+  }
+  letter {
+    ...ProductEnumFragment
+  }
+  mirrorType {
+    ...ProductEnumFragment
+  }
+  orientation {
+    ...ProductEnumFragment
+  }
+  room {
+    ...ProductEnumFragment
+  }
+  shape {
+    ...ProductEnumFragment
+  }
+  type {
+    ...ProductEnumFragment
+  }
+  buttonType {
+    ...ProductEnumFragment
+  }
+  colorNumber {
+    ...ProductEnumFragment
+  }
+  fiber {
+    ...ProductEnumFragment
+  }
+  bristle {
+    ...ProductEnumFragment
+  }
+  brushShape {
+    ...ProductEnumFragment
+  }
+  hardness {
+    ...ProductEnumFragment
+  }
+  length {
+    ...ProductEnumFragment
+  }
+  medium {
+    ...ProductEnumFragment
+  }
+  quantity {
+    ...ProductEnumFragment
+  }
+  tipSize {
+    ...ProductEnumFragment
+  }
+  candleHolderType {
+    ...ProductEnumFragment
+  }
+  candleType {
+    ...ProductEnumFragment
+  }
+  flameType {
+    ...ProductEnumFragment
+  }
+  scent {
+    ...ProductEnumFragment
+  }
+  partyType {
+    ...ProductEnumFragment
+  }
+  themeFamily {
+    ...ProductEnumFragment
+  }
+  age {
+    ...ProductEnumFragment
+  }
+  clayType {
+    ...ProductEnumFragment
+  }
+  paintFinish {
+    ...ProductEnumFragment
+  }
+  setDisclaimer {
+    ...ProductEnumFragment
+  }
+  woodFinish {
+    ...ProductEnumFragment
+  }
+  sportsTeam {
+    ...ProductEnumFragment
+  }
+  university {
+    ...ProductEnumFragment
+  }
+  width {
+    ...ProductEnumFragment
+  }
+  flowerType {
+    ...ProductEnumFragment
+  }
+  frameShape {
+    ...ProductEnumFragment
+  }
+  coin {
+    ...ProductEnumFragment
+  }
+  scale {
+    ...ProductEnumFragment
+  }
+  skillLevel {
+    ...ProductEnumFragment
+  }
+  guage {
+    ...ProductEnumFragment
+  }
+  metalColor {
+    ...ProductEnumFragment
+  }
+  articleNumber {
+    ...ProductEnumFragment
+  }
+  yarnWeight {
+    ...ProductEnumFragment
+  }
+  number {
+    ...ProductEnumFragment
+  }
+  christmasLights {
+    ...ProductEnumFragment
+  }
+  ornamentMaterial {
+    ...ProductEnumFragment
+  }
+  sizeGrouping {
+    ...ProductEnumFragment
+  }
+  subject {
+    ...ProductEnumFragment
+  }
+  treeHeight {
+    ...ProductEnumFragment
+  }
+  treeShape {
+    ...ProductEnumFragment
+  }
+}

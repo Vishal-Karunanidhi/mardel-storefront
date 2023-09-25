@@ -1,0 +1,41 @@
+@import '../breakpoints';
+@import '../variables';
+@import '../globals';
+
+.lookBook {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+    section figure {
+      margin: $margin-card-tall auto 0 auto;
+
+      @include desktop {
+        border-radius: calc($border-radius * 2);
+      }
+  }
+}
+
+.ctaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &Text {
+    width: 272px;
+    text-align: center;
+    margin-right: 0 !important;
+  }
+
+  &Button {
+    width: 209px;
+
+    & > div {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+:export {
+  hlLgBreakpoint: $hl-xs-m;
+}

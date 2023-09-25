@@ -1,0 +1,261 @@
+@import '../variables';
+@import '../globals';
+
+.main {
+  opacity: 0.5;
+}
+
+.headerAccountMain {
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  min-width: 10.25rem;
+  width: auto;
+
+  @include mobileAndTablet {
+    display: none;
+  }
+
+  .accountIcon {
+    color: $hl-black;
+    height: 20px;
+    margin: 0 0 0 auto;
+    width: 20px;
+
+    @include mobileAndTablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+    }
+
+    &.accountProfile {
+      position: relative;
+
+      &::after {
+        background: $hl-red;
+        border-radius: 4rem;
+        content: '';
+        height: 0.5rem;
+        position: absolute;
+        right: -0.2rem;
+        top: 0.05rem;
+        width: 0.5rem;
+      }
+    }
+  }
+
+  .accountSelectBox {
+
+    @include mobileAndTablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .signUpSaveLabel {
+      @include hl-font-300;
+      font-size: 14px;
+      color: $hl-black;
+    }
+
+    .emailAccountWrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .emailAccountLabel {
+        @include hl-font-700;
+        color: $hl-black;
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .modalToggle {
+        display: inherit;
+        cursor: pointer;
+
+        &:hover {
+          .emailAccountLabel {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .arrowButton {
+        margin-top: -12px;
+        margin-left: -5px;
+
+        .arrowIcon {
+          color: $hl-black;
+        }
+      }
+    }
+  }
+}
+
+.popoverPaperProps {
+  @include popOverArrowUp;
+  border-radius: $border-radius $border-radius calc($border-radius * 2) calc($border-radius * 2);
+  box-shadow: 0px 0px 9.28622px rgba(0, 0, 0, 0.2);
+  overflow: visible;
+  width: 557px;
+
+  .popoverWrapper {
+    @include mobileAndTablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+    }
+
+    .popoverHeader {
+      background-color: $hl-blue-outline;
+      border-radius: $border-radius $border-radius 0 0;
+      display: flex;
+      flex-direction: row;
+      height: 25px;
+      justify-content: flex-end;
+
+      .headerIconButton {
+        background-color: transparent;
+
+        .closeIcon {
+          color: $hl-white;
+          cursor: pointer;
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+
+    .popoverDivider {
+      border: 0.5px solid $hl-gray-line;
+    }
+
+    .popoverFooterSection {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px 25px 25px 25px;
+
+      .accountAndIcon {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+
+        .registerLabel {
+          @include hl-font-300;
+          text-decoration: underline;
+          font-size: 14px;
+          line-height: 20px;
+          color: $hl-black;
+        }
+
+        .icon {
+          color: $hl-black;
+          height: 20px;
+          width: 20px;
+        }
+      }
+
+      .alreadyRegisterLabel {
+        @include hl-font-300;
+        font-size: 14px;
+        line-height: 20px;
+        color: $hl-black;
+
+        .loginLabel {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.loggedIn.popoverPaperProps {
+  width: 230px;
+}
+
+.loggedInContainer {
+  padding: calc($font-size-p * 1.25) calc($font-size-p * 1.5) calc($font-size-p * 1.5)
+    calc($font-size-p * 1.5);
+  box-shadow: 0px 2.6155px 7.24134px rgba(0, 0, 0, 0.15);
+  border-radius: 0.625rem 0.625rem 1.25rem 1.25rem;
+}
+
+.loggedInTitle {
+  @include hl-font-700;
+  font-size: $font-size-h3;
+  margin: 0;
+  padding: 0;
+}
+
+.loggedInList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    @include href-black;
+  }
+
+  li {
+    margin: $font-size-p 0 0 0;
+    padding: 0 0 0 calc($font-size-p * 2);
+  }
+}
+
+.loggedInListAccount,
+.loggedInListHistory,
+.loggedInWishList {
+  position: relative;
+
+  &::before {
+    background-color: $hl-black;
+    content: '';
+    display: block;
+    left: 0;
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+  }
+
+  &:hover {
+    &::before {
+      background-color: $hl-blue;
+    }
+  }
+}
+
+.loggedInListAccount::before {
+  mask-image: url(/icons/account/accountProfile.svg);
+}
+
+.loggedInListHistory::before {
+  mask-image: url(/icons/cart-black.svg);
+}
+
+.loggedInWishList::before {
+  mask-image: url(/icons/favorite.svg);
+}
+
+.loggedInSignOut {
+  @include hl-font-700;
+  margin: $font-size-p 0 0 0;
+
+  a {
+    @include href-black-underlined;
+  }
+}

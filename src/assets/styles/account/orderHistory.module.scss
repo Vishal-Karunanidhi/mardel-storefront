@@ -1,0 +1,100 @@
+@import '../variables';
+@import '../globals';
+
+.orderHistory {
+  width: 100%;
+  @include mobileAndTablet {
+    margin-top: 80px;
+  }
+  .orderHistoryTitle {
+    @include hl-font-700;
+    font-size: 24px;
+    line-height: 32px;
+    color: $hl-black;
+  }
+
+  .sectionDivider {
+    height: 1px;
+    border: 0px;
+    border-top: 1px solid $hl-gray-line;
+    margin-top: 24px;
+    @include mobileAndTablet {
+      margin-top: 16px;
+    }
+  }
+
+  .previousOrder {
+    display: flex;
+    float: row;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 38px;
+
+    div {
+      :global(.MuiSelect-select) {
+        border-radius: 5px;
+      }
+
+      :global(.MuiSelect-icon) {
+        color: $hl-black;
+      }
+    }
+    .orderHistoryTitle {
+      @include hl-font-700;
+      font-size: 14px;
+      line-height: 20px;
+      color: $hl-black;
+      align-items: center;
+      margin-top: 14px;
+    }
+  }
+
+  div[class*='latestOrder_lastOrderSection'] {
+    margin-top: 16px;
+  }
+
+  span[class*='latestOrder_lastOrderTitle'] {
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  span[class*='accountOverView_imageItems'] {
+    margin-bottom: 16px;
+  }
+
+  span[class*='latestOrder_imageItems'] {
+    margin-top: 8px;
+  }
+
+  .orderBasicDetails {
+    display: flex;
+    flex-direction: column;
+    span[class*='latestOrder_orderWrapper'] {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .orderSectionDivider {
+      height: 1px;
+      border: 0px;
+      border-top: 1px solid $hl-gray-line;
+      margin-bottom: 24px;
+      margin-top: 24px;
+    }
+  }
+
+  .orderPagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+}
+
+.orderNotFound {
+  @include hl-font-700;
+  font-size: 24px;
+  line-height: 32px;
+  color: $hl-black;
+}

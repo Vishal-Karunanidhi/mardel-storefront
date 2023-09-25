@@ -1,0 +1,9 @@
+fragment MegaNavCategoryChild on Children {
+  label
+  href
+  isLeaf
+  deliveryId
+  thumbnail
+  altText
+  theme
+}

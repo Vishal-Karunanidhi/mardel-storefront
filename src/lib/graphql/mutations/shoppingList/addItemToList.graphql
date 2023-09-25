@@ -1,0 +1,13 @@
+mutation AddItemToExistingShoppingList($productKey: String!, $skuId: String!, $listId: String) {
+  addItemToList(productKey: $productKey, skuId: $skuId, listId: $listId) {
+    listId
+    customerId
+    listName
+    itemCount
+    shoppingListItemList {
+      id
+      productKey
+      skuId
+    }
+  }
+}

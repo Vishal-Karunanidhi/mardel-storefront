@@ -1,0 +1,13 @@
+@import '../globals';
+@import '../variables';
+
+.customFraming {
+
+    section[class*='heroBanner_mainHeroBanner'] {
+        margin: auto;
+    }
+
+    figure[class*='heroBanner_mainHeroBanner'] {
+        border-radius: 0;
+    }
+}

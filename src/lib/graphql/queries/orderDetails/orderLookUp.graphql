@@ -1,0 +1,8 @@
+#import '@GqlFragments/myAccount/order.fragment.graphql';
+
+query orderLookup($orderNumber: String!, $billingZipcode: String!, $email: String!) {
+  orderLookup(orderNumber: $orderNumber, billingZipcode: $billingZipcode, email: $email) {
+    order {...OrderFragment}
+    errorMessage
+  }
+}

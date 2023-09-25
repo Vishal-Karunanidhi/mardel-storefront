@@ -1,0 +1,145 @@
+query GetSeasonalData($deliveryKey: String!) {
+  getSeasonalDepartmentPageContent(deliveryKey: $deliveryKey) {
+    categories {
+      content {
+        priority
+        title
+        imageAltText
+        description
+        subCats {
+          id
+          contentType
+        }
+        thumbnail {
+          id
+          name
+          endpoint
+          defaultHost
+        }
+        _meta {
+          name
+          schema
+          deliveryId
+          deliveryKey
+          hierarchy {
+            parentId
+            root
+          }
+        }
+      }
+    }
+    page {
+      breadCrumbs {
+        name
+        key
+        slug
+      }
+      carousel {
+        topCategories {
+          priority
+          title
+          subCats {
+            priority
+            title
+            description
+            imageAltText
+          }
+          thumbnail {
+            id
+            name
+            endpoint
+            defaultHost
+          }
+          products {
+            productSelector
+          }
+        }
+        shopSale {
+          priority
+          title
+          subCats {
+            priority
+            title
+            description
+            imageAltText
+          }
+          thumbnail {
+            id
+            name
+            endpoint
+            defaultHost
+          }
+          _meta {
+            name
+            schema
+            deliveryId
+            deliveryKey
+            hierarchy {
+              parentId
+              root
+            }
+          }
+          label
+          products {
+            productSelector
+          }
+        }
+      }
+      promos {
+        secondary {
+          Promos {
+            link
+            discountLabel
+            description
+            showCartBagIcon
+            showShareIcon
+          }
+          Title
+        }
+        primary {
+          link
+          media {
+            image {
+              defaultHost
+              endpoint
+              id
+              name
+              url
+            }
+            imageAltText
+          }
+          discountLabel
+          description
+          showCartBagIcon
+          showShareIcon
+        }
+      }
+      labels {
+        sideNav
+        categoryCarousel
+        shopSaleCarousel
+        topCategoriesCarousel
+      }
+      seoContent {
+        title
+        description
+      }
+      _meta {
+        name
+        schema
+        deliveryId
+        deliveryKey
+        hierarchy {
+          parentId
+          root
+        }
+      }
+      breadCrumbs {
+        name
+        key
+        slug
+      }
+      title
+    }
+  }
+}

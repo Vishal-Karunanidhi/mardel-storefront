@@ -1,0 +1,49 @@
+@use '../../variables' as vars;
+@import '../../breakpoints';
+
+.nav {
+  width: 302px;
+  // max-width: 302px;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navHeader {
+  @include vars.hl-font-700;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.listItem {
+  @include vars.hl-font-300;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.listLink {
+  &:focus {
+    outline: 2px dashed vars.$hl-blue;
+    padding: 5px;
+    color: vars.$hl-blue;
+    text-decoration: underline;
+  }
+  &:hover {
+    color: vars.$hl-blue;
+    text-decoration: underline;
+  }
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: $hl-break-lg) {
+  .nav {
+    display: none;
+  }
+}

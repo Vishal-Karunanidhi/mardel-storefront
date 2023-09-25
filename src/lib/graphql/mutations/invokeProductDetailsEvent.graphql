@@ -1,0 +1,5 @@
+mutation InvokeProductDetailsEvent($variantIds: [String!]!) {
+  invokeProductDetailsEvent(variantIds: $variantIds) {
+    isSuccess
+  }
+}

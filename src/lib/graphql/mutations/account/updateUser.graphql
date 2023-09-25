@@ -1,0 +1,6 @@
+mutation UpdateUser($request: UpdateUserRequest!) {
+  updateUser(request: $request) {
+    status
+    message
+  }
+}

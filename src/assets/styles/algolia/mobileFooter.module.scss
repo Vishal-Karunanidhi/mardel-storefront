@@ -1,0 +1,141 @@
+@import '../variables';
+@import '../globals';
+
+.hidden {
+  overflow: hidden;
+}
+
+.footerContainer {
+  display: none;
+
+  @include mobileAndTablet {
+    @include hl-font-700;
+    font-size: 12px;
+    padding: 12px 24px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: $hl-gray-shadow;
+    box-shadow: 0px -4px 5px rgb(0 0 0 / 15%);
+
+    &Section {
+      text-transform: uppercase;
+      display: flex;
+      gap: 4px;
+      cursor: pointer;
+
+      &Title {
+        @include hl-font-700;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.drawerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $hl-white;
+  z-index: 1000;
+  min-width: 300px;
+  height: 100%;
+  padding-bottom: 1.5rem;
+  overflow-y: scroll;
+
+  &Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $color-canvas;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 8px;
+    @include mobileAndTablet {
+      width: 100%;
+    }
+
+    &Title {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &SortBy {
+    padding: 20px 24px;
+
+    &Title {
+      @include hl-font-700;
+      color: $hl-black;
+      text-transform: capitalize;
+
+      &Divider {
+        border-top: 2px solid $hl-darkest-gray;
+        margin-bottom: 20px;
+      }
+    }
+    &Item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 2rem;
+      cursor: pointer;
+
+      label {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0.00938em;
+      }
+      input[type='radio'] {
+        background-color: $hl-white;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 50%;
+        border: $border-size solid $color-border;
+        color: $color-body;
+        font: inherit;
+        height: $font-size-p;
+        margin: 0;
+        position: relative;
+        vertical-align: middle;
+        width: $font-size-p;
+        cursor: pointer;
+
+        &::before {
+          background-color: $hl-blue-dark;
+          border-radius: 50%;
+          box-shadow: inset 1em 1em $hl-blue-light;
+          content: '';
+          height: calc($font-size-p - 0.5rem);
+          left: calc($border-size + 0.075rem);
+          position: absolute;
+          top: calc($border-size + 0.065rem);
+          transform: scale(0);
+          transition: transform 5s !important;
+          width: calc($font-size-p - 0.5rem);
+        }
+        &:checked::before {
+          transform: scale(1);
+          border-color: $hl-blue-light;
+        }
+        &:checked {
+          border-color: $hl-blue-light;
+        }
+      }
+      hr {
+        border-top: 1px solid $hl-gray-lin-for-listing-page-drawers;
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  }
+}

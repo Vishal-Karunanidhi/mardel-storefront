@@ -1,0 +1,104 @@
+@import '../variables';
+@import '../globals';
+
+.errorSection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 4px;
+  background: $hl-gray-shadow;
+  border-radius: 5px;
+  flex-wrap: nowrap;
+  margin-bottom: 24px;
+
+  h2,
+  h3 {
+    @include hl-font-300;
+    font-size: $font-size-p;
+    line-height: 24px;
+    color: $hl-black;
+    margin: 0 0 0 12px;
+  }
+}
+
+.signInFormWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .inputFields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: $hl-error;
+
+    .errorInput {
+      :global(.MuiFilledInput-root) {
+        border: 1.25px solid $hl-error;
+        padding-right: 15px;
+      }
+    }
+  }
+
+  .checkBoxSection {
+    @include hl-font-300;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+
+    a {
+      text-decoration: underline;
+      align-items: center;
+      text-align: right;
+      cursor: pointer;
+    }
+  }
+
+  .signInButtonWrapper {
+    @include mobileAndTablet {
+      margin: calc($font-size-p * 0.5) 0 0 0;
+    }
+
+    @include desktop {
+      margin: $font-size-p 0 0 0;
+    }
+  }
+}
+
+.signInTitle {
+  @include hl-font-700;
+  font-size: $font-size-h3;
+  line-height: $font-size-h2;
+  color: #000000;
+
+  @include mobileAndTablet {
+    margin: calc($font-size-p * -0.25) 0 $font-size-p 0;
+  }
+
+  @include desktop {
+    margin: 0 0 $font-size-h3 0;
+  }
+}
+
+.spinner {
+  margin-right: 55%;
+  margin-top: 18%;
+
+  @include mobileAndTablet {
+    margin-right: 0%;
+    margin-top: 35%;
+  }
+}
+
+.fieldRule {
+  @include hl-font-300;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  margin-top: -8px;
+}

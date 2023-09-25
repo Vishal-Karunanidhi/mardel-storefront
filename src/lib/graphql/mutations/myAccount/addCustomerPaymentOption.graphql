@@ -1,0 +1,7 @@
+#import '@GqlFragments/myAccount/customerPayments.fragment.graphql';
+
+mutation AddCustomerPaymentOption($request: paymentRequest!) {
+  addPayment(request: $request) {
+    ...CustomerPaymentsFragment
+  }
+}

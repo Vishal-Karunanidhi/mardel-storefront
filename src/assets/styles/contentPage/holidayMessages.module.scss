@@ -1,0 +1,392 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.holidayMessages {
+  &Page {
+    width: 100%;
+  }
+
+  &Content {
+    margin: 0 auto;
+    max-width: $hl-xxl;
+    padding: 35px 80px 175px 80px;
+    width: 100%;
+  }
+}
+
+.richText {
+  @include hl-font-300;
+  max-width: 954px;
+  font-size: 16px;
+  line-height: 24px;
+  p {
+    margin: 0px;
+  }
+  a {
+    color: $hl-blue;
+    text-decoration: underline;
+    &:hover {
+      color: $hl-black;
+      text-decoration: none;
+    }
+  }
+}
+
+.horizontalRule {
+  margin-bottom: 0px;
+  margin-top: 16px;
+  background-color: $hl-gray;
+  border-top: 1px solid $hl-gray;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+}
+
+.menuItem {
+  font-size: 16px;
+}
+
+.titleAndDropdown {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 74px;
+}
+
+.title {
+  @include hl-font-700;
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 35px;
+  margin-top: 40px;
+}
+
+.card {
+  border-color: $hl-gray;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  height: 490px;
+  max-width: unset;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease-out;
+  width: 302px;
+
+  img {
+    transition: transform 0.2s ease-out;
+  }
+  &:hover {
+    img {
+      transform: scale(1.01);
+      transition: transform 0.2s ease-out;
+    }
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.2s ease-out;
+  }
+
+  &Details {
+    padding: 24px;
+  }
+
+  &ImageContainer {
+    height: 302px;
+    width: 302px;
+    border-radius: $border-radius $border-radius 0 0;
+    overflow: hidden;
+  }
+
+  &Image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.2s 'ease-out';
+    cursor: pointer;
+  }
+
+  &Title {
+    @include hl-font-500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $hl-black;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  &OccasionAndYear {
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 20px;
+    color: $hl-input-border-grey;
+  }
+
+  &Year {
+    margin-left: 5px;
+  }
+
+  &Button {
+    width: 254px;
+    height: 48px;
+    border-radius: 25px;
+    border: none;
+    background-color: $hl-blue-dark;
+    color: $hl-white;
+    @include hl-font-700;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 24px;
+    &:hover {
+      cursor: pointer;
+      background-color: $hl-blue-light;
+    }
+  }
+}
+
+.modal {
+  min-height: 681px;
+  &Close {
+    height: 32px;
+    background-color: $hl-blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    border-radius: 10px 10px 0px 0px;
+    &Icon {
+      color: $hl-white;
+      margin-right: 24px;
+      width: 20px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &Content {
+    width: 523px;
+    padding: 24px;
+    &Info {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      &Details {
+        display: flex;
+        flex-direction: column;
+        margin-left: 24px;
+        &Title {
+          @include hl-font-700;
+          color: $hl-black;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        &OccasionAndYear {
+          @include hl-font-300;
+          color: $hl-black;
+          font-size: 12px;
+          line-height: 16px;
+          margin-top: 8px;
+        }
+        &Year {
+          margin-left: 5px;
+        }
+        &Button {
+          width: 162px;
+          height: 38px;
+          border: 1px solid $hl-black;
+          border-radius: 20px;
+          background-color: $hl-white;
+          @include hl-font-700;
+          font-size: 16px;
+          line-height: 24px;
+          color: $hl-black;
+          margin-top: 16px;
+          &:hover {
+            cursor: pointer;
+            color: $hl-white;
+            background-color: $hl-black;
+          }
+          &Mobile {
+            margin-top: 16px;
+            @include hl-font-700;
+            display: none;
+            width: 100%;
+            height: 28px;
+            border-radius: 20px;
+            font-size: 14px;
+            line-height: 20px;
+            border: 1px solid $hl-black;
+            background-color: $hl-white;
+          }
+        }
+      }
+    }
+    &Form {
+      display: flex;
+      flex-direction: column;
+      &Header {
+        @include hl-font-700;
+        font-size: 24px;
+        line-height: 32px;
+        color: $hl-black;
+        margin-top: 16px;
+        margin-bottom: 0px;
+      }
+      &Field {
+        margin-top: 16px;
+        fieldset {
+          border-color: $hl-input-border-grey;
+        }
+        & .MuiOutlinedInput-root {
+          & fieldset {
+            border-color: 'red';
+          }
+        }
+      }
+      .invalidEmailLogo {
+        margin: 6px;
+      }
+      &Button {
+        background-color: $hl-blue-dark;
+        color: $hl-white;
+        border: none;
+        height: 48px;
+        border-radius: 25px;
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 16px;
+        &:hover {
+          cursor: pointer;
+          background-color: $hl-blue-light;
+        }
+      }
+    }
+    &Rule {
+      margin-top: 16px;
+      border: 1px solid $hl-gray;
+      border-bottom: none;
+    }
+  }
+  &Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &Container {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  &IconContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    margin-top: 16px;
+  }
+}
+
+.socialIcon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  &:hover {
+    cursor: pointer;
+  }
+  
+  > img {
+    width: 100%;
+  }
+}
+
+.spacing {
+  height: 16px;
+}
+
+@include mobile {
+  .holidayMessages {
+    &Content {
+      width: 100%;
+      padding: 35px 24px 60px 24px;
+    }
+  }
+
+  .cardContainer {
+    justify-content: center;
+  }
+
+  .titleAndDropdown {
+    margin-top: 40px;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .socialIcon {
+    width: 32px;
+    height: 32px;
+  }
+  .modal {
+    &Image {
+      &Container {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+      }
+    }
+    &Content {
+      width: 272px;
+      padding: 16px;
+      &Form {
+        &Button {
+          height: 28px;
+        }
+        &Header {
+          @include hl-font-700;
+          font-size: 20px;
+          line-height: 24px;
+          color: $hl-black;
+          margin-top: 16px;
+          margin-bottom: 0px;
+        }
+      }
+      &Info {
+        &Details {
+          margin-left: 16px;
+          &OccasionAndYear {
+            font-size: 10px;
+            line-height: 14px;
+          }
+          &Title {
+            font-size: 14px;
+            line-height: 20px;
+          }
+          &OccasionAndYear {
+            font-size: 10px;
+            line-height: 14px;
+          }
+          &Button {
+            display: none;
+            &Mobile {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

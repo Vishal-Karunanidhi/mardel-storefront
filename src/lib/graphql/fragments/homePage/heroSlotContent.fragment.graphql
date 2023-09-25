@@ -1,0 +1,27 @@
+fragment HeroSlot on HeroSlot {
+    _meta {
+        name
+    }
+    slotContent {
+        _meta {
+            name
+        }
+        description
+        heading1
+        heading2
+        heading3
+        image {
+            _meta {
+                name
+            }
+            defaultHost
+            endpoint
+            id
+            name
+        }
+        link {
+            label
+            value
+        }
+    }
+}

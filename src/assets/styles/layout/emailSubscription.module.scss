@@ -1,0 +1,56 @@
+@import '../variables';
+@import '../globals';
+
+.emailSubWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px 20px 25px;
+  gap: 20px;
+
+  .emailSubTitle {
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 24px;
+    color: $hl-black;
+  }
+  .emailCompWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    .errorInput {
+      :global(.MuiFilledInput-root) {
+        border: 1.25px solid $hl-error;
+        padding-right: 15px;
+      }
+      :global(.MuiInputLabel-root) {
+        color: $hl-gray;
+      }
+    }
+  }
+  .signUpButtonWrapper {
+    div[class*='submitWrapper'] {
+      width: 125px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.sucessContentWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px 20px 25px;
+  gap: 10px;
+  .thanksLabel {
+    @include hl-font-700;
+  }
+  .thanksLabel,
+  .weeklyadLabel {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+    color: $hl-black;
+  }
+  .thanksLabel {
+    @include hl-font-700;
+  }
+}

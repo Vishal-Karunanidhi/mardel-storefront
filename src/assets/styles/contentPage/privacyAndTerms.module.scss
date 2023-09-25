@@ -1,0 +1,33 @@
+@import '../globals';
+@import '../variables';
+@import '../breakpoints';
+
+.privacyAndTerms {
+  width: 100%;
+
+  &MainSection {
+    max-width: $hl-xxl;
+    
+    @include mobileAndTablet {
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+
+    @include desktop {
+      font-size: 20px;
+      margin: 70px auto;
+      padding: 0 54px;
+      
+    }
+
+    p {
+      @include mobileAndTablet {
+        font-size: 12px;
+      }
+
+      @include desktop {
+        font-size: 14px;
+      }
+    }
+  }
+}

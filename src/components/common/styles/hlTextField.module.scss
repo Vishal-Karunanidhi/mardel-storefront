@@ -1,0 +1,90 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/globals';
+
+.inputFieldWrapper {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  width: 100%;
+
+  @include mobileAndTablet {
+    flex-direction: column;
+  }
+
+  .textInput {
+    width: 100%;
+    border-radius: 5px;
+
+    @include mobileAndTablet {
+      width: 100%;
+    }
+
+    :global(.MuiInputLabel-shrink.Mui-focused) {
+      color: $hl-black;
+    }
+
+    :global(.MuiInputLabel-shrink) {
+      text-transform: uppercase;
+      color: $hl-black;
+      @include hl-font-300;
+      font-size: 11px;
+      line-height: 14px;
+      left: 1px;
+    }
+
+    :global(.MuiFilledInput-root) {
+      background-color: $hl-white;
+      border-radius: 5px;
+      height: 50px;
+      border: 1.25px solid $hl-input-border-grey;
+      padding: 0px;
+      overflow: hidden;
+
+      &:hover,
+      &:active {
+        border: 1.25px solid $hl-blue;
+      }
+
+      &:after,
+      &:before {
+        border-bottom: none;
+      }
+
+      input {
+        @include hl-font-300;
+        font-size: 16px;
+        line-height: 24px;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  :global(.MuiSelect-filled) {
+    background: transparent;
+  }
+
+  :global(.MuiSelect-filled[aria-expanded='true']) {
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  :global(.MuiSelect-icon.MuiSelect-iconFilled) {
+    color: #000000;
+  }
+
+  .errorInput {
+    :global(.MuiFilledInput-root) {
+      border: 1.25px solid $hl-error;
+    }
+  }
+
+  input {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+}

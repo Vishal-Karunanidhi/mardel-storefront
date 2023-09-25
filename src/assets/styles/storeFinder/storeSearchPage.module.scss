@@ -1,0 +1,482 @@
+@import '../variables';
+@import '../breakpoints';
+@import '../globals';
+
+.page {
+  width: 100%;
+}
+
+.map {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.staticMap {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  @include tablet {
+    padding: 35px 40px 40px 40px;
+  }
+
+  @include desktop {
+    padding: 35px 80px 80px 80px;
+  }
+
+  &Section {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.findStore {
+  min-width: 435px;
+  max-width: 435px;
+  display: flex;
+  flex-direction: column;
+  padding: 77px 27px 32px 24px;
+  align-items: center;
+  &Header {
+    font-size: 24px;
+    line-height: 34px;
+  }
+  &Form {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.searchButtonClassName {
+  padding: 14px 35px;
+  margin-left: 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: $hl-blue-dark;
+  color: $hl-white;
+  @include hl-font-700;
+  font-size: 16px;
+  line-height: 20px;
+  &:hover {
+    background-color: $hl-blue-light;
+    cursor: pointer;
+  }
+}
+
+.useMyLocation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: 0px 5px 5px 0px;
+  text-align: center;
+  color: $hl-black;
+  font-size: 16px;
+  line-height: 20px;
+  &Text {
+    margin-left: 7px;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: $hl-blue;
+      text-decoration: none;
+    }
+  }
+}
+
+.searchSection {
+  display: flex;
+  padding-top: 32px;
+}
+
+.storeFinderTextField {
+  width: 100%;
+}
+
+.searchAndMapSection {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $hl-input-border-grey;
+  border-radius: 10px;
+  position: relative;
+}
+
+.storeFinderButton {
+  @include hl-font-700;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 10px 25px;
+  background-color: $hl-white;
+  border-radius: 20px;
+  border: 1px solid $hl-black;
+  &:hover {
+    cursor: pointer;
+  }
+  margin-top: 160px;
+}
+
+.richTextContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 24px;
+}
+
+.richTextClosed {
+  position: relative;
+  max-height: 428px;
+  overflow: hidden;
+  border-bottom: solid 2px $hl-gray-shadow;
+  p {
+    margin-top: 0px;
+  }
+  a {
+    color: $hl-blue;
+    text-decoration: underline;
+    &:hover {
+      color: $hl-black;
+      text-decoration: none;
+    }
+  }
+}
+
+.richTextOpen {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  border-bottom: solid 2px $hl-gray-shadow;
+
+  p {
+    margin-top: 0px;
+  }
+  a {
+    color: $hl-blue;
+    text-decoration: underline;
+    &:hover {
+      color: $hl-black;
+      text-decoration: none;
+    }
+  }
+}
+
+.seeMore {
+  &Content {
+    padding: 0px 15px 0px 20px;
+    margin: 0px;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: $hl-white;
+    cursor: pointer;
+  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  bottom: 20px;
+  padding: 10.5px 0px 10.5px 0px;
+  @include hl-font-700;
+  font-size: 12px;
+  line-height: 16px;
+  color: $hl-black;
+  width: fit-content;
+}
+
+.fade {
+  position: absolute;
+  bottom: 0px;
+
+  display: block;
+
+  width: 100%;
+  height: 80px;
+
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 100%);
+  &Off {
+    display: none;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  &Container {
+    min-width: 520px;
+    min-height: 428px;
+    max-width: 520px;
+    max-height: 428px;
+    width: 520px;
+    height: 428px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+
+.locationIcon {
+  &Container {
+    position: relative;
+    width: 32px;
+  }
+  @include hl-font-500;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7px;
+  text-align: center;
+  color: $hl-white;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.storeResults {
+  &Header {
+    margin-top: 70px;
+    @include hl-font-300;
+    font-size: 24px;
+    line-height: 34px;
+
+    padding-bottom: 13px;
+  }
+  &List {
+    padding-left: 0px;
+    &Item {
+      display: flex;
+      flex-direction: row;
+      align-items: top;
+      column-gap: 20px;
+      padding-bottom: 32px;
+      margin-top: 32px;
+      border-bottom: solid 1px $hl-gray-line;
+
+      &GroupedInfo {
+        display: flex;
+        flex-direction: row;
+        width: 67.5%;
+        column-gap: 20px;
+      }
+
+      &Distance {
+        width: 10%;
+        display: flex;
+        flex-direction: row;
+        &Text {
+          @include hl-font-300;
+          font-size: 12px;
+          line-height: 16px;
+          color: $hl-black;
+        }
+        &AndIcon {
+          width: 84px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      &Number {
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+        width: 33.3333%;
+        color: $hl-blue-dark;
+        &Street {
+          text-decoration: underline;
+        }
+      }
+
+      &Address {
+        width: 33.33333%;
+        &Phone {
+          text-decoration: underline;
+        }
+      }
+
+      &Hours {
+        width: 33.333333%;
+        @include hl-font-700;
+        &Directions {
+          @include hl-font-300;
+          text-decoration: underline;
+          &Icon {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+        }
+      }
+
+      &Button {
+        &Container {
+          width: 22.5%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+        border-radius: 30px;
+        height: 40px;
+        width: 119px;
+        background-color: $hl-gray-shadow;
+        cursor: pointer;
+        border: none;
+        @include hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.infoWindow {
+  line-height: 25px;
+  &Details {
+    color: $hl-blue;
+    &:hover {
+      color: $hl-black;
+    }
+  }
+}
+
+@include tablet {
+  .imageContainer {
+    min-width: 320px;
+    min-height: 263px;
+    max-width: 320px;
+    max-height: 263px;
+    width: 320px;
+    height: 263px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .richTextClosed {
+    height: 263px;
+  }
+}
+
+@include mobile {
+  .content {
+    padding: 0px;
+    &Section {
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 24px 58px 24px;
+      margin-top: 0px;
+    }
+  }
+
+  .findStore {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px 20px 24px;
+    align-items: center;
+    &Header {
+      font-size: 20px;
+      line-height: 24px;
+      margin-top: 0px;
+      text-align: center;
+    }
+  }
+
+  .storeFinderButton {
+    font-size: 14px;
+    line-height: 20px;
+    // width: 185px; this will be changed back at a later date
+    width: auto;
+    border-radius: 20px;
+    margin-top: 32px;
+    padding: 5px 15px;
+  }
+
+  .searchAndMapSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid $hl-input-border-grey;
+    border-radius: 0px;
+  }
+
+  .map {
+    display: none;
+  }
+
+  .richTextContainer {
+    margin-left: 0px;
+    margin-top: 16px;
+  }
+
+  .imageContainer {
+    min-width: auto;
+    min-height: auto;
+    max-width: auto;
+    max-height: auto;
+    width: auto;
+    height: auto;
+    aspect-ratio: 272 / 223;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .storeResults {
+    &Header {
+      margin-top: 40px;
+    }
+    &List {
+      &Container {
+        padding: 40px 24px 40px 24px;
+      }
+      &Item {
+        flex-direction: row;
+        column-gap: 10px;
+        &GroupedInfo {
+          display: flex;
+          flex-direction: column;
+          width: auto;
+          row-gap: 16px;
+        }
+
+        &Distance {
+          width: auto;
+          justify-content: start;
+        }
+
+        &Number {
+          width: 100%;
+        }
+
+        &Address {
+          width: 100%;
+        }
+
+        &Hours {
+          width: 100%;
+        }
+
+        &Button {
+          display: none;
+          &Container {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

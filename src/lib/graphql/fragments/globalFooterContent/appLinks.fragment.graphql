@@ -1,0 +1,20 @@
+
+fragment AppLinks on AppLinks {
+    _meta {
+        name
+    }
+    links {
+        image {
+            _meta {
+                name
+            }
+            defaultHost
+            endpoint
+            id
+            name
+        }
+        title
+        app_url
+        display_order
+    }
+}

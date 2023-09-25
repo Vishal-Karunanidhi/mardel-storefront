@@ -1,0 +1,40 @@
+fragment RecallProductsAndYears on RecallProductsAndYears {
+  _meta {
+    deliveryId
+    schema
+    name
+    deliveryKey
+  }
+  recallList {
+    recalledProducts {
+      openNewTab
+      productText
+      productImage {
+        defaultHost
+        _meta {
+          name
+          schema
+          deliveryId
+          deliveryKey
+        }
+        endpoint
+        id
+        name
+        url
+      }
+      _meta {
+        name
+        schema
+        deliveryId
+        deliveryKey
+      }
+    }
+    year
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+    }
+  }
+}

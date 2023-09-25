@@ -1,0 +1,98 @@
+@import '../variables';
+@import '../globals';
+
+.productTileBadgeWrapper {
+  border-radius: 0px !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+.productTileBadgeWrapper,
+.productTileMainWrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $hl-input-border-grey;
+  border-radius: 20px;
+  padding: 16px;
+
+  .productTileImageAndContent {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    .productTileContent {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .quantity {
+        display: flex;
+        gap: 2px;
+        font-size: 10px;
+        line-height: 14px;
+        color: $hl-black;
+      }
+
+      .productPrice,
+      .productName {
+        @include hl-font-500;
+        font-size: 12px;
+        line-height: 16px;
+        color: $hl-black;
+      }
+
+      .productPrice {
+        .strikeAmount {
+          text-decoration: line-through;
+          margin-left: 4px;
+          font-weight: normal;
+        }
+        .discountAmount {
+          color: $hl-orange-dark;
+        }
+      }
+
+      .productTileAttribute {
+        flex-wrap: nowrap;
+        font-size: 10px;
+        line-height: 14px;
+        color: $hl-black;
+
+        @include desktop {
+          span + span {
+            margin-left: 5px;
+          }
+        }
+        @include mobileAndTablet {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .productTileNoticesWarnings {
+    font-size: 10px;
+    line-height: 14px;
+    color: $hl-black;
+  }
+}
+
+.badgeCartItems {
+  border: 1px solid transparent;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 27px;
+  width: 100%;
+  transform: translate(0%, 65%);
+
+  .badgeTitle {
+    @include hl-font-700;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: flex-end;
+    text-transform: uppercase;
+    color: $hl-white;
+    margin-left: 24px;
+    margin-top: 5px;
+  }
+}

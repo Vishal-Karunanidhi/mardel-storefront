@@ -1,0 +1,23 @@
+#import '@GqlFragments/common/index.fragment.graphql';
+
+fragment ComposedHeaderFragment on ComposedHeader {
+  logoNavigator {
+    Navigator {
+      ...LinkWithLabelFragment
+    }
+    logo {
+      ...MediaImageFragment
+    }
+  }
+  checkoutHeader {
+    checkoutLabel
+    checkoutSteps
+    returnToCart {
+      ...LinkWithLabelFragment
+    }
+  }
+  theme
+  _meta {
+    ...MetaFragment
+  }
+}

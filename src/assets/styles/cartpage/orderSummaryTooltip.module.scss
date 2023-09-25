@@ -1,0 +1,31 @@
+@use '../variables' as vars;
+@import '../globals';
+
+.tooltipFocus {
+  margin-left: 5px;
+  background-color: transparent;
+  border: none;
+  padding-right: 0px;
+  padding-left: 0px;
+  height: 26px;
+
+  &:focus-visible {
+    outline: 2px dashed vars.$hl-blue;
+  }
+}
+.tooltipAnchor,
+.tooltipLabel {
+  @include vars.hl-font-300;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 4px;
+  color: vars.$hl-black;
+}
+
+.tooltipAnchor {
+  text-decoration: underline;
+}
+
+.tooltipIcon {
+  cursor: pointer;
+}

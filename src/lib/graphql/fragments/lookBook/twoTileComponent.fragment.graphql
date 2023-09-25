@@ -1,0 +1,9 @@
+#import '@GqlFragments/lookBook/promoCard.fragment.graphql';
+#import '@GqlFragments/contentPage/components/contentCTA.fragment.graphql';
+
+fragment TwoTileComponent on TwoTileComponent {
+  tileSlots {
+    ...PromoCard
+    ...ContentCTA
+  }
+}

@@ -1,0 +1,60 @@
+query GetRelatedProducts($objectId: String!) {
+  getRelatedProducts(objectID: $objectId) {
+    hits {
+      _score
+      activeVariantCount
+      approvalStatus
+      assorted
+      availability
+      backInStockEligible
+      brand
+      category
+      color
+      daysOnline
+      department
+      description
+      dimensions
+      excludeFreeShipping
+      isInStock
+      isNew
+      material
+      name
+      objectID
+      on_sale
+      onlineStatus
+      ormd
+      pdpUrl
+      productonlinedate
+      productunit
+      productdaysOnline
+      producthighestDiscountedPrice
+      producthighestOriginalPrice
+      producthighestPrice
+      productisInStock
+      productisNew
+      productlowestDiscountedPrice
+      productlowestOriginalPrice
+      productlowestPrice
+      productID
+      productKey
+      productName
+      saletype
+      sku
+      skudiscountName
+      skudiscountedPrice
+      subcategory
+      variantprice
+      variantUrl
+      vendorname
+      vendorsku
+      yourPrice
+      productdiscountNames
+      ratingscount
+      ratingsaverage
+      images {
+        url
+      }
+      categoryKeys
+    }
+  }
+}

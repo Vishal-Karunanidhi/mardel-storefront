@@ -1,0 +1,6 @@
+mutation SignupForEmails($emailDataRequest: EmailSignupRequest!) {
+  signupForEmails(request: $emailDataRequest) {
+    Message
+    Status
+  }
+}

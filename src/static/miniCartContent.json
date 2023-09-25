@@ -1,0 +1,124 @@
+{
+  "data": {
+    "fullCartContent": {
+      "freeShippingMessages": {
+        "pendingEligibility": "away from free shipping!",
+        "achievingEligibility": "FREE SHIPPING!!!!",
+        "notes": {
+          "label": "Free-Shipping",
+          "richTextData": "**Note:** Free shipping only applies on eligible items",
+          "richTextDataType": "markdown"
+        }
+      },
+      "productTile": {
+        "warningNotices": {
+          "excludeFreeShipping": "Notice: Item not eligible for free shipping",
+          "additionalShipping": "Notice: Additional shipping charge $",
+          "noAirShipping": "Notice: This item cannot be shipped for",
+          "maximumStockLimit": "All available stock has been added to your cart. We’re sorry your requested quantity is unavailable....."
+        },
+        "labels": {
+          "myCart": "My Cart",
+          "saveForLater": "Save for Later",
+          "sku": "SKU",
+          "quantity": "Quantity"
+        }
+      },
+      "helpInfo": {
+        "needHelpTitle": "Need help?",
+        "contactTitle": "Contact us",
+        "contactUs": {
+          "label": "Contact us",
+          "value": "/customer-service/contact-us",
+          "openInNewTab": true
+        },
+        "cartReferenceTitle": "and be sure to reference your cart number:",
+        "checkoutLabel": "Checkout",
+        "checkoutCta": {
+          "label": "Checkout",
+          "value": "/checkout",
+          "openInNewTab": false
+        }
+      },
+      "orderSummary": {
+        "bulkOrderThreshold": 250,
+        "shippingTooltips": {
+          "standard": {
+            "title": "Standard Shipping:",
+            "tooltip": "We want to get your order to you as quickly as we can. It takes 2-3 business days to process your order. Delivery takes an additional 1-7 business days.",
+            "tooltipLink": {
+              "openInNewTab": true,
+              "value": "/customer-service/shipping-info-returns",
+              "label": "value"
+            }
+          },
+          "additional": {
+            "title": "Additional Shipping:",
+            "tooltip": "We want to get your order to you as quickly as we can. It takes 2-3 business days to process your order. Delivery takes an additional 1-7 business days."
+          },
+          "carrier": {
+            "title": "Carrier Surcharge:",
+            "tooltip": "We want to get your order to you as quickly as we can. It takes 2-3 business days to process your order. Delivery takes an additional 1-7 business days."
+          },
+          "shipping": {
+            "title": "Shipping discount:",
+            "tooltip": "Shipping Discount Details"
+          }
+        },
+        "labels": {
+          "title": "Order Summary",
+          "merchandiseTotal": "Merchandise Total:",
+          "discounts": "Discounts:",
+          "giftCardFee": "GiftCard processing Fee:",
+          "subtotal": "Subtotal:",
+          "total": "Total:",
+          "saved": "YOU SAVED",
+          "tax": null
+        },
+        "noticeAndWarnings": {
+          "giftCardFee": "$1 per card",
+          "bulkOrderThreshold": "**Orders totalling more than $250 are considered bulkl purchases and must be returned to hobbylobby.com",
+          "taxCalculation": "Tax calculated at checkout"
+        }
+      }
+    },
+    "miniCartContent": {
+      "signIn": {
+        "signInCtaLabel": {
+          "label": "Sign in",
+          "value": "/login",
+          "openInNewTab": true
+        },
+        "registerMessage": "Don't have an account?",
+        "registerLink": {
+          "label": "Register now",
+          "value": "/login",
+          "openInNewTab": true
+        }
+      },
+      "miniCartCta": {
+        "checkoutCtaLabel": {
+          "label": "Checkout",
+          "value": "/cart",
+          "openInNewTab": false
+        },
+        "continueShoppingCtaLabel": {
+          "label": "Continue shopping",
+          "value": "/",
+          "openInNewTab": false
+        },
+        "shopWeeklyAdCtaLabel": {
+          "label": "Shop Weekly Ad",
+          "value": "/weekly-ad",
+          "openInNewTab": false
+        }
+      },
+      "estimatedTotal": "Merchandise Subtotal:",
+      "emptyCartMessage": {
+        "highlightTitle": "Oops! It seems that your cart is empty.",
+        "description": "Start shopping and find something fabulous!"
+      },
+      "cartTitle": "MY CART"
+    }
+  }
+}

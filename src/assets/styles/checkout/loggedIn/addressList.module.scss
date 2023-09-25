@@ -1,0 +1,29 @@
+@import '../../variables';
+@import '../../globals';
+
+.BillingAddressWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .billingTitle {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .selectAddressTitle {
+    padding-top: 24px;
+  }
+
+  .addressRadioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .addressLabels {
+      display: flex;
+      flex-direction: column;
+      padding-top: 8px;
+    }
+  }
+}

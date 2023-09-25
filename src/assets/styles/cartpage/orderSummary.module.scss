@@ -1,0 +1,652 @@
+@use '../variables' as vars;
+@use '../breakpoints' as brPoint;
+@import '../globals';
+
+.progressBar {
+  @media only screen and (min-width: brPoint.$hl-desk-start) {
+    margin-right: 85px;
+  }
+}
+.orderSummaryMarginFix {
+  margin-top: 7.5rem;
+
+  @include mobile {
+    margin-top: 0rem;
+  }
+}
+
+.orderSummarySection {
+  margin-right: 85px;
+
+  @media only screen and (max-width: brPoint.$hl-mobile-end) {
+    margin-right: 0px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-tab-end) {
+    margin-right: 40px;
+    width: 320px;
+  }
+
+  .summaryBorder {
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 10px;
+    height: auto;
+    background: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 20px;
+    flex: none;
+    flex-grow: 0;
+    width: 100%;
+
+    @media only screen and (max-width: brPoint.$hl-mobile-end) {
+      border-radius: 0px;
+      border-color: none;
+      width: auto;
+      border: 0px solid #444444;
+    }
+
+    .summaryTitle {
+      width: 363px;
+      height: 24px;
+      @include vars.hl-font-700;
+      font-size: 20px;
+      line-height: 24px;
+      color: #000000;
+      flex: none;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+
+    .amountSection {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+
+      .amountSectionContent {
+        @include vars.hl-font-300;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000000;
+        flex: none;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 4px;
+
+        .subTotal {
+          @include vars.hl-font-700;
+          color: #003087;
+        }
+
+        .taxTitle {
+          font-size: 10px;
+          line-height: 14px;
+          margin-top: -4px;
+        }
+      }
+    }
+
+    .shippingSection {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+
+      div[class*='amountSectionContent'] {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include vars.hl-font-300;
+        font-size: 14px;
+        line-height: 20px;
+        color: vars.$hl-black;
+      }
+
+      .giftCardfee {
+        display: flex;
+        flex-direction: column;
+        .giftCardPriceInfo {
+          @include vars.hl-font-300;
+          font-size: 10px;
+          line-height: 14px;
+        }
+      }
+
+      .shippingSectionContent {
+        @include vars.hl-font-300;
+        font-size: 14px;
+        line-height: 20px;
+        color: vars.$hl-black;
+        flex: none;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 4px;
+
+        .shippingStyles {
+          margin-bottom: 4px;
+        }
+
+        .infoIconStyles {
+          cursor: pointer;
+        }
+
+        .shippingTotal {
+          @include vars.hl-font-700;
+          color: #003087;
+        }
+      }
+
+      .shippingSectionSubContent {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        label,
+        button {
+          align-self: center;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+
+    .totalShippingStyles {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .orderSummaryTotal {
+        @include vars.hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #003087;
+        flex: none;
+        flex-grow: 0;
+      }
+    }
+
+    .warningNotice {
+      @include vars.hl-font-500;
+      font-size: 10px;
+      line-height: 14px;
+      color: #000000;
+      margin-top: 15px;
+      width: 400px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      @media only screen and (max-width: brPoint.$hl-mobile-end) {
+        margin-bottom: 0px;
+        width: auto;
+      }
+
+      @media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-tab-end) {
+        width: auto;
+      }
+    }
+
+    .saveShippingStyles {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 24px;
+      font-size: 14px;
+
+      .saveTitle {
+        @include vars.hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #b40000;
+        flex: none;
+        flex-grow: 0;
+      }
+    }
+  }
+
+  .infoSectionMobile {
+    margin-top: 16px;
+    width: auto;
+    height: auto;
+    @include vars.hl-font-700;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    flex-direction: row;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    margin-left: 24px;
+
+    @media only screen and (min-width: brPoint.$hl-desk-start) {
+      display: none;
+    }
+
+    .helpTitle {
+      @include vars.hl-font-700;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .contactTitle {
+      color: vars.$hl-blue;
+      margin-left: 2px;
+      display: inline-flex;
+
+      a {
+        &:hover {
+          color: vars.$hl-black;
+        }
+      }
+    }
+
+    .cartTitle {
+      @include vars.hl-font-300;
+      font-size: 14px;
+      margin-left: 4px;
+    }
+
+    .numberTitle {
+      @include vars.hl-font-700;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+
+  .infoSection {
+    .anchorWrapper {
+      display: inline;
+    }
+  }
+
+  .contact {
+    @include href-blue-underlined;
+  }
+
+  @media only screen and (max-width: brPoint.$hl-tab-end) {
+    .infoSection {
+      display: none;
+    }
+
+    div[class*='orderSummary_checkoutMobileView'] {
+      div[class*='orderSummary_infoSection'] {
+        display: block;
+      }
+    }
+  }
+
+  @media only screen and (min-width: brPoint.$hl-desk-start) {
+    .infoSection {
+      margin-top: 16px;
+      width: 100%;
+      height: auto;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+      color: #000000;
+      flex: none;
+      align-self: stretch;
+      flex-grow: 0;
+
+      .cartContactSection {
+        flex-direction: row;
+        justify-content: center;
+
+        .helpTitle {
+          @include vars.hl-font-700;
+          font-size: 12px;
+          line-height: 16px;
+        }
+
+        .contactTitle {
+          color: #003087;
+          margin-left: 4px;
+
+          a {
+            text-decoration-line: underline;
+
+            &:hover {
+              color: vars.$hl-black;
+              text-decoration: none;
+              text-decoration-line: none;
+            }
+
+            &:focus-visible {
+              text-decoration: none;
+              text-decoration-line: none;
+              outline: 2px dashed vars.$hl-blue;
+              outline-offset: 1px;
+              color: vars.$hl-black;
+            }
+          }
+        }
+
+        .cartTitle {
+          @include vars.hl-font-300;
+          font-size: 14px;
+          margin-left: 4px;
+        }
+
+        .numberTitle {
+          @include vars.hl-font-700;
+          font-size: 12px;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: brPoint.$hl-desk-start) {
+    .checkoutMobileView {
+      display: none;
+    }
+  }
+
+  //mobile view
+  @media only screen and (max-width: brPoint.$hl-tab-end) {
+    .checkoutDesktopView {
+      display: none;
+    }
+
+    .checkoutMobileView {
+      background: #ededed;
+      height: 120px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      padding-left: 24px;
+      padding-right: 24px;
+      box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.05);
+      margin-bottom: 24px;
+
+      @media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-tab-end) {
+        background: none;
+        box-shadow: none;
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+
+      .orderSummary {
+        &Content {
+          &Info {
+            color: vars.$hl-black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: vars.$hl-white;
+            margin: 0 auto;
+
+            &Outline {
+              &Mobile {
+                margin-top: 0px;
+              }
+
+              &LinkMobile {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 25px;
+                gap: 7px;
+                color: vars.$hl-white;
+                @include vars.hl-font-700;
+                background: vars.$hl-blue-dark;
+                font-size: 14px;
+                line-height: 20px;
+                border-radius: 15px;
+                border: none;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+
+                @include mobile {
+                  &:disabled {
+                    border: 1px solid #5f5f5f;
+                  }
+                }
+
+                &:hover {
+                  background: vars.$hl-blue-light;
+                }
+
+                &:focus {
+                  outline: none;
+                  background: vars.$hl-blue-light;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .orderSummaryContentInfo {
+        background-color: unset;
+        z-index: 1;
+
+        &OutlineLinkMobile {
+          font-size: 16px;
+          line-height: 24px;
+          white-space: nowrap;
+          border-radius: 25px;
+          background: #000c59;
+          height: 28px;
+          width: 100%;
+          margin-bottom: 16px;
+
+          @media only screen and (min-width: brPoint.$hl-desk-start) {
+            display: none;
+          }
+
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 10px 25px;
+        }
+      }
+    }
+  }
+
+  //desktop view
+  .orderSummary {
+    &Content {
+      &Info {
+        color: vars.$hl-black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: vars.$hl-white;
+        margin: 0 auto;
+
+        &Outline {
+          &Link {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 25px;
+            gap: 7px;
+            color: vars.$hl-white;
+            @include vars.hl-font-700;
+            background: vars.$hl-blue-dark;
+            font-size: 14px;
+            line-height: 20px;
+            border-radius: 15px;
+            border: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+
+            &:hover {
+              background: vars.$hl-blue-light;
+            }
+
+            &:focus {
+              outline: none;
+              background: vars.$hl-blue-light;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .orderSummaryContentInfo {
+    background-color: unset;
+    z-index: 1;
+
+    &OutlineLink {
+      font-size: 16px;
+      line-height: 24px;
+      white-space: nowrap;
+      border-radius: 25px;
+      background: #000c59;
+      height: 48px;
+      width: 100%;
+      margin-top: 16px;
+      margin-bottom: 16px;
+
+      @media only screen and (min-width: brPoint.$hl-desk-start) {
+        display: block;
+      }
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 25px;
+    }
+  }
+}
+
+@media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-product-title-end) {
+  .desktoptabletView {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+
+    .cartView {
+      display: block;
+      width: 100%;
+
+      .cartTitle {
+        margin-left: 24px;
+        margin-top: 50px;
+      }
+    }
+
+    .orderView {
+      display: block;
+    }
+  }
+
+  .mobileView {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: brPoint.$hl-product-desk-start) {
+  .desktoptabletView {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: brPoint.$hl-xxl;
+    width: 100%;
+    justify-content: space-around;
+
+    .cartView {
+      display: block;
+
+      .cartTitle {
+        margin-left: 80px;
+        margin-top: 50px;
+      }
+    }
+
+    .orderView {
+      display: block;
+    }
+  }
+
+  .mobileView {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: brPoint.$hl-mobile-end) {
+  .mobileView {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .cartMobView {
+      display: block;
+
+      .cartMobTitle {
+        margin-left: 24px;
+        margin-top: 0px;
+        @include vars.hl-font-700;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    @media only screen and (max-width: brPoint.$hl-tab-end) {
+      .cartMobileView {
+        display: block;
+      }
+    }
+  }
+
+  .desktoptabletView {
+    display: none;
+  }
+}
+
+.errorSection {
+  display: flex;
+  align-items: flex-start;
+  padding: 18px;
+  gap: 4px;
+  background: vars.$hl-gray-shadow;
+  border-radius: 5px;
+  margin: 16px 24px;
+  font-size: 10px;
+  line-height: 14px;
+  @include vars.hl-font-700;
+  .errorSectionMessage {
+    @include vars.hl-font-300;
+  }
+  div {
+    width: 100%;
+  }
+}
+
+:export {
+  hlBlueDark: vars.$hl-blue-dark;
+  hlBlueLight: vars.$hl-blue-light;
+}
+
+.cartDomView {
+  height: 100vh;
+}
+.infoSection {
+  text-align: start;
+  .numberTitle {
+    @include vars.hl-font-700;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  .cartTitle {
+    @include vars.hl-font-300;
+    font-size: 14px;
+    margin-left: 4px;
+  }
+}

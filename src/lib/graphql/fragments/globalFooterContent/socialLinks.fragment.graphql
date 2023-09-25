@@ -1,0 +1,16 @@
+
+fragment SocialLinks on SocialLinks {
+    _meta {
+        name
+    }
+    theme
+    links {
+        _meta {
+            name
+        }
+        socialType
+        priority
+        link
+        openInSeparateTab
+    }
+}

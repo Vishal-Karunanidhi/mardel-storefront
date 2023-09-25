@@ -1,0 +1,26 @@
+#import '@GqlFragments/homePage/heroSlotContent.fragment.graphql';
+#import '@GqlFragments/homePage/whatsOnSaleContent.fragment.graphql';
+#import '@GqlFragments/homePage/freeShippingContent.fragment.graphql';
+#import '@GqlFragments/homePage/videoComponent.fragment.graphql';
+#import '@GqlFragments/homePage/cardList.fragment.graphql';
+#import '@GqlFragments/seasonalPage/secondaryPromotion.fragment.graphql';
+#import '@GqlFragments/seasonalPage/secondaryPromotion3x.fragment.graphql';
+#import '@GqlFragments/homePage/productSelector.fragment.graphql';
+
+query SeasonalPage {
+  seasonalPage {
+    _meta {
+      name
+    }
+    content {
+      ...HeroSlot
+      ...WhatsOnSaleContent
+      ...FreeShippingContent
+      ...VideoComponent
+      ...CardList
+      ...SecondaryPromoComponent
+      ...SecondaryPromoComponent3x
+      ...ProductSelector
+    }
+  }
+}

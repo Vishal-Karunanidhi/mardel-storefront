@@ -1,0 +1,45 @@
+query GetStoresSearch($location: String!) {
+  getStoresSearch(location: $location) {
+    status
+    executionTime
+    data {
+      storeNumber
+      commonName
+      streetAddress
+      city
+      state
+      zipCode
+      phoneNumber
+      latitude
+      longitude
+      status
+      statusLabel
+      distance
+      nextWeek {
+        hours {
+          date
+          day
+          startTime
+          endTime
+          legend
+        }
+      }
+      thisWeek {
+        hours {
+          date
+          day
+          startTime
+          endTime
+          legend
+        }
+      }
+    }
+    centerpoint {
+      lat
+      lng
+      dist
+      limit
+      address
+    }
+  }
+}

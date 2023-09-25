@@ -1,0 +1,28 @@
+query DynamicCategoryPage($deliveryKey: String!) {
+  dcPage(deliveryKey: $deliveryKey) {
+    content {
+      ... on HeroSlotContent {
+        description
+        heading1
+        image {
+          id
+          name
+          endpoint
+          defaultHost
+        }
+      }
+      ... on ContentMainSection {
+        title
+        richText
+      }
+    }
+    metaData {
+      description
+      title
+      ogImage {
+        id
+      }
+      keywords
+    }
+  }
+}

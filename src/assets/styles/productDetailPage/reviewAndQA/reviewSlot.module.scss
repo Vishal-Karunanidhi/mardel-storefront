@@ -1,0 +1,64 @@
+@use '../../variables' as vars;
+
+.review {
+  margin: 24px 0;
+  max-width: 845px;
+
+  &User {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    &Name {
+      @include vars.hl-font-700;
+      color: vars.$hl-black;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &Date {
+      @include vars.hl-font-500;
+      color: vars.$hl-gray;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &Rating {
+    color: vars.$hl-blue;
+    font-size: 10px;
+    margin-bottom: 17.5px;
+    stroke-width: 0.5px;
+    stroke: vars.$hl-blue;
+  }
+
+  &Title {
+    @include vars.hl-font-700;
+    color: vars.$hl-black;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  &Text {
+    color: vars.$hl-black;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  &NumHelpful {
+    @include vars.hl-font-500;
+    color: vars.$hl-gray;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  a {
+    @include vars.hl-font-500;
+    color: vars.$hl-blue;
+    font-size: 10px;
+    line-height: 14px;
+    text-decoration-line: underline;
+  }
+}

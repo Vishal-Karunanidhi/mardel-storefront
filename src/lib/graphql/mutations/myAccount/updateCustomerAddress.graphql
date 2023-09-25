@@ -1,0 +1,7 @@
+#import '@GqlFragments/myAccount/customerAddress.fragment.graphql';
+
+mutation UpdateCustomerAddress($addressId: String!, $request: AddressRequest!) {
+  updateAddress(addressId: $addressId, request: $request) {
+    ...CustomerAddressFragment
+  }
+}

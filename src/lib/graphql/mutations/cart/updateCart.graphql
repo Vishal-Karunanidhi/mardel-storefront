@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+mutation UpdateCart($request: UpdateCartRequest!) {
+  updateCart(request: $request) {
+   ...CartResponseFragment
+  }
+}

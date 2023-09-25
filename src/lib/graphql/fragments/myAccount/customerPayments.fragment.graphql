@@ -1,0 +1,16 @@
+#import './customerAddress.fragment.graphql';
+
+fragment CustomerPaymentsFragment on CustomerPayments {
+  paymentId
+  nameAsOnCard
+  maskedNumber
+  last4Digits
+  expiryMonth
+  expiryYear
+  cardExpired
+  cardType
+  defaultPayment
+  billingAddress {
+    ...CustomerAddressFragment
+  }
+}

@@ -1,0 +1,18 @@
+#import '@GqlFragments/globalHeaderContent/notificationBarSlot.fragment.graphql';
+#import '@GqlFragments/globalHeaderContent/placeholderContent.fragment.graphql';
+#import '@GqlFragments/globalHeaderContent/linkContent.fragment.graphql';
+#import '@GqlFragments/globalHeaderContent/composedHeader.fragment.graphql';
+
+query GlobalHeaderContent {
+  globalHeaderContent {
+    _meta {
+      name
+    }
+    contents {
+      ...NotificationBarSlot
+      ...PlaceholderContent
+      ...LinkContent
+      ...ComposedHeaderFragment
+    }
+  }
+}

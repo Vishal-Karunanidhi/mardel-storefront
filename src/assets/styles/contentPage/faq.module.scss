@@ -1,0 +1,344 @@
+@use '../variables' as var;
+@use '../globals' as glob;
+@import '../breakpoints';
+
+// Four Cards at the top of the page
+.header {
+    max-width: $hl-xxl;
+
+    @include glob.mobile {
+        margin: 35px 0 0 0;
+    }
+
+    @include glob.tabletAndDesktop {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(4, minmax(4rem, 1fr));
+    }
+
+    @include glob.tablet {
+        margin: 35px auto 0 auto;
+        padding: 0 40px;
+    }
+
+    @include glob.desktop {
+        margin: 70px auto 0 auto;
+        padding: 0 80px;
+    }
+
+    .anchor {
+        &:hover {
+            .container {
+                box-shadow: var.$box-shadow-hover;
+                transition: box-shadow .15s;
+            }
+
+            .image {
+                scale: 1.05;
+                transition: scale .5s;
+            }
+
+            .title {
+                color: var.$color-href-hover;
+                transition: color .25s;
+
+                &:before {
+                    background-color: var.$color-href-hover;
+                    transition: background-color .25s;
+                }
+            }
+        }
+    }
+
+    article {
+        grid-column: auto;
+        text-align: center;
+
+        @include glob.mobile {
+            border-bottom: var.$border-size solid var.$color-gray-4;
+            margin: 0;
+        }
+
+        @include glob.tabletAndDesktop {
+            aspect-ratio: 16/9;
+            margin: 0 auto;
+        }
+
+        .container {
+            box-shadow: 0 0 0 transparent;
+
+            @include glob.mobile {
+                display: none;
+                visibility: hidden;
+            }
+
+            @include glob.tabletAndDesktop {
+                aspect-ratio: 16/9;
+                border-radius: var.$border-radius;
+                overflow: hidden;
+                transition: box-shadow .25s;
+                width: 100%;
+            }
+        }
+
+        .image {
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            transition: scale .25s;
+            width: 100%;
+        }
+
+        .title {
+            @include var.hl-font-700;
+            font-size: var.$font-size-p;
+            line-height: var.$line-height;
+            position: relative;
+            transition: color .15s;
+
+            @include glob.mobile {
+                padding: 0 24px;
+                text-align: left;
+            }
+
+            @include glob.tabletAndDesktop {
+                margin: var.$font-size-p auto 0 auto;
+                padding: 0;
+                text-align: center;
+            }
+
+            &[data-label="Returns & Exchanges"] {
+                &:before {
+                    -webkit-mask-image: url('../../icons/faq/EWArrow.svg');
+                    mask-image: url('../../icons/faq/EWArrow.svg');
+                }
+            }
+
+            &[data-label="Track Orders"] {
+                &:before {
+                    -webkit-mask-image: url('../../icons/faq/deliveryTruck.svg');
+                    mask-image: url('../../icons/faq/deliveryTruck.svg');
+                }
+            }
+
+            &[data-label="Store Information"] {
+                &:before {
+                    -webkit-mask-image: url('../../icons/faq/shopfront.svg');
+                    mask-image: url('../../icons/faq/shopfront.svg');
+                }
+            }
+
+            &[data-label="Quick Order"] {
+                &:before {
+                    -webkit-mask-image: url('../../icons/faq/list.svg');
+                    mask-image: url('../../icons/faq/list.svg');
+                }
+            }
+
+            &:before {
+                background-color: black;
+                content: ' ';
+                display: inline-block;
+                height: (var.$line-height + rem);
+                mask-position: left center;
+                mask-repeat: no-repeat;
+                transition: background-color .15s;
+                vertical-align: middle;
+
+                @include glob.mobile {
+                    width: calc(var.$font-size-p + 1.25rem);
+                }
+
+                @include glob.tabletAndDesktop {
+                    width: calc(var.$font-size-p + 1rem);
+                }
+            }
+        }
+    }
+}
+
+// Container for the main content
+.body {
+    max-width: $hl-xxl;
+
+    @include glob.mobile {
+        margin: 35px 24px 0 24px;
+    }
+
+    @include glob.tabletAndDesktop {
+        align-items: flex-start;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: row nowrap;
+        gap: 2rem;
+    }
+
+    @include glob.tablet {
+        margin: 40px auto;
+        padding: 0 40px;
+    }
+
+    &:not(&.secondary) {
+        @include glob.desktop {
+            margin: 75px auto;
+            padding: 0 80px;
+        }
+    }
+
+    &.secondary {
+        @include glob.desktop {
+            margin: 50px auto;
+            padding: 0 80px;
+        }
+    }
+
+    p {
+        margin: var.$font-size-p 0 0 0;
+        padding: 0;
+    }
+
+    .topicsContainer {
+        width: 100%;
+
+        @include glob.tabletAndDesktop {
+            max-width: 80%;
+        }
+    }
+
+    .topic {
+        border: calc(var.$border-size * .75) solid var.$color-border;
+        border-radius: var.$border-radius;
+        overflow: hidden;
+        padding: 0 0 calc(var.$font-size-p * 1.5) 0;
+
+        &:not(:first-of-type) {
+            margin: calc(var.$font-size-p * 1.5) 0 0 0;
+        }
+
+        h2 {
+            @include var.hl-font-700;
+            background: var.$color-gray-7;
+            font-size: var.$font-size-h3;
+            margin: 0;
+            padding: var.$font-size-p var.$font-size-h4;
+
+            a {
+                @include glob.href-black;
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            a {
+                @include glob.href-blue-underlined;
+            }
+
+            li {
+                margin: var.$font-size-p var.$font-size-p 0 var.$font-size-h4;
+            }
+        }
+
+        p {
+            margin: var.$font-size-p var.$font-size-h4 0 var.$font-size-h4;
+        }
+
+        &.answer {
+            a {
+                @include glob.href-blue-underlined;
+            }
+        }
+
+        &.error {
+            a {
+                @include glob.href-blue-underlined;
+            }
+        }
+    }
+
+    aside {
+        a {
+            @include glob.href-blue-underlined;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin: var.$font-size-p 0 0 0;
+                padding: 0;
+            }
+        }
+
+        .button {
+            @include glob.button;
+            width: 100% !important;
+        }
+
+        &:not(&.secondary, &.tertiary) {
+            background: var.$color-gray-7;
+            padding: calc(var.$font-size-p * 4) calc(var.$font-size-p * 2);
+            text-align: center;
+
+            @include glob.mobile {
+                margin: var.$font-size-h2 -24px 0 -24px;
+                width: auto;
+            }
+
+            @include glob.tabletAndDesktop {
+                border-radius: var.$border-radius;
+                width: clamp(24rem, 25%, 40rem);
+            }
+
+            h3 {
+                @include var.hl-font-700;
+                font-size: var.$font-size-h2;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &.secondary,
+        &.tertiary {
+            border: calc(var.$border-size * 0.75) solid var.$color-border;
+            border-radius: var.$border-radius;
+            padding: calc(var.$font-size-p * 0.5) calc(var.$font-size-p * 1.5) calc(var.$font-size-p * 1.25) calc(var.$font-size-p * 1.5);
+
+            h3 {
+                font-size: var.$font-size-h6;
+                margin: var.$font-size-p 0 0 0;
+                padding: 0;
+                text-transform: uppercase;
+            }
+        }
+
+        &.secondary {
+            @include glob.mobile {
+                margin: var.$font-size-h2 0;
+                width: auto;
+            }
+
+            @include glob.tabletAndDesktop {
+                width: clamp(24rem, 25%, 40rem);
+            }
+        }
+
+        &.tertiary {
+            @include glob.mobile {
+                margin: var.$font-size-h2 0;
+                width: auto;
+            }
+
+            @include glob.tabletAndDesktop {
+                width: clamp(24rem, 55%, 60rem);
+            }
+        }
+
+        .related {
+            border-top: calc(var.$border-size * 0.5) solid var.$color-border;
+            margin: var.$font-size-p 0 0 0;
+        }
+    }
+}

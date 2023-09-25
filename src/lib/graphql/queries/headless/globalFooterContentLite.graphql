@@ -1,0 +1,14 @@
+#import '@GqlFragments/globalFooterContent/logo.fragment.graphql';
+#import '@GqlFragments/globalFooterContent/termsAndPrivacy.fragment.graphql';
+
+query GlobalFooterContentLite {
+  globalFooterContent {
+    _meta {
+      name
+    }
+    contents {
+      ...Logo
+      ...TermsAndPrivacy
+    }
+  }
+}

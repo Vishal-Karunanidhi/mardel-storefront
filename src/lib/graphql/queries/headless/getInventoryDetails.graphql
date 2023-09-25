@@ -1,0 +1,9 @@
+query GetInventoryDetails($variantKeys: [String!]!) {
+  getInventoryDetails(variantKeys: $variantKeys) {
+    inventoryItems {
+      productCode
+      totalCount
+    }
+    productsNotFound
+  }
+}

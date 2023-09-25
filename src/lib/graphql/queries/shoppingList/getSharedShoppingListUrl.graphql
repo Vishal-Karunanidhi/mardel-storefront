@@ -1,0 +1,5 @@
+query GetSharedShoppingListUrl($listId: String!) {
+  getSharedShoppingListUrl(listId: $listId) {
+    sharedListUrl
+  }
+}

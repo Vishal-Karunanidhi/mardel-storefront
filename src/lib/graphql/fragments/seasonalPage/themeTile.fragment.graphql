@@ -1,0 +1,33 @@
+fragment ThemeTile on ThemeTile {
+  image {
+    _meta {
+      deliveryId
+      deliveryKey
+      name
+      schema
+    }
+    defaultHost
+    endpoint
+    id
+    name
+  }
+  link {
+    url
+    title
+    openTab
+    _meta {
+      deliveryId
+      deliveryKey
+      schema
+      name
+    }
+  }
+  header
+  subHeader
+  _meta {
+    deliveryId
+    deliveryKey
+    name
+    schema
+  }
+}

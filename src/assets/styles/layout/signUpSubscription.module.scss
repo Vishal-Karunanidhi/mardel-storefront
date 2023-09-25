@@ -1,0 +1,203 @@
+@use '../variables' as vars;
+@use '../breakpoints' as brpoint;
+
+/* card dimensions 4 different categories */
+.signupCard {
+  background-color: vars.$hl-blue;
+  margin: 0;
+  padding-top: 22px;
+
+  /* Card padding and height in 3 different resolution */
+  @media only screen and (max-width: brpoint.$hl-mobile-end) {
+    padding-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: brpoint.$hl-tab-start) and (max-width: brpoint.$hl-tab-end) {
+    padding-bottom: 24px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 24px;
+  }
+
+  @media only screen and (min-width: brpoint.$hl-desk-start) {
+    padding-bottom: 35px;
+    padding-left: 81px;
+    padding-right: 81px;
+    padding-top: 35px;
+  }
+
+  .signupContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1275px;
+    width: 100%;
+
+    @media only screen and (min-width: brpoint.$hl-desk-start) {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  .signupTitle {
+    @include vars.hl-font-700;
+    color: white;
+    font-size: 16px;
+    height: auto;
+    line-height: 27px;
+    text-align: center;
+
+    @media only screen and (min-width: brpoint.$hl-desk-start) {
+      text-align: left;
+    }
+  }
+
+  .signupInputButtonContainer {
+    display: flex;
+
+    @media only screen and (max-width: brpoint.$hl-mobile-end) {
+      flex-direction: column;
+    }
+
+    @media only screen and (min-width: brpoint.$hl-desk-start) {
+      align-items: center;
+      flex: 1;
+    }
+  }
+
+  .signupInput {
+    height: 50px;
+
+    /* signup input field width and padding property in 3 different resolution  */
+    @media only screen and (max-width: brpoint.$hl-mobile-end) {
+      margin-top: 24px;
+    }
+
+    @media only screen and (min-width: brpoint.$hl-tab-start) and (max-width: brpoint.$hl-tab-end) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    @media only screen and (min-width: brpoint.$hl-desk-start) {
+      margin-left: 48px;
+      width: 328px;
+      flex: 1;
+    }
+
+    .inputStyle {
+      background-color: white;
+      color: black;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    label {
+      color: #5f5f5f;
+      line-height: 20px;
+    }
+
+  }
+
+  .spanButton {
+    @include vars.hl-font-700;
+    background-color: vars.$hl-white;
+    border-radius: 25px;
+    border: 1px solid vars.$hl-black;
+    color: vars.$hl-black;
+    line-height: 24px;
+    max-width: auto;
+    text-transform: none;
+
+    &:hover {
+      background-color: vars.$hl-blue-light;
+      color: vars.$hl-white;
+    }
+
+    &:focus-visible {
+      outline: 1px dashed vars.$hl-blue-light;
+      outline-offset: 3px;
+    }
+
+    &:active {
+      background-color: vars.$hl-white;
+      color: vars.$hl-black;
+    }
+
+    @media only screen and (max-width: brpoint.$hl-mobile-end) {
+      height: 28px;
+      padding-top: 2px;
+      width: 693px;
+    }
+
+    @media only screen and (min-width: brpoint.$hl-tab-start) and (max-width: brpoint.$hl-tab-end) {
+      height: 38px;
+      min-width: 130px;
+      padding-top: 6px;
+    }
+
+    @media only screen and (min-width: brpoint.$hl-desk-start) {
+      height: 48px;
+      min-width: 108px;
+      padding-top: 10px;
+    }
+  }
+
+  .secondaryButton {
+    background-color: transparent;
+    border-radius: 0px;
+    border: transparent;
+    padding: 0px;
+
+    span {
+      @include vars.hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &:focus-visible {
+      outline: 1px dashed vars.$hl-blue-light;
+      outline-offset: 2px;
+    }
+
+    @media only screen and (max-width: brpoint.$hl-mobile-end) {
+      height: 28px;
+      margin-top: 30px;
+    }
+
+    @media only screen and (min-width: brpoint.$hl-tab-start) and (max-width: brpoint.$hl-tab-end) {
+      height: 38px;
+      margin-left: 24px;
+      margin-top: 34px;
+      width: 130px;
+    }
+
+    @media only screen and (min-width: brpoint.$hl-desk-start) {
+      height: 48px;
+      margin-left: 15px;
+      margin-top: 4px;
+      width: 108px;
+    }
+  }
+
+  .fieldError {
+    margin-left: 2px;
+  }
+
+  .dialogTitleStyle {
+    @include vars.hl-font-700;
+    color: black;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .dialogContentStyle {
+    @include vars.hl-font-500;
+    color: black;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+}

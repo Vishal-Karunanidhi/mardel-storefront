@@ -1,0 +1,52 @@
+query addToCartToasterContent {
+  addToCartToasterContent {
+    toasterTitle
+    orderSummaryInfo {
+      yourCart
+      items
+      merchandiseTotal
+      discounts
+      shipping
+      estimatedTotal
+      taxInfo
+    }
+    checkoutCta {
+      label
+      value
+      openInNewTab
+    }
+    continueShoppingCta {
+      label
+      value
+      openInNewTab
+    }
+  }
+  getFreeShippingPromoState {
+    shippingPromoActive
+    freeShippingThresholdValue
+    freeShippingThresholdCurrency
+  }
+  fullCartContent {
+    productTile {
+      warningNotices {
+        excludeFreeShipping
+        additionalShipping
+        noAirShipping
+        maximumStockLimit
+      }
+      labels {
+        myCart
+        saveForLater
+        sku
+        quantity
+      }
+    }
+    freeShippingMessages {
+      notes {
+        richTextData
+      }
+      pendingEligibility
+      achievingEligibility
+    }
+  }
+}

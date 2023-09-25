@@ -1,0 +1,132 @@
+query GetListingPageContentAndData($categoryKey: String!, $deliveryKey: String!) {
+  getCategoryBreadCrumbs(key: $categoryKey) {
+    name
+    key
+    slug
+    url
+    parentBreadCrumb {
+      name
+      key
+      slug
+      url
+      parentBreadCrumb {
+        name
+        key
+        slug
+        url
+      }
+    }
+  }
+  getCategoryPageContent(deliveryKey: $deliveryKey) {
+    filterLabel
+    resultsLabel
+    subCategories {
+      title
+      carousal {
+        priority
+        title
+        description
+        imageAltText
+        thumbnail {
+          id
+          name
+          endpoint
+          defaultHost
+          _meta {
+            schema
+          }
+        }
+        _meta {
+          name
+          schema
+          deliveryId
+          deliveryKey
+        }
+      }
+    }
+    promos {
+      _meta {
+        name
+        schema
+        deliveryId
+      }
+      link
+      media {
+        image {
+          defaultHost
+          endpoint
+          id
+          name
+          url
+        }
+        imageAltText
+      }
+      discountLabel
+      description
+    }
+    enableAdTile
+    adTile {
+      discountInfo
+      tilePosition
+      pageNumber
+      link
+      media {
+        imageAltText
+        image {
+          _meta {
+            schema
+          }
+          defaultHost
+          endpoint
+          id
+          name
+          url
+        }
+        _meta {
+          schema
+        }
+      }
+      _meta {
+        name
+        schema
+        deliveryId
+      }
+    }
+    seoContent {
+      title
+      description
+    }
+    relatedCategories {
+      title
+      carousal {
+        priority
+        title
+        description
+        imageAltText
+        thumbnail {
+          id
+          name
+          endpoint
+          defaultHost
+          _meta {
+            schema
+          }
+        }
+        _meta {
+          name
+          schema
+          deliveryId
+          deliveryKey
+        }
+      }
+    }
+    metaData {
+      description
+      keywords
+      ogImage {
+        url
+      }
+      title
+    }
+  }
+}

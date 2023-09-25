@@ -1,0 +1,7 @@
+#import '@GqlFragments/myAccount/customerPayments.fragment.graphql';
+
+mutation DeletePayment($paymentId: String!) {
+  deletePayment(paymentId: $paymentId) {
+    ...CustomerPaymentsFragment
+  }
+}

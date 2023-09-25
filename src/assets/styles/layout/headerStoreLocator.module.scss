@@ -1,0 +1,197 @@
+@import '../variables';
+@import '../breakpoints';
+@import '../globals';
+
+.headerStoreLocator {
+  margin: 0 0 0 1rem;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.popover {
+  &Paper {
+    @include popOverArrowUp;
+    border-radius: $border-radius $border-radius calc($border-radius * 2) calc($border-radius * 2);
+    box-shadow: 0px 0px 9.28622px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    width: 557px;
+  }
+  &Top {
+    height: 25px;
+    background-color: $hl-blue;
+    border-radius: $border-radius $border-radius 0 0;
+    display: flex;
+    justify-content: flex-end;
+    &Icon {
+      color: white;
+    }
+  }
+  &Content {
+    padding: 25px;
+    &StoreDetails {
+      margin-top: 20px;
+      &Link {
+        text-decoration: underline;
+        &:hover {
+          color: $hl-blue-light;
+          text-decoration: none;
+        }
+      }
+    }
+    &Info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      &Button {
+        &Link {
+          height: 48px;
+          width: 208px;
+          border-radius: 30px;
+        }
+        height: 48px;
+        width: 208px;
+        border-radius: 30px;
+        border: 1px solid $hl-black;
+        background-color: $hl-white;
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 20px;
+        &:hover {
+          cursor: pointer;
+          background-color: $hl-blue-light;
+          border: none;
+          color: $hl-white;
+        }
+      }
+      &Address {
+        @include hl-font-300;
+        font-size: 16px;
+        line-height: 24px;
+        &Phone {
+          text-decoration: underline;
+          &:hover {
+            color: $hl-blue-light;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    &Hours {
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &Header {
+      margin: 0px 0px 20px 0px;
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+    }
+    &Description {
+      margin: 0px 0px 20px 0px;
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &Search {
+      display: flex;
+      margin-bottom: 17px;
+      &Button {
+        padding: 14px 35px;
+        margin-left: 20px;
+        border-radius: 30px;
+        border: none;
+        background-color: $hl-blue-dark;
+        color: $hl-white;
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 20px;
+        &:hover {
+          background-color: $hl-blue-light;
+          cursor: pointer;
+        }
+      }
+    }
+    &Location {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      &:hover {
+        color: $hl-blue;
+        .popoverContentLocationText {
+          text-decoration: none;
+        }
+      }
+      &Text {
+        margin-left: 6px;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.mobile {
+  &Content {
+    &Info {
+    }
+  }
+  &GetDirections {
+    @include hl-font-700;
+    border-radius: 30px;
+    border: 1px solid $hl-black;
+    background-color: $hl-white;
+    font-size: 16px;
+    line-height: 20px;
+    height: 48px;
+    margin-top: 20px;
+    width: 100%;
+    &:hover {
+      background-color: $hl-blue-light;
+      border: none;
+      color: $hl-white;
+      cursor: pointer;
+    }
+    &Link {
+      border-radius: 35px;
+      height: 48px;
+      width: 100%;
+    }
+  }
+  &Header {
+    margin: 0px;
+    @include hl-font-700;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &Description {
+    margin: 20px 0px 20px 0px;
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &Container {
+    padding: 15px;
+  }
+  &PopoverContentLocation {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  &Button {
+    border-radius: 30px;
+    height: 48px;
+    width: 100%;
+    border: none;
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: $hl-blue-dark;
+    color: $hl-white;
+    margin-top: 24px;
+    &:hover {
+      background-color: $hl-blue-light;
+      cursor: pointer;
+    }
+  }
+}

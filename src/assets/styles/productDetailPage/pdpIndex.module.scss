@@ -1,0 +1,74 @@
+@import '../breakpoints';
+@import '../variables';
+@import '../globals';
+
+.pdp {
+  min-width: 272px;
+  width: 100%;
+
+  &TopDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0 auto;
+    max-width: 519px;
+    width: 100%;
+    min-width: 272px;
+
+    @include mobile {
+      padding: 0 24px;
+    }
+  }
+
+  div[class^='featuredItems_headerWrapper'] {
+    h3 {
+      margin-left: 24px;
+    }
+  }
+
+  div[class^='slider_sliderContainer'] {
+    padding-left: 24px;
+    padding-right: 40px;
+  }
+}
+
+.itemsToConsider {
+  background-color: $color-gray-7;
+  div[class^='featuredItems_headerWrapper'] {
+    padding-top: 35px;
+  }
+}
+
+.featuredItems {
+  background-color: $color-gray-7;
+  margin: $margin-card-tall auto 0;
+  overflow: hidden;
+  width: 100%;
+
+  > div {
+    margin: $margin-card-tall auto 0 auto;
+  }
+}
+
+@include tablet {
+  .pdp {
+    min-width: 272px;
+
+    &TopDetails {
+      margin: 0 auto;
+    }
+  }
+}
+
+@include desktop {
+  .pdp {
+    margin: 0 auto;
+    max-width: $hl-xxl;
+    padding: 0 56px;
+
+    &Top {
+      display: flex;
+      gap: 28px;
+    }
+  }
+}

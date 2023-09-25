@@ -1,0 +1,40 @@
+@import '../../variables';
+@import '../../globals';
+
+.productSizeOptions {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 24px;
+
+  &Layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 8px;
+
+    button {
+      @include button;
+      @include buttonSmall;
+      &.buttonPrimary {
+        @include button;
+        @include buttonSmall;
+      }
+      &.buttonSecondary {
+        @include button;
+        @include buttonSmall;
+        @include buttonSecondary;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .productSizeOptions {
+    padding: 0;
+  }
+}
+
+:export {
+  hlWhite: $hl-white;
+  hlBlueDark: $hl-blue-dark;
+}

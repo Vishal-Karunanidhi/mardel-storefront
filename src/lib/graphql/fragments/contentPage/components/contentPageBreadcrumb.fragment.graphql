@@ -1,0 +1,12 @@
+fragment ContentPageBreadcrumb on ContentPageBreadcrumb {
+  _meta {
+    name
+    schema
+    deliveryId
+  }
+  links {
+    label
+    value
+    openInNewTab
+  }
+}

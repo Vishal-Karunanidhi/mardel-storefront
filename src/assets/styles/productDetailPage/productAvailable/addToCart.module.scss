@@ -1,0 +1,446 @@
+@use '../../variables' as vars;
+@use '../../breakpoints' as brPoint;
+
+.addToCart {
+  display: flex;
+  flex-direction: column;
+
+  .addToCartComp {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  input {
+    border-radius: 5px;
+    border: 1.25px solid vars.$hl-input-border-grey;
+    height: 38px;
+    padding: 13px 12px;
+    width: 101px;
+
+    &:focus-within,
+    &:focus-visible,
+    &:focus {
+      outline: 2px dashed vars.$hl-blue-dark;
+      outline-offset: 2px;
+
+      &:active {
+        outline: none;
+      }
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    appearance: textfield;
+  }
+
+  &ButtonOutline {
+    max-width: 397px;
+    min-width: 163px;
+    width: 100%;
+    height: 38px;
+
+    button {
+      cursor: pointer;
+      @include vars.hl-font-700;
+      align-items: center;
+      background: vars.$hl-blue-dark;
+      border-radius: 25px;
+      border: none;
+      color: vars.$hl-white;
+      display: flex;
+      flex-direction: row;
+      font-size: 16px;
+      gap: 7px;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:focus-within,
+    &:focus-visible,
+    &:focus {
+      outline: 2px dashed vars.$hl-blue-dark;
+      outline-offset: 2px;
+
+      &:active {
+        outline: none;
+      }
+    }
+  }
+}
+
+.addToCartButton {
+  margin: 0;
+
+  &:active {
+    outline: none;
+  }
+}
+
+.toasterTitle {
+  padding: 10px 18px 8px 24px;
+}
+
+.toasterCloseButton {
+  background: transparent;
+  border: none;
+  padding: 0px;
+  float: right;
+
+  &:focus-visible {
+    border: none;
+    outline: 2px dashed vars.$hl-white;
+  }
+}
+
+.toasterContent {
+  display: flex;
+
+  @media only screen and (max-width: brPoint.$hl-cart-toaster-tab-end) {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    height: 475px;
+  }
+}
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.progressBarMobileAndTabletView {
+  display: block;
+  padding: 24px 24px 0px 24px;
+
+  div[class*='progressContainer'] {
+    border: none;
+  }
+
+  div[class*='progress'] {
+    margin: 0px;
+    width: 100%;
+  }
+
+  div[class*='noteDetails'] {
+    margin: 0px;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    display: none;
+  }
+}
+
+.productTile {
+  @media only screen and (max-width: brPoint.$hl-cart-toaster-tab-end) {
+    padding: 16px 24px 24px 24px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    width: 438px;
+    padding: 24px 30px 24px 19px;
+  }
+
+  div[class*='warning'] {
+    padding-left: 0;
+  }
+
+  div[class*='desktop'] {
+    padding-left: calc(vars.$font-size-p * 0.5);
+    margin: 0px;
+
+    div[class*='cartItems'] {
+      border: none;
+      border-radius: 0px;
+      margin: 0px;
+
+      div[class*='productMainSection'] {
+        div[class*='imageSection'] {
+          margin-left: 0px;
+          margin-top: 0px;
+        }
+
+        div[class*='cartSection'] {
+          width: 270px;
+
+          div[class*='cartDescription'] {
+            margin-top: 0px;
+
+            label[class*='cartTitle'] {
+              margin-top: 0px;
+            }
+          }
+
+          div[class*='cartProperty'] {
+            padding: 0px;
+            margin-top: 8px;
+
+            div[class*='flexRow'] {
+              display: flex;
+              flex-direction: column;
+              span[class*='colorSpan'] {
+                height: 16px;
+              }
+              span[class*='quantitySpan'] {
+                height: 16px;
+              }
+              label {
+                margin: 0px;
+              }
+            }
+          }
+          div[class*='cartAmountSection'] {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      div[class*='notice'] {
+        margin-left: 0px;
+        width: 350px;
+      }
+    }
+  }
+
+  div[class*='mobile'] {
+    div[class*='mobilecartItems'] {
+      border: none;
+
+      @media only screen and (max-width: brPoint.$hl-cart-toaster-tab-end) {
+        border: 1px solid #444444;
+        border-radius: 20px;
+        margin: 0px;
+        padding: 16px;
+      }
+
+      div[class*='mobileImgDescSection'] {
+        div[class*='imageSection'] {
+          margin-left: 0px;
+        }
+      }
+
+      div[class*='notice'] {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+.frequentlyBought {
+  background: #f6f6f6;
+  display: none;
+  height: 100%;
+  padding: 8px;
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    display: block;
+  }
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  background: #ededed;
+
+  @media only screen and (max-width: brPoint.$hl-cart-toaster-tab-end) {
+    padding: 24px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    height: 475px;
+    width: 411px;
+    padding: 24px 40px 64px 40px;
+  }
+}
+
+.progressBarDesktopView {
+  display: none;
+
+  div[class*='progress'] {
+    margin: 0px;
+    width: 100%;
+  }
+
+  div[class*='noteDetails'] {
+    margin: 0px;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    display: block;
+    height: 70px;
+  }
+}
+
+.orderSummary {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryTitle {
+  display: none;
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    display: flex;
+    font-size: 16px;
+    @include vars.hl-font-700;
+  }
+}
+
+.merchandiseTotal {
+  display: none;
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-top: 16px;
+    @include vars.hl-font-300;
+  }
+}
+
+.discounts,
+.shipping {
+  display: none;
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-top: 8px;
+    @include vars.hl-font-300;
+  }
+}
+
+.estimatedTotal {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  @media only screen and (max-width: brPoint.$hl-cart-toaster-tab-end) {
+    padding-bottom: 16px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    justify-content: space-between;
+    padding-top: 16px;
+    color: #003087;
+    @include vars.hl-font-700;
+  }
+}
+
+.taxInfo {
+  display: none;
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    display: block;
+    @include vars.hl-font-300;
+    font-size: 10px;
+    padding-bottom: 40px;
+  }
+}
+
+.checkoutLinkDiv {
+  width: 100%;
+  color: vars.$hl-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.checkoutLink {
+  width: 100%;
+  color: #ffffff;
+  @include vars.hl-font-700;
+  font-size: 16px;
+  background: vars.$hl-blue-dark;
+  border: none;
+  cursor: pointer;
+
+  @media only screen and (max-width: brPoint.$hl-cart-toaster-tab-end) {
+    height: 28px;
+    border-radius: 15px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    height: 48px;
+    border-radius: 25px;
+  }
+
+  &:hover {
+    background: vars.$hl-blue-light;
+  }
+
+  &:focus {
+    background: vars.$hl-blue-light;
+    outline: none;
+    color: vars.$hl-white;
+    border: none;
+  }
+}
+
+.shoppingLinkDiv {
+  width: 100%;
+  margin-top: 16px;
+  color: vars.$hl-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shoppingLink {
+  width: 100%;
+  @include vars.hl-font-700;
+  font-size: 16px;
+  border: 1px solid vars.$hl-black;
+  background: vars.$hl-white;
+  cursor: pointer;
+
+  @media only screen and (max-width: brPoint.$hl-cart-toaster-tab-end) {
+    height: 28px;
+    border-radius: 15px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
+    height: 48px;
+    border-radius: 25px;
+  }
+
+  &:hover {
+    background: vars.$hl-blue-light;
+    border: none;
+    color: vars.$hl-white;
+  }
+
+  &:focus {
+    background: vars.$hl-blue-light;
+    outline: none;
+    color: vars.$hl-white;
+    border: none;
+  }
+}
+
+:export {
+  hlBlueDark: vars.$hl-blue-dark;
+  hlBlueLight: vars.$hl-blue-light;
+  hlWhite: vars.$hl-white;
+  hlBlack: vars.$hl-black;
+}

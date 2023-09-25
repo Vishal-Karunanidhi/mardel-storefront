@@ -1,0 +1,14 @@
+query GetProductReviews($productKey: String, $pageNumber: Int) {
+  getProductReviews(productKey: $productKey, pageNumber: $pageNumber) {
+    totalCount
+    reviews {
+      id
+      key
+      createdAt
+      authorName
+      title
+      text
+      rating
+    }
+  }
+}

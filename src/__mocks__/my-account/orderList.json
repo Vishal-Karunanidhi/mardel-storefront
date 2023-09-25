@@ -1,0 +1,359 @@
+{
+    "orderList": [
+        {
+            "orderId": "string",
+            "orderNumber": "00000011",
+            "version": 0,
+            "cartNumber": "string",
+            "customerId": "string",
+            "customerEmail": "string",
+            "anonymousId": "string",
+            "orderState": "Processing",
+            "shipmentState": "string",
+            "paymentState": "string",
+            "taxExempt": true,
+            "subTotal": 0,
+            "totalTax": 0,
+            "shippingSurcharge": 0,
+            "carrierSurcharge": 0,
+            "shippingCost": 0,
+            "retailDeliveryFee": 0,
+            "shippingDiscount": 0,
+            "totalPrice": 0,
+            "shippingAddress": {
+                "key": "string",
+                "country": "string",
+                "firstName": "string",
+                "lastName": "string",
+                "streetName": "string",
+                "city": "string",
+                "state": "string",
+                "postalCode": "string",
+                "phone": "string",
+                "email": "string",
+                "addressVerified": true
+            },
+            "billingAddress": {
+                "key": "string",
+                "country": "string",
+                "firstName": "string",
+                "lastName": "string",
+                "streetName": "string",
+                "city": "string",
+                "state": "string",
+                "postalCode": "string",
+                "phone": "string",
+                "email": "string",
+                "addressVerified": true
+            },
+            "lineItems": [
+                {
+                    "productKey": "string",
+                    "name": "string",
+                    "productType": "string",
+                    "variant": {
+                        "sku": "string",
+                        "key": "string",
+                        "price": 0,
+                        "discountedPrice": 0,
+                        "image": {
+                            "url": "string",
+                            "width": 0,
+                            "height": 0,
+                            "label": "string"
+                        },
+                        "attributes": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        }
+                    },
+                    "price": 0,
+                    "totalPrice": 0,
+                    "quantity": 0
+                }
+            ],
+            "shippingMethod": "string",
+            "payments": [
+                {
+                    "method": "string",
+                    "amount": 0,
+                    "maskedNumber": "string",
+                    "expirationYear": 0,
+                    "expirationMonth": 0,
+                    "nameOnCard": "string",
+                    "last4Digits": "string",
+                    "cardType": "string",
+                    "transactions": [
+                        {
+                            "timestamp": "2023-03-02T17:56:33.281Z",
+                            "type": "string",
+                            "amount": 0,
+                            "interactionId": "string",
+                            "state": "string"
+                        }
+                    ]
+                }
+            ],
+            "deliveries": [
+                {
+                    "consignmentId": "string",
+                    "consignmentType": "string",
+                    "deliveryItems": [
+                        {
+                            "sku": "string",
+                            "quantity": 0
+                        }
+                    ],
+                    "parcels": [
+                        {
+                            "carrier": "string",
+                            "trackingID": "string",
+                            "trackingUrl": "string"
+                        }
+                    ]
+                }
+            ],
+            "creationTime": "2023-03-02T17:56:33.281Z",
+            "modifiedTime": "2023-03-02T17:56:33.282Z"
+        },
+        {
+            "orderId": "string",
+            "orderNumber": "00000011",
+            "version": 0,
+            "cartNumber": "string",
+            "customerId": "string",
+            "customerEmail": "string",
+            "anonymousId": "string",
+            "orderState": "Processing",
+            "shipmentState": "string",
+            "paymentState": "string",
+            "taxExempt": true,
+            "subTotal": 0,
+            "totalTax": 0,
+            "shippingSurcharge": 0,
+            "carrierSurcharge": 0,
+            "shippingCost": 0,
+            "retailDeliveryFee": 0,
+            "shippingDiscount": 0,
+            "totalPrice": 0,
+            "shippingAddress": {
+                "key": "string",
+                "country": "string",
+                "firstName": "string",
+                "lastName": "string",
+                "streetName": "string",
+                "city": "string",
+                "state": "string",
+                "postalCode": "string",
+                "phone": "string",
+                "email": "string",
+                "addressVerified": true
+            },
+            "billingAddress": {
+                "key": "string",
+                "country": "string",
+                "firstName": "string",
+                "lastName": "string",
+                "streetName": "string",
+                "city": "string",
+                "state": "string",
+                "postalCode": "string",
+                "phone": "string",
+                "email": "string",
+                "addressVerified": true
+            },
+            "lineItems": [
+                {
+                    "productKey": "string",
+                    "name": "string",
+                    "productType": "string",
+                    "variant": {
+                        "sku": "string",
+                        "key": "string",
+                        "price": 0,
+                        "discountedPrice": 0,
+                        "image": {
+                            "url": "string",
+                            "width": 0,
+                            "height": 0,
+                            "label": "string"
+                        },
+                        "attributes": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        }
+                    },
+                    "price": 0,
+                    "totalPrice": 0,
+                    "quantity": 0
+                }
+            ],
+            "shippingMethod": "string",
+            "payments": [
+                {
+                    "method": "string",
+                    "amount": 0,
+                    "maskedNumber": "string",
+                    "expirationYear": 0,
+                    "expirationMonth": 0,
+                    "nameOnCard": "string",
+                    "last4Digits": "string",
+                    "cardType": "string",
+                    "transactions": [
+                        {
+                            "timestamp": "2023-03-02T17:56:33.281Z",
+                            "type": "string",
+                            "amount": 0,
+                            "interactionId": "string",
+                            "state": "string"
+                        }
+                    ]
+                }
+            ],
+            "deliveries": [
+                {
+                    "consignmentId": "string",
+                    "consignmentType": "string",
+                    "deliveryItems": [
+                        {
+                            "sku": "string",
+                            "quantity": 0
+                        }
+                    ],
+                    "parcels": [
+                        {
+                            "carrier": "string",
+                            "trackingID": "string",
+                            "trackingUrl": "string"
+                        }
+                    ]
+                }
+            ],
+            "creationTime": "2023-03-02T17:56:33.281Z",
+            "modifiedTime": "2023-03-02T17:56:33.282Z"
+        },
+        {
+            "orderId": "string",
+            "orderNumber": "00000011",
+            "version": 0,
+            "cartNumber": "string",
+            "customerId": "string",
+            "customerEmail": "string",
+            "anonymousId": "string",
+            "orderState": "Processing",
+            "shipmentState": "string",
+            "paymentState": "string",
+            "taxExempt": true,
+            "subTotal": 0,
+            "totalTax": 0,
+            "shippingSurcharge": 0,
+            "carrierSurcharge": 0,
+            "shippingCost": 0,
+            "retailDeliveryFee": 0,
+            "shippingDiscount": 0,
+            "totalPrice": 0,
+            "shippingAddress": {
+                "key": "string",
+                "country": "string",
+                "firstName": "string",
+                "lastName": "string",
+                "streetName": "string",
+                "city": "string",
+                "state": "string",
+                "postalCode": "string",
+                "phone": "string",
+                "email": "string",
+                "addressVerified": true
+            },
+            "billingAddress": {
+                "key": "string",
+                "country": "string",
+                "firstName": "string",
+                "lastName": "string",
+                "streetName": "string",
+                "city": "string",
+                "state": "string",
+                "postalCode": "string",
+                "phone": "string",
+                "email": "string",
+                "addressVerified": true
+            },
+            "lineItems": [
+                {
+                    "productKey": "string",
+                    "name": "string",
+                    "productType": "string",
+                    "variant": {
+                        "sku": "string",
+                        "key": "string",
+                        "price": 0,
+                        "discountedPrice": 0,
+                        "image": {
+                            "url": "string",
+                            "width": 0,
+                            "height": 0,
+                            "label": "string"
+                        },
+                        "attributes": {
+                            "additionalProp1": "string",
+                            "additionalProp2": "string",
+                            "additionalProp3": "string"
+                        }
+                    },
+                    "price": 0,
+                    "totalPrice": 0,
+                    "quantity": 0
+                }
+            ],
+            "shippingMethod": "string",
+            "payments": [
+                {
+                    "method": "string",
+                    "amount": 0,
+                    "maskedNumber": "string",
+                    "expirationYear": 0,
+                    "expirationMonth": 0,
+                    "nameOnCard": "string",
+                    "last4Digits": "string",
+                    "cardType": "string",
+                    "transactions": [
+                        {
+                            "timestamp": "2023-03-02T17:56:33.281Z",
+                            "type": "string",
+                            "amount": 0,
+                            "interactionId": "string",
+                            "state": "string"
+                        }
+                    ]
+                }
+            ],
+            "deliveries": [
+                {
+                    "consignmentId": "string",
+                    "consignmentType": "string",
+                    "deliveryItems": [
+                        {
+                            "sku": "string",
+                            "quantity": 0
+                        }
+                    ],
+                    "parcels": [
+                        {
+                            "carrier": "string",
+                            "trackingID": "string",
+                            "trackingUrl": "string"
+                        }
+                    ]
+                }
+            ],
+            "creationTime": "2023-03-02T17:56:33.281Z",
+            "modifiedTime": "2023-03-02T17:56:33.282Z"
+        }
+    ],
+    "totalCount": 0,
+    "errorMessages": [
+        "string"
+    ]
+}

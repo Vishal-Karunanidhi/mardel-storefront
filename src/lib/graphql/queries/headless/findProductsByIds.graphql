@@ -1,0 +1,58 @@
+query FindProductsByIds($keys: [String!]!) {
+  findProductsByIds(keys: $keys) {
+    total
+    products {
+      name
+      productKey
+      commercetoolsId
+      description
+      pdpUrl
+      slug
+      variants {
+        id
+        sku
+        isMasterVariant
+        key
+        imageSet
+        attributes {
+          description
+          backInStockEligible
+          approvalStatus
+          productOnlineDate
+          offlineDate
+          onlineDate
+          onlineStatus {
+            key
+            label
+          }
+          yourPrice
+          availability {
+            key
+            label
+          }
+          productWarnings {
+            key
+            label
+          }
+          productHazards {
+            key
+            label
+          }
+        }
+        price {
+          variantPrice
+          marketPrice
+          discountedPrice {
+            discountedPrice
+            discountName
+            discountKey
+            discountId
+          }
+        }
+        isMasterVariant
+        isMatchingVariant
+      }
+    }
+    productsNotFound
+  }
+}

@@ -1,0 +1,8 @@
+fragment GiftMessageFragment on CartResponse {
+    giftOrder
+    giftMessage {
+      giftMessage
+      giftSenderName
+      giftReceiverName
+    }
+}

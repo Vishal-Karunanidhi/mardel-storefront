@@ -1,0 +1,94 @@
+#import './orderLineItems.fragment.graphql';
+
+fragment OrderListFragment on Order {
+  version
+  creationTime
+  modifiedTime
+  orderId
+  orderNumber
+  customerId
+  customerEmail
+  anonymousId
+  giftMessage
+  giftSenderName
+  giftReceiverName
+  giftOption
+  totalPrice
+  subTotal
+  totalTax
+  orderState
+  shipmentState
+  paymentState
+  cartNumber
+  taxExempt
+  merchandisePrice
+  merchandiseDiscount
+  merchandiseSubTotal
+  totalSaved
+  shippingSurcharge
+  carrierSurcharge
+  shippingCost
+  retailDeliveryFee
+  shippingDiscount
+  shippingMethod
+  deliveries {
+    consignmentId
+    consignmentType
+    parcels {
+      carrier
+      trackingID
+      trackingUrl
+      creationTime
+    }
+    deliveryItems
+    creationTime
+  }
+  payments {
+    method
+    amount
+    maskedNumber
+    expirationYear
+    expirationMonth
+    nameOnCard
+    last4Digits
+    cardType
+    transactions {
+      timestamp
+      type
+      amount
+      interactionId
+      state
+    }
+  }
+  billingAddress {
+    key
+    country
+    firstName
+    lastName
+    addressLineOne
+    addressLineTwo
+    city
+    state
+    postalCode
+    phone
+    email
+    addressVerified
+  }
+  shippingAddress {
+    key
+    country
+    firstName
+    lastName
+    addressLineOne
+    addressLineTwo
+    city
+    state
+    postalCode
+    phone
+    email
+    addressVerified
+  }
+  lineItems {
+    ...OrderLineItemsFragment
+  }
+}

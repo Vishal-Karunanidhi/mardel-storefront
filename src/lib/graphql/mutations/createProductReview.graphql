@@ -1,0 +1,11 @@
+#import '@GqlFragments/pdp/reviews.fragment.graphql';
+
+mutation Mutation($request: ProductReviewCreateRequest!) {
+  createReview(request: $request) {
+    status
+    message
+    review {
+      ...ReviewsFragment
+    }
+  }
+}

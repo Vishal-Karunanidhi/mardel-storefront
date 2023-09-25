@@ -1,0 +1,129 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.quickOrderContainer {
+  max-width: $hl-xxl;
+  
+  @include mobileAndTablet {
+    margin: 24px auto;
+    padding: 0 24px;
+  }
+
+  @include desktop {
+    margin: 80px auto;
+    padding: 0 80px;
+  }
+  .quickOrderHeader {
+    display: inline-block;
+    width: 50%;
+    min-width: 600px;
+    @include mobileAndTablet {
+      display: none;
+    }
+    .quickOrderHeaderBlock {
+      border-bottom-style: solid;
+      display: flex;
+      gap: 24px;
+      padding: 16px 0px;
+      .quickOrderHeaderSKU {
+        display: inline-block;
+        width: 300px;
+        @include mobileAndTablet {
+          display: block;
+          width: 100%;
+        }
+      }
+      .quickOrderHeaderQuantity {
+        display: inline-block;
+        width: 200px;
+        @include mobileAndTablet {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .quickOrderHeaderProduct {
+    display: inline-block;
+    width: calc(100% - max(50%, 600px));
+    border-bottom-style: solid;
+    padding: 16px 0px;
+    @include mobileAndTablet {
+      display: none;
+    }
+  }
+  .quickOrderItem {
+    min-height: 165px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: $hl-gray-line;
+    @include mobileAndTablet {
+      min-height: none;
+    }
+    .quickOrderForm {
+      display: inline-block;
+      width: 50%;
+      min-width: 600px;
+      @include mobileAndTablet {
+        width: 100%;
+        min-width: 0px;
+      }
+      .quickOrderFormBlock {
+        display: flex;
+        gap: 24px;
+        padding: 40px 0px 76px 0px;
+        @include mobileAndTablet {
+          display: flex;
+          flex-direction: column;
+          padding: 0px;
+          gap: 23px;
+        }
+        .quickOrderFormSKU {
+          width: 300px;
+          @include mobileAndTablet {
+            width: 100%;
+            margin-top: 23px;
+          }
+        }
+        .quickOrderFormQuantity {
+          width: 200px;
+          @include mobileAndTablet {
+            width: 100%;
+            margin-top: 23px;
+          }
+        }
+      }
+    }
+    .quickOrderProduct {
+      display: inline-block;
+      width: calc(100% - max(50%, 600px));
+      @include mobileAndTablet {
+        width: 100%;
+        margin: 23px 0px;
+      }
+    }
+  }
+
+  .newField {
+    margin: 10px 0px;
+  }
+
+  .cartButton {
+    width: 179px;
+    float: right;
+    @include mobileAndTablet {
+      width: 100%;
+    }
+  }
+}
+
+.bulkOrder {
+  padding: 20px 80px;
+  margin-top: 20px;
+  background-color: $hl-gray-shadow;
+  @include mobileAndTablet {
+    padding: 20px 24px;
+    margin-top: 60px;
+  }
+}

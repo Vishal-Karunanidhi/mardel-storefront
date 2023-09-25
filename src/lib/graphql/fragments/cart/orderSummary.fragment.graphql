@@ -1,0 +1,16 @@
+fragment OrderSummaryFragment on OrderSummary {
+  merchandisePrice
+  merchandiseDiscount
+  merchandiseSubTotal
+  standardShipping
+  shippingDiscount
+  additionalShipping
+  carrierSurCharge
+  shippingSubTotal
+  totalPrice
+  totalSaved
+  totalTax
+  giftCardProcessingFee
+  isGCCoversFullPayment
+  retailDeliveryFee
+}

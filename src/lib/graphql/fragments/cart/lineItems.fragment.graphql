@@ -1,0 +1,27 @@
+#import '@GqlFragments/pdp/productAttributes.fragment.graphql';
+
+fragment LineItemFragment on LineItem {
+  id
+  productId
+  productKey
+  name
+  productSlug
+  variant {
+    ...VariantFragment
+  }
+  originalPricePerQuantity
+  discountedPricePerQuantity
+  totalPrice
+  quantity
+  pdpUrl
+}
+
+fragment VariantFragment on LineItemVariant {
+  id
+  sku
+  key
+  imageSet
+  attributes {
+    ...VariantAttributesFragment
+  }
+}

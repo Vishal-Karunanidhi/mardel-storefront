@@ -1,0 +1,92 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.productImages {
+  margin: 20px auto;
+  width: 272px;
+  overflow-x: hidden;
+
+  @include productFavoriteModal;
+
+  picture img {
+    width: 100%;
+  }
+
+  &Heart {
+    text-align: end;
+
+    &:focus-visible {
+      outline: $hl-blue dashed 2px;
+      outline-offset: 2px;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  &Container {
+    width: 272px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &Thumbnails {
+      column-gap: 16px;
+      display: flex;
+      padding-top: 16px;
+      width: max-content;
+
+      &Image {
+        border-radius: 8px;
+        border: 1px solid transparent;
+        overflow: hidden;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .productImages {
+    width: 519px;
+
+    &Container {
+      width: 519px;
+    }
+  }
+}
+
+@include desktop {
+  .productImages {
+    width: 736px;
+
+    &Container {
+      width: 736px;
+
+      &Thumbnails {
+        column-gap: 32px;
+        padding-top: 32px;
+
+        &Image {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+:export {
+  hlBlue: $hl-blue;
+  hlBlack: $hl-black;
+  hlOrangeDark: $hl-orange-dark;
+}

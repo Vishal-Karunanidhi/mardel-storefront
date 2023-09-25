@@ -1,0 +1,38 @@
+fragment HolidayMessagesCardList on HolidayMessagesCardList {
+  title
+  cardList {
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+    }
+    holidayMessagesImage {
+      defaultHost
+      endpoint
+      id
+      name
+      url
+      _meta {
+        name
+        schema
+        deliveryId
+        deliveryKey
+      }
+    }
+    holidayMessagesPdf {
+      openInNewTab
+      url
+    }
+    occasion
+    title
+    year
+    altText
+  }
+  _meta {
+    deliveryId
+    deliveryKey
+    name
+    schema
+  }
+}

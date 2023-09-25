@@ -1,0 +1,39 @@
+@use '../../variables' as vars;
+
+.warning {
+  align-items: center;
+  color: vars.$hl-black;
+  display: grid;
+  gap: calc(vars.$font-size-p * 0.5);
+  grid-template-columns: [icon] auto [message] 1fr;
+  grid-template-rows: [warning] auto [disclaimer] auto;
+  line-height: 1;
+  padding: vars.$font-size-p vars.$font-size-p calc(vars.$font-size-p * 0.5) vars.$font-size-p;
+
+  &Icon {
+    grid-area: warning / icon;
+    margin: 0;
+    padding: 0;
+  }
+
+  &Text {
+    grid-area: warning / message;
+    font-size: vars.$font-size-cite;
+    margin: 0 auto 0 0;
+    padding: 0;
+  }
+
+  &Disclaimer {
+    grid-area: disclaimer / icon / disclaimer / span 2;
+    font-size: vars.$font-size-cite;
+    margin: 0 auto 0 0;
+    padding: 0;
+  }
+
+  label,
+  p {
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
+  }
+}

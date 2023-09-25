@@ -1,0 +1,17 @@
+
+
+query GetGiftCardBalance($request: GiftCardBalanceRequest) {
+  getGiftCardBalance(request: $request) {
+    cardBalance
+    transactions {
+      transactionId
+      date
+      action
+      amount
+    }
+    transactionResponse {
+      transactionStatus
+      transactionMessage
+    }
+  }
+}

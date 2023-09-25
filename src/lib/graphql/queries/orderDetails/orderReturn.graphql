@@ -1,0 +1,9 @@
+query OrderReturn($deliveryKey: String!) {
+  orderReturn(deliveryKey: $deliveryKey) {
+    pageDescriptionLink {
+      label
+      value
+    }
+    pageDescriptionText
+  }
+}

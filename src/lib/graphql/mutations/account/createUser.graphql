@@ -1,0 +1,10 @@
+mutation CreateUser($request: CreateUserRequest!) {
+  createUser(request: $request) {
+    message
+    status
+     invalidParameters {
+      message
+      parameter
+    }
+  }
+}

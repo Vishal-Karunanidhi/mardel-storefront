@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.ratings {
+  align-self: flex-start;
+  display: flex;
+  gap: 9px;
+
+  &Stars {
+    color: $hl-orange-dark;
+    stroke: $hl-orange-dark;
+    stroke-width: 0.5px;
+  }
+}

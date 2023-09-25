@@ -1,0 +1,7 @@
+#import '@GqlFragments/myAccount/customerPayments.fragment.graphql';
+
+mutation SetDefaultPayment($paymentId: String!) {
+  setDefaultPayment(paymentId: $paymentId) {
+    ...CustomerPaymentsFragment
+  }
+}

@@ -1,0 +1,18 @@
+fragment CustomerAddressFragment on CustomerAddress {
+  addressId
+  addressNickName
+  addressLineOne
+  addressLineTwo
+  city
+  country
+  firstName
+  lastName
+  state
+  zipCode
+  phone
+  addressVerified
+  defaultAddress
+  addressNickName
+  taxExemptedAddress
+  company
+}

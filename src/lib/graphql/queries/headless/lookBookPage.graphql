@@ -1,0 +1,23 @@
+#import '@GqlFragments/lookBook/heroSlotContent.fragment.graphql';
+#import '@GqlFragments/lookBook/twoTileComponent.fragment.graphql';
+#import '@GqlFragments/lookBook/promoCard.fragment.graphql';
+
+query LookBookPage($deliveryKey: String!) {
+  lookBookPage(deliveryKey: $deliveryKey) {
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+      hierarchy {
+        parentId
+        root
+      }
+    }
+    content {
+      ...HeroSlotContent
+      ...TwoTileComponent
+      ...PromoCard
+    }
+  }
+}

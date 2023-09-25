@@ -1,0 +1,7 @@
+#import '@GqlFragments/myAccount/customerPayments.fragment.graphql';
+
+query GetCustomerPaymentOption {
+  getPayments {
+    ...CustomerPaymentsFragment
+  }
+}

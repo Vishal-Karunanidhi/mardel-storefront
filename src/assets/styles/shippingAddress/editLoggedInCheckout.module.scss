@@ -1,0 +1,53 @@
+@import '../variables';
+@import '../globals';
+
+.shippingTitleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: $hl-black;
+
+  .shippingAddress {
+    @include hl-font-700;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+  }
+  .selectAddress {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.addressRadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+
+  .addressLabels {
+    display: flex;
+    flex-direction: column;
+    @include hl-font-300;
+    font-size: 12px;
+    line-height: 16px;
+    color: $hl-black;
+    .nickName {
+      @include hl-font-700;
+      text-transform: uppercase;
+    }
+  }
+  .addAddress {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: $hl-black;
+  }
+}
+.shippingForm {
+  label[class*='shippingAddress'] {
+    display: none;
+  }
+}

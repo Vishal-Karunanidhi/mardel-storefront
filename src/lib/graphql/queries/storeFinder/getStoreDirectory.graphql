@@ -1,0 +1,11 @@
+query GetStoreDirectory {
+  getStoreDirectory {
+    status
+    executionTime
+    directory {
+      stateAbbr
+      state
+      count
+    }
+  }
+}

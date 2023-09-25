@@ -1,0 +1,379 @@
+#import '@GqlFragments/pdp/ratings.fragment.graphql';
+#import '@GqlFragments/pdp/reviews.fragment.graphql';
+
+# The Query is reverted back to original structure,
+# since apollo client is not constructing the Query properly with the fragments.
+# TODO: Verify why Query returns {} while fragments were used to construct the Query?
+query GetProductPageDetails(
+  $key: String!
+  $isActiveVariants: Boolean
+  $isStaged: Boolean
+  $keysToFetch: [String] = []
+) {
+  getProductDetails(key: $key, isActiveVariants: $isActiveVariants, isStaged: $isStaged) {
+    name
+    productKey
+    productType
+    commercetoolsId
+    description
+    slug
+    variants(keysToFetch: $keysToFetch, keyToMatch: $key) {
+      id
+      sku
+      key
+      inStock
+      attributes {
+        approvalStatus
+        productOnlineDate
+        assorted
+        backInStockEligible
+        onlineStatus {
+          key
+          label
+        }
+        description
+        additionalShipping
+        ormd
+        excludeFreeShipping
+        yourPrice
+        availability {
+          key
+          label
+        }
+        brand {
+          key
+          label
+        }
+        collection {
+          key
+          label
+        }
+        color {
+          key
+          label
+        }
+        colorFamily {
+          key
+          label
+        }
+        dimensions {
+          key
+          label
+        }
+        downloadableMedias
+        excludedStates {
+          key
+          label
+        }
+        lettersNumbers {
+          key
+          label
+        }
+        material {
+          key
+          label
+        }
+        offlineDate
+        onlineDate
+        paperFinish {
+          key
+          label
+        }
+        paperType {
+          key
+          label
+        }
+        pattern {
+          key
+          label
+        }
+        productHazards {
+          key
+          label
+        }
+        productUnit {
+          key
+          label
+        }
+        productWarnings {
+          key
+          label
+        }
+        ribbonContent {
+          key
+          label
+        }
+        ribbonType {
+          key
+          label
+        }
+        ribbonWidth {
+          key
+          label
+        }
+        saleType {
+          key
+          label
+        }
+        seasonCode {
+          key
+          label
+        }
+        size {
+          key
+          label
+        }
+        theme {
+          key
+          label
+        }
+        vendorName
+        vendorSku
+        vinylFinish {
+          key
+          label
+        }
+        vinylType {
+          key
+          label
+        }
+        volume {
+          key
+          label
+        }
+        knobShape {
+          key
+          label
+        }
+        lampHeight {
+          key
+          label
+        }
+        letter {
+          key
+          label
+        }
+        mirrorType {
+          key
+          label
+        }
+        orientation {
+          key
+          label
+        }
+        room {
+          key
+          label
+        }
+        shape {
+          key
+          label
+        }
+        type {
+          key
+          label
+        }
+        buttonType {
+          key
+          label
+        }
+        colorNumber {
+          key
+          label
+        }
+        fiber {
+          key
+          label
+        }
+        bristle {
+          key
+          label
+        }
+        brushShape {
+          key
+          label
+        }
+        hardness {
+          key
+          label
+        }
+        length {
+          key
+          label
+        }
+        medium {
+          key
+          label
+        }
+        quantity {
+          key
+          label
+        }
+        tipSize {
+          key
+          label
+        }
+        candleHolderType {
+          key
+          label
+        }
+        candleType {
+          key
+          label
+        }
+        flameType {
+          key
+          label
+        }
+        scent {
+          key
+          label
+        }
+        partyType {
+          key
+          label
+        }
+        themeFamily {
+          key
+          label
+        }
+        age {
+          key
+          label
+        }
+        clayType {
+          key
+          label
+        }
+        paintFinish {
+          key
+          label
+        }
+        setDisclaimer {
+          key
+          label
+        }
+        woodFinish {
+          key
+          label
+        }
+        sportsTeam {
+          key
+          label
+        }
+        university {
+          key
+          label
+        }
+        width {
+          key
+          label
+        }
+        flowerType {
+          key
+          label
+        }
+        frameShape {
+          key
+          label
+        }
+        coin {
+          key
+          label
+        }
+        scale {
+          key
+          label
+        }
+        skillLevel {
+          key
+          label
+        }
+        guage {
+          key
+          label
+        }
+        metalColor {
+          key
+          label
+        }
+        articleNumber {
+          key
+          label
+        }
+        yarnWeight {
+          key
+          label
+        }
+        number {
+          key
+          label
+        }
+        christmasLights {
+          key
+          label
+        }
+        ornamentMaterial {
+          key
+          label
+        }
+        sizeGrouping {
+          key
+          label
+        }
+        subject {
+          key
+          label
+        }
+        treeHeight {
+          key
+          label
+        }
+        treeShape {
+          key
+          label
+        }
+      }
+      price {
+        variantPrice
+        marketPrice
+        discountedPrice {
+          discountedPrice
+          discountName
+          discountKey
+          discountId
+          isAlwaysOn
+        }
+      }
+      isMasterVariant
+      isMatchingVariant
+      url
+      imageSet
+      swatchUrl
+    }
+    variantPicker
+    breadcrumb {
+      ...BreadCrumbFragment
+      parentBreadCrumb {
+        ...BreadCrumbFragment
+        parentBreadCrumb {
+          ...BreadCrumbFragment
+        }
+      }
+    }
+    pdpUrl
+    reviews {
+      ...ReviewsFragment
+    }
+    rating {
+      ...RatingsFragment
+    }
+  }
+}
+
+fragment BreadCrumbFragment on BreadCrumb {
+  name
+  key
+  slug
+  url
+}

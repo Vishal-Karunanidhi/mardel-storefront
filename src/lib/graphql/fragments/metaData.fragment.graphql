@@ -1,0 +1,22 @@
+fragment MetaData on MetaData {
+  keywords
+  title
+  description
+  ogImage {
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+      hierarchy {
+        parentId
+        root
+      }
+    }
+    defaultHost
+    endpoint
+    id
+    name
+    url
+  }
+}

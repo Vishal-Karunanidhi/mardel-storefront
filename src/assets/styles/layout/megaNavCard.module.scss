@@ -1,0 +1,879 @@
+@use '../variables' as vars;
+@use '../breakpoints' as brPoint;
+@use '../globals' as glob;
+
+.visuallyHidden {
+  display: none;
+}
+
+.megaNavCard {
+  background: transparent;
+  border-radius: none;
+  box-shadow: inset 0px 6px 6px -5px rgb(0 0 0 / 25%);
+  max-width: 900px;
+
+  @media only screen and(min-width: brPoint.$hl-lg) {
+    border-radius: 0px;
+    min-height: 484px;
+    width: 1043px;
+
+    .categoriesGrid {
+      display: block;
+    }
+
+    .menuItemGrid {
+      background: vars.$hl-blue;
+      display: block;
+      max-width: 217px;
+    }
+
+    .containerGrid {
+      min-height: 484px;
+    }
+  }
+
+  @media only screen and (max-width: brPoint.$hl-break-lg) {
+    margin-top: 0px;
+    box-shadow: none;
+
+    .categoriesGrid {
+      display: none;
+    }
+
+    .menuItemGrid {
+      display: none;
+    }
+  }
+
+  .navMainBlock {
+    display: grid;
+    grid-template-columns: auto 120px;
+    margin-bottom: 20px;
+    margin-right: 23px;
+    margin-top: 15px;
+
+    .blockTitle {
+      @include vars.hl-font-700;
+      align-items: center;
+      color: vars.$hl-black;
+      font-size: 16px;
+      height: 24px;
+      line-height: 24px;
+      margin-left: 20px;
+    }
+
+    [class^='common_submitWrapper'] {
+      margin-top: 1px;
+
+      button {
+        height: 28px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .diyImage {
+    column-gap: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 35px;
+    column-gap: 30px;
+    row-gap: 24px;
+    margin-bottom: 20px;
+
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+      column-gap: 30px;
+      row-gap: 5px;
+      margin-left: 24px;
+    }
+
+    .cardLinkLabel {
+      @include vars.hl-font-500;
+      color: vars.$hl-black;
+      display: inline-block;
+      font-size: 12px;
+      height: auto;
+      line-height: 16px;
+      margin-top: 12px;
+      text-align: center;
+      vertical-align: top;
+      width: 75px;
+
+      @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        margin-bottom: 12px;
+        width: 77px;
+
+        a {
+          -webkit-tap-highlight-color: transparent;
+        }
+      }
+
+      a {
+        -webkit-tap-highlight-color: transparent;
+
+        &:focus-visible {
+          outline: 0px dashed vars.$hl-blue;
+          outline-offset: 5px;
+          width: auto;
+        }
+
+        &:hover {
+          @include vars.hl-font-700;
+        }
+      }
+    }
+
+    .cardSpan {
+      width: 106px;
+      height: auto;
+
+      .cardFocus {
+        text-align: center;
+        width: 76px;
+        display: block;
+      }
+
+      @media only screen and(min-width: brPoint.$hl-lg) {
+        .anchorCardFocus {
+          outline: none;
+        }
+
+        &:focus-within {
+          .cardFocus {
+            filter: drop-shadow(0px 2.62px 7.24px rgba(0, 0, 0, 0.15));
+            height: auto;
+            outline-offset: 5px;
+            outline: 2px dashed vars.$hl-blue;
+
+            a {
+              -webkit-tap-highlight-color: transparent;
+              @include vars.hl-font-700;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        filter: drop-shadow(0px 2.62px 7.24px rgba(0, 0, 0, 0.15));
+
+        a {
+          @include vars.hl-font-700;
+        }
+      }
+
+      @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        height: auto;
+        width: 74px;
+      }
+
+      .imageCard {
+        @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+          height: 45px;
+          margin-left: 15px;
+          width: 45px;
+        }
+
+        @media only screen and (max-width: brPoint.$hl-break-lg) {
+          cursor: auto;
+        }
+
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        box-shadow: none;
+        box-shadow: none;
+        cursor: pointer;
+        height: 76px;
+        overflow: hidden;
+        width: 76px;
+
+        &:hover {
+          filter: drop-shadow(0px 2.62px 7.24px rgba(0, 0, 0, 0.15));
+        }
+      }
+
+      .cardStyles {
+        @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+          height: 45px;
+          width: 45px;
+        }
+
+        border-radius: 10px;
+        height: 76px;
+        width: 76px;
+      }
+    }
+  }
+
+  .cardList {
+    column-gap: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 13px;
+    margin-left: 10px;
+
+    @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+      margin-bottom: 10px;
+      margin-left: 25px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+      margin-left: 24px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-lg) {
+      width: 410px;
+    }
+
+    .cardLinkLabel {
+      @include vars.hl-font-500;
+      color: vars.$hl-black;
+      display: inline-block;
+      font-size: 12px;
+      height: auto;
+      line-height: 16px;
+      margin-top: 12px;
+      text-align: center;
+      vertical-align: top;
+      width: 75px;
+
+      a {
+        -webkit-tap-highlight-color: transparent;
+
+        &:focus-visible {
+          outline: 0px dashed vars.$hl-blue;
+          outline-offset: 5px;
+          width: auto;
+        }
+
+        &:hover {
+          @include vars.hl-font-700;
+        }
+      }
+    }
+
+    .cardSpan {
+      align-items: normal;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 13px;
+      margin-top: 8px;
+
+      @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        margin-bottom: 0px;
+      }
+
+      .cardFocus {
+        text-align: center;
+        width: 76px;
+      }
+
+      @media only screen and(min-width: brPoint.$hl-lg) {
+        .anchorCardFocus {
+          outline: none;
+        }
+
+        &:focus-within {
+          .cardFocus {
+            filter: drop-shadow(0px 2.62px 7.24px rgba(0, 0, 0, 0.15));
+            max-height: auto;
+            min-height: 20px;
+            outline-offset: 5px;
+            outline: 2px dashed vars.$hl-blue;
+
+            a {
+              -webkit-tap-highlight-color: transparent;
+              @include vars.hl-font-700;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        filter: drop-shadow(0px 2.62px 7.24px rgba(0, 0, 0, 0.15));
+
+        a {
+          @include vars.hl-font-700;
+        }
+      }
+
+      @media only screen and(min-width: brPoint.$hl-lg) {
+        width: 106px;
+        height: auto;
+        align-items: center;
+      }
+
+      @media only screen and (max-width: brPoint.$hl-break-lg) {
+        align-items: center;
+        height: 97px;
+        width: 77px;
+      }
+
+      .imageCard {
+        border-radius: 10px;
+        -webkit-tap-highlight-color: transparent;
+
+        @media only screen and (min-width: brPoint.$hl-lg) {
+          height: 76px;
+          width: 76px;
+        }
+
+        @media only screen and (max-width: brPoint.$hl-break-lg) {
+          cursor: auto;
+          height: 45px;
+          margin-left: 15px;
+          width: 45px;
+        }
+
+        background-position: center;
+        background-size: cover;
+        box-shadow: none;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+          background: vars.$hl-white;
+          border-radius: 10px;
+          box-shadow: 0px 2.6155px 7.24134px rgba(0, 0, 0, 0.15);
+          transform: scale(1.005);
+          transition: 500ms;
+        }
+
+        .cardStyles {
+          border-radius: 10px;
+
+          @media only screen and (min-width: brPoint.$hl-lg) {
+            margin-bottom: 8px;
+            margin-left: 8px;
+            margin-right: 8px;
+            margin-top: 8px;
+          }
+
+          @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 2px;
+          }
+
+          @media only screen and (max-width: brPoint.$hl-break-lg) {
+            border-radius: 0;
+            height: 35px !important;
+            width: 35px !important;
+          }
+
+          @media only screen and (min-width: brPoint.$hl-lg) {
+            border-radius: 0;
+            height: 60px !important;
+            width: 60px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainMenu {
+  padding-bottom: 0px;
+  padding-top: 0px;
+
+  @media only screen and (min-width: brPoint.$hl-lg) {
+    background-color: vars.$hl-blue;
+    height: 44px;
+    width: 217px;
+  }
+
+  &:hover {
+    background-color: vars.$hl-white;
+  }
+
+  .menuItemList {
+    align-items: flex-start;
+    border-top: 1.46988px solid vars.$hl-gray-shadow;
+    box-shadow: inset 0px 6px 6px -5px rgb(0 0 0 / 25%);
+    color: vars.$hl-white;
+    height: 44px;
+
+    &:focus-visible {
+      background: vars.$hl-white;
+      color: vars.$hl-black;
+      outline-offset: -8px;
+      outline: 2px dashed vars.$hl-blue;
+      text-decoration-line: underline;
+    }
+
+    &:hover {
+      color: vars.$hl-black;
+    }
+
+    .menuLink {
+      span {
+        @include vars.hl-font-700;
+        align-items: center;
+        display: flex;
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 6px;
+      }
+    }
+  }
+}
+
+.megaNavWeeklyButton {
+  &Content {
+    &Info {
+      align-items: center;
+      background: vars.$hl-white;
+      color: vars.$hl-black;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      min-width: 119px;
+
+      &Outline {
+        &Link {
+          @include vars.hl-font-700;
+          align-items: center;
+          background: vars.$hl-blue-dark;
+          border-radius: 15px;
+          border: none;
+          color: vars.$hl-white;
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          font-size: 14px;
+          gap: 7px;
+          justify-content: center;
+          line-height: 20px;
+          min-width: 119px;
+          padding: 10px 25px;
+
+          &:hover {
+            background: vars.$hl-blue-light;
+          }
+
+          &:focus {
+            background: vars.$hl-blue-light;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.megaNavWeeklyButtonContentInfo {
+  background-color: unset;
+  z-index: 1;
+
+  &OutlineLink {
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 15px;
+    float: right;
+    font-size: 14px;
+    height: 28px;
+    line-height: 20px;
+    min-width: 119px;
+    white-space: nowrap;
+  }
+}
+
+:export {
+  hlBlueDark: vars.$hl-blue-dark;
+  hlBlueLight: vars.$hl-blue-light;
+}
+
+.buttonSmall {
+  @include glob.button;
+}
+
+.label {
+  .removeOutline {
+    outline: unset;
+  }
+}
+
+.megaNavCategories {
+  @include glob.mobile {
+    display: none;
+    visibility: hidden;
+  }
+
+  @include glob.tablet {
+    display: block;
+    width: 100%;
+  }
+
+  @include glob.desktop {
+    align-content: flex-start;
+    background: vars.$color-secondary;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    @include vars.hl-font-300;
+    isolation: isolate;
+    list-style: none;
+    margin: 0;
+    max-width: 215px;
+    min-height: 500px;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+.megaNavCategories input {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+
+  @include glob.tablet {
+    display: none;
+  }
+}
+
+.megaNavCategories label {
+  margin: 0;
+  padding: 0;
+
+  @include glob.tablet {
+    background-color: unset !important;
+    background-image: unset !important;
+    width: 100%;
+
+    &>span {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+.megaNavCategories>label,
+.megaNavCategories>li {
+  cursor: pointer;
+  font-size: calc(vars.$font-size-p / 1.25);
+  @include vars.hl-font-500;
+  margin: 0;
+  padding: calc(vars.$font-size-p / 3) vars.$font-size-p;
+}
+
+.megaNavCategories>label:first-child,
+.megaNavCategories>li:first-child {
+  background-color: vars.$color-secondary-dark;
+  background-image: linear-gradient(to bottom, vars.$color-secondary-dark, vars.$color-secondary .25rem);
+}
+
+.megaNavCategories>label:not(:first-child),
+.megaNavCategories>li:not(:first-child) {
+  border-top: 1px solid white;
+
+  @include glob.tablet {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@supports (selector(has)) {
+  .megaNavCategories label:focus-within:has(input[type="radio"]) {
+    outline: vars.$outline-size dashed vars.$color-outline;
+    outline-offset: calc(vars.$outline-offset * -2);
+  }
+
+  .megaNavCategories label:focus-within:has(input[type="radio"]):has(.megaNavCategoryContent:focus-within) {
+    outline-color: transparent;
+  }
+
+  .megaNavCategories label:has(input[type="radio"]:checked) {
+    background-color: white;
+    background-image: linear-gradient(to bottom, vars.$color-gray-4, vars.$color-gray-8 .5rem);
+    color: black;
+  }
+}
+
+.megaNavCategories>label:hover,
+.megaNavCategories>label:focus-within,
+.megaNavCategories>li:hover {
+  background-color: white;
+  background-image: linear-gradient(to bottom, vars.$color-gray-4, vars.$color-gray-8 .5rem);
+  color: black;
+}
+
+.megaNavCategories label:focus-within .megaNavCategoryContent,
+.megaNavCategories>li:focus-within .megaNavCategoryContent,
+.megaNavCategories>li:hover .megaNavCategoryContent {
+  display: block;
+}
+
+.megaNavCategories input[type="radio"]:checked + .megaNavCategoryContent {
+  display: block;
+}
+
+@supports (selector(has)) {
+  .megaNavCategories label:has(input[type="radio"]:checked) .megaNavCategoryContent {
+    display: block;
+  }
+}
+
+.megaNavCategoryContent {
+  cursor: initial;
+  color: vars.$color-body;
+  display: none;
+  isolation: isolate;
+  list-style: none;
+  margin: 0;
+  padding: 0 vars.$font-size-p;
+  position: absolute;
+  left: 215px;
+  top: 0;
+  width: 685px;
+
+  @include glob.tablet {
+    display: block;
+    left: 0;
+    margin: -1rem 0 0 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  @include glob.desktop {
+    padding: vars.$font-size-p vars.$font-size-h4;
+  }
+}
+
+.megaNavCategoryContent ul {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  @include glob.tablet {
+    gap: 1rem 1.5rem;
+  }
+
+  @include glob.desktop {
+    margin: 1rem 0 0 0;
+  }
+}
+
+.megaNavCategoryContent li {
+  cursor: pointer;
+  @include vars.hl-font-500;
+  line-height: vars.$line-height;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 80px;
+
+  @include glob.mobileAndTablet {
+    height: auto;
+    min-height: 80px;
+    width: 80px;
+  }
+
+  @include glob.desktop {
+    height: auto;
+    min-height: 110px;
+    width: 80px;
+  }
+
+  &:focus-within a:focus {
+    outline: vars.$outline-size dashed vars.$color-outline;
+  }
+}
+
+.megaNavCategoryContent li a {
+  display: block;
+  font-size: calc(vars.$font-size-p / 1.33);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.megaNavCategoryContent li span.image {
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border-radius: vars.$border-radius;
+  display: inline-flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  @include glob.mobileAndTablet {
+    height: 43px;
+    padding: 4px;
+    width: 43px;
+  }
+
+  @include glob.desktop {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+.megaNavCategoryContent li:hover span.image {
+  box-shadow: vars.$box-shadow-1;
+}
+
+.megaNavCategoryContent li span.image img {
+  background: vars.$color-gray-4;
+  border-radius: vars.$border-radius;
+  border-color: transparent;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.megaNavCategoryContent li:hover span.image img {
+  background: vars.$color-gray-3;
+}
+
+.megaNavCategoryContent li span.description {
+  @include vars.hl-font-300;
+  display: block;
+  margin-top: 0.75rem;
+}
+
+.megaNavCategoryContent li:hover span.description {
+  @include vars.hl-font-500;
+}
+
+.megaNavCategoryToolbar {
+  display: none;
+  visibility: hidden;
+
+  @include glob.desktop {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+.megaNavCategoryToolbar h2 {
+  align-self: flex-start;
+  font-size: vars.$font-size-p;
+  @include vars.hl-font-700;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.megaNavCategoryToolbar .megaNavExploreDiv {
+  align-self: flex-end;
+  margin: 0;
+}
+
+.megaNavCategoryToolbar .megaNavExplore {
+  @include glob.button;
+}
+
+.megaNavCategories {
+  &.leftHidden {
+    background-color: transparent;
+
+    .megaNavCategoryContent {
+      display: block;
+      left: 0;
+    }
+  }
+}
+
+.card {
+  background-color: white;
+  background-image: linear-gradient(to bottom, vars.$box-shadow-standard, white 0.25rem);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  cursor: initial;
+  display: none;
+  left: 0;
+  margin: 0;
+  max-width: 900px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: calc(vars.$font-size-p * 5.5);
+  transition: background 1s;
+  width: 100%;
+
+  &.leftHidden {
+    left: 215px;
+    max-width: 685px;
+  }
+}
+
+ul[class*="megaNav"]>li:not([class*="weeklyAd"]):focus-within .card {
+  animation: opacity 0.1s ease-in;
+  display: block;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include glob.desktop {
+  .megaNavCategories {
+    &.leftHidden {
+      background-color: transparent;
+
+      .megaNavCategoryContent {
+        display: block;
+        left: 0;
+      }
+    }
+  }
+
+  .card {
+    background-color: white;
+    background-image: linear-gradient(to bottom, vars.$box-shadow-standard, white 0.25rem);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    cursor: initial;
+    display: none;
+    left: 0;
+    margin: 0;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: calc(vars.$font-size-p * 5.5);
+    transition: background 1s;
+    width: 100%;
+
+    &.leftHidden {
+      left: 215px;
+      max-width: 685px;
+    }
+  }
+
+  ul[class*="megaNav"]>li:not([class*="weeklyAd"]):focus-within .card {
+    animation: opacity 0.1s ease-in;
+    display: block;
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

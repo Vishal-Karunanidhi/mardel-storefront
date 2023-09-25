@@ -1,0 +1,439 @@
+@import '../variables';
+@import '../breakpoints';
+@import '../globals';
+
+.header {
+  @include hl-font-700;
+  font-size: 32px;
+  line-height: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  @include mobileAndTablet {
+    margin: 5rem 0 0 0;
+  }
+
+  @include desktop {
+    margin: 0;
+  }
+}
+
+.dropDown {
+  &Select {
+    padding: 0px;
+    height: 45px;
+  }
+}
+.guestlists {
+  padding: 35px 80px;
+  width: 100%;
+
+  @include mobile {
+    padding: 0px 24px;
+
+    h3[class*='header'] {
+      margin: 0px;
+      font-size: 24px;
+      line-height: 32px;
+      margin-top: 40px;
+    }
+
+    div[class*='listsContainer'] {
+      width: 100%;
+      div[class*='listComponentContainer'] {
+        max-width: 100%;
+        width: 100%;
+
+        div[class*='listComponent'] {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @include tablet {
+    div[class*='listsContainer'] {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.guestList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  margin-top: 35px;
+  border: 1px solid $hl-gray;
+  border-radius: 10px;
+  margin-bottom: 80px;
+  height: 72px;
+
+  @include mobile {
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0px;
+    border-radius: 0px;
+  }
+
+  span {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+    @include mobile {
+      position: absolute;
+      padding: 24px;
+      height: 110px;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #bfbfbf;
+
+      box-shadow: 0px 2.6155px 7.24134px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.guestlists,
+.lists {
+  width: 100%;
+  &Container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    @include tablet {
+      margin-bottom: 70px;
+    }
+    @include mobile {
+      align-content: center;
+      flex-direction: column;
+      margin-bottom: 70px;
+    }
+    margin: 2rem 0 0 0;
+  }
+}
+
+.listComponent {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 302px;
+  height: 302px;
+  border-radius: 5px;
+  border: 1px solid $hl-gray-shadow;
+  background-color: $hl-gray-shadow;
+  &Container {
+    align-self: flex-end;
+    max-width: 302px;
+  }
+  &Header {
+    position: relative;
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    align-items: center;
+    @include hl-font-700;
+    justify-content: space-between;
+    &Items {
+      @include hl-font-300;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+    }
+    &Container {
+      max-width: 270px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &Icon {
+      &Popover {
+        padding: 16px 24px;
+        border-radius: 10px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        &Share {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        &Print {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  &Empty {
+    &Message {
+      margin: 0px 32px 0px 32px;
+      text-align: center;
+      align-self: center;
+    }
+  }
+  &Product {
+    &Image {
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  &Container {
+    overflow: hidden;
+    border-radius: 5px;
+    width: 50%;
+    height: 50%;
+    border: solid 1px $hl-gray-shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &SeeAll {
+      text-align: center;
+      &Number {
+        font-size: 16px;
+        line-height: 24px;
+        @include hl-font-300;
+      }
+      &Text {
+        font-size: 16px;
+        line-height: 24px;
+        @include hl-font-300;
+        color: $hl-blue;
+        &:hover {
+          cursor: pointer;
+          color: $hl-black;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.seeAllContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.createNewList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 302px;
+  height: 302px;
+  border-radius: 5px;
+  background-color: $hl-gray-shadow;
+  align-self: flex-end;
+  @include mobile {
+    height: 56px;
+  }
+  &Cta {
+    display: flex;
+    &Icon {
+    }
+    &Text {
+      margin-left: 16px;
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+      text-decoration: underline;
+    }
+    &:hover {
+      color: $hl-blue-light;
+      text-decoration: none;
+      cursor: pointer;
+      .createNewListCtaText {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.newList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 302px;
+  height: 302px;
+  border-radius: 5px;
+  background-color: $hl-gray-shadow;
+  &Empty {
+    margin: 0px 32px 0px 32px;
+    text-align: center;
+    align-self: center;
+  }
+  &Input {
+    width: 100%;
+    margin-bottom: 16px;
+    border: none;
+    border-bottom: 1px solid $hl-gray;
+    font-size: 18px;
+    @include hl-font-300;
+    line-height: 24px;
+    &:focus {
+      border-bottom: 1px solid $hl-gray;
+      outline: none;
+    }
+  }
+  &Container {
+    align-self: flex-end;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $hl-gray-line;
+  }
+}
+
+.spinner {
+  color: $hl-blue;
+  &Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 302px;
+    height: 302px;
+    border-radius: 5px;
+    background-color: $hl-gray-shadow;
+  }
+}
+
+.deleteModal {
+  width: 410px;
+  padding: 0px;
+  &Top {
+    background-color: $hl-blue;
+    display: flex;
+    height: 32px;
+    align-items: center;
+    justify-content: flex-end;
+    &Close {
+      margin-right: 10px;
+      color: $hl-white;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &Content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    &Header {
+      margin: 0px;
+      font-size: 24px;
+      @include hl-font-700;
+      line-height: 32px;
+    }
+    &Text {
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 16px;
+      margin-bottom: 0px;
+    }
+    &Delete {
+      @include hl-font-700;
+      font-size: 16px;
+      height: 48px;
+      width: 100%;
+      border-radius: 25px;
+      background-color: $hl-blue-dark;
+      border: none;
+      color: $hl-white;
+      margin-top: 16px;
+      &:hover {
+        cursor: pointer;
+        background-color: $hl-blue-light;
+      }
+    }
+    &Cancel {
+      @include hl-font-700;
+      font-size: 16px;
+      width: 100%;
+      height: 48px;
+      border-radius: 25px;
+      background-color: $hl-white;
+      border: 1px solid $hl-black;
+      color: $hl-black;
+      margin-top: 16px;
+      &:hover {
+        cursor: pointer;
+        background-color: $hl-blue-light;
+        border: none;
+        color: $hl-white;
+      }
+    }
+  }
+}
+
+.shareModal {
+  width: 410px;
+  padding: 0px;
+  @include mobile {
+    width: 100%;
+  }
+  &IconContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  &Icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    &:hover {
+      cursor: pointer;
+    }
+    >img {
+      width: 100%;
+    }
+  }
+  &Header {
+    @include hl-font-700;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0px;
+  }
+  &Input {
+    margin-top: 16px;
+    width: 100%;
+  }
+  &Button {
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: $hl-blue-dark;
+    color: $hl-white;
+    margin-top: 16px;
+    &:hover {
+      background-color: $hl-blue-light;
+      cursor: pointer;
+    }
+  }
+}

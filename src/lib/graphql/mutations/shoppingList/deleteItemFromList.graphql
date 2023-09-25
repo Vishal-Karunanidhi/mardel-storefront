@@ -1,0 +1,5 @@
+mutation DeleteItemToExistingShoppingList($itemId: String!, $listId: String) {
+  deleteItemFromList(itemId: $itemId, listId: $listId) {
+    status
+  }
+}

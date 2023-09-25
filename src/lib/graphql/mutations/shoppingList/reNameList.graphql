@@ -1,0 +1,22 @@
+#import '@GqlFragments/pdp/variants.fragment.graphql';
+
+mutation RenameList($listId: String!, $listName: String!) {
+  renameList(listId: $listId, listName: $listName) {
+    customerId
+    itemCount
+    listId
+    listName
+    items {
+      ...ItemFragment
+    }
+  }
+}
+
+fragment ItemFragment on Item {
+  id
+  productKey
+  skuId
+  product {
+    ...VariantFragment
+  }
+}

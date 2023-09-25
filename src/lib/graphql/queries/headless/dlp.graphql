@@ -1,0 +1,163 @@
+query GetDepartmentData($deliveryKey: String!) {
+  getDepartmentData(deliveryKey: $deliveryKey) {
+    metaData {
+      keywords
+      title
+      description
+    }
+    categories {
+      content {
+        priority
+        title
+        imageAltText
+        description
+        thumbnail {
+          id
+          name
+          endpoint
+          defaultHost
+        }
+        _meta {
+          deliveryKey
+        }
+      }
+    }
+    page {
+      breadCrumbs {
+        name
+        key
+        slug
+      }
+      carousel {
+        topCategories {
+          priority
+          title
+          subCats {
+            priority
+            title
+            description
+            imageAltText
+            thumbnail {
+              id
+              name
+              endpoint
+              defaultHost
+              _meta {
+                deliveryKey
+              }
+            }
+            _meta {
+              deliveryKey
+            }
+          }
+          thumbnail {
+            id
+            name
+            endpoint
+            defaultHost
+          }
+          _meta {
+            deliveryKey
+          }
+        }
+        shopSale {
+          priority
+          title
+          subCats {
+            priority
+            title
+            description
+            imageAltText
+            thumbnail {
+              id
+              name
+              endpoint
+              defaultHost
+            }
+            _meta {
+              deliveryKey
+            }
+          }
+          thumbnail {
+            id
+            name
+            endpoint
+            defaultHost
+          }
+          _meta {
+            deliveryKey
+          }
+        }
+      }
+      promos {
+        secondary {
+          _meta {
+            deliveryKey
+          }
+          Promos {
+            link
+            media {
+              image {
+                _meta {
+                  deliveryKey
+                }
+                defaultHost
+                endpoint
+                id
+                name
+                url
+              }
+              imageAltText
+              _meta {
+                schema
+              }
+            }
+            _meta {
+              deliveryKey
+            }
+            discountLabel
+            description
+          }
+          Title
+        }
+        primary {
+          link
+          _meta {
+            deliveryKey
+          }
+          description
+          discountLabel
+          media {
+            image {
+              defaultHost
+              endpoint
+              id
+              name
+              url
+            }
+            imageAltText
+          }
+        }
+      }
+      labels {
+        sideNav
+        categoryCarousel
+        shopSaleCarousel
+        topCategoriesCarousel
+      }
+      seoContent {
+        title
+        description
+      }
+      _meta {
+        deliveryKey
+      }
+      breadCrumbs {
+        name
+        key
+        slug
+      }
+      title
+    }
+  }
+}

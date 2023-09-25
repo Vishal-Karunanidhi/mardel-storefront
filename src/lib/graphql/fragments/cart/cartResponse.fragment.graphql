@@ -1,0 +1,70 @@
+#import '@GqlFragments/cart/orderSummary.fragment.graphql';
+#import '@GqlFragments/cart/lineItems.fragment.graphql';
+#import '@GqlFragments/cart/cartAddress.fragment.graphql';
+#import '@GqlFragments/cart/giftMessage.fragment.graphql';
+#import '@GqlFragments/cart/paymentDetails.fragment.graphql';
+
+fragment CartResponseFragment on CartResponse {
+    id
+    cartNumber
+    cartState
+    orderNumber
+    orderDate
+    customerId
+    customerEmail
+    anonymousId
+    lineItemCount
+    billingSameAsShipping
+    displayGiftCardPayment
+    lineItems {
+      ...LineItemFragment
+    }
+    totalLineItemQuantity
+    inventoryMessages
+    ...GiftMessageFragment
+    orderSummary {
+      ...OrderSummaryFragment
+    }
+    cartSubTotalForFreeShippingEligibleItems
+    shippingAddress {
+      ...CartAddressFragment
+    }
+    billingAddress {
+      ...CartAddressFragment
+    }
+    paymentDetails {
+      ...PaymentDetailsFragment
+      paymentClassification {
+        applePay {
+          paymentId
+          paymentMethod
+          amount
+        }
+        paypal {
+          paymentId
+          paymentMethod
+          amount
+        }
+        giftCard {
+          paymentMethod
+          paymentId
+          cardNumber
+          amount
+          last4digits
+        }
+        creditCard {
+          owner
+          cardType
+          paymentId
+          expirationYear
+          expirationMonth
+          last4Digits
+          maskedNumber
+          paymentToken
+          paymentMethod
+          cardHolderName
+          amount
+        }
+      }
+    }
+}

@@ -1,0 +1,30 @@
+#import '@GqlFragments/pdp/variants.fragment.graphql';
+
+query GetMyAllShoppingLists($pageNumber: Int, $itemsPerPage: Int) {
+  getMyAllShoppingLists(pageNumber: $pageNumber, itemsPerPage: $itemsPerPage) {
+    totalPages
+    shoppingListCount
+    shoppingList {
+      ...ListResponseFragment
+    }
+  }
+}
+
+fragment ListResponseFragment on ListResponse {
+  listId
+  listName
+  itemCount
+  customerId
+  items {
+    ...ItemFragment
+  }
+}
+
+fragment ItemFragment on Item {
+  id
+  productKey
+  skuId
+  product {
+    ...VariantFragment
+  }
+}

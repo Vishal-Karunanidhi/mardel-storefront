@@ -1,0 +1,310 @@
+@import '../variables';
+@import '../globals';
+
+%focus-visible-property {
+  &:focus-visible {
+    text-decoration: transparent;
+    outline: 2px dashed $hl-blue;
+    outline-offset: 5px;
+    color: $hl-blue;
+  }
+}
+
+.productTileBadgeWrapper {
+  border-radius: 0px !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+.productTileBadgeWrapper,
+.productTileMainWrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $hl-input-border-grey;
+  border-radius: 20px;
+  padding: 16px;
+  width: 100%;
+
+  .productTileAllCompWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include tabletAndDesktop {
+      span[class*='wishListMoveFavContent'] {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+      span[class*='wishListMoveFavContent'] {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        gap: 10px;
+        button {
+          padding: 0px;
+        }
+      }
+    }
+
+    .productTileImageAndContent {
+      display: flex;
+      flex-direction: row;
+      gap: 23px;
+
+      .productTileContent {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .productPrice,
+        .productName {
+          @include hl-font-700;
+          font-size: 12px;
+          line-height: 16px;
+          color: $hl-black;
+        }
+
+        .productPrice {
+          .strikeAmount {
+            text-decoration: line-through;
+          }
+          .discountAmount {
+            color: $hl-orange-dark;
+          }
+        }
+
+        .productTileAttribute {
+          flex-wrap: nowrap;
+          font-size: 10px;
+          line-height: 14px;
+          color: $hl-black;
+
+          @include desktop {
+            span + span {
+              margin-left: 5px;
+            }
+          }
+          @include mobileAndTablet {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    .wishListMoveFavCartContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include mobile {
+        div[class*='wishListActionButton'] {
+          justify-content: flex-start;
+          margin-top: 16px;
+        }
+        span[class*='wishListMoveFavContent'] {
+          button {
+            svg {
+              position: relative;
+              bottom: 100px;
+            }
+          }
+        }
+      }
+
+      .favButton {
+        display: contents;
+        .productImagesHeart {
+          color: $hl-black;
+          font-size: 20px;
+        }
+      }
+      .wishListMoveFavContent {
+        display: flex;
+        gap: 26px;
+        justify-content: flex-end;
+      }
+    }
+  }
+  .productTileNoticesWarnings {
+    font-size: 10px;
+    line-height: 14px;
+    color: $hl-black;
+  }
+}
+.productWrapper {
+  .badgeCartItems {
+    border: 1px solid transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 27px;
+    width: 100%;
+    transform: translate(0%, 65%);
+    background: $hl-red;
+    margin-top: -18px;
+
+    .badgeTitle {
+      @include hl-font-700;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      align-items: flex-end;
+      text-transform: uppercase;
+      color: $hl-white;
+      margin-left: 24px;
+      margin-top: 5px;
+    }
+  }
+}
+.wishListActionButton,
+.cartActionButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 16px;
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+
+    .decrement {
+      width: 30px;
+      border: 1px solid $hl-dark-gray;
+      border-color: $hl-dark-gray;
+      background-color: $hl-white;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .increment {
+      width: 30px;
+      border: 1px solid $hl-dark-gray;
+      border-color: $hl-dark-gray;
+      background-color: $hl-white;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .itemQuantity {
+      width: 50px;
+      text-align: center;
+      border: 1px solid $hl-dark-gray;
+      margin-left: -1px;
+      margin-right: -1px;
+      border-color: $hl-dark-gray;
+
+      &:focus-visible {
+        outline: 0px dashed transparent;
+        outline-offset: 0px;
+      }
+    }
+  }
+
+  .deleteButtonSpan {
+    -webkit-tap-highlight-color: transparent;
+    display: contents;
+
+    button[disabled] {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .deleteButton {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $hl-blue;
+        text-decoration: transparent;
+      }
+
+      &:focus-visible {
+        text-decoration: transparent;
+        outline: 2px dashed $hl-blue;
+        outline-offset: 0px;
+        color: $hl-blue;
+      }
+    }
+  }
+}
+
+.wishListActionButton {
+  gap: 24px;
+  margin-top: 0px;
+  div[class*='submitWrapper'] {
+    margin-top: 0px;
+    width: max-content;
+
+    button[class*='submitButton'] {
+      height: 28px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.favButtonDiv {
+  .favouriteButton {
+    display: flex;
+    float: right;
+
+    @extend %focus-visible-property;
+
+    &:focus-visible {
+      outline-offset: -7px;
+      border-radius: 0px;
+    }
+
+    .productImagesHeart {
+      color: $hl-black;
+      font-size: 20px;
+    }
+  }
+
+  .favoriteBadgeButton {
+    display: flex;
+    float: right;
+    @extend %focus-visible-property;
+
+    &:focus-visible {
+      outline-offset: -7px;
+      border-radius: 0px;
+    }
+
+    .productImagesHeart {
+      color: $hl-black;
+      font-size: 20px;
+    }
+  }
+}
+
+.promoBadgeNew {
+  background: $hl-blue;
+  margin-top: -18px;
+}
+
+@media print {
+  .productTileAllCompWrapper {
+    div[class*='wishListActionButton'] {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}
+
+:export {
+  hlBlueDark: $hl-blue-dark;
+  hlBlueLight: $hl-blue-light;
+  hlWhite: $hl-white;
+  hlBlue: $hl-blue;
+  hlBlack: $hl-black;
+  hlOrangeDark: $hl-orange-dark;
+  hlError: $hl-error;
+}

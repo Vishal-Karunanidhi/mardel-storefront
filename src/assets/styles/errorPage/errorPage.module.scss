@@ -1,0 +1,65 @@
+@import '../variables';
+@import '../globals';
+
+.errorPageContainer {
+  margin: 80px 70px;
+  display: flex;
+  gap: 80px;
+
+  @include mobileAndTablet {
+    margin: 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .imageContainer {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include mobileAndTablet {
+      width: 100%;
+    }
+
+    .image {
+      height: 353px;
+      @include mobileAndTablet {
+        height: 153px;
+      }
+    }
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    @include mobileAndTablet {
+      text-align: center;
+    }
+
+    .headline {
+      @include hl-font-700;
+      font-size: 40px;
+      line-height: 50px;
+
+      @include mobileAndTablet {
+      font-size: 24px;
+      line-height: 32px;
+      }
+    }
+
+    .strapline {
+      @include hl-font-300;
+      font-size: 20px;
+      line-height: 24px;
+
+      @include mobileAndTablet {
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      }
+    }
+  }
+}

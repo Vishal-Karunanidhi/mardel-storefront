@@ -1,0 +1,7 @@
+#import '@GqlFragments/myAccount/customerAddress.fragment.graphql';
+
+mutation DeleteCustomerAddress($addressId: String!) {
+  deleteAddress(addressId: $addressId) {
+    ...CustomerAddressFragment
+  }
+}

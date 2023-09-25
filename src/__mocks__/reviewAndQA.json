@@ -1,0 +1,26 @@
+{
+  "productReviews": [
+    {
+      "userName": "Yvonne",
+      "date": "November 26, 2021",
+      "rating": 4.5,
+      "title": "Lorem ipsum",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt, dui id rhoncus iaculis, turpis nulla scelerisque risus, sed lobortis leo libero nec tellus. Proin a dolor dolor. Pellentesque arcu massa, condimentum ac fringilla sed, ornare a mi. Vivamus tortor justo, tincidunt at purus vel, egestas sodales nisl.",
+      "numHelpful": 120
+    }
+  ],
+  "productQA": [
+    {
+      "id": 1,
+      "title": "Q: Does this come in different colors?",
+      "answer": "A: Yes: please use the color dropdown to see other options.",
+      "numHelpful": 120
+    },
+    {
+      "id": 2,
+      "title": "Q: Does the t-shirt fit properly, or does it run small?",
+      "answer": "A: The shirts run at their size. Please shop with confidence.",
+      "numHelpful": 3
+    }
+  ]
+}

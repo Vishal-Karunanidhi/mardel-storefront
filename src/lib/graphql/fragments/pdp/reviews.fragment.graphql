@@ -1,0 +1,9 @@
+fragment ReviewsFragment on ProductReview {
+  id
+  key
+  createdAt
+  authorName
+  title
+  text
+  rating
+}

@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
+    "paths": {
+      "@Styles/*": ["src/assets/styles/*"],
+      "@Images/*": ["src/assets/images/*"],
+      "@Icons/*": ["src/assets/icons/*"],
+      "@Components/*": ["src/components/*"],
+      "@Constants/*": ["src/constants/*"],
+      "@Lib/*": ["src/lib/*"],
+      "@Graphql/*": ["src/lib/graphql/*"],
+      "@GqlQueries/*": ["src/lib/graphql/queries/*"],
+      "@GqlFragments/*": ["src/lib/graphql/fragments/*"],
+      "@GqlMutations/*": ["src/lib/graphql/mutations/*"],
+      "@Hooks/*": ["src/hooks/*"],
+      "@Utils/*": ["src/utils/*"],
+      "@Pages/*": ["src/pages/*"],
+      "@Mocks/*": ["src/__mocks__/*"],
+      "@Types/*": ["src/types/*"],
+      "@Redux/*": ["src/redux/*"]
+    },
+    "baseUrl": "."
+  },
+  "include": ["src/**/*", "test/**/*", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".next", "coverage", "*serverless"]
+}

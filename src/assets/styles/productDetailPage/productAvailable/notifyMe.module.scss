@@ -1,0 +1,150 @@
+@import '../../variables';
+@import '../../breakpoints';
+@import '../../globals';
+
+.notifyMe {
+  background: $hl-gray-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px;
+
+  &Modal {
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    max-width: 438px;
+    min-width: 303px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    &Close {
+      background: $hl-blue;
+      color: $hl-white;
+      font-size: 20px;
+      text-align: end;
+      height: 25px;
+      position: relative;
+
+      svg {
+        cursor: pointer;
+        font-size: 17px;
+        position: absolute;
+        right: 12px;
+        top: 5px;
+        stroke: $hl-white;
+        stroke-width: 0.5px;
+
+        &:hover {
+          outline: $hl-blue dashed 2px;
+        }
+      }
+    }
+
+    &Container {
+      padding: 25px;
+      background-color: $hl-white;
+
+      &Title {
+        @include hl-font-700;
+        font-size: 20px;
+        line-height: 24px;
+        padding-bottom: 15px;
+      }
+
+      &Text {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &Text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &Inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+
+    &Submit {
+      background: $hl-blue-dark;
+      border-radius: 15px;
+      height: 28px;
+      justify-content: center;
+      display: flex;
+      width: 100%;
+
+      button {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        @include hl-font-700;
+        color: $hl-white;
+        font-size: 14px;
+
+        &:focus-visible {
+          outline: $hl-blue dashed 2px;
+          outline-offset: 2px;
+        }
+      }
+
+      &:active {
+        background-color: $hl-blue-dark;
+
+        &:hover {
+          background-color: $hl-blue-dark;
+        }
+      }
+
+      &:hover {
+        background-color: $hl-blue-light;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    color: $hl-error;
+  }
+}
+
+@include desktop {
+  .notifyMe {
+    &ModalContainer {
+      &Title {
+        font-size: 24px;
+        line-height: 32px;
+        padding-bottom: 20px;
+      }
+
+      &Text {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &Inputs {
+      flex-direction: row;
+
+      &Submit {
+        border-radius: 25px;
+        height: 48px;
+      }
+    }
+  }
+}
+
+:export {
+  hlBlue: $hl-blue;
+  hlError: $hl-error;
+}

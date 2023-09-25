@@ -1,0 +1,59 @@
+#import '@GqlFragments/contentPage/components/contentPageBreadcrumb.fragment.graphql';
+#import '@GqlFragments/contentPage/components/contentCTA.fragment.graphql';
+
+query FaqPage($deliveryKey: String!) {
+  getFaqPage(deliveryKey: $deliveryKey) {
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+      hierarchy {
+        parentId
+        root
+      }
+    }
+    ctaPanel {
+      ...ContentCTA
+    }
+    topics {
+      topicName
+      questions {
+        answer
+        question
+      }
+    }
+    metaData {
+      description
+      keywords
+      ogImage {
+        url
+      }
+      title
+    }
+    header {
+      ...on Card {
+        _meta {
+          name
+          schema
+          deliveryId
+        }
+        media {
+          image {
+            defaultHost
+            endpoint
+            id
+            name
+            url
+          }
+          imageAltText
+        }
+        link
+        title
+      }
+    }
+    breadcrumbs {
+      ...ContentPageBreadcrumb
+    }
+  }
+}

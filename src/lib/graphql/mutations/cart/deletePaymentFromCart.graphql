@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+mutation DeletePaymentFromCart($paymentId: String!) {
+  deletePaymentFromCart(paymentId: $paymentId) {
+    ...CartResponseFragment
+  }
+}

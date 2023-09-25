@@ -1,0 +1,8 @@
+query MyAccountContent {
+  myAccountContent {
+    loginDetails {
+      helperText
+      phoneNumber
+    }
+  }
+}

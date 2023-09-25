@@ -1,0 +1,156 @@
+@import '../variables';
+@import '../globals';
+
+.accountOverview {
+  width: 100%;
+  .profileSection {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    @include mobileAndTablet {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 64px;
+    }
+
+    .profileDetails {
+      display: flex;
+      flex-direction: column;
+      color: $hl-black;
+
+      .profileName {
+        @include hl-font-700;
+        font-size: 24px;
+        line-height: 32px;
+      }
+      .profileJoinedYear,
+      .profileLogout {
+        @include hl-font-300;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .profileLogout {
+        a {
+          color: $hl-blue;
+          text-decoration: underline;
+        }
+      }
+
+      .profileName + .profileLogout {
+        @include mobile {
+          margin-top: calc($font-size-p * 2);
+        }
+
+        @include tabletAndDesktop {
+          margin-top: $font-size-p;
+        }
+      }
+
+      .profileJoinedYear + .profileLogout {
+        @include mobile {
+          margin-top: calc($font-size-p * 2);
+        }
+
+        @include tabletAndDesktop {
+          margin-top: $font-size-p;
+        }
+      }
+    }
+  }
+  .sectionDivider {
+    height: 1px;
+    border: 0px;
+    border-top: 1px solid $hl-gray;
+    margin-top: 24px;
+    @include mobileAndTablet {
+      margin-top: 16px;
+    }
+  }
+
+  .addressBookSection {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 24px;
+
+    span[class*='myAccount_userName'] {
+      display: none;
+    }
+
+    div[class*='addressBook_meatBallMenu'] {
+      display: none;
+    }
+
+    @include mobileAndTablet {
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 0px;
+    }
+
+    .sectionDivider {
+      margin-top: 0px;
+      @include desktop {
+        display: none;
+      }
+    }
+    .addressSection {
+      @include mobileAndTablet {
+        margin-top: 16px;
+      }
+    }
+    .paymentSection {
+      @include mobileAndTablet {
+        margin-top: 0px;
+      }
+      div[class*='paymentOption_meatBallMenu'] {
+        display: none;
+      }
+      div[class*='myAccount_cardInfoWrapper'] {
+        padding-top: 4px;
+      }
+    }
+    .addressSection,
+    .paymentSection {
+      display: flex;
+      flex-direction: column;
+      width: 412px;
+      @include mobileAndTablet {
+        width: 272px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-black;
+      .addressTitle,
+      .paymentTitle {
+        @include hl-font-700;
+        font-size: 24px;
+        line-height: 32px;
+        color: $hl-black;
+        @include mobileAndTablet {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+      .defaultAddress,
+      .addressNickName,
+      .defaultPayment {
+        @include hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $hl-black;
+        margin-top: 8px;
+        @include mobileAndTablet {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

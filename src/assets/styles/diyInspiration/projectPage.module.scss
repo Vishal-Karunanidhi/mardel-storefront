@@ -1,0 +1,471 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+@media print {
+  .stepByStepInstruction {
+    position: absolute;
+    top: 0;
+    visibility: visible;
+    z-index: 2;
+  }
+  .instructionSet {
+    img {
+      max-width: 300px;
+      height: auto;
+      padding-right: 5px;
+    }
+  }
+}
+
+.bannerWrapper {
+  span[class*='landingPage_bannerContents'] {
+    span[class*='landingPage_title'] {
+      @include hl-font-300;
+      font-size: 48px;
+      line-height: 58px;
+      text-align: center;
+      color: $hl-black;
+      padding-bottom: 24px;
+
+      @include mobileAndTablet {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    span[class*='landingPage_description'] {
+      @include hl-font-300;
+      color: $hl-black;
+      font-size: 24px;
+      line-height: 34px;
+      text-align: center;
+      @include mobileAndTablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .projectBanner {
+    padding: 20px 40px;
+    border-radius: 60px;
+    transition: all 500ms ease-out;
+    &:hover {
+      background: transparent;
+      filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
+      transform: scale(1.005);
+      transition: all 200ms ease-out;
+    }
+  }
+
+  div[class*='description'] {
+    font-size: 24px;
+  }
+  .title {
+    padding: 0px;
+    padding-bottom: 50px;
+  }
+
+  .pdfShare {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    @include mobileAndTablet {
+      flex-direction: column;
+      width: 100%;
+      gap: 0px;
+    }
+    button[class*='shareButton'] {
+      height: 48px;
+      margin-top: 24px;
+      width: 107px;
+
+      font-size: 16px;
+      @include mobileAndTablet {
+        width: 100%;
+        height: 38px;
+      }
+    }
+    button[class*='ubmitButton'] {
+      @include mobileAndTablet {
+        width: 100%;
+        height: 38px;
+      }
+    }
+  }
+
+  button {
+    img[class*='videoComponent_imageDimension'] {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  div {
+    span[class*='videoComponent_videoContent'] {
+      display: none;
+    }
+  }
+}
+
+.projectVideo {
+  width: 100%;
+  display: flex;
+  @include desktop {
+    height: 720px;
+    max-width: $hl-xl;
+    margin: auto;
+  }
+
+  section[class*='popupPlayer'] {
+    width: 100%;
+  }
+  article[class*='videoElements'] {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+  }
+}
+
+.skillSpan {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 32px;
+  background: $hl-gray-shadow;
+  justify-content: center;
+  margin: 70px auto;
+  border-radius: 10px;
+  max-width: $hl-xl;
+
+  @include mobileAndTablet {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0px;
+    margin-top: 40px;
+    margin-bottom: 26px;
+    margin-left: 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+  .skillLevelTitle,
+  .duration {
+    @include hl-font-300;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .skillLevelTitle {
+    line-height: 16px;
+  }
+
+  .duration {
+    line-height: 20px;
+    align-items: center;
+  }
+}
+
+.youWillNeedContainer {
+  @include desktop {
+    max-width: $hl-xl;
+    margin: auto;
+    margin-bottom: 70px;
+  }
+}
+
+.instructionSet {
+  display: flex;
+  flex-direction: row;
+
+  .bannerContents {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    gap: 132px;
+  }
+
+  @include mobileAndTablet {
+    flex-direction: column;
+  }
+  span[class*='landingPage_bannerContents'] {
+    width: 100%;
+    margin: 0px;
+    padding-right: 24px;
+    padding-top: 42px;
+    gap: 24px;
+
+    @include mobileAndTablet {
+      padding-top: 16px;
+      gap: 4px;
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    span {
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+
+  img {
+    border-radius: 20px;
+    transition: all 500ms ease-out;
+    @include mobileAndTablet {
+      border-radius: 0px;
+    }
+    &:hover {
+      background: transparent;
+      filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
+      transform: scale(1.005);
+      transition: all 200ms ease-out;
+    }
+  }
+
+  .youWillNeedImage {
+    @include desktop {
+      min-width: 502px;
+      max-width: 502px;
+      max-height: 341px;
+      margin-top: 0px;
+    }
+  }
+
+  .preReqImage {
+    margin: 0px;
+    @include desktop {
+      max-width: 302px;
+      min-width: 302px;
+      max-height: 302px;
+      min-height: 302px;
+    }
+  }
+  .preReqTitle {
+    @include hl-font-700;
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 35px;
+
+    @include mobileAndTablet {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  .preReqDescription {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+    @include mobileAndTablet {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.instructionSetHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 35px;
+  max-width: $hl-xl;
+  margin: auto;
+  @include mobileAndTablet {
+    padding: 32px 24px;
+  }
+
+  span {
+    @include hl-font-700;
+    font-size: 40px;
+    line-height: 50px;
+    @include mobileAndTablet {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+.stepByStepInstruction {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: $hl-xl;
+  margin: auto;
+  justify-content: space-between;
+
+  @include desktop {
+    row-gap: 70px;
+  }
+
+  @include mobileAndTablet {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .instructionSet {
+    padding: 0px;
+
+    @include desktop {
+      gap: 24px;
+      width: 49%;
+    }
+
+    @include mobileAndTablet {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+
+    img {
+      max-width: 300px;
+      @include mobileAndTablet {
+        max-width: 100%;
+        max-height: 300px;
+
+        border-radius: 20px;
+      }
+    }
+
+    span[class*='landingPage_bannerContents'] {
+      margin: 0px;
+      padding-right: 24px;
+      padding-top: 42px;
+      gap: 24px;
+      text-align: start;
+
+      @include mobileAndTablet {
+        padding: 0px;
+        padding-top: 16px;
+        gap: 4px;
+      }
+
+      span {
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+  }
+
+  .preReqTitle {
+    @include hl-font-700;
+    font-size: 18px;
+    line-height: 24px;
+    @include mobileAndTablet {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .preReqDescription {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+    @include mobileAndTablet {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.relatedCategories {
+  width: 100%;
+  background: white;
+  max-width: $hl-xl;
+  margin: auto;
+
+  h3[class*='departmentPage_categoryHeader'] {
+    @include hl-font-700;
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: capitalize;
+    @include desktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  @include mobileAndTablet {
+    padding: 20px 0px;
+    padding-left: 24px;
+    padding-right: 20px;
+  }
+}
+
+.shopTheItemCarousel {
+  @include desktop {
+    max-width: $hl-xl;
+    margin: auto;
+    div[class*='persistingSliderClass'] {
+      flex-wrap: wrap !important;
+    }
+    div[class*='sliderContainer'] {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    h2[class*='featuredItems_header'] {
+      margin: 0px;
+    }
+  }
+}
+
+.cancelButton {
+  button {
+    color: $hl-black;
+    background: $hl-white;
+    border: 1px solid $hl-black;
+    width: 100%;
+    height: 30px;
+    @include hl-font-700;
+
+    &:focus-visible,
+    &:hover {
+      background: $hl-blue-light;
+      color: $hl-white;
+    }
+  }
+
+  @include mobileAndTablet {
+    display: none;
+  }
+}
+
+.desktopContainer {
+  @include desktop {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+.projectCarouselContainer {
+  background-color: $color-gray-7;
+  div[class*='featuredItems_container'] {
+    @include desktop {
+      width: 100%;
+      margin-top: 25px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+  div[class*='sliderContainer'] {
+    @include desktop {
+      padding: 0px;
+    }
+  }
+  div[class*='featuredItems_headerWrapper'] {
+    @include desktop {
+      padding: 0px;
+      max-width: $hl-xl;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+  }
+  h2[class*='featuredItems_header'] {
+    @include desktop {
+      margin: 0px;
+    }
+  }
+}

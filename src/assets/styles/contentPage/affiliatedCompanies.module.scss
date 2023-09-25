@@ -1,0 +1,60 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.affiliatedCompanies {
+  @include mobileAndTablet {
+    font-size: 14px;
+  }
+
+  @include desktop {
+    font-size: 16px;
+  }
+
+  &Body {
+    max-width: $hl-xxl;
+
+    @include mobileAndTablet {
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    @include desktop {
+      margin: 40px auto;
+      padding: 0 80px;
+    }
+
+    &Head {
+      border-bottom: 1px solid $hl-gray;
+
+      @include mobileAndTablet {
+        padding-bottom: 24px;
+      }
+
+      @include desktop {
+        padding-bottom: 35px;
+      }
+    }
+
+    &RichText {
+      margin-top: 40px;
+
+      a {
+        color: $hl-blue;
+        text-decoration: underline;
+
+        &:focus {
+          text-decoration: none;
+          color: $hl-black;
+          outline-offset: 5px;
+          outline: 2px dashed $hl-blue;
+        }
+
+        &:hover {
+          text-decoration: none;
+          color: $hl-black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use '../globals' as glob;
+@use '../variables' as vars;
+@import '../breakpoints';
+
+.container {
+    @include glob.desktop {
+        margin: 0 80px;
+    }
+
+    @include glob.tablet {
+        margin: 0 40px;
+    }
+
+    &.marginTop {
+        margin-top: vars.$margin-card-tall;
+    }
+}
+
+.heroNoMask {
+
+    div[class*="mainHeroBannerContentBlur"],
+    div[class*="mainHeroBannerContentInfo"] {
+        display: none;
+        visibility: hidden;
+    }
+
+    article[class*="mainHeroBannerContent__"] {
+        margin-top: 0;
+    }
+}
+
+.secondaryPromotion {
+
+    @include glob.desktop {
+        &>span>div {
+            width: 50%;
+        }
+    }
+
+    @include glob.mobileAndTablet {
+        &>span>div {
+            width: 100%;
+        }
+    }
+}
+
+.secondaryPromotion3x {
+
+    div[class*="secondaryPromotion_promoCard__"] {
+        button:hover {
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+            filter: unset;
+            
+            img {
+                filter: unset;
+            }
+        }
+        img:hover {
+            filter: unset;
+        }
+    }
+
+    img {
+        aspect-ratio: unset;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 100%;
+        width: auto;
+    }
+
+    @include glob.mobile {
+        &>span {
+            display: block;
+
+            &>button {
+                align-content: center;
+                align-items: center;
+                display: flex;
+            }
+
+            &>div {
+                width: 100%;
+            }
+        }
+    }
+
+    @include glob.tabletAndDesktop {
+        &>span {
+            display: grid;
+            grid-template-columns: repeat(3, calc(33% - 12px));
+            grid-template-rows: 100%;
+            height: auto;
+            max-height: 350px;
+        }
+
+        button {
+            height: 100%;
+        }
+    }
+}
+
+.shopByCategory {
+    background-color: vars.$color-gray-7;
+    margin-top: vars.$margin-card-tall;
+    overflow: hidden;
+
+    div[class*="shopByCategoryCard_imageContainer"] {
+        min-width: 260px;
+        width: unset;
+    }
+}

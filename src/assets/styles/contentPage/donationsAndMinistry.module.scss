@@ -1,0 +1,133 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.donationsAndMinistryPage {
+  width: 100%;
+}
+
+.breadCrumbsContainer {
+  width: 100%;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+  padding: 35px 80px 35px 80px;
+}
+
+.richTextContainer {
+  border-bottom: 1px solid $hl-gray;
+}
+
+.ourStorySectionBody {
+  a {
+    color: $hl-blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: $hl-black;
+      text-decoration: none;
+    }
+    &:active {
+      color: $hl-blue;
+      text-decoration: underline;
+    }
+    &:focus {
+      outline: 2px dashed $hl-blue;
+      padding: 5px;
+      color: $hl-black;
+      text-decoration: none;
+    }
+  }
+}
+
+.organizationsContainer {
+  margin-bottom: 170px;
+}
+
+.organizations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 40px;
+}
+
+.org {
+  display: inherit;
+  flex-flow: column wrap;
+  
+  &Image {
+    display: inline-block;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+    object-position: left;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+
+    &Container {
+      display: inherit;
+      height: 80px;
+      margin-bottom: 24px;
+      width: auto;
+    }
+  }
+
+  &Description {
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &Details {
+    margin-top: 24px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.title {
+  &Main {
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $hl-black;
+    margin-bottom: 16px;
+  }
+
+  &Org {
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $hl-black;
+    margin-bottom: 40px;
+    margin-top: 70px;
+  }
+}
+
+@include mobile {
+  .content {
+    padding: 35px 24px 35px 24px;
+  }
+
+  .organizations {
+    align-content: center;
+    flex-direction: column;
+    margin-top: 60px;
+  }
+
+  .titleOrg {
+    display: none;
+  }
+}
+
+@include desktop {
+  .org {
+    width: 302px;
+  }
+}

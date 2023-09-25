@@ -1,0 +1,22 @@
+#import '@GqlFragments/globalFooterContent/logo.fragment.graphql';
+#import '@GqlFragments/globalFooterContent/appLinks.fragment.graphql';
+#import '@GqlFragments/globalFooterContent/socialLinks.fragment.graphql';
+#import '@GqlFragments/globalFooterContent/footerLinks.fragment.graphql';
+#import '@GqlFragments/globalFooterContent/termsAndPrivacy.fragment.graphql';
+#import '@GqlFragments/globalFooterContent/signUpSubscription.fragment.graphql';
+
+query GlobalFooterContent {
+    globalFooterContent {
+        _meta {
+            name
+        }
+        contents {
+            ...Logo
+            ...AppLinks
+            ...SocialLinks
+            ...FooterLinks
+            ...TermsAndPrivacy
+            ...SignUpSubscription
+        }
+    }
+}

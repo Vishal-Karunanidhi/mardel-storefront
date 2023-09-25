@@ -1,0 +1,75 @@
+@use '../../../variables' as vars;
+@import '../../../breakpoints';
+
+.card {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-right: 25px;
+  height: 100%;
+  max-width: 125px;
+  &:last-of-type {
+    margin-right: 0px;
+  }
+  &:hover {
+    img {
+      transform: scale(1.01);
+      transition: all 0.2s ease-out;
+    }
+    .imageContainer {
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s ease-out;
+    }
+  }
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  img {
+    transition: all 0.2s ease-out;
+  }
+  .imageContainer {
+    transition: transform 0.2s ease-out;
+    transition: box-shadow 0.2s ease-out;
+  }
+  outline: none;
+  &:focus {
+    border: 2px dashed vars.$hl-blue;
+    padding: 5px;
+    .imageContainer {
+      width: 110px;
+      height: 110px;
+    }
+  }
+}
+
+.imageContainer {
+  border-radius: 20px;
+  height: 125px;
+  overflow: hidden;
+  width: 125px;
+  will-change: transform;
+  // border: 0.5px solid #666666;
+}
+
+.image {
+  border-radius: 20px;
+  cursor: pointer;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  width: 100%;
+}
+
+.text {
+  @include vars.hl-font-300;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  letter-spacing: 0em;
+  line-height: 24px;
+  margin-top: 15px;
+  min-height: 40px;
+  // min-width: 125px;
+  text-align: center;
+}

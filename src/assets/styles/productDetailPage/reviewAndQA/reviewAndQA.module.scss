@@ -1,0 +1,20 @@
+@use '../../_variables' as vars;
+
+.tabs {
+  &Buttons {
+    @include vars.hl-font-700;
+    align-items: flex-start;
+    background-color: transparent;
+    border: none;
+    color: vars.$hl-black;
+    font-size: 22px;
+    letter-spacing: unset;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+  }
+}
+
+:export {
+  hlBlue: vars.$hl-blue;
+}

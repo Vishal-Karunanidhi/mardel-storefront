@@ -1,0 +1,25 @@
+@use '../variables' as var;
+@use '../globals' as glob;
+
+.body {
+  @include glob.mobile {
+    display: block;
+    margin: 35px 24px -40px 24px;
+  }
+
+  @include glob.tablet {
+    margin: 40px;
+  }
+
+  @include glob.desktop {
+    margin: 75px 80px;
+  }
+}
+
+.content {
+  max-width: 60rem;
+
+  h3 {
+    @include var.hl-font-700;
+  }
+}

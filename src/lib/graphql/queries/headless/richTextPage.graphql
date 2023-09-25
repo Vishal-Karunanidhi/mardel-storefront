@@ -1,0 +1,22 @@
+query getRichTextPageContents($deliveryKey: String!) {
+  getRichTextPageContents(deliveryKey: $deliveryKey) {
+    richText
+    breadcrumbs {
+      links {
+        label
+        value
+        openInNewTab
+      }
+    }
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+      hierarchy {
+        parentId
+        root
+      }
+    }
+  }
+}

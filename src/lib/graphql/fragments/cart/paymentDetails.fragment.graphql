@@ -1,0 +1,10 @@
+fragment PaymentDetailsFragment on PaymentDetails {
+  cardHolderName
+  maskedNumber
+  last4Digits
+  expirationMonth
+  expirationYear
+  cardType
+  paymentMethod
+  amount
+}

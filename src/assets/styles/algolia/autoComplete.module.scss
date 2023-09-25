@@ -1,0 +1,51 @@
+@import '../variables';
+@import '../globals';
+
+.searchContainer {
+  display: grid;
+  grid-template-columns: 90% auto;
+  grid-template-rows: auto;
+  height: fit-content;
+
+  @include mobile {
+    grid-template-columns: 70% auto;
+  }
+}
+
+.searchForm {
+  padding-left: 10px;
+  border-radius: 3px 0 0 3px;
+}
+
+.searchPrefix {
+  order: 5;
+  @include mobile {
+    height: unset;
+  }
+}
+
+.searchButton {
+  @include button;
+  @include buttonSmall;
+  line-height: 0;
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  align-items: center;
+  grid-column: 2;
+  grid-row: 1;
+  z-index: 2;
+
+  @include mobile {
+    margin: 0;
+    width: fit-content;
+  }
+
+  svg > path,
+  svg > circle {
+    color: $hl-white;
+  }
+}
+
+.searchButtonHidden {
+  display: none;
+}

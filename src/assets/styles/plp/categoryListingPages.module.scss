@@ -1,0 +1,903 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.heading {
+    height: 0;
+    line-height: 1px;
+    opacity: 0;
+    position: absolute;
+
+  @include mobile {
+    margin: $margin-card-short auto;
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include tablet {
+    margin: $margin-card-tall auto;
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    margin: $margin-card-tall auto;
+    padding: 0 $padding-framing-desktop;
+  }
+}
+
+.giftCardInfoComp {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  max-width: $hl-xxl;
+
+  @include mobile {
+    flex-direction: column;
+    margin: $margin-card-short auto;
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include tablet {
+    margin: $margin-card-tall auto;
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    margin: $margin-card-tall auto;
+    padding: 0 $padding-framing-desktop;
+  }
+}
+
+.dividerLine {
+  border-bottom: 1px solid;
+  max-width: calc($hl-xxl - ($padding-framing-desktop * 2));
+
+  @include mobile {
+    flex-direction: column;
+    margin: $margin-card-short auto 0 auto;
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include tablet {
+    margin: $margin-card-tall auto 0 auto;
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    margin: $margin-card-tall auto 0 auto;
+    padding: 0 $padding-framing-desktop;
+  }
+}
+
+.widgetAndHitsWrapper {
+  max-width: $hl-xxl;
+  width: 100%;
+
+  @include mobile {
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include mobileAndTablet {
+    margin: 0 auto $margin-card-short auto;
+  }
+
+  @include tablet {
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    display: grid;
+    gap: calc($font-size-p * 2);
+    grid-template-columns: minmax(25%, 320px) minmax(60%, auto);
+    margin: $font-size-p auto $margin-card-tall auto;
+    padding: 0 $padding-framing-desktop;
+  }
+
+  .widgetsDivision {
+    height: calc(100vh - 25px);
+    overflow: auto;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+
+    @include mobileAndTablet {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      background-color: white;
+      border-radius: 20px;
+      cursor: grab;
+      height: 4px;
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: $color-canvas;
+      border-radius: 20px;
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $hl-blue;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $hl-blue-light;
+    }
+  }
+
+  .giftCardsHitsDivision {
+    grid-column: span 2;
+    .customProdCard {
+      grid-template-columns: repeat(4, 1fr);
+
+      @media only screen and (max-width: 1320px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media only screen and (max-width: 1023px) {
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        margin-top: 25px;
+      }
+
+      @media only screen and (max-width: 860px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media only screen and (max-width: 587px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+
+  .hitsDivision {
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+
+    &::-webkit-scrollbar {
+      background-color: white;
+      border-radius: 20px;
+      cursor: grab;
+      height: 4px;
+      width: 4px;
+      visibility: hidden;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: $color-canvas;
+      border-radius: 20px;
+      visibility: hidden;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $hl-blue;
+      border-radius: 20px;
+      visibility: hidden;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $hl-blue-light;
+    }
+
+    @include mobileAndTablet {
+      margin-right: 10px;
+      width: 100%;
+    }
+
+    .imlookingFor {
+
+      @include mobileAndTablet {
+        padding: 40px 24px 0 0;
+      }
+
+      @include desktop {
+        padding: 40px 0 0 0;
+      }
+    }
+
+    .promos {
+      padding-bottom: 10px;
+
+      @include mobileAndTablet {
+        padding-bottom: 40px;
+      }
+
+      @include mobileAndTablet {
+        padding-top: 20px;
+      }
+
+      div[class*='cardActions'] {
+        padding: 16px 8px 0 4px;
+
+        @include tablet {
+          padding: 20px 12px 0 24px;
+        }
+
+        @include desktop {
+          padding: 16px 0 0 0;
+        }
+      }
+
+      div[class*='cardActionArea'] {
+        @media screen and (max-width: $hl-break-lg) {
+          border-radius: 0px;
+        }
+      }
+
+      @include tabletAndDesktop {
+        div[class*='promoImage'] {
+          @media screen and (max-width: $hl-break-lg) {
+            border-radius: 0px;
+          }
+        }
+      }
+    }
+
+    /* plp pagination */
+    .plpPagination {
+      ul[class*='ais-Pagination-list'] {
+        margin-top: 40px;
+      }
+
+      a[class*='ais-Pagination-link'] {
+        color: $hl-black;
+      }
+
+      li[class*='ais-Pagination-item--selected'] {
+        background-color: rgb(74, 89, 184, 0.15);
+        box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+
+        a {
+          color: $hl-black;
+        }
+      }
+
+      li[class*='ais-Pagination-item--page'] {
+        @include hl-font-300;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 1.5em;
+      }
+
+      li[class*='ais-Pagination-item--firstPage'] {
+        padding-right: 10px;
+
+        a {
+          color: $color-body;
+        }
+      }
+
+      li[class*='ais-Pagination-item--lastPage'] {
+        padding-left: 10px;
+
+        a {
+          color: $color-body;
+        }
+      }
+
+      li[class*='ais-Pagination-item--previousPage'] {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+.seoWrapper {
+  margin: 0 auto $font-size-p auto;
+  max-width: $hl-xxl;
+  @include mobile {
+    padding: $margin-card-short $padding-framing-mobile;
+  }
+
+  @include tablet {
+    padding: $margin-card-tall $padding-framing-tablet;
+  }
+
+  @include desktop {
+    padding: $margin-card-tall $padding-framing-desktop;
+  }
+}
+
+.dynamicWidgetWrapper {
+  min-width: 300px;
+
+  @include mobileAndTablet {
+    padding: 20px 24px 20px 24px;
+  }
+
+  @include desktop {
+    display: block;
+    padding: 35px 25px 0 0;
+  }
+
+  label[class*='ais-ToggleRefinement-label']:hover::before {
+    background-color: $hl-thin-blue;
+  }
+
+  svg[class*='MuiSvgIcon']:hover {
+    cursor: pointer;
+    color: $hl-thin-blue;
+  }
+
+  li[class$='ais-RefinementList-item'] {
+    input:hover {
+      background-color: $hl-thin-blue;
+      &::after {
+        color: $hl-thin-blue;
+      }
+    }
+  }
+
+  li[class$='ais-RefinementList-item--selected'] {
+    input:hover:checked {
+      background-color: $hl-thin-blue;
+    }
+  }
+
+  .filterSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .filterLabel {
+      @include hl-font-700;
+      color: $hl-black;
+      text-transform: capitalize;
+    }
+
+    .resultsLabel {
+      @include hl-font-300;
+      color: $hl-black;
+    }
+  }
+
+  hr {
+    width: 302px;
+    height: 0px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border: none;
+  }
+
+  .titleDivider {
+    border-top: 2px solid #333333;
+    width: 100%;
+  }
+
+  .filterDivider {
+    border-top: 1px solid #b7b7b7;
+    width: 100%;
+  }
+
+  .ais-RefinementList-item {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.featuredItems {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+}
+
+.customHits {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+
+  .adTile {
+    display: flex;
+    flex-direction: column;
+    height: 585px;
+    border-radius: 20px;
+    gap: 0;
+
+    img {
+      height: 445px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 10px;
+      background: #4a59b8;
+      color: #ffffff;
+      height: 140px;
+
+      .rightArrow {
+        float: right;
+        margin-top: 15px;
+        margin-right: 2px;
+      }
+
+      .rightArrowImage {
+        filter: invert(1);
+        height: auto;
+      }
+    }
+
+    @include mobileAndTablet {
+      height: 260px;
+      width: 271px;
+      min-width: 271px;
+
+      img {
+        height: 145px;
+      }
+
+      .content {
+        height: 115px;
+
+        .rightArrow {
+          margin-top: -24px;
+        }
+      }
+    }
+  }
+
+  .noResultPage {
+    div[class*='emptyBook'] {
+      height: 70%;
+
+      span[class*='emptyBookTitle'] {
+        display: flex;
+        padding-left: 0%;
+        justify-content: center;
+        word-break: break-all;
+      }
+
+      @include mobileAndTablet {
+        display: flex;
+        margin: 24px 24px 24px 34px;
+        padding: 0px;
+        justify-content: center;
+        align-items: center;
+        span[class*='emptyBookTitle'] {
+          padding-left: 0%;
+        }
+      }
+    }
+  }
+
+  /*New Prod Card*/
+  .customProdCard {
+    display: grid;
+    gap: 22px;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media only screen and (max-width: 1320px) {
+      grid-template-columns: repeat(2, 1fr);
+      // grid-template-columns: 302px 302px 302px;
+    }
+
+    @media only screen and (max-width: 1023px) {
+      grid-template-columns: repeat(3, 1fr);
+      margin: auto;
+      margin-top: 25px;
+    }
+
+    @media only screen and (max-width: 860px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: 587px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .mobileParentCard {
+      height: 260px;
+      border: 1px solid #5f5f5f;
+      border-radius: 20px;
+      min-width: 271px;
+      position: relative;
+      width: auto;
+
+      @include productFavoriteModal;
+
+      .giftcardPrice {
+        margin-left: 16px;
+      }
+
+      @include desktop {
+        display: none;
+      }
+
+      .mobileParentDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 15px;
+        padding-top: 25px;
+
+        img {
+          width: 90px;
+          height: 90px;
+        }
+
+        .ratingDiv {
+          display: flex;
+          flex-direction: row;
+
+          span {
+            top: 3px;
+          }
+        }
+      }
+
+      .imageSection {
+        width: 250px;
+        margin: auto;
+
+        a {
+          align-items: center;
+          display: flex;
+          height: 250px;
+          justify-content: space-around;
+          width: 100%;
+        }
+
+        svg {
+          position: relative;
+          right: 20px;
+          margin-bottom: 10px;
+        }
+
+        img {
+          max-height: 250px;
+          max-width: 250px;
+        }
+      }
+
+      .priceAndCtaSection {
+        width: 250px;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+
+        button {
+          height: 28px;
+        }
+      }
+
+      .favIconWrapper {
+        padding-right: 18px;
+        -webkit-tap-highlight-color: transparent;
+
+        svg[class*='favoriteIcon'] {
+          height: 19.29px;
+          width: 20.67px;
+          float: right;
+          margin-left: 0px;
+          margin-top: 15px;
+        }
+      }
+    }
+
+    .parentCard {
+      height: 585px;
+      border: 1px solid #5f5f5f;
+      border-radius: 20px;
+      position: relative;
+      max-width: 302px;
+
+      @include productFavoriteModal;
+
+      @include mobileAndTablet {
+        display: none;
+      }
+
+      .imageSection {
+        width: 250px;
+        margin: auto;
+
+        svg {
+          position: relative;
+          right: 20px;
+          margin-bottom: 10px;
+        }
+
+        img {
+          align-self: center;
+          display: flex;
+          flex: 0 1 auto;
+          height: max-content;
+          margin: 0 auto;
+          max-height: 250px;
+          max-width: 250px;
+          width: auto;
+        }
+      }
+
+      .ratingAvailabilitySection {
+        margin: $font-size-p auto 0 auto;
+        width: 250px;
+
+        span {
+          align-self: center;
+          font-size: $font-size-p;
+        }
+
+        .ratingDiv {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+
+      .priceAndCtaSection {
+        width: 250px;
+        margin: auto;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.currRefineAndSortBy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+
+  @include mobileAndTablet {
+    display: none;
+  }
+
+  div[class*='MuiInputBase-root'] {
+    width: 187px;
+    height: 48px;
+  }
+}
+
+.relatedCategories {
+  width: 100%;
+  background: $color-canvas;
+  padding: 20px 24px;
+
+  @include mobileAndTablet {
+    padding: 20px 0px;
+  }
+
+  @media only screen and (min-width: $hl-desk-start) {
+    padding: 20px 0;
+  }
+}
+
+.relatedCategoriesWrapper {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  @include mobile {
+    padding: 0 20px;
+
+    div[class*='slider_sliderContainer'] {
+      padding: 0;
+    }
+  }
+
+  @include tablet {
+    padding: 0 40px;
+  }
+
+  @include desktop {
+    padding: 0 80px;
+  }
+}
+
+.filtersHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-canvas;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  @include mobileAndTablet {
+    width: 100%;
+  }
+
+  .filtersSection {
+    @include desktop {
+      display: block;
+    }
+
+    @include mobileAndTablet {
+      display: none;
+    }
+  }
+
+  .filtersTitle {
+    display: flex;
+    align-items: center;
+
+    .filtersIcon {
+      padding-right: 4px;
+      padding-bottom: 8px;
+    }
+
+    .filtersHeader {
+      @include hl-font-700;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  .closeIcon {
+    font-size: 1.5rem;
+    padding-right: 1em;
+    display: inline-block;
+  }
+}
+
+.drawerPaperProps {
+  @include mobile {
+    width: 100vw;
+  }
+
+  @include tablet {
+    width: 320px;
+  }
+}
+
+.drawerStyles {
+  @include desktop {
+    display: none;
+
+    &:nth-of-type(2n) {
+      ~ div[class*='MuiModal-root'] {
+        ul[class*='MuiList-root'] {
+          height: auto !important;
+        }
+      }
+    }
+  }
+}
+
+/*Notify Me Modal*/
+.modalTitle {
+  background-color: #003087;
+  border-radius: 10px 10px 0px 0px;
+  height: 35px;
+  outline: #003087;
+  outline-color: #003087;
+
+  .closeIcon {
+    float: right;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: -7px;
+  }
+}
+
+.notifyMedialog {
+  border-radius: 20px;
+  box-shadow: 0px 0px 9.28622px rgba(0, 0, 0, 0.2);
+
+  :global(.MuiDialogContent-root) {
+    section {
+      background: transparent;
+    }
+  }
+}
+
+.sortByRadioGroup {
+  hr:last-of-type {
+    display: none;
+  }
+
+  .filterDivider {
+    margin: 5px 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  @include mobile {
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include tablet {
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    padding: 0 $padding-framing-desktop;
+  }
+}
+
+.emptyBook {
+  background: $color-canvas;
+  border-radius: $border-radius;
+  margin: $margin-framing-short auto;
+  max-height: 200px;
+  text-align: center;
+
+  @include mobile {
+    padding: $margin-card-tall $padding-framing-mobile;
+  }
+
+  @include tablet {
+    padding: $margin-card-tall $padding-framing-tablet;
+  }
+
+  @include desktop {
+    padding: $margin-card-tall $padding-framing-desktop;
+  }
+
+  &Title {
+    @include hl-font-700;
+    font-size: $font-size-h2;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: $font-size-p 0 0 0;
+  }
+}
+
+.filterWrapper {
+  background: $color-canvas;
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: center;
+  margin: $margin-framing-tall auto 0 auto;
+
+  @include mobile {
+    max-width: calc($hl-xxl - ($padding-framing-mobile * 2));
+    padding: 0 $padding-framing-mobile;
+  }
+
+  @include tablet {
+    max-width: calc($hl-xxl - ($padding-framing-tablet * 2));
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    max-width: calc($hl-xxl - ($padding-framing-desktop * 2));
+    padding: 0 $padding-framing-desktop;
+  }
+
+  div[class*='MuiTabs-root'] {
+    margin-top: 0px;
+
+    div[class*='MuiTabs-flexContainer'] {
+      button[class*='textColorPrimary'] {
+        color: $hl-black;
+      }
+
+      button[class*='Mui-selected'] {
+        color: $hl-blue;
+      }
+    }
+    span[class*='MuiTabs-indicator'] {
+      background: $hl-blue;
+    }
+  }
+}

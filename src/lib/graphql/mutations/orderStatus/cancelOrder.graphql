@@ -1,0 +1,9 @@
+mutation CancelOrder($orderNumber: String!) {
+  cancelOrder(orderNumber: $orderNumber) {
+    errorMessage
+    order {
+      orderNumber
+      orderState
+    }
+  }
+}

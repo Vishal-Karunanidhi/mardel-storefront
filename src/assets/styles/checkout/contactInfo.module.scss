@@ -1,0 +1,137 @@
+@import '../variables';
+@import '../globals';
+
+
+
+.checkoutLabelWrapperDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .guest {
+        @include hl-font-700;
+        font-size: 24px;
+        line-height: 32px;
+
+        @include mobileAndTablet {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+
+    .contact {
+        @include hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+
+        @include mobileAndTablet {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+
+}
+
+.statusContact {
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 16px 0px;
+
+    @include mobileAndTablet {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.editContactForm {
+
+    .promoWrapperDiv {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        gap: 8px;
+
+        .promoCheckRadio {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            background: $hl-white;
+            border: 1.25px solid #333333;
+            border-radius: 2.5px;
+
+            &:focus-visible {
+                outline: 1.215px dashed $hl-blue;
+                outline-offset: 5px;
+            }
+
+            @include desktop {
+                &:hover {
+                    background: #BDC1D9;
+
+                    &:after {
+                        color: #BDC1D9;
+                    }
+                }
+            }
+
+            &:active {
+                color: #BDC1D9;
+
+                &:after {
+                    color: $hl-blue;
+                }
+
+                @include mobile {
+                    box-shadow: 0px 0px 6px 6px $hl-light-gray-shadow;
+                }
+            }
+
+            &:checked {
+                background: $hl-white;
+
+                &:after {
+                    color: $hl-blue;
+                }
+            }
+
+        }
+
+        label {
+            @include hl-font-300;
+            font-size: 14px;
+            line-height: 20px;
+            vertical-align: middle;
+
+            @include mobileAndTablet {
+                font-size: 12px;
+                line-height: 16px;
+            }
+        }
+    }
+
+}
+
+.loginWelcome {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    background: $hl-gray-shadow;
+    padding: 16px;
+    border-radius: 5px;
+
+    b {
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    label {
+        @include hl-font-300;
+
+        a {
+            text-decoration: underline;
+            color: $hl-blue;
+        }
+    }
+}

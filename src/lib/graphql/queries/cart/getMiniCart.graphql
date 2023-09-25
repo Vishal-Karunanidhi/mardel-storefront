@@ -1,0 +1,127 @@
+query GetMiniCartContent {
+  getFreeShippingPromoState {
+    shippingPromoActive
+    freeShippingThresholdValue
+    freeShippingThresholdCurrency
+  }
+  fullCartContent {
+    freeShippingMessages {
+      pendingEligibility
+      achievingEligibility
+      notes {
+        label
+        richTextData
+        richTextDataType
+      }
+    }
+    productTile {
+      warningNotices {
+        excludeFreeShipping
+        additionalShipping
+        noAirShipping
+        maximumStockLimit
+      }
+      labels {
+        myCart
+        saveForLater
+        sku
+        quantity
+      }
+    }
+    helpInfo {
+      needHelpTitle
+      contactTitle
+      contactUs {
+        label
+        value
+        openInNewTab
+      }
+      cartReferenceTitle
+      checkoutLabel
+      checkoutCta {
+        label
+        value
+        openInNewTab
+      }
+    }
+    orderSummary {
+      bulkOrderThreshold
+      shippingTooltips {
+        standard {
+          title
+          tooltip
+          tooltipLink {
+            openInNewTab
+            value
+            label
+          }
+        }
+        additional {
+          title
+          tooltip
+        }
+        carrier {
+          title
+          tooltip
+        }
+        shipping {
+          title
+          tooltip
+        }
+      }
+      labels {
+        title
+        merchandiseTotal
+        discounts
+        giftCardFee
+        subtotal
+        total
+        saved
+        tax
+      }
+      noticeAndWarnings {
+        giftCardFee
+        bulkOrderThreshold
+        taxCalculation
+      }
+    }
+  }
+  miniCartContent {
+    signIn {
+      signInCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+      registerMessage
+      registerLink {
+        label
+        value
+        openInNewTab
+      }
+    }
+    miniCartCta {
+      checkoutCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+      continueShoppingCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+      shopWeeklyAdCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+    }
+    estimatedTotal
+    emptyCartMessage {
+      highlightTitle
+      description
+    }
+    cartTitle
+  }
+}

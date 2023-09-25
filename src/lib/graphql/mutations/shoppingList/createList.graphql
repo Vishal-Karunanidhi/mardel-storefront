@@ -1,0 +1,7 @@
+mutation CreateShoppingList($listName: String) {
+  createList(listName: $listName) {
+    listId
+    customerId
+    listName
+  }
+}

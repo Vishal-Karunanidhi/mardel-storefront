@@ -1,0 +1,5 @@
+mutation DeleteShoppingList($listId: String!) {
+  deleteList(listId: $listId) {
+    message
+  }
+}

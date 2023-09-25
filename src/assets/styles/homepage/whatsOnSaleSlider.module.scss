@@ -1,0 +1,328 @@
+@import '../variables';
+@import '../_globals';
+@import '../_breakpoints';
+
+.onSale {
+  $font-size: 12px;
+  $left-arrow: 0px;
+  $line-height: 16px;
+  $link-gap: 17px;
+  $right-arrow: 0px;
+  display: grid;
+  grid-template-columns: 132px auto;
+  grid-template-rows: 49px;
+  max-width: $hl-xxl;
+  overflow: hidden;
+  width: 100%;
+
+  @include mobile {
+    margin: 0px;
+  }
+
+  @include tablet {
+    padding: 0 $padding-framing-tablet;
+  }
+
+  @include desktop {
+    padding: 0 $padding-framing-desktop;
+  }
+
+  @include tabletAndDesktop {
+    border-radius: 0 0 calc($border-radius * 2) calc($border-radius * 2);
+    margin: 0 auto;
+  }
+
+  &Title {
+    @include hl-font-700;
+    align-items: center;
+    background-color: $hl-blue;
+    color: $hl-white;
+    display: flex;
+    font-size: clamp($font-size-cite, 1.5vw, $font-size-h4);
+    grid-column: 1;
+    justify-content: center;
+    line-height: $line-height;
+    overflow: hidden;
+
+    @include tabletAndDesktop {
+      border-radius: 0 0 0 calc($border-radius * 2);
+    }
+  }
+
+  &Slider {
+    background-color: $color-canvas;
+    display: inherit;
+    grid-column: 2;
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+
+    @include tabletAndDesktop {
+      border-radius: 0 0 calc($border-radius * 2) 0;
+    }
+
+    &Arrow {
+      align-items: center;
+      display: inherit;
+      height: 100%;
+      justify-content: center;
+      top: 0;
+
+      button {
+        align-items: center;
+        background: transparent;
+        color: $hl-blue;
+        border: none;
+        display: inherit;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &:first-of-type {
+        background: linear-gradient(90deg,
+          $color-canvas 75%,
+          transparent 100%);
+        left: 0;
+        position: absolute;
+
+        button {
+          margin: 0 auto 0 1rem;
+        }    
+
+      }
+
+      &:last-of-type {
+        background: linear-gradient(270deg,
+          $color-canvas 75%,
+          transparent 100%);
+        position: absolute;
+        right: 0;
+
+        button {
+          margin: 0 1.1rem 0 auto;
+        }
+      }
+    }
+
+    &Links {
+      align-items: center;
+      display: grid;
+      font-size: clamp($font-size-cite, 1.5vw, $font-size-p);
+      gap: 0 $font-size-h1;
+      grid-auto-columns: max-content;
+      height: 100%;
+      list-style: none;
+      margin: 0;
+      overflow: auto;
+      padding: 0 1rem 0 0.5rem;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &Item {
+        @include hl-font-700;
+        font-size: clamp($font-size-cite, 1.5vw, $font-size-p);
+        grid-row: 1;
+        line-height: $line-height;
+
+        a {
+          @include href-black;
+          white-space: nowrap;
+          -webkit-tap-highlight-color: transparent;
+      
+          &:focus {
+            outline-offset: 0.5rem !important;
+          }
+        }      
+
+        &:first-of-type {
+          margin-left: $link-gap;
+        }
+
+        &:last-of-type {
+          margin-right: $right-arrow;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 744px) {
+  .onSale {
+    $line-height: 20px;
+    $link-gap: 24px;
+
+    grid-template-columns: 150px auto;
+
+    &Title {
+      line-height: $line-height;
+    }
+
+    &Slider {
+      &Links {
+        column-gap: $link-gap;
+
+        &Item {
+          line-height: $line-height;
+        }
+
+        &Item:first-of-type {
+          margin-left: $link-gap;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .onSaleSlider {
+    $link-gap: 32px;
+
+    &Links {
+      column-gap: $link-gap;
+
+      &Item:first-of-type {
+        margin-left: $link-gap;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .onSale {
+    $link-gap: 40px;
+
+    grid-template-columns: 166px auto;
+
+    &Slider {
+      &Links {
+        column-gap: $link-gap;
+
+        &Item:first-of-type {
+          margin-left: $link-gap;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .onSale {
+    $line-height: 24px;
+
+    grid-template-columns: 193px auto;
+    grid-template-rows: 56px;
+
+    &Title {
+      line-height: $line-height;
+    }
+
+    &SliderLinksItem {
+      line-height: $line-height;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .onSale {
+    $right-arrow: 120px;
+    $left-arrow: 80px;
+
+    grid-template-columns: 279px auto;
+    grid-template-rows: 70px;
+
+    &Title {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    &Slider {
+      align-items: center;
+
+      &Arrow {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        &:first-of-type {
+          min-width: $left-arrow;
+        }
+
+        &:last-of-type {
+          min-width: $right-arrow;
+        }
+      }
+
+      &Links {
+        column-gap: 56px;
+
+        &Item:first-of-type {
+          margin-left: $left-arrow;
+        }
+
+        &Item:last-of-type {
+          margin-right: $right-arrow;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .onSaleSlider {
+    $right-arrow: 100px;
+
+    &Arrow:last-of-type {
+      width: $right-arrow;
+    }
+
+    &LinksItem:last-of-type {
+      margin-right: $right-arrow;
+    }
+  }
+}
+
+@media screen and (min-width: 1728px) {
+  .onSale {
+    grid-template-columns: 321px auto;
+    grid-template-rows: 80px;
+
+    &Title {
+      font-size: 22px;
+    }
+
+    &SliderLinks {
+      column-gap: 64px;
+
+      &Item {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .onSaleSlider {
+    $right-arrow: 251px;
+
+    &Arrow:last-of-type {
+      width: $right-arrow;
+    }
+
+    &LinksItem:last-of-type {
+      margin-right: $right-arrow;
+    }
+  }
+}
+
+:export {
+  hlBlue: $hl-blue;
+}

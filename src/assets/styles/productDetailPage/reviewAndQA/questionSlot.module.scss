@@ -1,0 +1,39 @@
+@use '../../variables' as vars;
+
+.question {
+  color: vars.$hl-black;
+  margin-bottom: 24px;
+
+  &Title {
+    @include vars.hl-font-700;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+  &SubSection {
+    padding-left: 16px;
+    &Answer {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 8px;
+    }
+
+    &NumHelpful {
+      color: vars.$hl-gray;
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 8px;
+
+      &Options {
+        font-size: 12px;
+        line-height: 16px;
+
+        a {
+          color: vars.$hl-blue;
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+}

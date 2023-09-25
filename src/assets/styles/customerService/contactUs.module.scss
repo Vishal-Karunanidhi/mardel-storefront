@@ -1,0 +1,147 @@
+@import '../variables';
+@import '../globals';
+
+.contactUs {
+  display: flex;
+  gap: 218px;
+  padding: 35px 80px;
+  margin: 0 auto;
+  justify-content: center;
+
+  div[class*='submitWrapper'] {
+    width: 133px;
+  }
+
+  &Left {
+    width: 543px;
+
+    &Text {
+      &FormHeader {
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &Form {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 18px;
+
+      .Input {
+        max-width: calc(50% - 9px);
+
+        input[type='number'] {
+          -moz-appearance: textfield;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 18px;
+        width: 100%;
+
+        .CommentText {
+          font-size: 12px;
+          line-height: 16px;
+          margin: -12px 0;
+          gap: 0;
+          width: 100%;
+        }
+
+        textarea {
+          width: 100%;
+          height: 150px;
+          resize: none;
+          padding: 13px 12px;
+        }
+
+        p:not(.CommentText) {
+          @include hl-font-700;
+          font-size: 14px;
+          line-height: 20px;
+          margin: 5px 0 -8px;
+        }
+      }
+    }
+  }
+
+  &Right {
+    width: 517px;
+  }
+
+  &SuccessModal {
+    width: calc(100% - 80px);
+    max-width: 1280px;
+    height: 150px;
+    background: #ededed;
+    border-radius: 20px;
+    margin: 35px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+
+    &Header {
+      @include hl-font-700;
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &Body {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+@include mobileAndTablet {
+  .contactUs {
+    flex-direction: column;
+    row-gap: 40px;
+    padding: 24px 24px 0 24px;
+
+    &Left {
+      &Form {
+        .Input {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+    &Left,
+    &Right {
+      width: unset;
+      min-width: 272px;
+      padding: 0 24px;
+    }
+  }
+}
+
+@include mobile {
+  .contactUs {
+    div[class*='submitWrapper'] {
+      width: 100%;
+    }
+    &SuccessModal {
+      width: 100%;
+      border-radius: 0;
+      margin: 0;
+    }
+  }
+}
+
+.uppercaseText {
+  text-transform: uppercase;
+}

@@ -1,0 +1,12 @@
+mutation SignInUser($request: SignInUserRequest!) {
+  signInUser(request: $request) {
+    status
+    message
+    sessionId
+    sessionState
+    firstName
+    lastName
+    email
+    phone
+  }
+}

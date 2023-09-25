@@ -1,0 +1,192 @@
+@use '../variables' as var;
+@use '../globals' as glob;
+@import '../breakpoints';
+
+.header {
+  @include var.hl-font-700;
+  max-width: $hl-xxl;
+
+  @include glob.mobile {
+    margin: var.$margin-card-short auto 0 auto;
+    padding: 0 var.$padding-framing-mobile;
+  }
+
+  @include glob.tablet {
+    margin: var.$margin-card-tall auto 0 auto;
+    padding: 0 var.$padding-framing-tablet;
+  }
+
+  @include glob.desktop {
+    margin: var.$margin-card-tall auto 0 auto;
+    padding: 0 var.$padding-framing-desktop;
+  }
+}
+
+.body {
+  line-height: 1.25;
+  max-width: $hl-xxl;
+
+  @include glob.mobile {
+    display: block;
+    margin: 0 0 var.$margin-card-short 0;
+    padding: 0 var.$padding-framing-mobile;
+  }
+
+  @include glob.tabletAndDesktop {
+    display: grid;
+    gap: 24px;
+  }
+
+  @include glob.tablet {
+    grid-template-columns: repeat(3, 1fr);
+    margin: var.$margin-card-short auto var.$margin-card-tall auto;
+    padding: 0 var.$padding-framing-tablet;
+  }
+
+  @include glob.desktop {
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    margin: var.$margin-card-tall auto;
+    padding: 0 var.$padding-framing-desktop;
+  }
+}
+
+.card {
+  background: white;
+  border: 1px solid var.$hl-gray;
+  border-radius: calc(var.$border-radius * 2);
+  display: grid;
+  overflow: hidden;
+  padding: 24px;
+  width: 100%;
+
+  @include glob.mobile {
+    gap: var.$font-size-p;
+    grid-template-columns: [image] minmax(4rem, 40%) [description] 1fr;
+    grid-template-rows: auto 1fr;
+    margin: var.$margin-card-short 0 0 0;
+  }
+
+  @include glob.tablet {
+    grid-template-rows: auto 1fr minmax(2rem, 7rem)
+  }
+
+  @include glob.tabletAndDesktop {
+    gap: var.$font-size-p 0;
+    grid-template-columns: 1fr;
+  }
+
+  @include glob.desktop {
+    grid-template-rows: auto 1fr auto;
+  }
+
+  picture,
+  img {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+
+    @include glob.mobileAndTablet {
+      border-radius: var.$border-radius;
+      max-height: 200px;
+    }
+  
+    @include glob.desktop {
+      border-radius: var.$border-radius var.$border-radius 0 0;
+      max-height: 360px;
+    }
+  }
+
+  p {
+    @include var.hl-font-500;
+  }
+}
+
+.detailsContainer {
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.imageContainer {
+  font-size: 0;
+
+  @include glob.mobile {
+    grid-row: 1/3;
+  }
+
+  @include glob.tabletAndDesktop {
+    grid-column: 1/3;
+    grid-row: 1/1;
+    margin: -24px -24px 0 -24px;
+  }
+}
+
+.nameContainer {
+  margin: 0;
+  width: 100%;
+
+  @include glob.mobile {
+    grid-column: [description];
+    grid-row: 1;
+  }
+}
+
+.skuContainer {
+  width: 100%;
+
+  @include glob.mobile {
+    grid-column: [description];
+    grid-row: 2;
+    margin: 0;
+  }
+
+  @include glob.mobileAndTablet {
+    margin: var.$font-size-p 0 0 0;
+  }
+
+  @include glob.desktop {
+    margin: var.$font-size-p 0 0 0;
+  }
+}
+
+.buttonContainer {
+  align-items: flex-end;
+  display: flex;
+  gap: 16px;
+  grid-column: 1/3;
+  margin: 0;
+  max-width: 100%;
+  min-width: 4rem;
+  padding: 0;
+  width: 100%;
+
+  @include glob.mobile {
+    flex-flow: row nowrap;
+  }
+
+  @include glob.tablet {
+    flex-flow: row wrap;
+  }
+
+  @include glob.desktop {
+    flex-flow: row nowrap;
+  }
+}
+
+.button {
+  @include glob.button;
+  flex: 1 1 8rem;
+  width: 100% !important;
+
+  @include glob.mobile {
+    line-height: unset;
+    min-height: unset;
+    padding: 0.15rem;
+  }
+}

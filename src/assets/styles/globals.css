@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: MuseoSans300, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 300;
+}
+
+body {
+  font-family: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body.print,
+body.print #__next {
+  height: 100%;
+  margin: 0;
+  max-height: 230mm;
+  overflow: hidden;
+  padding: 0;
+  visibility: hidden;
+  width: 200mm;
+  z-index: 0;
+}
+
+body.print #onetrust-consent-sdk {
+  display: none;
+  visibility: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+b,
+strong {
+  font-family: MuseoSans700, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-weight: 300;
+}
+
+i,
+em {
+  font-family: MuseoSans300Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* transition: background-color 5000s ease-in-out 0s; */
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  text-align: center;
+  background: #ffffff;
+}
+
+input[type='checkbox']:after {
+  content: '\2713';
+  color: #ffffff;
+}
+
+input[type='checkbox']:checked:after {
+  content: '\2713';
+  color: #003087;
+}
+
+body div .MuiDialog-paper.MuiDialog-paperScrollPaper {
+  border-radius: 20px;
+}
+
+::-ms-reveal {
+  display: none;
+}
+
+.aa-Panel {
+  z-index: 5;
+  padding: 0;
+  background: lightgray;
+}
+
+@media only screen and (min-width: 1023px) {
+  .aa-Panel {
+    width: 40vw !important;
+    min-width: 600px;
+
+    .aa-PanelLayout {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1023px) and (max-width: 1500px) {
+  .aa-Panel {
+    left: auto !important;
+    right: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .aa-Panel {
+    width: 100vw !important;
+    left: auto !important;
+    right: 0px !important;
+  }
+}
+
+.aa-Item {
+  padding: 15px;
+}
+
+.aa-Item img {
+  border-radius: 10px;
+}
+
+.aa-Panel .aa-PanelLayout {
+  padding: 0px;
+}
+
+.aa-Panel .aa-PanelLayout section {
+  padding: 25px;
+}
+
+.aa-Panel .aa-PanelLayout section:nth-child(1) {
+  background: white;
+}
+
+.aa-Panel .aa-PanelLayout section:nth-child(2) {
+  background: lightgray;
+}
+
+.aa-PriceSection {
+  margin-top: 10px;
+}
+
+.aa-DiscountPrice {
+  color: red;
+}
+
+.aa-RegularPrice {
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.aa-ItemContentTitle {
+  white-space: unset;
+}
+
+.aa-FooterSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.aa-FooterSeeMore {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+:root {
+  --hl-search-box-color: #003087;
+}
+
+.aa-Form:focus-within {
+  border-color: var(--hl-search-box-color);
+  box-shadow: none;
+}
+
+.aa-Form:focus-within .aa-Label svg {
+  color: var(--hl-search-box-color);
+}
+
+.aa-Label svg {
+  color: #000;
+}
+
+@media (max-width: 699px) {
+
+  :root {
+    --hl-search-input-height: 33px;
+  }
+
+  .aa-Form {
+    height: var(--hl-search-input-height);
+  }
+
+  .aa-LoadingIndicator, .aa-SubmitButton {
+    padding: 0 4px;
+    width: 34px;
+  }
+
+  .aa-Label svg {
+    height: calc(var(--hl-search-input-height) * 0.5);
+  }
+
+  .aa-Input {
+    font-family: inherit;
+    font-weight: 300;
+    height: var(--hl-search-input-height);
+  }
+}
+
+table {
+  background: white;
+  border: 1px solid #ededed;
+  border-collapse: collapse;
+  margin: 20px auto;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+th,
+td {
+  border: 0;
+  border-bottom: 1px solid #ededed;
+  padding: 12px;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 36px;
+}
+
+tr:first-child {
+  background-color: rgb(204, 236, 249);
+}

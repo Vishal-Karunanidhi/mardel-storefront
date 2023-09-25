@@ -1,0 +1,24 @@
+fragment MetaFragment on Meta {
+  name
+  schema
+  deliveryId
+  deliveryKey
+  hierarchy {
+    parentId
+    root
+  }
+}
+
+fragment MediaImageFragment on MediaImage {
+  id
+  name
+  endpoint
+  defaultHost
+  url
+}
+
+fragment LinkWithLabelFragment on LinkWithLabel {
+  label
+  value
+  openInNewTab
+}

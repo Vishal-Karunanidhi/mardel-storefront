@@ -1,0 +1,214 @@
+@import '../variables';
+@import '../breakpoints';
+@import '../globals';
+
+.accountsReceivable {
+  &Page {
+    padding: 70px 80px 210px 80px;
+    @include mobile {
+      padding: 0px;
+    }
+  }
+  &Info {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $hl-gray;
+    &Email {
+      text-decoration: underline;
+      color: $hl-blue;
+      &:hover {
+        color: $hl-black;
+        text-decoration: none;
+      }
+    }
+    @include mobile {
+      margin: 20px 24px;
+    }
+  }
+}
+
+.balanceForm {
+  margin-top: 70px;
+  padding: 24px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 2.6155px 7.24134px rgba(0, 0, 0, 0.15);
+  border: 1px solid $hl-input-border-grey;
+  @include mobile {
+    text-align: center;
+    margin-top: 0px;
+    box-shadow: none;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid $hl-input-border-grey;
+  }
+  &Header {
+    margin: 0px 0px 35px 0px;
+    font-size: 24px;
+    line-height: 32px;
+    @include hl-font-700;
+    @include mobile {
+      font-size: 20px;
+      line-height: 24px;
+      margin: 0px 0px 24px 0px;
+    }
+  }
+  &Inputs {
+    display: flex;
+    gap: 26.33px;
+    @include mobileAndTablet {
+      flex-direction: column;
+    }
+  }
+  &Button {
+    border-radius: 25px;
+    border: none;
+    height: 48px;
+    min-width: 161px;
+    background-color: $hl-blue-dark;
+    color: white;
+    font-size: 16px;
+    @include hl-font-700;
+    &:hover {
+      cursor: pointer;
+      background-color: $hl-blue-light;
+    }
+    @include mobile {
+      height: 28px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    &Disabled {
+      border-radius: 25px;
+      border: none;
+      height: 48px;
+      min-width: 161px;
+      background-color: $hl-gray-shadow;
+      color: $hl-gray;
+      font-size: 16px;
+      @include hl-font-700;
+      @include mobile {
+        height: 28px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.balance {
+  &Page {
+  }
+  &Display {
+    margin-top: 70px;
+    padding: 35px 40px;
+    background-color: $hl-gray-shadow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    @include mobile {
+      border-radius: 0px;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+    &Header {
+      margin: 0px;
+      font-size: 32px;
+      line-height: 40px;
+      @include hl-font-700;
+      @include mobile {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    &Dollar {
+      margin-top: 40px;
+      font-size: 64px;
+      @include hl-font-700;
+      line-height: 80px;
+      @include mobile {
+        font-size: 48px;
+        line-height: 60px;
+        margin-top: 24px;
+      }
+    }
+    &Button {
+      margin-top: 40px;
+      width: 203px;
+      height: 48px;
+      background-color: $hl-blue-dark;
+      border: none;
+      border-radius: 25px;
+      color: $hl-white;
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+      &:hover {
+        background-color: $hl-blue-light;
+        cursor: pointer;
+      }
+      @include mobile {
+        font-size: 14px;
+        line-height: 20px;
+        border-radius: 15px;
+        width: 272px;
+        height: 28px;
+      }
+    }
+  }
+  &Transaction {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+      margin-top: 24px;
+      border-bottom: 1px solid $hl-gray;
+    }
+    &Section {
+      margin-top: 70px;
+      @include mobile {
+        padding: 0px 24px 40px 24px;
+        margin-top: 40px;
+      }
+    }
+    &Header {
+      margin: 0px;
+      text-transform: uppercase;
+      font-size: 16px;
+      @include hl-font-700;
+      line-height: 20px;
+    }
+    &Container {
+    }
+    &Group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 25%;
+      padding-bottom: 16px;
+      padding-top: 24px;
+      border-bottom: 1px solid $hl-gray;
+      &Label {
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+        &Colon {
+          display: none;
+          @include mobile {
+            display: inline;
+          }
+        }
+      }
+      &Value {
+        @include hl-font-300;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @include mobile {
+        flex-direction: row;
+        border-bottom: none;
+        padding-bottom: 8px;
+        padding-top: 0px;
+        width: auto;
+      }
+    }
+  }
+}

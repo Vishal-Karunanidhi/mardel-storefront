@@ -1,0 +1,723 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+@media screen {
+  .printImage {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media print {
+  .printImage {
+    background: white;
+    display: block;
+    height: 100%;
+    isolation: isolate;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    // padding: 3% 8% 2% 8%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    visibility: visible;
+    width: 100%;
+    z-index: 1000000;
+
+    picture,
+    img {
+      height: auto;
+      max-width: 170mm;
+      width: 100%;
+    }
+  }
+  .weeklyAdContainer {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+// Main weekly ad page
+
+.weeklyAdContainer {
+  background: $color-canvas;
+}
+
+.weeklyAd {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  margin: 0 auto;
+  max-width: $hl-xxl;
+  padding: $padding-card-big;
+
+  &Top {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+
+    &Title {
+      @include hl-font-700;
+      font-size: $font-size-displayHeader;
+      margin: 0;
+      padding: $margin-framing-short 0 0 0;
+    }
+
+    &Date {
+      font-size: $font-size-h3;
+      margin: 0;
+      padding: 0;
+    }
+
+    &Note {
+      @include hl-font-700;
+      font-size: $font-size-cite;
+      margin: $font-size-h3 0 0 0;
+      padding: 0;
+    }
+
+    &Disclaimer {
+      font-size: $font-size-cite;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &Middle {
+    display: flex;
+    gap: $font-size-h3;
+    margin: $font-size-h2 0 0 0;
+    width: 100%;
+
+    .adTileImage {
+      @include tablet {
+        padding: 0 0 0 $font-size-p;
+      }
+    }
+
+    .adTileImage,
+    .adTileImage picture,
+    .adTile img {
+      height: auto;
+      margin: 0;
+      width: 100%;
+    }
+
+    .adTileImage img {
+      @include mobile {
+        margin: $font-size-p 0 0 0;
+      }
+
+      @include tablet {
+        display: block;
+        margin: 0 auto;
+      }
+
+      @include desktop {
+        margin: 0 0 0 auto;
+        max-height: 150px;
+        width: auto;
+      }
+    }
+
+    .adTileColorTitles {
+      justify-content: flex-start;
+      margin: 0;
+    }
+
+    .adTileColorTitlesBlue {
+      font-size: inherit;
+      margin: 0 $font-size-p 0 0;
+      text-align: left;
+    }
+
+    .adTileColorTitlesRed {
+      font-size: inherit;
+      margin: 0;
+      text-align: left;
+    }
+
+    .adTileDisclaimer {
+      @include tabletAndDesktop {
+        margin: calc($font-size-p * 0.5) 0 0 0;
+      }
+    }
+
+    &Thumbnail {
+      display: flex;
+      height: max-content;
+      justify-content: center;
+      position: relative;
+
+      @include desktop {
+        &:hover {
+          picture img {
+            box-shadow: $box-shadow-hover;
+            transition: $button-transition-hover;
+          }
+        }
+      }
+
+      picture img {
+        border-radius: 0.75rem;
+        box-shadow: $box-shadow-1;
+        height: max-content;
+        margin: 0;
+        padding: 0;
+        transition: $button-transition;
+        vertical-align: bottom;
+      }
+
+      &Buttons {
+        bottom: 16px;
+        overflow: hidden;
+        position: absolute;
+
+        div[class*='submitWrapper'] {
+          width: 229px;
+          height: 48px;
+          border-radius: 25px;
+        }
+
+        &CTA {
+          display: block;
+
+          button {
+            background-repeat: no-repeat !important;
+            padding: 0 3rem 0 1.75rem;
+
+            @include mobileAndTablet {
+              background-position: right 1.25rem top 0.2rem !important;
+              background-size: 1.25rem 1.25rem !important;
+            }
+
+            @include desktop {
+              background-position: right 1.25rem top 0.75rem !important;
+              background-size: 1.5rem 1.5rem !important;
+            }
+          }
+
+          &.eastIcon {
+            button {
+              background-image: url(/icons/button-arrow-right-white.svg);
+            }
+          }
+
+          &.printOutline {
+            margin: 1rem 0 0 0;
+
+            button {
+              @include buttonSecondary;
+              background-image: url(/icons/print-out-black.svg);
+              color: $hl-black;
+
+              &:hover {
+                background-image: url(/icons/print-out-white.svg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &HighlightedAd {
+      flex-grow: 1;
+
+      &MessageBox {
+        @include hl-font-700;
+        color: $hl-white;
+        background: #b53315;
+        border: 1px solid #444444;
+        border-top: unset;
+        border-radius: 0px 0px calc($font-size-p * 0.5) calc($font-size-p * 0.5);
+        font-size: calc($font-size-p * 0.875);
+        padding: $font-size-h3;
+      }
+    }
+  }
+
+  &Tiles {
+    margin-top: 24px;
+    width: 100%;
+
+    & > div > div {
+      align-items: center;
+    }
+
+    & > div > div > div,
+    a {
+      border-radius: calc($border-radius * 2);
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      padding: $font-size-h3;
+      width: 100%;
+
+      div[class*='adTileColorTitles'] {
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
+    .adTileColorTitlesBlue,
+    .adTileColorTitlesRed {
+      display: block;
+      width: 100%;
+    }
+
+    .adTileSubtitle {
+      @include tabletAndDesktop {
+        text-align: center;
+      }
+    }
+  }
+
+  &GeneralDisclaimer {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 32px 0 40px 0;
+    text-align: center;
+  }
+
+  &HeaderLinks {
+    display: flex;
+    gap: 16px;
+
+    a {
+      @include href-blue-underlined;
+    }
+
+    .weeklyAdHeaderLinkButton {
+      @include href-blue-underlined;
+      background: unset !important;
+      border: unset !important;
+      border-radius: 0 !important;
+      height: unset !important;
+      font-size: inherit;
+      line-height: 1 !important;
+      margin: unset !important;
+      width: unset !important;
+    }
+  }
+
+  &Fullscreen {
+    background: $color-canvas;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @include mobile {
+      padding: $padding-card-small;
+    }
+
+    @include tabletAndDesktop {
+      padding: $padding-card-big;
+    }
+
+    &Slider {
+      align-content: center;
+      background-color: $color-gray-5;
+      display: grid;
+      font-size: 30px;
+      gap: 16px;
+      grid-template-columns: min-content auto min-content;
+      grid-template-rows: auto;
+      height: 34px;
+      line-height: 34px;
+      margin: $font-size-p 0 0 0;
+      padding: 6px 14px;
+      width: 317px;
+
+      &Level {
+        background-color: $color-border;
+        height: 100%;
+        transition: 0.25s;
+        width: 0%;
+      }
+
+      &Icon {
+        &:hover {
+          background: $color-gray-8;
+          border-radius: calc($border-radius * 0.5);
+          cursor: pointer;
+        }
+
+        &:active {
+          background: $color-gray-6;
+          transform: translateY(2px);
+        }
+      }
+    }
+
+    &ImageContainer {
+      width: 100%;
+      height: 100%;
+      overflow-x: scroll;
+
+      img {
+        height: auto;
+        width: 100%;
+
+        @include mobile {
+          border-radius: calc($border-radius * 1.5);
+        }
+
+        @include tablet {
+          border-radius: calc($border-radius * 2);
+        }
+
+        @include desktop {
+          border-radius: calc($border-radius * 3);
+        }
+      }
+    }
+  }
+}
+
+// Reusable weekly ad tile component
+.adTile {
+  background: white;
+  border-radius: calc($border-radius * 2) calc($border-radius * 2) 0 0;
+  border: 1px solid $hl-input-border-grey;
+  display: grid;
+  grid-template-areas:
+    'titles titles titles image'
+    'titleTwo titleTwo titleTwo image'
+    'subtitle subtitle subtitle image'
+    'dic dic dic dic'
+    'col1 col1 col2 col2'
+    'dic2 dic2 dic2 dic2';
+  padding: calc($font-size-h3);
+  position: relative;
+  text-align: left;
+
+  &ColorTitles {
+    @include hl-font-700;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: $font-size-h1;
+    grid-area: titles;
+    justify-content: space-around;
+    line-height: 1;
+    margin: 0 auto;
+    padding: 0;
+
+    &Blue {
+      color: $hl-blue-dark;
+      margin: 0;
+
+      @include tabletAndDesktop {
+        text-align: center;
+      }
+
+      @include tablet {
+        width: max-content;
+      }
+    }
+
+    &Red {
+      color: $hl-orange;
+      font-size: $font-size-h2;
+
+      @include mobile {
+        margin: 0;
+      }
+
+      @include tablet {
+        width: max-content;
+      }
+
+      @include tabletAndDesktop {
+        margin: $font-size-cite 0 0 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &TitleTwo {
+    @include hl-font-700;
+    color: $hl-blue-dark;
+    font-size: $font-size-h2;
+    grid-area: titleTwo;
+    margin: 0;
+    padding: 0;
+  }
+
+  &Subtitle {
+    color: $hl-blue-dark;
+    font-size: $font-size-h3;
+    grid-area: subtitle;
+    margin: calc($font-size-p * 0.25) 0 0 0;
+    padding: 0;
+  }
+
+  &Disclaimer {
+    font-size: $font-size-cite;
+    grid-area: dic;
+
+    @include mobile {
+      margin: calc($font-size-p * 0.5) 0 0 0;
+    }
+
+    &Two {
+      font-size: $font-size-cite;
+      grid-area: dic2;
+      margin: $font-size-h3 0 0 0;
+    }
+  }
+
+  &Description {
+    display: flex;
+    gap: 0 $font-size-p;
+    grid-area: 5 / 1 / 5 / 5;
+
+    div {
+      grid-area: col1;
+      width: 50%;
+
+      &:last-of-type {
+        grid-area: col2;
+      }
+    }
+
+    ul {
+      list-style: disc;
+      margin: $font-size-p 0 0 0;
+      padding: 0 0 0 calc($font-size-p - 0.1rem);
+    }
+
+    ul li {
+      @include hl-font-700;
+      margin: calc($font-size-p * 0.5) 0 0 0;
+    }
+
+    ul li ul {
+      list-style: none;
+      margin: calc($font-size-p * 0.25) 0 0 0;
+      padding: 0;
+    }
+
+    ul li ul li {
+      @include hl-font-300;
+      font-size: 0.9rem;
+      margin: 0;
+
+      small {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  &Image {
+    grid-area: image;
+    height: auto;
+    justify-self: flex-end;
+    width: 100%;
+
+    @include tabletAndDesktop {
+      margin: $font-size-p 0 0 0;
+    }
+
+    img {
+      border-radius: $border-radius;
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+:not(.weeklyAdMiddleHighlightedAd) {
+  @include tabletAndDesktop {
+    .adTileDisclaimer {
+      margin: calc($font-size-p * 0.5) auto 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+@include mobileAndTablet {
+  .weeklyAd {
+    &Middle {
+      flex-direction: column;
+
+      &Thumbnail {
+        flex-direction: column;
+        align-items: center;
+
+        &Buttons {
+          align-self: center;
+          display: flex;
+          gap: 16px;
+          position: initial;
+
+          @include tablet {
+            margin: 1rem 0 0 0;
+          }
+
+          &CTA {
+            &.eastIcon,
+            &.printOutline {
+              margin: 0;
+
+              &:after {
+                font-size: 0.75rem;
+              }
+            }
+          }
+
+          div[class*='submitWrapper'] {
+            button {
+              width: 227px;
+              height: 48px;
+            }
+
+            &:last-child {
+              button {
+                border: 1px solid $hl-black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .weeklyAd {
+    &Top {
+      max-width: 499px;
+
+      &Note {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .adTile {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'titles titles titles .'
+      'titleTwo titleTwo titleTwo .'
+      'subtitle subtitle subtitle .'
+      'dic dic dic dic'
+      'col1 col1 col2 col2'
+      'dic2 dic2 image image';
+
+    &Image {
+      justify-self: flex-start;
+    }
+  }
+}
+
+@include mobile {
+  .weeklyAd {
+    padding: 0 24px;
+
+    &Top {
+      align-items: flex-start;
+
+      &Title {
+        font-size: 48px;
+        line-height: 60px;
+      }
+
+      &Date {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      &Note {
+        margin-bottom: 24px;
+      }
+    }
+
+    &Middle {
+      &Thumbnail {
+        gap: 24px;
+
+        &Buttons {
+          flex-direction: column;
+
+          div[class*='submitWrapper'] {
+            margin: 0;
+
+            button {
+              width: 227px;
+              height: 48px;
+            }
+          }
+        }
+      }
+
+      &HighlightedAd {
+        &MessageBox {
+          font-size: $font-size-cite;
+        }
+      }
+    }
+
+    &GeneralDisclaimer {
+      font-size: $font-size-cite;
+      padding: 24px 0;
+    }
+  }
+
+  .adTile {
+    display: flex;
+    flex-direction: column;
+
+    &ColorTitles {
+      align-items: flex-start;
+      font-size: 28px;
+      line-height: 35px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 0;
+    }
+
+    &TitleTwo {
+      align-items: flex-start;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &Subtitle {
+      align-items: flex-start;
+      font-size: 20px;
+      line-height: 24px;
+      padding: 6px 0;
+    }
+
+    &Disclaimer {
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    &Description {
+      flex-direction: column;
+
+      div {
+        width: 100%;
+      }
+    }
+
+    &Image {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+    }
+  }
+}
+
+:export {
+  desktop: $hl-tab-end;
+  tablet: $hl-mobile-end;
+}

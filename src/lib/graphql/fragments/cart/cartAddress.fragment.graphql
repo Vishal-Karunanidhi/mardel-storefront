@@ -1,0 +1,15 @@
+fragment CartAddressFragment on CartAddress {
+  key
+  id
+  firstName
+  lastName
+  streetName
+  additionalStreetInfo
+  postalCode
+  city
+  state
+  country
+  phone
+  email
+  company
+}

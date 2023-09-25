@@ -1,0 +1,61 @@
+#import '@GqlFragments/pdp/ratings.fragment.graphql';
+
+fragment PromoCard on PromoCard {
+  link
+  media {
+    image {
+      defaultHost
+      endpoint
+      name
+    }
+    imageAltText
+  }
+  discountLabel
+  description
+  showCartBagIcon
+  showShareIcon
+  shopImageProducts {
+    name
+    productKey
+    variants {
+      name
+      id
+      sku
+      key
+      attributes {
+        approvalStatus
+        productOnlineDate
+        assorted
+        backInStockEligible
+        onlineStatus {
+          key
+          label
+        }
+        description
+        additionalShipping
+        ormd
+        excludeFreeShipping
+        yourPrice
+        availability {
+          key
+          label
+        }
+        offlineDate
+        onlineDate
+        name
+      }
+      price {
+        variantPrice
+        discountedPrice {
+          discountedPrice
+        }
+      }
+      isMasterVariant
+      imageSet
+    }
+    pdpUrl
+    rating {
+      ...RatingsFragment
+    }
+  }
+}

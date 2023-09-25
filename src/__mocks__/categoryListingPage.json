@@ -1,0 +1,279 @@
+{
+    "data": {
+      "getCategoryPageContent": {
+        "filterLabel": "Filters",
+        "resultsLabel": "Results",
+        "subCategories": {
+          "title": "I’m looking for:",
+          "carousal": [
+            {
+              "priority": 1,
+              "title": "Season3 subcat1",
+              "description": "season3 subcategory1",
+              "imageAltText": null,
+              "thumbnail": {
+                "id": "6431c3fa-7351-4c54-86ff-bdc195f585fb",
+                "name": "984500-053019",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season3 SubCat1",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "28e378fd-748d-4e5d-b005-a4ab2baff194",
+                "deliveryKey": "seasonal/season3/subcat1",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "Season3 subcat2",
+              "description": "season3 subcategory2",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "d4bfc754-62f4-4aed-8962-c0f3458957c1",
+                "name": "719294-053019",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season3 SubCat2",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "c2c1fa15-278b-4f86-b9f0-e118e206ef0b",
+                "deliveryKey": "seasonal/season3/subcat2",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "season 3 subcat3",
+              "description": "season3 subcategory3",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "3d7a9193-1d1f-4a80-8dd4-95a384c8b2e0",
+                "name": "glasses",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season3 SubCat3",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "a77c2683-9532-4832-8530-730e933be4a3",
+                "deliveryKey": "seasonal/season3/subcat3",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "season3 subcat4",
+              "description": "season3 subcategory4",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "3820b60b-de7e-4d14-a9f9-64ff9298cea7",
+                "name": "350Wx350H-1873959-1119",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season3 SubCat4",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "8d2e5a0f-7715-43a7-9f8d-317a36fb778a",
+                "deliveryKey": "seasonal/season3/subcat4",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "season3 subcat5",
+              "description": "season3 subcategory5",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "29884f8b-0808-46b6-ae4d-7d2c641364f7",
+                "name": "BasketPromo",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season3 SubCat5",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "e41785dd-24b6-4050-94e2-c8fa0f3ef9f7",
+                "deliveryKey": "seasonal/season3/subcat5",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "season3 subcat6",
+              "description": "season3 subcategory6",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "72899e30-d34d-4542-a9a1-d6142af8139a",
+                "name": "1161389-0220",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season3 SubCat6",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "1985b22e-af96-401d-b108-a4203ebc3812",
+                "deliveryKey": "seasonal/season3/subcat6",
+                "hierarchy": null
+              }
+            }
+          ]
+        },
+        "promos": {
+          "_meta": {
+            "name": "hdf-dlp-promo",
+            "schema": "https://hobbylobby.com/content/promo-card?v1",
+            "deliveryId": "d12eda6d-78f8-45c4-b1df-2f3c2e916c92",
+            "deliveryKey": null,
+            "hierarchy": null
+          },
+          "link": "https://www.google.com/",
+          "media": {
+            "image": {
+              "defaultHost": "cdn.media.amplience.net",
+              "endpoint": "hobbylobbydev",
+              "id": "0d08f48a-186d-457d-a156-5b06a0d79034",
+              "name": "3950-HL-PS-Paper Embellishments_Paper-Crafts",
+              "url": "https://cdn.media.amplience.net/i/hobbylobbydev/3950-HL-PS-Paper Embellishments_Paper-Crafts"
+            },
+            "imageAltText": "Artificial flowers with gift box"
+          },
+          "discountLabel": "50 % offer",
+          "description": "Home decor home decor Scheduled - 21st Oct - 6th"
+        },
+        "enableAdTile": true,
+        "adTile": {
+          "discountInfo": "**50% Off** Dolor sit amet, cdfsgconsectetu adipiscing elit. Egestas eget dolor.",
+          "tilePosition": 6,
+          "pageNumber": 1,
+          "link": "https://www.hobbylobby.com/Home-Decor-Frames/Candles-Fragrance/c/3-111"
+        },
+        "seoContent": {
+          "title": "More about Decor & Pillows",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        },
+        "relatedCategories": {
+          "title": "Related categories",
+          "carousal": [
+            {
+              "priority": 1,
+              "title": "Seasonal SubCat 1",
+              "description": "Seasonal subcategory 1",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "a85ebe52-1977-4742-9dca-a032912c07e0",
+                "name": "2150464-b-0222",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Seasonal1Subcat1",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "4c369688-3dbc-462d-9566-b50dbcb67287",
+                "deliveryKey": "seasonal/season1/subcat1",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "Seasonal SubCat2",
+              "description": "Seasonal subcategory2",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "19ce6309-a81c-404f-8a27-7a0be8a29f3c",
+                "name": "802892-a-0719",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Seasonal3/SubCat2",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "aa88cc11-15e4-4748-b570-3ad6939794c1",
+                "deliveryKey": "seasonal/season1/subcategory2",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "Seasonal SubCat 3",
+              "description": "seasonal subcategory 3",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "26e77bee-20ba-421a-ad09-e36f8dd6603e",
+                "name": "833301-070319",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Seasonal SubCat3",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "30e8a40e-cf21-486e-b5b8-3395ea2f1897",
+                "deliveryKey": "seasonal/season1/subcat3",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "season1 subcat4",
+              "description": "season subcategory4",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "26e77bee-20ba-421a-ad09-e36f8dd6603e",
+                "name": "833301-070319",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season 1 SubCat4",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "00562fa7-8674-4c0e-9af3-fcc0d7e9c905",
+                "deliveryKey": "seasonal/season1/subcat4",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "season1 Subcat5",
+              "description": "Season subcategory 5",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "e147feaa-eea7-46fd-b751-9c5e8b208c57",
+                "name": "1000934_1",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season 1 SubCat5",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "c0301d51-dacc-41db-860a-b4af6c26c169",
+                "deliveryKey": "seasonal/season1/subcat5",
+                "hierarchy": null
+              }
+            },
+            {
+              "priority": 1,
+              "title": "Season1 SubCat6",
+              "description": "Season subcategory 6",
+              "imageAltText": "Alt text",
+              "thumbnail": {
+                "id": "23d387bd-d220-4035-a04c-c3cbec2253e1",
+                "name": "woman-flower-dress",
+                "endpoint": "hobbylobbydev",
+                "defaultHost": "cdn.media.amplience.net"
+              },
+              "_meta": {
+                "name": "Season 1 SubCat6",
+                "schema": "https://hobbylobby.com/content/subcategory?v1",
+                "deliveryId": "4f18de4f-1d0f-46de-baf5-ca4f987f954b",
+                "deliveryKey": "seasonal/season1/subcat6",
+                "hierarchy": null
+              }
+            }
+          ]
+        }
+      }
+    }
+  }

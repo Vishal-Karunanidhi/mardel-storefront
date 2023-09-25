@@ -1,0 +1,16 @@
+#import '@GqlFragments/seasonalPage/themeTile.fragment.graphql';
+
+fragment ThemeTilePair on ThemeTilePair {
+  _meta {
+    deliveryId
+    deliveryKey
+    name
+    schema
+  }
+  viewMore1 {
+    ...ThemeTile
+  }
+  viewMore2 {
+    ...ThemeTile
+  }
+}

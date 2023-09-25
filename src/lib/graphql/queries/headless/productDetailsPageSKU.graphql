@@ -1,0 +1,11 @@
+#import '@GqlFragments/pdp/productDetails.fragment.graphql';
+
+query GetProductPageContentAndDetailsbySKU(
+  $sku: String!
+  $isActiveVariants: Boolean
+  $isStaged: Boolean
+) {
+  getProductBySku(sku: $sku, isActiveVariants: $isActiveVariants, isStaged: $isStaged) {
+    ...ProductDetailsFragment
+  }
+}

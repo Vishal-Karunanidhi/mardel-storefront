@@ -1,0 +1,186 @@
+@import '../../variables';
+@import '../../breakpoints';
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#carousel {
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow-y: visible;
+  padding: 35px 80px 0 80px;
+}
+
+#innerCarousel {
+  display: flex;
+  direction: row;
+  position: relative;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#cardContainer {
+  display: flex;
+  direction: row;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#carouselLeftIcon {
+  position: absolute;
+  left: -35px;
+  top: 77.5px;
+  z-index: 1;
+  visibility: visible;
+  font-size: 40px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#carouselRightIcon {
+  position: absolute;
+  right: -35px;
+  top: 77.5px;
+  z-index: 1;
+  font-size: 40px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carouselItem {
+  min-width: 190px;
+  min-height: 190px;
+  cursor: pointer;
+}
+
+#dotsContainer {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  padding-bottom: 35px;
+  padding-top: 10px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  margin-left: 8px;
+  margin-top: 10px;
+  border-radius: 100%;
+  border: 1px solid #666666;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.card-desktop {
+  min-width: 190px;
+  min-height: 230px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselImage {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.mobileContainer {
+  width: 230px;
+  display: flex;
+  flex-direction: row;
+  overflow: visible;
+}
+
+.mobileCarousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.mobileImage {
+  height: 230px;
+  width: 230px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+}
+
+.mobileCardText {
+  height: 40px;
+  text-align: center;
+}
+
+.arrowContainer {
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  background-color: #003087;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    background-color: #4a59b8;
+  }
+}
+
+@media screen and (max-width: $hl-break-xl) {
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  #carousel {
+    padding: 35px 0 0 0;
+    margin-left: 80px;
+    overflow: hidden;
+  }
+
+  #innerCarousel {
+    width: 100%;
+  }
+
+  #carouselLeftIcon {
+    visibility: hidden;
+  }
+
+  #carouselRightIcon {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: $hl-break-lg) {
+  #carousel {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: $hl-break-sm) {
+  #carousel {
+    padding-left: 24px;
+    margin-left: 0px;
+  }
+}
+
+:export {
+  hlBlue: $hl-blue;
+  hlBlueLight: $hl-blue-light;
+  hlBlueDark: $hl-blue-dark;
+}

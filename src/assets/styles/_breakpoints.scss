@@ -1,0 +1,42 @@
+/* HL breakpoints */
+
+/* min & max width breakpoints */
+$hl-xxxxs: 0px;
+$hl-xxxs: 320px;
+$hl-xxs: 428px;
+$hl-xs-m: 700px;
+$hl-xs: 744px;
+$hl-sm: 768px;
+$hl-md: 834px;
+$hl-lg: 1024px;
+$hl-xl: 1280px;
+$hl-xxl: 1440px;
+$hl-xxxl: 1728px;
+$hl-xxxxl: 1920px;
+
+/* Intermediate breakeakpoints */
+$hl-break-xxs: 427px;
+$hl-break-xs-m: 699px;
+$hl-break-xs: 743px;
+$hl-break-sm: 767px;
+$hl-break-md: 833px;
+$hl-break-lg: 1023px;
+$hl-break-xl: 1279px;
+$hl-break-xxl: 1439px;
+$hl-break-xxxl: 1727px;
+$hl-break-xxxxl: 1919px;
+
+/* Latest breakeakpoints */
+$hl-desk-start: 1024px;
+$hl-tab-start: 700px;
+
+$hl-tab-end: 1023px;
+$hl-mobile-end: 699px;
+
+/* cart breakpoint */
+$hl-cart-tab-start: 1125px;
+$hl-cart-tab-end: 1200px;
+$hl-product-title-end: 1300px;
+$hl-product-desk-start: 1301px;
+$hl-cart-toaster-tab-end: 900px;
+$hl-cart-toaster-desk-start: 901px;

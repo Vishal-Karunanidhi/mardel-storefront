@@ -1,0 +1,243 @@
+@import '../variables';
+@import '../globals';
+
+.parentBookWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+  @include mobileAndTablet {
+    margin-top: 60px;
+  }
+
+  .titleDiv {
+    display: flex;
+    justify-content: space-between;
+
+    @include desktop {
+      flex-direction: row;
+    }
+
+    @include mobileAndTablet {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    b {
+      @include hl-font-700;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    a {
+      cursor: pointer;
+
+      span {
+        top: 7px;
+      }
+
+      label {
+        cursor: pointer;
+        padding-left: 3px;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .emptyBook {
+    height: 215px;
+    background: $hl-gray-shadow;
+    border-radius: 10px;
+    padding: 100px;
+    margin-top: 10px;
+
+    span {
+      padding-left: 25%
+    }
+  }
+
+  .addressBookList {
+    .defaultAddress {
+      width: 50%;
+      display: inline-block;
+      @include mobileAndTablet {
+        width:100%;
+      }
+
+      .defaultLabel {
+        @include hl-font-700;
+        font-size: 15px;
+        line-height: 16px;
+      }
+
+      .addressComp {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        div {
+          label {
+            float: left;
+          }
+
+          a {
+            float: right;
+
+            .meatBallMenu {
+              button {
+                &:hover {
+                  background: transparent;
+                }
+              }
+            }
+          }
+
+          label {
+            @include hl-font-700;
+            font-size: 15px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+
+    .dividerLine {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid;
+    }
+
+    .nonDefaultAddress {
+      display: flex;
+      flex-direction: column;
+
+      b {
+        label {
+          font-size: 15px;
+        }
+      }
+
+      .listRenderer {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: 290px 290px;
+
+        @media only screen and (min-width: 1275px) {
+          grid-template-columns: 290px 290px 290px;
+        }
+
+        @include mobile {
+          grid-template-columns: 300px;
+        }
+
+
+        .addressComp {
+          display: flex;
+          flex-direction: column;
+          margin-top: 25px;
+
+          div {
+            label {
+              float: left;
+              @include hl-font-700;
+              font-size: 20px;
+            }
+
+            a {
+              float: right;
+
+              .meatBallMenu {
+                button {
+                  &:hover {
+                    background: transparent;
+                  }
+                }
+              }
+            }
+
+            label {
+              @include hl-font-700;
+              font-size: 15px;
+              line-height: 16px;
+            }
+          }
+
+          .addressSplitBorder {
+            border-bottom: 1px solid #BFBFBF;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .addAddressForm {
+    margin-top: 15px;
+    background: transparent;
+    width: 100%;
+
+    @include mobileAndTablet {
+      width: 90%;
+    }
+
+    .errorMessage {
+      padding: 10px;
+      background: lightgray;
+      margin: 10px 0px;
+
+      span {
+        margin-top: 6px;
+      }
+
+      label {
+        margin-left: 5px;
+      }
+    }
+
+    .editAddressWrapper {
+      padding: 0px;
+      background-color: transparent;
+      width: auto;
+
+      b {
+        @include hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      input[type='checkbox'] {
+        font-size: 12.5px;
+      }
+
+      div[class*="actionButtonGroup"] {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        div {
+          width: 50%;
+
+          &:first-child {
+            button {
+              background: transparent;
+              color: black;
+              border: 1px solid;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .caShippingWarning {
+        margin-top: 15px;
+      }
+    }
+
+  }
+
+  .addAddressIcon {
+    position: relative;
+    top: 7px;
+  }
+}

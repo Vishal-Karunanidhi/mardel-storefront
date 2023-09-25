@@ -1,0 +1,1253 @@
+@use '../variables' as vars;
+@use '../breakpoints' as brPoint;
+@use '../globals' as glob;
+
+.header {
+  /*Header Logo item*/
+  .logoStack {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: brPoint.$hl-xxl;
+    width: 100%;
+    z-index: 4;
+
+    .accountIcon {
+      
+      @include glob.mobileAndTablet {
+        display: block;
+      }
+
+      @include glob.desktop {
+        display: none;
+      }
+
+      .accountIconButton {
+        color: vars.$hl-black;
+        width: 20px;
+        height: 20px;
+
+        &.accountProfile {
+          position: relative;
+    
+          &::after {
+            background: vars.$hl-red;
+            border-radius: 4rem;
+            content: '';
+            height: 0.5rem;
+            position: absolute;
+            right: -0.05rem;
+            top: -0.05rem;
+            width: 0.5rem;
+          }  
+        }
+      }
+    }
+
+    .shoppingListIcon {
+      color: vars.$hl-black;
+
+      @include glob.desktop {
+        height: 34px !important;
+      }
+    }
+
+    .cartButton {
+      align-items: center;
+      padding: 0;
+
+      &:focus-visible {
+        border-radius: 0px;
+        outline: 2px dashed vars.$hl-blue;
+        outline-offset: 3px;
+      }
+      
+      @include glob.desktop {
+        height: 100%;
+      }
+
+      .cartBadge {
+        @media only screen and (max-width: brPoint.$hl-mobile-end) {
+          :global(.MuiBadge-badge) {
+            @include vars.hl-font-700;
+            border-radius: 30px;
+            font-size: 7.5px;
+            height: 11px;
+            line-height: 8px;
+            margin-right: -2px;
+            margin-top: 12px;
+            padding: 2px 3px 1px;
+            padding: 7px;
+            width: 10px;
+          }
+        }
+
+        @media only screen and (min-width: brPoint.$hl-tab-start) {
+          :global(.MuiBadge-badge) {
+            @include vars.hl-font-700;
+            font-size: 10px;
+            height: 15px;
+            line-height: 14px;
+            margin-right: 1px;
+            margin-top: 16px;
+            padding: 1px 5px 3px;
+            width: 16px;
+          }
+        }
+
+        .cartButtonIcon {
+          color: vars.$hl-black;
+
+          @media only screen and (max-width: brPoint.$hl-mobile-end) {
+            width: 18px;
+            height: 18px;
+          }
+
+          @media only screen and (min-width: brPoint.$hl-desk-start) {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+
+    .favoriteIcon {
+      height: 16px;
+      width: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    @include glob.mobile {
+      margin: 0;
+      padding: calc(vars.$font-size-p * 0.5) 0 0 0;
+    }
+  
+    @include glob.tablet {
+      margin: 0 auto;
+      padding: vars.$padding-framing-mobile 0 0 0;
+    }
+  
+    @include glob.desktop {
+      margin: 0 auto;
+      max-height: 3.5rem;
+      padding: vars.$padding-framing-mobile 0 0 0.5rem;
+    }
+
+    .logoSection {
+      float: left;
+
+      @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        height: 48px;
+      }
+
+      .imageButton {
+        @media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-tab-end) {
+          margin-top: -18px;
+        }
+
+        @media only screen and (max-width: brPoint.$hl-mobile-end) {
+          margin-top: -3px;
+        }
+
+        &:focus-visible {
+          outline: 2px dashed vars.$hl-blue;
+          outline-offset: 5px;
+        }
+      }
+
+      .breadCrumbsButton {
+        display: none;
+        margin-right: 12px;
+        margin: 0;
+        padding: 0;
+        top: -5px;
+
+        svg {
+          color: vars.$hl-black;
+        }
+
+        @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+          top: 0;
+          margin-top: -8px;
+          margin-right: 30px;
+
+          svg {
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+          top: 0;
+          margin-right: 12px;
+
+          svg {
+            width: 18px;
+            height: 18px;
+            margin-bottom: 2px;
+          }
+        }
+
+        @media only screen and (max-width: brPoint.$hl-break-lg) {
+          display: inline-block;
+        }
+      }
+
+      /*Todo: Image doesn't fit as per breakpoint -need to fix*/
+      .hl_logo,
+      span {
+        margin: 0 !important;
+        max-height: 30px !important;
+        max-width: 300px !important;
+
+        @media only screen and (min-width: 0px) and (max-width: brPoint.$hl-break-xs-m) {
+          max-height: 12px !important;
+          max-width: 120px !important;
+        }
+
+        @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+          max-height: 26px !important;
+          max-width: 258px !important;
+        }
+      }
+    }
+
+    .otherItemsSection {
+      display: flex;
+      flex-direction: row;
+      gap: vars.$font-size-p;
+      margin: 0 0 0 auto;
+
+      @include glob.mobile {
+        align-items: center;
+      }
+
+      @include glob.tabletAndDesktop {
+        align-items: flex-start;
+      }
+    }
+  }
+
+  .standardCheckoutContainer {
+    max-width: brPoint.$hl-xxl;
+    margin: 0 auto;
+
+    @include glob.mobile {
+      padding: 0 vars.$padding-framing-mobile;
+    }
+    @include glob.tablet {
+      padding: 0 vars.$padding-framing-tablet;
+    }
+    @include glob.desktop {
+      padding: 0 vars.$padding-framing-desktop;
+    }
+  }
+
+  //Checkout CSS
+  
+  .checkoutHeaderContainer {
+    max-width: brPoint.$hl-xxl;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    @media only screen and (max-width: brPoint.$hl-tab-end) {
+      padding: 0 16px;
+    }
+  }
+  
+  .checkoutLogoStack {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media only screen and (min-width: brPoint.$hl-desk-start) {
+      height: 24px;
+      margin-top: 25px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-tab-end) {
+      height: 12px;
+      margin-top: 30px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-mobile-end) {
+      margin-left: 24px;
+      margin-top: 18px;
+      display: block;
+      margin-right: 24px;
+    }
+
+    .logoSection {
+      .imageButton {
+        @media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-tab-end) {
+          margin-top: -18px;
+        }
+
+        @media only screen and (max-width: brPoint.$hl-mobile-end) {
+          float: left;
+        }
+
+        &:focus-visible {
+          outline: 2px dashed vars.$hl-blue;
+          outline-offset: 5px;
+        }
+      }
+    }
+  }
+
+  /*2nd Row MegaNav Container*/
+  .navMenuStack {
+    @media only screen and (min-width: brPoint.$hl-lg) {
+      height: 90px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+      margin-bottom: 16px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+      margin-bottom: 16px;
+      margin-top: 8px;
+    }
+
+    .navGridRow {
+      display: flex;
+      float: left;
+      margin-right: 0;
+    }
+  }
+
+  /*Grid Wrapper Common Row*/
+  .dropdownMenu {
+    cursor: pointer;
+
+    .navButtons {
+      @include vars.hl-font-300;
+
+      ~ {
+        .categoryNavButtonborder {
+          border-bottom: 8px solid vars.$hl-orange;
+          @include vars.hl-font-700;
+          display: block;
+        }
+      }
+
+      &:focus-visible {
+        @include vars.hl-font-700;
+        outline-offset: 5px;
+        outline: 2px dashed vars.$hl-blue;
+        padding-top: 2px;
+
+        ~ {
+          .navButtonborder {
+            border-bottom: 2px solid vars.$hl-orange;
+            @include vars.hl-font-700;
+            display: block;
+          }
+
+          .hoverBox {
+            display: block;
+            height: 27px;
+            border-bottom: 27px solid transparent;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+          }
+
+          .megaNavPopUp {
+            display: block;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-lg) {
+      display: none;
+      visibility: hidden;
+    }
+
+    .navButtonborder {
+      display: none;
+      visibility: hidden;
+    }
+
+    &:hover {
+      .navButtonborder {
+        border-bottom: 2px solid vars.$hl-orange;
+        @include vars.hl-font-700;
+        display: block;
+        visibility: visible;
+      }
+
+      .navButtons {
+        @include vars.hl-font-700;
+      }
+
+      .megaNavPopUp {
+        display: block;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .hoverBox {
+        display: block;
+        height: 27px;
+        border-bottom: 27px solid transparent;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+      }
+    }
+
+    .hoverBox {
+      display: none;
+    }
+
+    .navButtons {
+      -webkit-tap-highlight-color: transparent;
+      font-size: 16px;
+      line-height: 24px;
+      padding-top: 10px;
+      text-align: right;
+
+      &:after {
+        content: '\25BE';
+        font-family: sans-serif;
+        padding-top: 2px;
+        margin-left: 8px;
+      }
+
+      @media only screen and (max-width: brPoint.$hl-break-lg) {
+        display: none;
+      }
+    }
+
+    /*Right Side part of Header*/
+    .searchInput {
+      align-items: center;
+      background: vars.$hl-white;
+      border-radius: 5px;
+      z-index: 2;
+
+      input {
+        &::placeholder {
+          color: vars.$hl-gray;
+          font-size: 16px;
+          line-height: 24px;
+          text-align: left;
+        }
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      height: 44px;
+
+      @media only screen and (min-width: 1920px) {
+        width: 571px;
+      }
+
+      @media only screen and (min-width: 1728px) and (max-width: 1919px) {
+        width: 507px;
+      }
+
+      @media only screen and (min-width: 1440px) and (max-width: 1727px) {
+        width: 465px;
+      }
+
+      @media only screen and (min-width: 1280px) and (max-width: 1439px) {
+        width: 288px;
+      }
+
+      @media only screen and (max-width: 1279px) {
+        width: 418px;
+      }
+    }
+  }
+
+  /*Checkout Minimal Header Styling*/
+  .checkoutGrid {
+    @media only screen and (min-width: brPoint.$hl-tab-start) {
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-mobile-end) {
+      display: flex;
+      flex-direction: row;
+      float: right;
+    }
+
+    @include glob.mobile {
+      padding-left: 25px;
+      margin-top: 15px;
+      margin-bottom: 16px;
+    }
+
+    .stepperDiv {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      float: left;
+
+      .checkoutTitle {
+        @include vars.hl-font-700;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0;
+        margin-top: 1px;
+      }
+
+      @include glob.mobile {
+        flex-wrap: wrap;
+      }
+
+      span.stepGroup {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        @include vars.hl-font-300;
+        font-size: 12px;
+        line-height: 16px;
+        align-items: center;
+
+        button {
+          border-radius: 20px;
+          border: 1px solid #5f5f5f;
+          height: 20px;
+          line-height: 0.9rem;
+          margin-right: 8px;
+          margin-top: 1px;
+          width: 20px;
+        }
+      }
+    }
+
+    @include glob.mobile {
+      .cartReturnDesk {
+        display: none;
+      }
+    }
+
+    .cartReturnMobile {
+      display: none;
+
+      @include glob.mobile {
+        display: block;
+      }
+    }
+
+    .cartReturnDesk,
+    .cartReturnMobile {
+      float: right;
+      @include vars.hl-font-300;
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: -7px;
+
+      @media only screen and (max-width: brPoint.$hl-mobile-end) {
+        margin: 0;
+        width: auto;
+      }
+
+      a.arrowSvg {
+        cursor: pointer;
+
+        span {
+          top: 5px;
+          right: 8px;
+        }
+      }
+    }
+  }
+}
+
+.backButton {
+  display: block;
+  width: 100%;
+
+  @include glob.mobile {
+    margin: 0;
+  }
+
+  @include glob.tabletAndDesktop {
+    margin: 0.7rem 0 0 0;
+  }
+
+  a {
+    @include glob.buttonBack;
+    margin: -1rem -1rem -1rem -1rem;
+    padding: 1rem 1rem 1rem 3rem;
+
+    &::before {
+      left: 1rem;
+      top: 0.75rem;
+    }
+
+    &:focus-visible {
+      outline: 2px dashed vars.$hl-blue;
+    }
+  }
+}
+
+.menuDrawer {
+  :global(.MuiDrawer-paper) {
+    background: vars.$hl-gray-shadow;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-desk-start) {
+    display: none;
+  }
+
+  .drawerBox {
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+      width: 435px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+      width: 100vw;
+    }
+
+    height: 100%;
+
+    .signInButton {
+      @include vars.hl-font-700;
+      background: vars.$hl-blue-dark;
+      border-radius: 15px;
+      color: vars.$hl-white;
+      font-size: 10px;
+      height: 28px;
+      line-height: 14px;
+      text-transform: none;
+      width: auto;
+    }
+
+    .createAccount {
+      @include vars.hl-font-500;
+      @include glob.href-black-underlined;
+      align-items: center;
+      display: flex;
+      float: right;
+      font-size: 10px;
+      line-height: 14px;
+      margin-top: 6px;
+      text-align: right;
+
+      &:focus-visible {
+        outline: 2px dashed vars.$hl-blue;
+        outline-offset: 5px;
+        width: auto;
+      }
+    }
+
+    .otherItems {
+      align-items: center;
+      color: vars.$hl-black;
+      display: grid;
+      font-size: vars.$font-size-cite;
+      gap: calc(vars.$font-size-p * 0.1);
+      grid-template-columns: 20px 1fr;
+      line-height: vars.$font-size-p;
+      text-transform: none;
+
+      .otherItemsImg {
+        align-items: center;
+        display: inherit;
+        justify-content: center;
+        margin: 0 calc(vars.$font-size-p * 0.5) 0 0;
+        padding: 0;
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: vars.$hl-blue;
+        text-decoration-line: underline;
+      }
+
+        &:focus-visible {
+        outline: 2px dashed vars.$hl-blue;
+        outline-offset: 5px;
+        width: auto;
+      }
+    }
+
+    .topNavigationList {
+      margin: 0;
+      padding: vars.$font-size-p 0 vars.$font-size-p vars.$font-size-p;
+    }
+
+    .tNLCart,
+    .tNLMyLists,
+    .tNLMyAccount,
+    .tNLStoreFinder {
+      align-content: center;
+      align-items: center;
+      border-radius: calc(vars.$border-radius * 0.5) 0 0 calc(vars.$border-radius * 0.5);
+      display: grid;
+      font-size: vars.$font-size-cite;
+      line-height: vars.$font-size-p;
+      mask-size: vars.$font-size-p;
+      padding: 0 0 0 calc(vars.$font-size-p * 2);
+      position: relative;
+      text-transform: none;
+
+      &:not(:first-child) {
+        margin: calc(vars.$font-size-p * 0.5) 0 0 0;
+      }
+
+      &:hover {
+        background-image: linear-gradient(to right, vars.$color-highlight-faded, white);
+        background-size: 100%;
+
+        &::before {
+          background-color: vars.$hl-blue;
+        }
+      }
+
+      &::before {
+        background-color: vars.$hl-black;
+        content: '';
+        height: 100%;
+        left: calc(vars.$font-size-p * 0.5);
+        position: absolute;
+        top: 0;
+        width: vars.$font-size-p;
+      }
+
+      a {
+        height: 100%;
+        line-height: 2;
+        width: 100%;
+        @include glob.href-black;
+
+        &:focus-visible {
+          outline: 2px dashed vars.$hl-blue;
+          outline-offset: 5px;
+          width: max-content;
+        }
+      }
+    }
+
+    .tNLCart::before {
+      mask: url('/icons/megaNav/cart.svg') left no-repeat;
+    }
+
+    .tNLMyLists::before {
+      mask: url('/icons/megaNav/favorite.svg') left 0.04rem top 50% no-repeat;
+    }
+
+    .tNLMyAccount::before {
+      mask: url('/icons/megaNav/account.svg') left 0.03rem top 50% no-repeat;
+    }
+
+    .tNLStoreFinder::before {
+      mask: url('/icons/megaNav/location.svg') no-repeat;
+      mask-position: left 0.15rem top 50%;
+      mask-size: vars.$font-size-cite;
+    }
+
+    .accordLabel {
+      @include vars.hl-font-700;
+      align-items: center;
+      color: vars.$hl-black;
+      display: flex;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: none;
+    }
+
+    .footerItemGrid {
+      background: vars.$hl-gray-shadow;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      margin: 0;
+      padding: 0 0 84px vars.$padding-meganav-mobile;
+
+      a {
+        @include vars.hl-font-500;
+        align-items: center;
+        color: vars.$hl-black;
+        display: flex;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .cardLinkLabel {
+        @include vars.hl-font-500;
+        color: vars.$hl-black;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+
+        a {
+          margin: vars.$font-size-p 0 0 0;
+
+          &:focus-visible {
+            outline: 2px dashed vars.$hl-blue;
+            outline-offset: 5px;
+            width: max-content;
+          }
+
+          &:hover,
+          &:focus-visible {
+            color: vars.$hl-blue;
+            text-decoration-line: underline;
+          }
+        }
+      }
+    }
+
+    .footerLogoGrid {
+      bottom: 0px;
+      position: fixed;
+
+      .blueBorderBox {
+        display: flex;
+        flex-direction: column;
+        height: 66px;
+        padding: 5px;
+      }
+
+      .imageAnchor {
+        margin-right: 9px;
+      }
+
+      .privacyTerms {
+        align-items: center;
+        color: vars.$hl-white;
+        display: flex;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.megaNavPopUp {
+  background-color: vars.$hl-white;
+  display: none;
+  left: 0px;
+  margin-left: 80px;
+  min-width: 200px;
+  position: absolute;
+  z-index: 2;
+
+  .megaNavCard {
+    margin-top: 39px;
+  }
+}
+
+/*Tablet Mode flex Card inside accordian*/
+.megaNavFlexCard {
+  @include glob.mobile {
+    display: block;
+    visibility: visible;
+  }
+
+  @include glob.tablet {
+    display: block;
+    position: relative;
+    visibility: visible;
+    width: 100%;
+  }
+
+  @include glob.desktop {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/*Mobile Mode flex Card inside accordian*/
+.megaNavCarousel {
+  div[class*='sliderContainer'] {
+    padding: 0px 24px 15px 24px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-tab-end) {
+    display: none;
+  }
+}
+
+.megaNavButton {
+  @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+    margin-left: 40px;
+  }
+
+  @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+    margin-left: 24px;
+  }
+
+  @media only screen and (min-width: brPoint.$hl-lg) {
+    margin-left: 80px;
+  }
+
+  a {
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.megaNavWeeklyButton {
+  &Content {
+    &Info {
+      align-items: center;
+      background: vars.$hl-white;
+      color: vars.$hl-black;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+
+      &Outline {
+        &Link {
+          -webkit-tap-highlight-color: transparent;
+          @include vars.hl-font-700;
+          align-items: center;
+          background: vars.$hl-blue-dark;
+          border-radius: 15px;
+          border: none;
+          color: vars.$hl-white;
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          font-size: 14px;
+          gap: 7px;
+          justify-content: center;
+          line-height: 20px;
+          padding: 10px 25px;
+
+          &:hover {
+            background: vars.$hl-blue-light;
+          }
+
+          &:focus {
+            background: vars.$hl-blue-light;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.megaNavWeeklyButtonContentInfo {
+  background-color: unset;
+  z-index: 1;
+
+  &OutlineLink {
+    @include glob.button;
+    @include vars.hl-font-700;
+    margin: 0;
+
+    @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+      
+      @include glob.buttonSmall;
+      
+    }
+  }
+}
+
+.accessibleSkip {
+  position: absolute;
+  top: 0;
+  left: -99999px;
+}
+
+.accessibleSkip:focus {
+  background: white;
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$box-shadow-1;
+  color: vars.$hl-orange;
+  left: 2rem;
+  padding: 1rem 2rem;
+  top: 1rem;
+  z-index: 5;
+}
+
+:export {
+  hlBlueDark: vars.$hl-blue-dark;
+  hlBlueLight: vars.$hl-blue-light;
+  hlBlack: vars.$hl-black;
+}
+
+// Navigation -- Button and Menu
+
+@supports (selector(has)) {
+  .buttonOutline:has(a.button:focus-visible) {
+    display: inline-block;
+    outline: vars.$color-outline dashed vars.$outline-size;
+    outline-offset: vars.$outline-offset;
+  }
+
+  .buttonOutline:has(a.button:focus-visible:active) {
+    outline-color: transparent;
+  }
+}
+
+.button {
+  @include glob.button;
+
+  @include glob.mobile {
+    font-size: calc(vars.$font-size-p / 1.5);
+    min-height: unset;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.nav {
+  margin: 0 auto;
+  max-width: brPoint.$hl-xxl;
+  width: 100%;
+
+  @include glob.mobile {
+    margin: 0;
+    padding: calc(vars.$font-size-p * 0.5) 0 0 0;
+  }
+
+  @include glob.tablet {
+    margin: 0 auto;
+    padding: 0 0 vars.$font-size-p 0;
+  }
+
+  @include glob.desktop {
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .searchBox {
+    float: right;
+    margin-left: 0;
+    margin-top: 2px;
+    width: 100%;
+
+    @include glob.tablet {
+      display: grid;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      margin: 0;
+    }
+
+    @include glob.mobile {
+      margin: 0;
+    }
+  }
+}
+
+.megaNav {
+  align-self: center;
+  display: grid;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  @include glob.mobile {
+    grid-template-columns: [weeklyAd] 6.5rem [remainder] 1fr;
+  }
+
+  @include glob.tablet {
+    grid-template-columns: [weeklyAd] 8.25rem [remainder] 1fr;
+  }
+
+  @media screen and (max-width: 1200px) {
+    gap: 1rem;
+  }
+
+  @include glob.desktop {
+    grid-template-columns: [weeklyAd] 8.25rem [navButton1] 9rem [navButton2] 9rem [navButton3] 8rem [navButton4] 4rem [remainder] 1fr;
+  }
+
+  &.weeklyAd {
+    text-align: left;
+  }
+
+  &:hover {
+    outline: unset !important;
+  }
+}
+
+.megaNav .megaNavButton,
+.megaNav .common_submitWrapper__ApAXd,
+.megaNavWeeklyButtonContentInfoOutline {
+  margin: 0 !important;
+}
+
+.megaNav > li {
+  align-self: center;
+  background-image: linear-gradient(
+    to bottom,
+    white,
+    white 3.4rem,
+    white 3.41rem,
+    white 3.5rem,
+    white 3.51rem,
+    white
+  );
+  background-position: top -0.25rem left 0;
+  line-height: calc(vars.$font-size-p * 2);
+  margin: 0;
+  min-height: calc(vars.$font-size-p * 3);
+  transition: background-position 0.25s;
+
+  @include glob.mobile {
+    text-align: left;
+  }
+
+  @include glob.tabletAndDesktop {
+    text-align: center;
+  }
+
+  &:focus-visible {
+    > span {
+      outline: vars.$outline-size dashed vars.$color-outline;
+      outline-offset: 1rem;
+    }
+  }
+
+  &:focus-within {
+    outline-color: transparent;
+  }
+
+  &.weeklyAd {
+    padding: 0;
+  }
+
+  &:not(.weeklyAd, .searchBox) {
+    display: none;
+    margin: calc(vars.$font-size-p * 0.5) 0 0 0;
+    padding: calc(vars.$font-size-p * 1.25) 0.75rem calc(vars.$font-size-p * 1.75) 0;
+
+    @include glob.desktop {
+      display: list-item;
+    }
+  }
+}
+
+.megaNav > li:not(.weeklyAd) {
+  &:hover:focus-within span::after {
+    animation: arrowbob 0.25s ease-in-out;
+  }
+
+  @keyframes arrowbob {
+    0% {
+      transform: translateY(0px);
+    }
+
+    35% {
+      transform: translateY(2px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  &:focus-within {
+    transition: 0s;
+
+    span {
+      outline-offset: calc(vars.$font-size-p / 4);
+    }
+  }
+
+  &:focus-within,
+  &:hover {
+    @include vars.hl-font-700;
+    background-image: linear-gradient(
+      to bottom,
+      white,
+      white 3.4rem,
+      vars.$color-primary 3.41rem,
+      vars.$color-primary 3.5rem,
+      white 3.51rem,
+      white
+    );
+    background-position: top 0 left 0;
+    cursor: pointer;
+  }
+
+  &.selected {
+    @include vars.hl-font-700;
+    background-image: linear-gradient(
+      to bottom,
+      white,
+      white 3.4rem,
+      vars.$color-primary 3.41rem,
+      vars.$color-primary 3.6rem,
+      white 3.61rem,
+      white
+    );
+    background-position: top -0.1rem left 0;
+
+    &:focus-within,
+    &:hover {
+      @include vars.hl-font-900;
+      background-image: linear-gradient(
+        to bottom,
+        white,
+        white 3.4rem,
+        vars.$color-primary 3.41rem,
+        vars.$color-primary 3.6rem,
+        white 3.61rem,
+        white
+      );
+      background-position: top 0 left 0;
+      cursor: pointer;
+    }
+  }
+
+  > span {
+    position: relative;
+
+    &::after {
+      display: block;
+      content: '\25BE';
+      font-family: sans-serif;
+      position: absolute;
+      right: -1rem;
+      top: -0.45rem;
+    }
+  }
+}
+
+.megaNav .card {
+  background-color: white;
+  background-image: linear-gradient(to bottom, vars.$box-shadow-standard, white 0.25rem);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  cursor: initial;
+  display: none;
+  left: 0;
+  margin: 0;
+  max-width: unset;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: calc(vars.$font-size-p * 5.5);
+  transition: background 1s;
+  width: max-content;
+}
+
+.megaNav > li:not(.weeklyAd):focus-within .card {
+  animation: opacity 0.1s ease-in;
+  display: block;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,96 @@
+@import '../variables';
+@import '../globals';
+
+.loginSection {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  width: 100%;
+
+  @include mobileAndTablet {
+    margin-top: 50px;
+    margin-left: 0px;
+  }
+
+  .loginHeader {
+    @include hl-font-700;
+    color: $hl-black;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0 0 40px 0;
+  }
+
+  .loginDetailSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 411px;
+
+    @include mobileAndTablet {
+      width: 100%;
+    }
+
+    .detailCompSeparator {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .detailLabelValue {
+        display: flex;
+        flex-direction: column;
+
+        .detailLabel,
+        .detailValue {
+          @include hl-font-300;
+          font-size: 16px;
+          line-height: 24px;
+          color: $hl-black;
+          margin: 0;
+          padding: 0;
+          text-transform: lowercase;
+        }
+
+        .detailLabel {
+          @include hl-font-700;
+          text-transform: none;
+        }
+      }
+
+      .editButton {
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .loginDivider {
+      margin-bottom: 16px;
+      width: 411px;
+
+      @include mobileAndTablet {
+        width: 100%;
+      }
+    }
+  }
+
+  .mobileDetailsEnquiry {
+    @include hl-font-300;
+    font-size: 12px;
+    line-height: 16px;
+    color: $hl-black;
+    width: 411px;
+    margin-top: -8px;
+
+    @include mobileAndTablet {
+      width: 100%;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $hl-blue;
+
+      @include desktop {
+        pointer-events: none;
+      }
+    }
+  }
+}

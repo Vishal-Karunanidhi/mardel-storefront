@@ -1,0 +1,6 @@
+mutation ShareShoppingList($request: ShareWishlistPayload!) {
+  shareList(request: $request) {
+    Message
+    Status
+  }
+}

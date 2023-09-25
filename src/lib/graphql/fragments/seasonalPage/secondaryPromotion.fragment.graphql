@@ -1,0 +1,29 @@
+fragment SecondaryPromoComponent on SecondaryPromoComponent {
+    _meta {
+        name
+    }
+    Promos {
+        _meta {
+            name
+        }
+        link
+        media {
+            image {
+                _meta {
+                    name
+                }
+                defaultHost
+                endpoint
+                id
+                name
+                url
+            }
+            imageAltText
+        }
+        discountLabel
+        description
+        showCartBagIcon
+        showShareIcon
+    }
+    Title
+}

@@ -1,0 +1,177 @@
+@import '../globals';
+@import '../variables';
+@import '../breakpoints';
+
+.accessibility {
+  &Content {
+    margin: 0 auto;
+    max-width: $hl-xxl;
+    padding: 0 24px 40px 24px;
+
+    &Section {
+      border-bottom: 1px solid $hl-gray;
+      margin: 40px 0;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &Title {
+        @include hl-font-700;
+        font-size: 14px;
+        line-height: 14px;
+      }
+      &Body {
+        font-size: 14px;
+        line-height: 20px;
+
+        a {
+          color: $hl-blue;
+          text-decoration: underline;
+
+          &:focus {
+            text-decoration: none;
+            color: $hl-black;
+            outline-offset: 5px;
+            outline: 2px dashed $hl-blue;
+          }
+
+          &:hover {
+            text-decoration: none;
+            color: $hl-black;
+          }
+        }
+      }
+    }
+  }
+
+  &ContactContainer {
+    background-color: $hl-gray-shadow;
+    border-radius: calc($border-radius * 2);
+    max-width: calc($hl-xxl - ($padding-framing-desktop *2));
+    margin: 0 auto;
+    padding: calc($font-size-p * 2);
+  }
+
+  &Contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+
+    &Title {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+      align-self: center;
+    }
+    &Body {
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      max-width: 626px;
+      align-self: center;
+
+      a {
+        color: $hl-blue;
+        text-decoration: underline;
+
+        &:focus {
+          text-decoration: none;
+          color: $hl-black;
+          outline-offset: 5px;
+          outline: 2px dashed $hl-blue;
+        }
+
+        &:hover {
+          text-decoration: none;
+          color: $hl-black;
+        }
+      }
+    }
+
+    &Outline {
+      margin: 10px 0;
+      width: 100%;
+      max-width: 626px;
+      align-self: center;
+
+      button {
+        @include hl-font-700;
+        background: $hl-blue-dark;
+        border-radius: 15px;
+        font-size: 14px;
+        line-height: 20px;
+        color: $hl-white;
+        padding: 4px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+
+        &:hover {
+          background: $hl-blue-light;
+        }
+
+        &:focus {
+          outline: none;
+          background: $hl-blue-light;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .accessibility {
+    &Content {
+      padding: 0 80px 40px 80px;
+      display: flex;
+
+      img {
+        padding: 35px 0 0 133px;
+      }
+
+      &Section {
+        border: none;
+
+        &Title {
+          font-size: 16px;
+          line-height: 20px;
+        }
+        &Body {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &ContactContainer {
+      margin: 0 auto $margin-card-tall auto;
+    }
+
+    &Contact {
+      align-items: center;
+      margin: 0 auto;
+
+      &Title {
+        font-size: 32px;
+        line-height: 40px;
+      }
+      &Body {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      button {
+        border-radius: 25px;
+        max-width: 134px;
+        padding: 10px 25px;
+      }
+    }
+  }
+}
+
+:export {
+  hlBlueDark: $hl-blue-dark;
+  hlBlueLight: $hl-blue-light;
+}

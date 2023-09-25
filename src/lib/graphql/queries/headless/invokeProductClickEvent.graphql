@@ -1,0 +1,5 @@
+mutation InvokeProductClickEvent($variantIds: [String!]!, $queryId: String!, $positions: [Int!]!, $eventName: String!) {
+  invokeProductClickEvent(variantIds: $variantIds, queryID: $queryId, positions: $positions, eventName: $eventName) {
+    isSuccess
+  }
+}

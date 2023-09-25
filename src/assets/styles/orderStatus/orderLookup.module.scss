@@ -1,0 +1,416 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.orderStatusContainer {
+  .orderLookUp {
+    margin: 0 auto;
+    max-width: $hl-xxl;
+
+    .orderLookUpBox {
+      border-style: solid;
+      margin: 70px 80px;
+      border-radius: 10px;
+      border-width: 1px;
+      padding: 24px 40px;
+
+      @include mobileAndTablet {
+        border-style: none;
+        margin: 20px 0px;
+        padding: 24px 20px;
+      }
+
+      .orderLookUpHeader {
+        @include hl-font-700;
+        margin: 24px 40px;
+        font-size: 24px;
+        line-height: 32px;
+        font-style: normal;
+
+        @include mobileAndTablet {
+          text-align: center;
+          font-size: 20px;
+          line-height: 24px;
+          margin: 20px 0px;
+        }
+      }
+
+      .orderLookUpForm {
+        .orderLookUpInputs {
+          display: flex;
+          justify-content: space-between;
+          margin: 24px 40px;
+          gap: 35px;
+
+          @include mobileAndTablet {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 20px 0px;
+            gap: 24px;
+          }
+
+          .lookUpButton {
+            @include desktop {
+              width: 50%;
+              min-width: 156px;
+              margin-top: -20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .orderNotFound {
+    background-color: $hl-gray-shadow;
+    padding: 35px 0px;
+    text-align: center;
+    margin: 35px 80px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobileAndTablet {
+      padding: 40px 20px;
+      margin: 35px 0px;
+      border-radius: 0px;
+    }
+
+    .orderNotFoundHeader {
+      @include hl-font-700;
+      font-size: 32px;
+      line-height: 40px;
+      font-style: normal;
+
+      @include mobileAndTablet {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+
+    .orderNotFoundMessage {
+      font-size: 16px;
+      line-height: 24px;
+
+      @include mobileAndTablet {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.orderStatusBar {
+  .orderStatusBarBox {
+    margin: 20px 80px;
+
+    @include mobileAndTablet {
+      margin: 35px 24px;
+    }
+
+    .orderStatusBarInfo {
+      display: flex;
+      justify-content: space-between;
+
+      @include mobileAndTablet {
+        flex-direction: column;
+      }
+
+      .orderStatusBarHeader {
+        @include hl-font-700;
+        font-size: 32px;
+        line-height: 40px;
+        font-style: normal;
+
+        @include mobileAndTablet {
+          font-size: 20px;
+          line-height: 24px;
+        }
+        .orderStatusBarDate {
+          font-size: 16px;
+          line-height: 24px;
+          .orderStatusBarDateText {
+            @include hl-font-300;
+          }
+        }
+      }
+
+      .orderStatusBarButton {
+        @include desktop {
+          width: 10%;
+          min-width: 156px;
+          margin: -20px 0px 0px -20px;
+        }
+      }
+    }
+  }
+}
+
+.shipmentStatus {
+  margin: 20px 80px;
+  @include mobileAndTablet {
+    margin: 35px 24px;
+  }
+
+  .shipmentStatusBar {
+    border-style: solid;
+    padding: 10px;
+    border-radius: 10px;
+
+    .shipmentStatusTrackingId {
+      margin-left: 20px;
+
+      .shipmentStatusTrackingIdHeader {
+        @include hl-font-700;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .shipmentStatusTrackingIdBody {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 10px;
+
+        .shipmentStatusTrackingIdLabel {
+          @include hl-font-700;
+        }
+      }
+    }
+
+    .orderStatusBarShipmentBox {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      .orderStatusBarShipmentReceived {
+        width: 40%;
+      }
+
+      .orderStatusBarShipmentProcessing {
+        width: 40%;
+      }
+
+      .orderStatusBarShipmentShipped {
+        width: 20%;
+      }
+
+      .orderStatusBarShipmentConnectorActive {
+        border-color: $hl-blue;
+        border-bottom-style: solid;
+        margin-bottom: -12px;
+        margin-right: 5px;
+        margin-left: 25px;
+      }
+
+      .orderStatusBarShipmentConnectorInActive {
+        border-color: $hl-gray-line;
+        border-bottom-style: solid;
+        margin-bottom: -12px;
+        margin-right: 5px;
+        margin-left: 25px;
+      }
+
+      .orderStatusBarShipmentConnectorCancelled {
+        border-color: $hl-red;
+        border-bottom-style: solid;
+        margin-bottom: -12px;
+        margin-right: 5px;
+        margin-left: 25px;
+      }
+
+      .orderStatusBarShipmentShippedConnector {
+        margin-bottom: -12px;
+      }
+
+      .orderStatusBarShipmentIconActive {
+        background-color: $hl-blue;
+        border-style: solid;
+        border-radius: 50% 50%;
+        width: 20px;
+        height: 20px;
+        color: $hl-white;
+        font-size: 12px;
+        text-align: center;
+        border-color: $hl-blue;
+      }
+
+      .orderStatusBarShipmentIconInActive {
+        background-color: $hl-white;
+        border-style: solid;
+        border-radius: 50% 50%;
+        width: 20px;
+        height: 20px;
+        color: $hl-white;
+        font-size: 12px;
+        text-align: center;
+        border-color: $hl-gray-line;
+      }
+      .orderStatusBarShipmentIconCancelled {
+        background-color: $hl-red;
+        border-style: solid;
+        border-radius: 50% 50%;
+        width: 20px;
+        height: 20px;
+        color: $hl-white;
+        font-size: 12px;
+        text-align: center;
+        border-color: $hl-red;
+      }
+    }
+  }
+}
+
+.orderDetails {
+  display: flex;
+  gap: 10px;
+  margin: 20px 80px;
+  @include mobileAndTablet {
+    margin: 20px 24px;
+    display: block;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .leftBar {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 1px;
+    @include mobileAndTablet {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+  }
+
+  div[class*='orderSummarySection'] {
+    margin-right: 0px;
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .orderSummary {
+    width: 40%;
+
+    @include mobileAndTablet {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+    @include mobile {
+      border-style: solid;
+      border-color: $hl-black;
+      border-width: 1px;
+    }
+  }
+
+  .rightBar {
+    width: 40%;
+    display: inline-block;
+    border-style: solid;
+    border-radius: 20px;
+    @include mobileAndTablet {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+  }
+
+  .tickIcon {
+    border-radius: 50%;
+    background-color: $hl-black;
+    color: $hl-white;
+    font-size: 11px;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 2px;
+  }
+}
+
+.orderReturn {
+  margin: 20px 80px;
+
+  .link {
+    color: $hl-blue;
+    text-decoration: underline;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+}
+
+.orderedItems {
+  margin: 10px 80px;
+
+  @include mobileAndTablet {
+    margin: 10px 24px;
+  }
+}
+
+.returns {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin: 40px auto;
+  max-width: $hl-xxl;
+  padding: 0;
+
+  .boxReturnImg {
+    display: flex;
+    align-self: center;
+  }
+  .returnTitle {
+    color: $color-ribbon;
+    font-size: 24px;
+    line-height: 32px;
+    @include hl-font-700;
+    align-self: center;
+    margin-bottom: 72px;
+    @include mobile {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  a {
+    color: $hl-blue;
+    text-decoration: underline;
+
+    &:focus {
+      text-decoration: none;
+      color: $hl-black;
+      outline-offset: 5px;
+      outline: 2px dashed $hl-blue;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $hl-black;
+    }
+  }
+
+  @include desktop {
+    font-size: 16px;
+    padding: 0 80px;
+  }
+
+  @include mobile {
+    padding: 0 16px;
+  }
+  @include tablet {
+    padding: 0 32px;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+}

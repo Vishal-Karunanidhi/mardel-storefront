@@ -1,0 +1,160 @@
+@use '../../variables' as vars;
+@import '../../breakpoints';
+@import '../../_globals';
+
+.body {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+  padding: 35px 80px 0px 80px;
+  width: 100%;
+}
+
+.gridContainer {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 302px minmax(0, 1fr);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 302px;
+  grid-column: 1 / span 1;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  grid-column: 2 / span 1;
+}
+
+.header {
+  @include vars.hl-font-700;
+  font-size: 40px;
+  line-height: 50px;
+  // margin-top: 35px;
+}
+
+.categoryHeader {
+  @include vars.hl-font-700;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.seoTitle {
+  @include vars.hl-font-700;
+  color: vars.$hl-black;
+  font-size: 32px;
+  letter-spacing: 0, 02em;
+  line-height: 40px;
+
+  @include mobile {
+
+  }
+
+  @include tabletAndDesktop {
+    margin: 0
+  }
+}
+
+.seoDescription {
+  @include vars.hl-font-300;
+  color: vars.$hl-black;
+  font-size: 16px;
+  line-height: 24px;
+  margin: vars.$margin-framing-short 0 0 0;
+}
+
+@media screen and (max-width: $hl-break-lg) {
+  .right {
+    grid-column: 1 / span 2;
+    padding-left: 0px;
+  }
+}
+
+@media screen and (max-width: $hl-break-xs-m) {
+  .body {
+    padding: 35px 0px 0px 0px;
+  }
+  .slider {
+    padding: 0px 24px 0px 24px;
+  }
+}
+
+// Slider at the top of the page
+.slider {
+  overflow: visible;
+  
+  div[class*='slider_rightArrow__'] {
+    right: 0 !important;
+  }
+  div[class*='slider_leftArrow__'] {
+    left: 0 !important;
+  }
+  div[class^='slider_slider__'] {
+    width: 100%;
+  }
+
+  @include tabletAndDesktop {
+    div[class^='featuredItems_headerWrapper__'] {
+      padding-right: 0;
+      h2 {
+        margin-left: 0;
+      }
+    }
+    div[class^='slider_sliderContainer__'] {
+      @include mobile {
+        padding: 0 0 0 0;
+      }
+
+      @include tabletAndDesktop {
+        margin: 0 -20px;
+        padding: 0 20px;
+        width: calc(100% + 20px);
+      }
+    }
+  }
+}
+
+// Slider at the bottom of the page
+
+.departmentSlider {
+  
+  @include mobile {
+    margin-bottom: vars.$margin-card-short;
+  }
+
+  @include tablet {
+    margin-bottom: vars.$margin-card-tall;
+  }
+
+  @include desktop {
+    margin-bottom: vars.$margin-card-tall;
+  }
+
+  div[class*='slider_sliderContainer'] {
+    @include mobile {
+      margin-top: vars.$margin-card-short;
+    }
+  
+    @include tablet {
+      margin-top: vars.$margin-card-tall;
+    }
+  
+    @include desktop {
+      margin-top: vars.$margin-card-tall;
+    }
+  }
+}
+
+.seo {
+  margin: 0 auto vars.$margin-card-tall auto;
+  max-width: $hl-xxl;
+
+  @include mobile {
+    padding: vars.$padding-framing-mobile;
+  }
+}

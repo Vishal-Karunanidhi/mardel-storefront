@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+query GetCart($recalculate: Boolean, $recalculateTax: Boolean) {
+  getCart(recalculate: $recalculate, recalculateTax: $recalculateTax) {
+    ...CartResponseFragment
+  }
+}

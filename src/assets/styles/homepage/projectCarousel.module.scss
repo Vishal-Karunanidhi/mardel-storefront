@@ -1,0 +1,74 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.carouselWrapper {
+  div[class*='featuredItems_container'] {
+    background: $color-gray-7;
+    padding: 35px 0px;
+  }
+}
+
+.parentCard {
+  background: $hl-white;
+  width: 302px;
+  border: 1px solid #5f5f5f;
+  border-radius: 20px;
+  position: relative;
+  padding-bottom: 50px;
+  gap: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  .titleCards {
+    display: block;
+    line-height: 1.5;
+    margin: 0 16px 8px 16px;
+  }
+
+  .favoriteIconWrapper {
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .favoriteIcon {
+    height: 27.53px;
+    margin-left: 243px;
+    margin-top: 19.24px;
+    width: 30px;
+    position: absolute;
+  }
+  
+  a {
+    span {
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  .ratingComp {
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 16px 0 14px;
+    position: absolute;
+    
+    div {
+      line-height: 1.6;
+    }
+
+    .videoIcon {
+      position: absolute;
+      left: 260px;
+    }
+  }
+}
+
+.projectImage {
+  width: 300px;
+  border-radius: calc($border-radius * 1.9) calc($border-radius * 1.9) 0 0;
+  padding-bottom: 16px;
+}

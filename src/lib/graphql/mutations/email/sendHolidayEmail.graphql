@@ -1,0 +1,6 @@
+mutation sendHolidayEmail($request: HolidayEmailRequest!) {
+  sendHolidayEmail(request: $request) {
+    Message
+    Status
+  }
+}

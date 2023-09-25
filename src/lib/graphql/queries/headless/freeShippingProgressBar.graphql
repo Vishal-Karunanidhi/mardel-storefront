@@ -1,0 +1,16 @@
+query FreeShippingMessages {
+  fullCartContent {
+    freeShippingMessages {
+      notes {
+        richTextData
+      }
+      pendingEligibility
+      achievingEligibility
+    }
+  }
+  getFreeShippingPromoState {
+    shippingPromoActive
+    freeShippingThresholdValue
+    freeShippingThresholdCurrency
+  }
+}

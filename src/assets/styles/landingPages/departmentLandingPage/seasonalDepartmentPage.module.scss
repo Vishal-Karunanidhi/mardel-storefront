@@ -1,0 +1,95 @@
+@use '../../variables' as vars;
+@import '../../breakpoints';
+@import '../../globals';
+
+.body {
+  padding: 35px 80px 0px 80px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.gridContainer {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 302px minmax(0, 1fr);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 302px;
+  grid-column: 1 / span 1;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+  grid-column: 2 / span 1;
+}
+
+.header {
+  @include vars.hl-font-700;
+  font-size: 40px;
+  line-height: 50px;
+  // margin-top: 35px;
+}
+
+.categoryHeader {
+  @include vars.hl-font-700;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.seoTitle {
+  @include vars.hl-font-700;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 35px;
+  letter-spacing: 0, 02em;
+  margin-top: 70px;
+  color: vars.$hl-black;
+}
+
+.seoDescription {
+  @include vars.hl-font-300;
+  font-size: 16px;
+  line-height: 24px;
+  color: vars.$hl-black;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: $hl-break-lg) {
+  .right {
+    grid-column: 1 / span 2;
+    padding-left: 0px;
+  }
+}
+
+@media screen and (max-width: $hl-break-xs-m) {
+  .body {
+    padding: 35px 0px 0px 0px;
+  }
+  .slider {
+    padding: 0px 24px 0px 24px;
+  }
+}
+
+.seo {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  @include mobile {
+    padding: 0 24px;
+  }
+
+  @include tablet {
+    padding: 0 40px;
+  }
+  
+  @include desktop {
+    padding: 0 80px;
+  }
+}

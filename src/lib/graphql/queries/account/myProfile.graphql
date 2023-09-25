@@ -1,0 +1,23 @@
+#import '@GqlFragments/myAccount/order.fragment.graphql';
+
+query MyProfileDetails {
+  me {
+    firstName
+    lastName
+    createdAt
+    email
+    phone
+    defaultShippingAddressID
+    defaultBillingAddressID
+    defaultPayment
+    taxExempt
+    taxExemptState
+    taxExemptCompanyName
+    taxExemptDate
+    shippingAddressIds
+    billingAddressIds
+    order {
+      ...OrderFragment
+    }
+  }
+}

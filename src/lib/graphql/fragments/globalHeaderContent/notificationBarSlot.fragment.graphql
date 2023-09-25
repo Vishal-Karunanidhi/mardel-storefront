@@ -1,0 +1,16 @@
+
+fragment NotificationBarSlot on NotificationBarSlot {
+    _meta {
+        name
+    }
+    slotContent {
+        rotationDelay
+        notifications {
+            title
+            link {
+                value
+                openInNewTab
+            }
+        }
+    }
+}

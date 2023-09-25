@@ -1,0 +1,29 @@
+#import '@GqlFragments/contentPage/components/contentPageBreadcrumb.fragment.graphql';
+#import '@GqlFragments/contentPage/components/contentMainSection.fragment.graphql';
+#import '@GqlFragments/contentPage/components/contentRichText.fragment.graphql';
+#import '@GqlFragments/contentPage/components/contentPageImage.fragment.graphql';
+#import '@GqlFragments/contentPage/components/contentCTA.fragment.graphql';
+#import '@GqlFragments/contentPage/components/organizationList.fragment.graphql';
+#import '@GqlFragments/contentPage/components/recallProductsAndYears.fragment.graphql';
+#import '@GqlFragments/contentPage/components/holidayMessagesCardList.fragment.graphql';
+
+query ContentPage($deliveryKey: String!) {
+  contentPage(deliveryKey: $deliveryKey) {
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+    }
+    content {
+      ...ContentPageBreadcrumb
+      ...ContentMainSection
+      ...ContentRichText
+      ...ContentPageImage
+      ...ContentCTA
+      ...OrganizationList
+      ...RecallProductsAndYears
+      ...HolidayMessagesCardList
+    }
+  }
+}

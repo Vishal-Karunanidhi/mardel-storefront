@@ -1,0 +1,13 @@
+fragment RatingsFragment on ProductRating {
+  averageRating
+  highestRating
+  lowestRating
+  numberOfRatings
+  ratingsDistribution {
+    fiveStarReviews
+    fourStarReviews
+    threeStarReviews
+    twoStarReviews
+    oneStarReviews
+  }
+}

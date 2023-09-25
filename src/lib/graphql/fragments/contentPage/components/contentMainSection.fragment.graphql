@@ -1,0 +1,9 @@
+fragment ContentMainSection on ContentMainSection {
+  _meta {
+    name
+    schema
+    deliveryId
+  }
+  title
+  richText
+}

@@ -1,0 +1,19 @@
+fragment VideoComponent on VideoComponent {
+    video {
+        altimagetext
+        image {
+             defaultHost
+             endpoint
+             name
+             id
+             url
+        }
+        videolink
+        videotitle
+    }
+    description
+    cta {
+        label
+        value
+    }
+}

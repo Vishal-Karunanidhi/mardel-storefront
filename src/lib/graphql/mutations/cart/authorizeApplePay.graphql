@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/applePayOrderResponse.fragment.graphql';
+
+mutation AuthorizeApplePay($request: ApplePayPaymentRequest!) {
+  authorizeApplePay(request: $request) {
+    ...ApplePayOrderResponseFragment
+  }
+}

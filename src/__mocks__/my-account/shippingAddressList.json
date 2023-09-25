@@ -1,0 +1,62 @@
+[
+  {
+    "addressId": "EEvntHHs",
+    "addressNickName": "office",
+    "addressLineOne": "09876",
+    "addressLineTwo": "Georgia Ave",
+    "city": "Silver Spring",
+    "country": "United States",
+    "firstName": "Francis",
+    "lastName": "O’Neil",
+    "state": "MD",
+    "zipCode": "20906",
+    "phone": "9876543210",
+    "addressVerified": false,
+    "defaultAddress": true
+  },
+  {
+    "addressId": "9LlW4h9j",
+    "addressNickName": "OFFiCE",
+    "addressLineOne": "2nd Address QWERT",
+    "addressLineTwo": "POIUY",
+    "city": "jkl",
+    "country": "US",
+    "firstName": "SDE",
+    "lastName": "EDS",
+    "state": "AL",
+    "zipCode": "jkl",
+    "phone": "9876543210",
+    "addressVerified": false,
+    "defaultAddress": false
+  },
+  {
+    "addressId": "LDdXuVFy",
+    "addressNickName": "HOME",
+    "addressLineOne": "3rd Address QWERT",
+    "addressLineTwo": "POIUY",
+    "city": "jkl",
+    "country": "US",
+    "firstName": "SDE",
+    "lastName": "EDS",
+    "state": "AL",
+    "zipCode": "jkl",
+    "phone": "9876543210",
+    "addressVerified": false,
+    "defaultAddress": false
+  },
+  {
+    "addressId": "vxEUAYGb",
+    "addressNickName": "PERSONAL",
+    "addressLineOne": "4th Address QWERT",
+    "addressLineTwo": "POIUY",
+    "city": "jkl",
+    "country": "US",
+    "firstName": "SDE",
+    "lastName": "EDS",
+    "state": "AL",
+    "zipCode": "jkl",
+    "phone": "9876543210",
+    "addressVerified": false,
+    "defaultAddress": false
+  }
+]

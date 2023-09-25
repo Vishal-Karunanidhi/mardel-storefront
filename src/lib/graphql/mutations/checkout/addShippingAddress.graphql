@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+mutation AddShippingAddress($request: AddressRequest!) {
+  addShippingAddress(request: $request) {
+     ...CartResponseFragment
+  }
+}

@@ -1,0 +1,27 @@
+fragment OrganizationList on OrganizationList {
+  _meta {
+    deliveryId
+    name
+    schema
+    deliveryKey
+  }
+  organizations {
+    image {
+      defaultHost
+      endpoint
+      id
+      name
+      url
+    }
+    description
+    details
+    altimagetext
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+    }
+  }
+  header
+}

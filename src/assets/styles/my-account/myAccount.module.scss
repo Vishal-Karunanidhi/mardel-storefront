@@ -1,0 +1,153 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.divIsInitialLoading {
+  height: 350px;
+}
+
+.myAccountPage {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: $hl-xxl;
+  gap: 24px;
+
+  @include mobileAndTablet {
+    padding: 24px 24px 0px 24px;
+  }
+
+  @include desktop {
+    padding: 70px 80px;
+  }
+
+  .sideNavMain {
+    @include mobileAndTablet {
+      display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .sideNavSub {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .navHeader {
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+        color: $hl-black;
+      }
+
+      .sideNavImageLabel {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        cursor: pointer;
+
+        .loginsideNavLabel,
+        .sideNavLabel {
+          @include hl-font-300;
+          font-size: 16px;
+          line-height: 24px;
+          color: $hl-black;
+          cursor: pointer;
+        }
+
+        .loginsideNavLabel {
+          color: $hl-blue;
+        }
+      }
+
+      .sideNavDivider {
+        margin-bottom: 16px;
+        width: 302px;
+      }
+    }
+  }
+}
+
+.addressComp {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: $hl-black;
+
+  .userName,
+  .addressLineOne,
+  .city,
+  .country,
+  .addressLineTwo {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .meatBallWrapper {
+    .addressNickName {
+      @include hl-font-700;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+    }
+    span {
+      float: left;
+    }
+
+    a {
+      float: right;
+
+      .meatBallMenu {
+        button {
+          &:hover {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cardInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include mobile {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .defaultCardInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 49%;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .cardInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cardExpired {
+    color: $hl-orange-dark;
+  }
+
+  .divider {
+    width: 100%;
+
+    @include mobile {
+      width: 96.5%;
+    }
+  }
+}

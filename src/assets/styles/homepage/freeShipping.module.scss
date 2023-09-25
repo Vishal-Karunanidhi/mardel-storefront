@@ -1,0 +1,150 @@
+@use "../variables" as vars;
+@use "../breakpoints" as brPoint;
+
+.mainAccordionPadding {
+    margin: 0 auto;
+    max-width: brPoint.$hl-xxl;
+    padding: 35px 24px;
+
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.mainTitle {
+    @include vars.hl-font-700;
+    color: vars.$hl-white;
+    padding-right: 24px;
+
+    @media only screen and (max-width: brPoint.$hl-break-lg) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        font-size: 32px;
+        letter-spacing: 0.02em;
+        line-height: 40px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        padding-bottom: 6px;
+        padding-left: 232px;
+        padding-top: 18px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        padding-bottom: 6px;
+        padding-left: 180px;
+        padding-top: 16px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+        padding-bottom: 40px;
+        padding-left: 24px;
+        padding-top: 24px;
+    }
+}
+
+.accordionTitle {
+    @include vars.hl-font-700;
+    color: vars.$hl-white;
+    padding-right: 8px;
+
+    @media only screen and (max-width: brPoint.$hl-break-lg) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+   
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        padding-left: 216px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        padding-left: 164px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+         margin-top: -36px;
+         padding-bottom: 4px;
+         padding-left: 8px;
+         padding-top: 0px;
+    }
+}
+
+.policies {
+    color: vars.$hl-white;
+    padding-right: 8px;
+
+    @media only screen and (max-width: brPoint.$hl-break-lg) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        padding-left: 216px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-xs-m) and (max-width: brPoint.$hl-break-lg) {
+        padding-left: 164px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+        padding-left: 8px;
+    }
+}
+
+.imageButton {
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (min-width: brPoint.$hl-xxxl) {
+        margin-left: 24px;
+        margin-top: -68px;
+    }
+
+    @media only screen and (min-width: brPoint.$hl-md) and (max-width: brPoint.$hl-break-xxxl) {
+        margin-left: 24px;
+        margin-top: -68px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-md) {
+        margin-left: 24px;
+        margin-top: -68px;
+    }
+}
+
+.truckImage {
+    @media only screen and (min-width: brPoint.$hl-lg) {
+        height: 89px;
+        width: 164px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-break-lg) {
+        height: 62px;
+        width: 116px;
+    }
+}
+    
+    .accordionBox {
+        @media only screen and (max-width: brPoint.$hl-break-xs-m) {
+            flex-direction: column-reverse;
+            margin: 0px;
+        }
+    }

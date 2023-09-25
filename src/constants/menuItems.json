@@ -1,0 +1,30 @@
+[
+  {
+    "name": "SSG-Graphql",
+    "path": ""
+  },
+  {
+    "name": "StaticSG",
+    "path": "strategies/render/ssg"
+  },
+  {
+    "name": "IncrementalSR",
+    "path": "strategies/render/isr"
+  },
+  {
+    "name": "ClientSR",
+    "path": "strategies/render/csr"
+  },
+  {
+    "name": "ServerSR",
+    "path": "strategies/render/ssr"
+  },
+  {
+    "name": "CSR-Graphql",
+    "path": "strategies/graphql/csr"
+  },
+  {
+    "name": "AjaxRedux",
+    "path": "ajax"
+  }
+]

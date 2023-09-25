@@ -1,0 +1,13 @@
+fragment ContentCTA on ContentCTA {
+  _meta {
+    name
+    schema
+    deliveryId
+  }
+  cta {
+    value
+    label
+  }
+  title
+  body
+}

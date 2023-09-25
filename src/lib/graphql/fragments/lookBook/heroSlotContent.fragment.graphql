@@ -1,0 +1,20 @@
+fragment HeroSlotContent on HeroSlotContent {
+  _meta {
+    name
+    schema
+    deliveryId
+    deliveryKey
+    hierarchy {
+      parentId
+      root
+    }
+  }
+  heading2
+  heading3
+  image {
+    defaultHost
+    endpoint
+    id
+    name
+  }
+}

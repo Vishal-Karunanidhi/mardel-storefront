@@ -1,0 +1,153 @@
+@import '../variables';
+@import '../globals';
+
+.lastOrderSection {
+  display: flex;
+  flex-direction: column;
+  @include hl-font-300;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 24px;
+  gap: 8px;
+
+  .lastOrderTitle {
+    @include hl-font-700;
+    font-size: 24px;
+    line-height: 32px;
+    color: $hl-black;
+  }
+
+  .imageItems {
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 24px;
+    color: $hl-black;
+  }
+  .imageList {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+  .viewOrderBtnMobile {
+    @include desktop {
+      display: none;
+    }
+    .cancelWrapper {
+      &:active {
+        outline: none;
+      }
+
+      .cancelButton {
+        cursor: pointer;
+        border: 1px solid $hl-black;
+        border-radius: 25px;
+        width: 100%;
+        height: 28px;
+        margin-top: 16px;
+        @include hl-font-700;
+
+        font-size: 14px;
+        line-height: 20px;
+
+        color: $hl-black;
+        background: $hl-white;
+
+        &:active {
+          background: $hl-white;
+        }
+
+        &:hover,
+        &:focus-visible {
+          background: $hl-blue-light;
+          border: 1px solid $hl-white;
+          color: $hl-white;
+        }
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+    @include mobileAndTablet {
+      span[class*='orderWrapper'] {
+        span[class*='viewOrderBtnDesktop'] {
+          display: none;
+        }
+      }
+    }
+}
+
+.sectionDivider {
+  height: 1px;
+  border: 0px;
+  border-top: 1px solid $hl-gray;
+  margin-top: 24px;
+  @include mobileAndTablet {
+    margin-top: 16px;
+  }
+}
+
+.orderWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include mobileAndTablet {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .viewOrderBtnDesktop {
+    .cancelWrapper {
+      &:active {
+        outline: none;
+      }
+
+      .cancelButton {
+        cursor: pointer;
+        border: 1px solid $hl-black;
+        border-radius: 25px;
+        width: 135px;
+        height: 38px;
+
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include mobileAndTablet {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        @include mobileAndTablet {
+          height: 28px;
+          width: 100%;
+        }
+
+        color: $hl-black;
+        background: $hl-white;
+
+        &:active {
+          background: $hl-white;
+        }
+
+        &:hover,
+        &:focus-visible {
+          background: $hl-blue-light;
+          border: 1px solid $hl-white;
+          color: $hl-white;
+        }
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .orderDetails {
+    display: flex;
+    flex-direction: column;
+  }
+}

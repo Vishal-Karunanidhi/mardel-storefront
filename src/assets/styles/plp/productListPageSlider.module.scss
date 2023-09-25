@@ -1,0 +1,32 @@
+@use '../variables' as vars;
+@use '../breakpoints' as res;
+@import '../globals';
+
+.wrapper {
+  div[class*='categoryListingPages_customProdCard'] {
+    grid-template-columns: none;
+  }
+  div[class*='categoryListingPages_parentCard'] {
+    background-color: #fff;
+  }
+  section[class*='categoryListingPages_priceAndCtaSection'] {
+    padding: 0px 10px;
+  }
+  section[class*='categoryListingPages_imageSection'] {
+    width: 100% !important;
+  }
+  section[class*='categoryListingPages_ratingAvailabilitySection'] {
+    padding: 0px 10px;
+  }
+  section[class*='featuredItemCard_promoAlert'] {
+    margin: 0px !important;
+    border-radius: 20px 20px 0px 0px !important;
+  }
+  div[class*='widgetAndHitsWrapper'] {
+    padding: 0px;
+    grid-template-columns: none;
+  }
+  div[class*='categoryListingPages_mobileParentCard'] {
+    background-color: #fff;
+  }
+}

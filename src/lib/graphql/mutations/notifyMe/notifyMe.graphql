@@ -1,0 +1,6 @@
+mutation notifyMe($request: NotifyMeRequest!) {
+  notifyMe(request: $request) {
+    status
+    message
+  }
+}

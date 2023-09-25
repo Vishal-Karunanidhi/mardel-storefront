@@ -1,0 +1,19 @@
+query getShippingAddresses {
+  getShippingAddresses {
+    addressId
+    addressNickName
+    addressLineOne
+    addressLineTwo
+    city
+    country
+    firstName
+    lastName
+    state
+    company
+    zipCode
+    phone
+    addressVerified
+    defaultAddress
+    taxExemptedAddress
+  }
+}

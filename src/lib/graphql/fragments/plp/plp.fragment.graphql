@@ -1,0 +1,14 @@
+fragment SubCategory on SubCats {
+  id
+  contentType
+  _meta {
+    name
+    schema
+    deliveryId
+    deliveryKey
+    hierarchy {
+      parentId
+      root
+    }
+  }
+}

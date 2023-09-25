@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/giftMessage.fragment.graphql';
+
+mutation AddGiftMessage($request: AddGiftMessageRequest!) {
+  addGiftMessage(request: $request) {
+   ...GiftMessageFragment
+  }
+}

@@ -1,0 +1,21 @@
+.toggleLabel {
+  background-color: transparent;
+
+  &::before {
+    content: none;
+  }
+  &::after {
+    content: none;
+  }
+}
+
+.checkbox {
+  appearance: auto !important;
+  opacity: unset;
+  position: unset;
+  margin-right: 0 !important;
+
+  &::after {
+    content: none !important;
+  }
+}

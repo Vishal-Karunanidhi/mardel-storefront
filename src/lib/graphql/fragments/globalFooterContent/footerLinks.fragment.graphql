@@ -1,0 +1,22 @@
+
+fragment FooterLinks on FooterLinks {
+    groups {
+        groupName
+        title
+        links {
+            content {
+                _meta {
+                    name
+                }
+                priority
+                theme
+                type
+                boldText
+                title
+                link
+                openInDifferentTab
+                url
+            }
+        }
+    }
+}

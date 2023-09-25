@@ -1,0 +1,43 @@
+query getWeddingTemplatesContent($deliveryKey: String!) {
+  getWeddingTemplatesContent(deliveryKey: $deliveryKey) {
+    templatePageBody {
+      templateCard {
+        groupTitle
+        templateCardBody {
+          invitationUrl
+          rsvpUrl
+          sku
+          templateImage {
+            image {
+              defaultHost
+              endpoint
+              id
+              name
+              url
+            }
+            imageAltText
+          }
+          templateName
+          templateUrl
+        }
+      }
+    }
+    breadcrumbs {
+      links {
+        label
+        value
+        openInNewTab
+      }
+    }
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+      hierarchy {
+        parentId
+        root
+      }
+    }
+  }
+}

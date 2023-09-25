@@ -1,0 +1,178 @@
+@import '../../variables';
+@import '../../breakpoints';
+
+.productColorOptions {
+  > hr {
+    margin: 0;
+  }
+  div[class*='sliderContainer'] {
+    padding: 16px 27.5px;
+  }
+  &Title {
+    align-items: center;
+    color: $hl-black;
+    display: flex;
+    font-size: 12px;
+    height: 28px;
+    justify-content: space-evenly;
+    line-height: 16px;
+
+    > div:first-of-type {
+      padding-top: 0;
+    }
+
+    &Color {
+      width: 147px;
+    }
+
+    &Views {
+      display: flex;
+      gap: 18px;
+
+      &Icon {
+        display: flex;
+        gap: 10px;
+        @include hl-font-300;
+        align-items: center;
+        color: $hl-black;
+        cursor: pointer;
+        padding-bottom: 7px;
+        border-bottom: 4px solid transparent;
+
+        svg {
+          font-size: 14px;
+        }
+
+        &:focus-visible {
+          outline: $hl-blue dashed 2px;
+          outline-offset: 2px;
+        }
+
+        &:active {
+          outline: none;
+        }
+      }
+
+      &List {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        height: 164px;
+        margin: 20px auto;
+        overflow-y: scroll;
+        width: 272px;
+        cursor: pointer;
+
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+          width: 13px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: $hl-blue;
+          border-radius: 40px;
+          box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: $hl-gray-shadow;
+          border-radius: 40px;
+        }
+      }
+    }
+  }
+
+  &Images {
+    &Grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0 12px;
+    }
+
+    &List {
+      align-items: center;
+      color: $hl-black;
+      display: flex;
+      font-size: 14px;
+      gap: 15px;
+      line-height: 20px;
+      padding-left: 5px;
+    }
+
+    &Image {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+
+      img {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+
+      &Disabled {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        hr {
+          position: absolute;
+          width: 50px;
+          border: 1px solid;
+        }
+      }
+
+      &:focus-visible {
+        outline: $hl-blue dashed 2px;
+        outline-offset: 2px;
+      }
+
+      &:active {
+        outline: none;
+      }
+    }
+  }
+}
+
+.selected {
+  &Tab {
+    color: $hl-blue;
+    font-weight: 600;
+    border-color: $hl-blue;
+  }
+  &Icon {
+    color: $hl-blue;
+  }
+  &Image {
+    border: 2px solid $hl-blue-outline;
+    &Text {
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (min-width: $hl-lg) {
+  .productColorOptions {
+    div[class*='sliderContainer'] {
+      padding: 0;
+    }
+    &Title {
+      justify-content: space-between;
+      &ViewsList {
+        width: 100%;
+      }
+    }
+  }
+}
+
+:export {
+  hlBlue: $hl-blue;
+  hlBlueOutline: $hl-blue-outline;
+  hlLgBreakpoint: $hl-lg;
+}

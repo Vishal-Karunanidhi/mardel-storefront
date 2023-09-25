@@ -1,0 +1,1456 @@
+@use 'globals' as global;
+@use 'variables' as vars;
+
+* {
+  box-sizing: border-box;
+
+  &:focus,
+  &:focus-visible {
+    outline: vars.$outline-size dotted vars.$color-secondary;
+    outline-offset: vars.$outline-offset;
+  }
+}
+
+html {
+  @include vars.hl-font-300;
+
+  color: vars.$color-body;
+  font-size: clamp(calc(vars.$font-size-body) - 0.25rem, vars.$font-resize, vars.$font-size-body);
+  font-weight: 300;
+  line-height: vars.$line-height;
+  margin: 0;
+  padding: 0;
+
+  @include global.mq('small', max) {
+    font-size: calc(vars.$font-size-body - 0.25rem);
+  }
+
+  @include global.mq('small') {
+    font-size: vars.$font-size-body;
+  }
+}
+
+body {
+  font-family: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+
+  & div .MuiDialog-paper.MuiDialog-paperScrollPaper {
+    border-radius: vars.$border-radius;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+b, strong {
+  @include vars.hl-font-300;
+  font-weight: 300;
+}
+
+i, em {
+  @include vars.hl-font-300-italic;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+[aria-disabled],
+.disabled,
+[disabled] {
+  pointer-events: none;
+}
+
+// Text Elements
+// These only include classes when they are being used to match standard elements.
+
+a {
+
+  // TODO: This enables the global styling of href links but boy does it currently break things
+  // @include global.href-default;
+
+  color: inherit;
+  text-decoration: inherit;
+}
+
+blockquote {
+  border-left: 0.25rem double vars.$color-gray-4;
+  display: block;
+  font-size: vars.$font-size-p;
+  font-size: clamp(calc(vars.$font-size-p) - 0.5rem, vars.$font-resize, vars.$font-size-p);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0 0 0 0.5rem;
+}
+
+.button,
+button {
+  background-color: vars.$color-href;
+  border: vars.$border-size solid vars.$color-href;
+  border-radius: vars.$button-border-radius;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: vars.$font-family-sans-500;
+  font-size: vars.$font-size-p;
+  // font-weight: vars.$font-weight-button;
+  line-height: 2.25;
+  margin: vars.$margin-body 0 0 0;
+  min-height: vars.$button-min-height;
+  padding: vars.$button-padding-height vars.$button-padding-width;
+  text-align: center;
+  text-decoration: none;
+  transition: vars.$button-transition;
+  vertical-align: middle;
+  width: 100%;
+
+  @include global.mq('small') {
+    margin: 0;
+    width: max-content;
+  }
+
+  &:visited {
+    background-color: vars.$color-href;
+    border: vars.$border-size solid vars.$color-href;
+  }
+
+  &:hover {
+    background-color: vars.$color-href-hover;
+    border: vars.$border-size solid vars.$color-href-hover;
+  }
+
+  &:active {
+    background-color: vars.$color-href-active;
+    border: vars.$border-size solid vars.$color-href-active;
+    transition: 0s;
+  }
+
+  &:focus {
+    background-color: vars.$color-outline;
+    border: vars.$border-size solid vars.$color-outline;
+    transition: vars.$button-transition-hover;
+
+    &:hover {
+      background-color: vars.$color-href-hover;
+      border: vars.$border-size solid vars.$color-href-hover;
+    }
+  }
+
+  // Button Variants
+
+  &.buttonMedium {
+    min-height: calc(vars.$button-min-height - 0.5rem);
+    padding: calc(vars.$button-padding-height - 0.10rem) calc(vars.$button-padding-width - 0.1rem);
+  }
+
+  &.buttonSmall {
+    font-size: calc(vars.$font-size-p) - 0.15rem;
+    min-height: calc(vars.$button-min-height - 0.925rem);
+    padding: calc(vars.$button-padding-height - 0.15rem) calc(vars.$button-padding-width - 0.5rem);
+  }
+
+  &.buttonSecondary {
+    background-color: white;
+    border: vars.$border-size solid vars.$color-border;
+    color: vars.$color-body;
+
+    &:hover {
+      background-color: vars.$color-href-hover;
+      border: vars.$border-size solid vars.$color-href-hover;
+      color: white;
+    }
+
+    &:active {
+      background-color: vars.$color-href-active;
+      border: vars.$border-size solid vars.$color-href;
+      color: white;
+      transition: 0s;
+    }
+
+    &:focus {
+      background-color: white;
+      border: vars.$border-size solid vars.$color-border;
+      color: vars.$color-body;
+
+      &:hover {
+        background-color: vars.$color-href-hover;
+        border: vars.$border-size solid vars.$color-href-hover;
+        color: white;
+      }
+    }
+  }
+
+  &.buttonInactive,
+  &:disabled,
+  &.disabled,
+  &[disabled] {
+    background-color: vars.$color-gray-6;
+    border: vars.$border-size solid vars.$color-gray-6;
+    color: vars.$color-gray-1;
+
+    &.buttonSecondary {
+      border-color: vars.$color-gray-2;
+    }
+
+    &:hover {
+      background-color: vars.$color-gray-6;
+      color: vars.$color-gray-1;
+    }
+
+    &:focus,
+    &:focus-visible {
+      background-color: vars.$color-gray-6;
+      outline: vars.$outline-size dotted vars.$color-gray-2;
+      outline-offset: vars.$outline-offset;
+
+      &:hover {
+        background-color: vars.$color-gray-4;
+        color: vars.$color-gray-1;
+      }
+    }
+  }
+
+  // Iconic Button Defaults
+
+  &.buttonIconCenter {
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-width: calc(vars.$button-padding-width + 2.5rem);
+    transition: vars.$button-icon-transition;
+
+    span {
+      display: none;
+      visibility: hidden;
+    }
+
+    &.buttonIconCarousel {
+      box-shadow: vars.$box-shadow-1;
+      min-height: 2rem;
+      min-width: 2rem;
+      padding: 1.25rem;
+      transform: scale(1);
+      transition: vars.$button-icon-transition, vars.$button-transition;
+
+      @include global.mq('small', max) {
+        display: block;
+        margin: 0 auto;
+        width: max-content !important;
+      }
+
+      &:hover {
+        box-shadow: vars.$box-shadow-hover;
+        transform: scale(1.15);
+        transition: vars.$button-icon-transition-hover, vars.$button-transition-hover;
+      }
+
+      &:active {
+        box-shadow: vars.$box-shadow-1;
+        transform: scale(1);
+        transition: vars.$button-icon-transition-active, vars.$button-transition-active;
+      }
+    }
+  }
+
+  &.buttonIconLeft {
+    background-repeat: no-repeat;
+
+    @include global.mq('small', max) {
+      span {
+        display: inline-block;
+        margin: 0 auto;
+        max-width: calc(100% - 3rem);
+      }
+    }
+
+    @include global.mq('small') {
+      padding-left: calc(vars.$button-padding-width + 1.25rem);
+    }
+  }
+
+  &.buttonIconRight {
+    background-repeat: no-repeat;
+
+    @include global.mq('small', max) {
+      span {
+        display: inline-block;
+        margin: 0 auto;
+        max-width: calc(100% - 3rem);
+      }
+    }
+
+    @include global.mq('small') {
+      padding-right: calc(vars.$button-padding-width) + 1.25rem;
+    }
+  }
+
+  // ➡️ Arrow Icon Button
+
+  &.buttonArrow {
+
+    &Left {
+      &:not(.buttonSecondary) {
+        background-image: vars.$button-icon-arrow-left-white;
+      }
+
+      &.buttonSecondary {
+        background-image: vars.$button-icon-arrow-left-black;
+
+        &:hover {
+          background-image: vars.$button-icon-arrow-left-white;
+        }
+
+        &:active {
+          background-image: vars.$button-icon-arrow-left-white;
+        }
+      }
+    }
+
+    &Right {
+      &:not(.buttonSecondary) {
+        background-image: vars.$button-icon-arrow-right-white;
+      }
+
+      &.buttonSecondary {
+        background-image: vars.$button-icon-arrow-right-black;
+
+        &:hover {
+          background-image: vars.$button-icon-arrow-right-white;
+        }
+
+        &:active {
+          background-image: vars.$button-icon-arrow-right-white;
+        }
+      }
+    }
+
+    &Left,
+    &Right {
+      background-size: calc(vars.$font-size-body + 0.5rem);
+
+      &:hover {
+        background-size: calc(vars.$font-size-body + 0.75rem);
+      }
+
+      &:active {
+        background-size: calc(vars.$font-size-body + 0.5rem);
+      }
+
+      &.buttonIconLeft {
+        background-position: left 0.7rem center;
+
+        &:hover {
+          background-position: left 0.6rem center;
+        }
+
+        &:active {
+          background-position: left 0.7rem center;
+        }
+      }
+
+      &.buttonIconRight {
+        background-position: right 0.7rem center;
+
+        &:hover {
+          background-position: right 0.6rem center;
+        }
+
+        &:active {
+          background-position: right 0.7rem center;
+        }
+      }
+    }
+
+  }
+
+  // 🛒 Shopping Cart Button
+
+  &.buttonCart {
+    background-size: calc(vars.$font-size-body + 0.25rem);
+
+    &:not(.buttonSecondary) {
+      background-image: vars.$button-icon-cart-white;
+    }
+
+    &.buttonSecondary {
+      background-image: vars.$button-icon-cart-black;
+
+      &:hover {
+        background-image: vars.$button-icon-cart-white;
+      }
+
+      &:active {
+        background-image: vars.$button-icon-cart-white;
+      }
+    }
+
+    &:hover {
+      background-size: calc(vars.$font-size-body + 0.4rem);
+    }
+
+    &:active {
+      background-size: calc(vars.$font-size-body + 0.25rem);
+    }
+
+    &.buttonIconCenter {
+      padding: calc(vars.$button-padding-height + 0.75rem) calc(vars.$button-padding-width + 0.5rem);
+    }
+
+    &.buttonIconLeft {
+      background-position: left 0.85rem center;
+
+      &:hover {
+        background-position: left 0.75rem center;
+      }
+
+      &:active {
+        background-position: left 0.85rem center;
+      }
+    }
+
+    &.buttonIconRight {
+      background-position: right 0.85rem center;
+
+      &:hover {
+        background-position: right 0.75rem center;
+      }
+
+      &:active {
+        background-position: right 0.85rem center;
+      }
+    }
+  }
+
+  svg {
+    vertical-align: middle;
+  }
+}
+
+cite {
+  display: block;
+  font-size: vars.$font-size-cite;
+  font-style: normal;
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$font-size-cite 0 0 0;
+  padding: 0;
+}
+
+code {
+  display: inline;
+  font-family: vars.$font-family-mono;
+  font-size: inherit;
+  // font-weight: inherit;
+  line-height: inherit;
+}
+
+dl {
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+}
+
+
+em {
+  font-style: italic;
+  font-style: oblique;
+}
+
+form {
+  @include global.margin-card-default;
+}
+
+fieldset {
+  border: unset;
+  display: block;
+  margin: vars.$margin-body 0 0 0;
+  min-inline-size: min-content;
+  padding-block-end: 0;
+  padding-block-start: 0;
+  padding-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+// Default Checkbox
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+input[type='checkbox'] {
+  -moz-appearance: none;
+  -o-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ffffff;
+  box-shadow: none;
+  text-align: center;
+
+  &:not(:checked),
+  &:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+  }
+
+  +label {
+    cursor: pointer;
+    font-size: vars.$font-size-p;
+    line-height: calc(vars.$line-height * 1.5);
+    padding: 0 0 0 calc(vars.$margin-body * 1.5);
+    position: relative;
+  }
+
+  &:not(:checked)+label:before,
+  &:checked+label:before {
+    background: white;
+    border-radius: vars.$border-radius-light;
+    border: vars.$border-size solid vars.$color-body;
+    content: '';
+    height: vars.$font-size-p;
+    left: 0;
+    position: absolute;
+    top: -0.05rem;
+    transition: opacity 0.25s;
+    width: vars.$font-size-p;
+  }
+
+  &:not(:checked)+label:after,
+  &:checked+label:after {
+    color: vars.$color-secondary;
+    content: '\2713';
+    font: inherit;
+    left: calc(vars.$font-size-p / 6);
+    line-height: 0;
+    position: absolute;
+    top: calc(vars.$font-size-p / 1.8);
+    transition: opacity 0.15s;
+  }
+
+  &:not(:checked)+label:after {
+    opacity: 0;
+  }
+
+  &:checked+label:after {
+    opacity: 1;
+  }
+
+  &:disabled:not(:checked)+label:before,
+  &:disabled:checked+label:before {
+    background-color: vars.$color-gray-5;
+    border-color: vars.$color-border;
+    box-shadow: none;
+  }
+
+  &:disabled:checked+label:after {
+    color: vars.$color-gray-4;
+  }
+
+  &:disabled+label {
+    color: vars.$color-gray-3;
+  }
+
+  &:checked:focus+label:before,
+  &:not(:checked):focus+label:before {
+    border-color: vars.$color-highlight;
+    outline: vars.$outline-size dotted vars.$color-href;
+    outline-offset: vars.$outline-offset;
+  }
+}
+
+// Select / Dropdown / Combobox
+  // Licensed according to the W3C Software License at
+  // https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+
+  .dropdown {
+    .combo {
+      display: block;
+      margin: calc(cssvar(margin-body) / 2) 0 0 0;
+      max-width: 33rem;
+      position: relative;
+    }
+
+    .combo::after {
+      border-bottom: cssvar(border-size) solid cssvar(color-border);
+      border-right: cssvar(border-size) solid cssvar(color-border);
+      content: "";
+      display: block;
+      height: calc(cssvar(font-size-p) / 2);
+      pointer-events: none;
+      position: absolute;
+      right: cssvar(font-size-p);
+      top: 50%;
+      transform: translate(0, -65%) rotate(45deg);
+      width: calc(cssvar(font-size-p) / 2);
+    }
+
+    .open.combo::after {
+      border-right: unset;
+      transform: translate(0, -65%) rotate(0);
+      top: 45%;
+      width: calc(cssvar(font-size-p) / 1.5);
+    }
+
+    .comboInput {
+      background-color: white;
+      border: cssvar(border-size) solid cssvar(color-border);
+      border-radius: cssvar(border-radius);
+      display: block;
+      font-size: cssvar(font-size-p);
+      min-height: calc(cssvar(font-size-p) * 2);
+      padding: cssvar(margin-body);
+      text-align: left;
+      width: 100%;
+    }
+
+    .open .comboInput {
+      border-radius: cssvar(border-radius) cssvar(border-radius) 0 0;
+    }
+
+    .comboInput:focus {
+      border: cssvar(border-size) solid cssvar(color-highlight);
+      box-shadow: cssvar(box-shadow-hover);
+      outline: calc(cssvar(font-size-p) / 4) solid transparent;
+    }
+
+    .comboLabel {
+      display: block;
+      font-size: inherit;
+      // font-weight: inherit;
+      margin: cssvar(margin-body) 0 0 0;
+    }
+
+    .comboMenu {
+      background-color: cssvar(color-gray-8);
+      border-radius: 0 0 0 cssvar(border-radius);
+      border: cssvar(border-size) solid cssvar(color-highlight);
+      border-top: unset;
+      display: none;
+      left: 0;
+      max-height: 300px;
+      overflow-y: scroll;
+      position: absolute;
+      scrollbar-gutter: stable;
+      top: 100%;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .open .comboMenu {
+      display: block;
+    }
+
+    .comboOption {
+      padding: cssvar(margin-body);
+    }
+
+    .comboOption:hover {
+      background-color: cssvar(color-gray-6);
+    }
+
+    .comboOption.optionCurrent {
+      background: white;
+      outline: cssvar(border-size) solid cssvar(color-highlight);
+    }
+
+    .comboOption[aria-selected="true"] {
+      padding-right: calc(cssvar(font-size-p) * 2);
+      position: relative;
+    }
+
+    .comboOption[aria-selected="true"]::after {
+      border-bottom: cssvar(border-size) solid cssvar(color-highlight);
+      border-right: cssvar(border-size) solid cssvar(color-highlight);
+      content: "";
+      height: cssvar(font-size-p);
+      position: absolute;
+      right: calc(cssvar(font-size-p) * 1.5);
+      top: 45%;
+      transform: translate(0, -50%) rotate(45deg);
+      width: calc(cssvar(font-size-p) / 2);
+    }
+  }
+
+// Toggle Checkbox
+
+.checkboxToggle {
+  input[type='checkbox'] {
+    &+label {
+      padding-left: calc(vars.$font-size-p * 3);
+
+      &:before {
+        background-color: white;
+        border-radius: vars.$border-radius;
+        height: vars.$font-size-p;
+        margin: 0 calc(vars.$font-size-p / 4) 0 0;
+        width: calc(vars.$font-size-p * 2);
+      }
+
+      &:after {
+        border-radius: vars.$font-size-p;
+        content: '';
+        height: calc(vars.$font-size-p - 0.15rem);
+        opacity: 1;
+        top: vars.$border-size;
+        transition: background-color 0.15s, left 0.25s;
+        width: calc(vars.$font-size-p - 0.15rem);
+      }
+    }
+
+    &:not(:checked)+label {
+      &:after {
+        background-color: vars.$color-gray-1;
+        left: calc(vars.$border-size + 0.1rem);
+      }
+    }
+
+    &:checked+label {
+      &:after {
+        background-color: vars.$color-secondary;
+        left: calc(vars.$font-size-p * 1.15);
+      }
+    }
+  }
+}
+
+// This moves the toggles to the right of the label.
+
+.toggleRight {
+  input[type='checkbox'] {
+    +label {
+      display: block;
+      padding: 0;
+      width: 100%;
+
+      &:not(:checked)+label,
+      &:checked+label {
+        cursor: pointer;
+        font-size: vars.$font-size-p;
+        line-height: calc(vars.$line-height * 1.5);
+        padding: 0 0 0 calc(vars.$margin-body * 1.5);
+        position: relative;
+      }
+
+      &:before {
+        left: unset;
+        position: absolute;
+        right: 0;
+        top: calc(vars.$font-size-p / 4);
+
+      }
+
+      &:after {
+        left: unset;
+        right: calc(vars.$border-size * 13.9);
+        top: calc(vars.$font-size-p / 2.4);
+        transition: background-color 0.15s, right 0.25s;
+      }
+    }
+
+    &:checked {
+      +label {
+        &:after {
+          right: calc(vars.$border-size * 4.25);
+        }
+      }
+    }
+  }
+}
+
+
+// Radio Button
+
+input[type='radio'] {
+  // Leave background-color to handle iOS support
+  background-color: var(--form-background);
+
+  appearance: none;
+  border-radius: 50%;
+  border: vars.$border-size solid vars.$color-border;
+  color: vars.$color-body;
+  font: inherit;
+  height: vars.$font-size-p;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+  width: vars.$font-size-p;
+
+  &:before {
+    // Leave background-color at top for Windows support
+    background-color: CanvasText;
+
+    border-radius: 50%;
+    box-shadow: inset 1em 1em vars.$color-secondary;
+    content: '';
+    height: calc(vars.$font-size-p - 0.5rem);
+    left: calc(vars.$border-size + 0.075rem);
+    position: absolute;
+    top: calc(vars.$border-size + 0.065rem);
+    transform: scale(0);
+    transition: transform 0.15s;
+    width: calc(vars.$font-size-p - 0.5rem);
+  }
+
+  &:checked {
+    &:before {
+      transform: scale(1);
+    }
+  }
+
+  &+label {
+    line-height: calc(vars.$font-size-p * 1.9);
+    vertical-align: middle;
+  }
+}
+
+// Text Inputs
+// This has promise and works if one uses straight (or form-enclosed) inputs,
+// but the MaterialUI method doesn't work well with this SCSS because it
+// targets the div for style changes while I target the input.
+
+// I don't know if I should give up trying to implement it with MaterialUI
+// or if this is a better choice because I'm too biased about the options.
+
+/*
+input[type='text'],
+input[type='password'],
+input[type='tel'],
+textarea {
+  background-color: white;
+  border: vars.$border-size solid vars.$color-border;
+  border-radius: vars.$border-radius;
+  font-size: inherit;
+  margin: 0 calc(vars.$margin-body - 0.5rem) 0 0;
+  padding: vars.$margin-body;
+
+  &:hover {
+    border: vars.$border-size solid vars.$color-highlight-dark;
+  }
+
+  &:focus,
+  &:focus-visible {
+    background-color: white;
+    border: vars.$border-size solid vars.$color-highlight;
+    outline: none;
+
+    &.error {
+      border-color: vars.$color-error-light;
+    }
+  }
+
+  &[disabled],
+  &[readonly] {
+    border: vars.$border-size solid vars.$color-gray-6;
+    color: vars.$color-gray-1;
+  }
+
+  &::placeholder {
+    color: transparent;
+    font-family: vars.$font-family-sans-300;
+  }
+
+  &:not(:placeholder-shown),
+  &:focus,
+  &:focus:not(:placeholder-shown) {
+    background-color: white;
+
+    &~label:not(.error) {
+      background-color: white;
+      border-radius: vars.$border-radius;
+      color: vars.$color-body;
+      font-size: calc(vars.$font-size-p - 0.1rem);
+      padding: calc(vars.$margin-body / 2);
+      transform: translate(0.5rem, -0.9rem);
+      transition: all 0.25s ease, background-color 0s, width 0s;
+    }
+  }
+
+  &.error {
+    border: vars.$border-size solid vars.$color-error;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &~label:not(.error) {
+      color: vars.$color-error;
+    }
+  }
+} */
+
+label {
+  &.error {
+    clear: both;
+    color: vars.$color-error;
+    display: block;
+    font-size: vars.$font-size-cite;
+    max-width: 100%;
+    padding: calc(vars.$margin-body / 2) 0 0 0;
+  }
+
+  &:not(.error) {
+    transition: all 0.25s ease, background-color 0.1s;
+  }
+}
+
+legend {
+  font-family: vars.$font-family-sans-700;
+  // font-weight: vars.$font-weight-bold;
+}
+
+textarea {
+  resize: none;
+}
+
+// This makes the input label move up and above the input box when in focus.
+
+.formFloatingLabelInput {
+  position: relative;
+
+  input {
+    width: max-content;
+  }
+
+  label {
+    &:not(.error) {
+      font-size: inherit;
+      left: 0;
+      line-height: inherit;
+      padding: vars.$margin-body;
+      position: absolute;
+      top: 0.1rem;
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.formSideBySide {
+  display: grid;
+  gap: 0 vars.$margin-body;
+  grid-auto-flow: row;
+  grid-template-columns: [inputbox] 1fr [button] auto;
+  grid-template-rows: [input] auto [error] auto;
+
+  button {
+    grid-area: input / button / input / button;
+    margin: 0;
+  }
+
+  input {
+    grid-area: input / inputbox / input / inputbox;
+    width: 100%;
+  }
+
+  label.error {
+    grid-area: error / inputbox / error / inputbox;
+  }
+}
+
+main {
+  z-index: 1;
+}
+
+h1,
+.fontHeader {
+  display: block;
+  font-size: vars.$font-size-h1;
+  font-size: clamp(calc(vars.$font-size-h1 - 0.5rem), vars.$font-resize, vars.$font-size-h1);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-300-italic  !important;
+  }
+}
+
+h2,
+.fontTitle {
+  display: block;
+  font-size: vars.$font-size-h2;
+  font-size: clamp(calc(vars.$font-size-h2 - 0.5rem), vars.$font-resize, vars.$font-size-h2);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-300-italic  !important;
+  }
+}
+
+h3,
+.fontSubtitle {
+  display: block;
+  font-size: vars.$font-size-h3;
+  font-size: clamp(calc(vars.$font-size-h3 - 0.5rem), vars.$font-resize, vars.$font-size-h3);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-300-italic  !important;
+  }
+}
+
+h4 {
+  display: block;
+  font-size: vars.$font-size-h4;
+  font-size: clamp(calc(vars.$font-size-h4 - 0.5rem), vars.$font-resize, vars.$font-size-h4);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-300-italic  !important;
+  }
+}
+
+h5 {
+  display: block;
+  font-size: vars.$font-size-h5;
+  font-size: clamp(calc(vars.$font-size-h5 - 0.5rem), vars.$font-resize, vars.$font-size-h5);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-300-italic  !important;
+  }
+}
+
+h6 {
+  display: block;
+  font-size: vars.$font-size-h6;
+  font-size: clamp(calc(vars.$font-size-h6 - 0.5rem), vars.$font-resize, vars.$font-size-h6);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-300-italic  !important;
+  }
+}
+
+hr {
+  @include global.margin-card-default;
+
+  height: calc(vars.$font-size-p / 16);
+  padding: 0;
+}
+
+p {
+  display: block;
+  font-size: vars.$font-size-p;
+  font-size: clamp(calc(vars.$font-size-p - 0.5rem), vars.$font-resize, vars.$font-size-p);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: 0;
+}
+
+pre {
+  background: vars.$color-gray-7;
+  border-radius: vars.$border-radius;
+  display: block;
+  font-family: vars.$font-family-mono;
+  font-size: calc(vars.$font-size-p - 0.1rem);
+  font-size: clamp(calc(vars.$font-size-p - 0.6rem), vars.$font-resize, calc(vars.$font-size-p) - 0.1rem);
+  // font-weight: vars.$font-weight-body;
+  margin: vars.$margin-body 0 0 0;
+  padding: vars.$font-size-p;
+}
+
+small {
+  font-size: calc(vars.$font-size-p) - 0.25rem;
+  font-size: clamp(calc(vars.$font-size-h4 - 0.75rem), vars.$font-resize, calc(vars.$font-size-h4) - 0.25rem);
+  // font-weight: vars.$font-weight-body;
+  margin: calc(vars.$margin-body - 0.25rem) 0 0 0;
+  padding: 0;
+}
+
+strong {
+  font-family: vars.$font-family-sans-700;
+  // font-weight: vars.$font-weight-bold;
+}
+
+table {
+  @include global.margin-card-default;
+
+  background: white;
+  border-collapse: collapse;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+
+  thead {
+    background: vars.$color-gray-7;
+
+    @include global.mq('medium', max) {
+      display: none;
+    }
+
+    th {
+      background: black;
+      color: white;
+      font-family: vars.$font-family-serif;
+      font-size: vars.$font-size-h1;
+      font-style: oblique;
+      // font-weight: vars.$font-weight-body;
+      margin: 0;
+      padding: vars.$font-size-p;
+      text-align: left;
+
+      @include global.mq('medium', max) {
+        display: none;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-of-type(2n) {
+        background: vars.$color-gray-7;
+      }
+    }
+  }
+
+  td {
+    margin: 0;
+    padding: vars.$font-size-p;
+
+    &:not(.tdTitle) {
+      * {
+        @include global.mq('medium') {
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    @include global.mq('medium', max) {
+      display: block;
+
+      &:not(.tdTitle) {
+        &:before {
+          content: attr(title);
+          font-size: vars.$font-size-cite;
+          font-size: vars.$font-weight-body;
+          letter-spacing: vars.$letter-spacing-wide;
+          text-transform: uppercase;
+        }
+      }
+
+      &.tdEmpty {
+        display: none;
+      }
+    }
+
+    &.tdHighlight {
+      background: vars.$color-gray-1;
+      color: white;
+    }
+
+    &.tdShaded {
+      background: vars.$color-gray-6;
+    }
+
+    &.tdTitle {
+      * {
+        font-size: vars.$font-size-h2;
+        line-height: calc(vars.$font-size-h2 + 0.5rem);
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  &:not(.tableAlternate) {
+    border-radius: vars.$border-radius;
+    box-shadow: vars.$box-shadow-1;
+
+    td {
+      border-top: 0.09rem solid vars.$color-border;
+    }
+  }
+
+  &.tableAlternate {
+    td {
+      border: 0.09rem solid vars.$color-border;
+
+      &:not(:first-child) {
+        @include global.mq('small', max) {
+          border-top: unset;
+        }
+      }
+    }
+  }
+}
+
+ul {
+  margin: vars.$margin-body 0 0 calc(vars.$margin-body + 0.25rem);
+  padding: 0;
+
+  * {
+    margin-top: calc(vars.$margin-body / 4);
+  }
+
+  li {
+    margin: calc(vars.$margin-body / 4) 0 0 0;
+    padding: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// CLASSES
+
+// Box Control
+
+.block {
+  display: block !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.inlineBlock {
+  display: inline-block !important;
+}
+
+.mainContainer {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 0 2rem;
+}
+
+.marginBody {
+  margin-top: vars.$margin-body  !important;
+}
+
+.marginCardShort {
+  margin-top: vars.$margin-card-short  !important;
+}
+
+.marginCardTall {
+  margin-top: vars.$margin-card-short  !important;
+}
+
+.marginFramingShort {
+  margin-top: vars.$margin-framing-short  !important;
+}
+
+.marginFramingTall {
+  margin-top: vars.$margin-framing-tall  !important;
+}
+
+.marginTop0 {
+  margin-top: 0 !important;
+}
+
+.marginTop0p5 {
+  margin-top: 0.5rem !important;
+}
+
+.marginTopBody {
+  margin-top: vars.$margin-body  !important;
+}
+
+.verticalAlignBottom {
+  vertical-align: bottom !important;
+
+  &All * {
+    vertical-align: bottom !important;
+  }
+}
+
+.verticalAlignMiddle {
+  vertical-align: middle !important;
+
+  &All * {
+    vertical-align: middle !important;
+  }
+}
+
+.verticalAlignTop {
+  vertical-align: top !important;
+
+  &All * {
+    vertical-align: top !important;
+  }
+}
+
+// Fonts
+
+.callout {
+  text-transform: uppercase !important;
+}
+
+.descriptor {
+  font-size: calc(vars.$font-size-p - 0.125rem);
+  // font-weight: vars.$font-weight-body;
+  line-height: calc(vars.$font-size-p + 0.25rem);
+  margin: calc(vars.$margin-body - 0.1rem) 0 0 0;
+  padding: 0;
+
+  &.bold,
+  &.demi {
+    font-family: vars.$font-family-sans-700  !important;
+    // font-weight: vars.$font-weight-black  !important;
+  }
+}
+
+.disclaimer {
+  font-size: calc(vars.$font-size-p - 0.25rem);
+  // font-weight: vars.$font-weight-body;
+  line-height: calc(vars.$font-size-p + 0.25rem);
+  margin: calc(vars.$margin-body - 0.25rem) 0 0 0;
+  padding: 0;
+}
+
+.displayHeader {
+  font-family: vars.$font-family-sans-100;
+  font-size: calc(vars.$font-size-h1 + 1.5rem);
+  font-size: clamp(calc(vars.$font-size-h1 + 0.5rem), vars.$font-resize, calc(vars.$font-size-h1 + 1.5rem));
+  // font-weight: vars.$font-weight-light;
+  line-height: 1.25;
+}
+
+.italic,
+.oblique {
+  font-style: italic !important;
+  font-style: oblique !important;
+}
+
+.productDetail {
+  font-size: calc(vars.$font-size-p - 0.125rem);
+  font-style: oblique;
+  // font-weight: vars.$font-weight-body;
+  line-height: calc(vars.$font-size-p + 0.25rem);
+  margin: calc(vars.$margin-body - 0.5rem) 0 0 0;
+}
+
+.productName {
+  font-size: vars.$font-size-p;
+  // font-weight: vars.$font-weight-body;
+  line-height: calc(vars.$font-size-p + 0.5rem);
+}
+
+.serif {
+  font-family: vars.$font-family-serif;
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+.weight100,
+.light {
+  font-family: vars.$font-family-sans-100  !important;
+  // font-weight: vars.$font-weight-light  !important;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-100-italic  !important;
+  }
+}
+
+.weight300,
+.body {
+  font-family: vars.$font-family-sans-300  !important;
+  // font-weight: vars.$font-weight-body  !important;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-300-italic  !important;
+  }
+}
+
+.weight500 {
+  font-family: vars.$font-family-sans-500  !important;
+  // font-weight: vars.$font-weight-button  !important;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-500-italic  !important;
+  }
+}
+
+.weight700,
+.bold,
+.demi {
+  font-family: vars.$font-family-sans-700  !important;
+  // font-weight: vars.$font-weight-bold  !important;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-700-italic  !important;
+  }
+}
+
+.weight900,
+.black {
+  font-family: vars.$font-family-sans-900  !important;
+  // font-weight: vars.$font-weight-black  !important;
+
+  &.italic,
+  &.oblique {
+    font-family: vars.$font-family-sans-900-italic  !important;
+  }
+}
+
+// Inline Embeds
+
+.embedTool {
+  aspect-ratio: 16 / 9;
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe,
+  object,
+  embed,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.fluidVids {
+    position: initial !important;
+  }
+}
+
+// Infrastructure
+
+.card {
+  @include global.margin-card-default;
+  @include global.padding-card-default;
+
+  background: white;
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$box-shadow-1;
+  max-width: 100%;
+  width: 100%;
+}

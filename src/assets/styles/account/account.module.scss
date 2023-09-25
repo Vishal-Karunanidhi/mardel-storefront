@@ -1,0 +1,219 @@
+@import '../variables';
+@import '../globals';
+@import '../breakpoints';
+
+.accountPage {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: $hl-xxl;
+  padding: 80px;
+
+  @include mobileAndTablet {
+    flex-direction: column;
+    padding: 24px;
+  }
+  .SignUpform,
+  .SignInform {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    @include mobileAndTablet {
+      width: 100%;
+    }
+  }
+
+  .loginPageDivider {
+    height: 630px;
+    border-left: 1px solid $hl-gray;
+    margin-left: 121px;
+    margin-right: 121px;
+
+    @include mobileAndTablet {
+      flex-direction: column;
+      height: 1px;
+      border-top: 1px solid $hl-gray;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+/*This Section scss related to AccountBenefit component*/
+.benefitSectionWrapper {
+  display: flex;
+  gap: 20px;
+
+  @include mobileAndTablet {
+    flex-flow: column wrap;
+  }
+
+  @include desktop {
+    flex-flow: row nowrap;
+  }
+
+  .benefitContent {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+
+    @include mobileAndTablet {
+      width: 100%;
+    }
+    
+    @include desktop {
+      width: 50%;
+    }
+
+    .contentStyle {
+      display: flex;
+      gap: 10px;
+      .benefitcontentImage {
+        height: 20px;
+        width: 20px;
+      }
+      .benefitcontentText {
+        @include hl-font-300;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: $hl-black;
+      }
+    }
+  }
+}
+
+/*This Section scss related to WelcomeUserModal component*/
+.signUpModalTitle {
+  background-color: $hl-blue-dark;
+  border-radius: 10px 10px 0px 0px;
+  height: 35px;
+  outline: $hl-blue-dark;
+  outline-color: $hl-blue-dark;
+  .closeIconStyle {
+    float: right;
+    color: $hl-white;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: -7px;
+  }
+}
+.dialogTitleStyle {
+  @include hl-font-700;
+  font-size: 18px;
+  line-height: 24px;
+  align-items: center;
+  color: $hl-black;
+}
+.dialogContentTitle {
+  @include hl-font-300;
+  font-size: 14px;
+  line-height: 20px;
+  color: $hl-black;
+  margin-bottom: 28px;
+}
+
+//Create new password styles
+.newPwUpdated,
+.newPwWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  gap: 24px;
+  padding-bottom: 100px;
+
+  @include mobileAndTablet {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .errorSection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 4px;
+    background: $hl-gray-shadow;
+    border-radius: 5px;
+    flex-wrap: nowrap;
+    width: 628px;
+    @include mobileAndTablet {
+      width: 100%;
+    }
+  }
+
+  .title {
+    @include hl-font-700;
+    font-size: 24px;
+    line-height: 32px;
+    @include mobileAndTablet {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .pwCriteria {
+    @include hl-font-300;
+    font-size: 12px;
+    line-height: 16px;
+    width: 628px;
+    @include mobileAndTablet {
+      width: 100%;
+      font-size: 10px;
+      line-height: 14px;
+    }
+  }
+
+  div[class*='inputFieldWrapper'] {
+    width: 628px;
+    @include mobileAndTablet {
+      width: 100%;
+    }
+    p {
+      margin-left: 0px;
+    }
+  }
+
+  div[class*='submitWrapper'] {
+    width: 628px;
+    margin-top: 0px;
+    @include mobileAndTablet {
+      width: 100%;
+    }
+  }
+  .errorInput {
+    :global(.MuiFilledInput-root) {
+      padding-right: 15px;
+    }
+    :global(.MuiInputLabel-root) {
+      color: $hl-gray;
+    }
+  }
+}
+
+.newPwUpdated {
+  @include mobileAndTablet {
+    align-items: inherit;
+    .title {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .pwSuccessMsg {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    width: 628px;
+    @include mobileAndTablet {
+      width: 100%;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

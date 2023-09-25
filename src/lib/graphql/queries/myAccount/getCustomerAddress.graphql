@@ -1,0 +1,7 @@
+#import '@GqlFragments/myAccount/customerAddress.fragment.graphql';
+
+query GetCustomerAddress {
+  getAddresses {
+    ...CustomerAddressFragment
+  }
+}

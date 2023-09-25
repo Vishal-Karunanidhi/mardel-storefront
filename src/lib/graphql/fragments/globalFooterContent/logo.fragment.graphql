@@ -1,0 +1,21 @@
+
+fragment Logo on Logo {
+    _meta {
+        name
+    }
+    image {
+        _meta {
+            name
+        }
+        defaultHost
+        endpoint
+        id
+        name
+    }
+    altText
+    imageLink {
+     openInNewTab
+        value
+        label
+   }
+}

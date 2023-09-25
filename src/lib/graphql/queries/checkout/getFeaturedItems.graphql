@@ -1,0 +1,9 @@
+#import '@GqlFragments/homePage/productSelector.fragment.graphql';
+
+query HomePage {
+  homePage {
+    content {
+      ...ProductSelector
+    }
+  }
+}

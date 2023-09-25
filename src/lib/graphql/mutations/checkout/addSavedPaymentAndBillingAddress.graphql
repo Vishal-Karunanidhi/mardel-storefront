@@ -1,0 +1,13 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+#import '@GqlFragments/cart/paymentDetails.fragment.graphql';
+
+mutation AddSavedPaymentToCart($paymentId: String!, $billingAddress: AddressRequest!) {
+  addBillingAddress(request: $billingAddress) {
+    ...CartResponseFragment
+  }
+  addSavedPaymentToCart(paymentId: $paymentId) {
+    paymentDetails {
+      ...PaymentDetailsFragment
+    }
+  }
+}

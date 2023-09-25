@@ -1,0 +1,8 @@
+query HeartBeat {
+  heartBeat {
+    sessionId
+    sessionState
+    userName
+    isLoggedInUser
+  }
+}

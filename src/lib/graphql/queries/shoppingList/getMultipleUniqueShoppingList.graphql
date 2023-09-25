@@ -1,0 +1,26 @@
+#import '@GqlFragments/pdp/variants.fragment.graphql';
+
+query GetMultipleUniqueShoppingList($listIdArray:  [String]!, $pageNumber: Int, $itemsPerPage: Int) {
+  getMultipleUniqueShoppingList(listIdArray: $listIdArray, pageNumber: $pageNumber, itemsPerPage: $itemsPerPage) {
+    ...ListResponseFragment
+  }
+}
+
+fragment ListResponseFragment on ListResponse {
+  listId
+  listName
+  itemCount
+  customerId
+  items {
+    ...ItemFragment
+  }
+}
+
+fragment ItemFragment on Item {
+  id
+  productKey
+  skuId
+  product {
+    ...VariantFragment
+  }
+}

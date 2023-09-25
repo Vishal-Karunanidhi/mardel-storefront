@@ -1,0 +1,665 @@
+@use 'breakpoints' as resol;
+@use 'variables' as vars;
+
+@mixin hlFontStyle($fontSize: 16px, $lineHeight: 24px) {
+  @include vars.hl-font-300;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+/*Tab & Desktop Resolution*/
+@mixin tabletAndDesktop {
+  @media only screen and (min-width: resol.$hl-tab-start) {
+    @content;
+  }
+}
+
+/*Mobile & Tab Resolution*/
+@mixin mobileAndTablet {
+  @media only screen and (max-width: resol.$hl-tab-end) {
+    @content;
+  }
+}
+
+/*Group Resultion Breakpoints: 3Sets: Mobile-Tablet-Desktop*/
+@mixin desktop {
+  @media only screen and (min-width: resol.$hl-desk-start) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: resol.$hl-tab-start) and (max-width: resol.$hl-tab-end) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: resol.$hl-mobile-end) {
+    @content;
+  }
+}
+
+// MIXINS
+// Use the @include tag in your elements to add these commonly-referenced settings.
+// This prevents repeating yourself and causing future find+replace frustrations.
+
+// Breakpoints
+// These are the default media queries that have been used in the Figma design of the site.
+// This is more for ease of use than to enforce a particular set of break points.
+// Call it with the following:
+// @include mq('large') {}
+// @include mq('small', $type: min) {}
+// @include mqMinMax('small', 'medium') {}
+
+$breakpoints: (
+  small: 32em,
+  medium: 48em,
+  large: 65em
+);
+
+// This breakpoint mixin is for use when only one breakpoint is being referenced
+// as either the minimum (default) or maximum limit.
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type ==max {
+      $width: $width - 0.1em;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+// This breakpoint mixin is used when a minimum and a maximum limit
+// are needed in a breakpoint.
+
+@mixin mqMinMax($minWidth, $maxWidth) {
+  @if map_has_key($breakpoints, $minWidth, $maxWidth) {
+    $minWidth: map_get($breakpoints, $minWidth);
+    $maxWidth: map_get($breakpoints, $maxWidth);
+
+    @media only screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+      @content;
+    }
+  }
+}
+
+// Default link styling
+
+@mixin href-default {
+  cursor: pointer;
+
+  &:not(.button) {
+    color: vars.$color-href;
+
+    &:link {
+      color: vars.$color-href;
+    }
+
+    &:visited {
+      color: vars.$color-href-visited;
+
+      &:hover {
+        color: vars.$color-href-hover;
+      }
+
+      &:active {
+        color: vars.$color-href-active;
+      }
+    }
+
+    &:hover {
+      color: vars.$color-href-hover;
+    }
+
+    &:active {
+      color: vars.$color-href-active;
+    }
+
+    &:focus {
+      color: vars.$color-href-hover;
+      outline: vars.$outline-size dashed vars.$hl-blue;
+      outline-offset: vars.$outline-offset;
+    }
+  }
+}
+
+@mixin href-black-underlined {
+  cursor: pointer;
+
+  &:not(.button) {
+    color: vars.$color-body;
+    text-decoration: underline;
+
+    &:link {
+      color: vars.$color-body;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: vars.$color-body;
+      text-decoration: underline;
+
+      &:hover {
+        color: vars.$color-href;
+        text-decoration: none;
+      }
+
+      &:active {
+        color: vars.$color-body;
+        text-decoration: underline;
+      }
+    }
+
+    &:hover {
+      color: vars.$color-href;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: vars.$color-body;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: vars.$color-href;
+      outline: vars.$outline-size dashed vars.$hl-blue;
+      outline-offset: vars.$outline-offset;
+    }
+  }
+}
+
+@mixin href-blue-underlined {
+  cursor: pointer;
+
+  &:not(.button) {
+    color: vars.$color-href;
+    text-decoration: underline;
+
+    &:link {
+      color: vars.$color-href;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: vars.$color-href;
+      text-decoration: underline;
+
+      &:hover {
+        color: vars.$color-body;
+        text-decoration: none;
+      }
+
+      &:active {
+        color: vars.$color-href;
+        text-decoration: underline;
+      }
+    }
+
+    &:hover {
+      color: vars.$color-body;
+      text-decoration: none;
+    }
+
+    &:active {
+      color: vars.$color-href;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: vars.$color-body;
+      outline: vars.$outline-size dashed vars.$hl-blue;
+      outline-offset: vars.$outline-offset;
+    }
+  }
+}
+
+@mixin href-black {
+  cursor: pointer;
+
+  &:not(.button) {
+    color: vars.$color-body;
+    text-decoration: none;
+
+    &:link {
+      color: vars.$color-body;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: vars.$color-body;
+      text-decoration: none;
+
+      &:hover {
+        color: vars.$color-href;
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: vars.$color-body;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      color: vars.$color-href;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: vars.$color-body;
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: vars.$color-href;
+      outline: vars.$outline-size dashed vars.$hl-blue;
+      outline-offset: vars.$outline-offset;
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin href-blue {
+  cursor: pointer;
+
+  &:not(.button) {
+    color: vars.$color-href;
+    text-decoration: none;
+
+    &:link {
+      color: vars.$color-href;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: vars.$color-href;
+      text-decoration: none;
+
+      &:hover {
+        color: vars.$color-body;
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: vars.$color-href;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      color: vars.$color-body;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: vars.$color-href;
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: vars.$color-body;
+      outline: vars.$outline-size dashed vars.$hl-blue;
+      outline-offset: vars.$outline-offset;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Default button styling
+
+@mixin button {
+  background-color: vars.$hl-blue-dark;
+  border: vars.$border-size solid vars.$hl-blue-dark;
+  border-radius: vars.$button-border-radius;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: vars.$font-family-sans-500;
+  font-size: vars.$font-size-p;
+  line-height: 2.25;
+  margin: vars.$margin-body 0 0 0;
+  min-height: vars.$button-min-height;
+  padding: vars.$button-padding-height vars.$button-padding-width;
+  text-align: center;
+  text-decoration: none;
+  transition: vars.$button-transition;
+  vertical-align: middle;
+  width: 100%;
+
+  @include mq('small') {
+    margin: 0;
+    width: max-content;
+  }
+
+  &:visited {
+    background-color: vars.$color-href;
+    border: vars.$border-size solid vars.$color-href;
+  }
+
+  &:hover {
+    background-color: vars.$color-href-hover;
+    border: vars.$border-size solid vars.$color-href-hover;
+  }
+
+  &:active {
+    background-color: vars.$color-href-active;
+    border: vars.$border-size solid vars.$color-href-active;
+    transition: 0s;
+
+    &:focus,
+    &:focus-visible {
+      outline: unset;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    background-color: vars.$color-href-hover;
+    border-color: vars.$color-href-hover;
+    outline: vars.$outline-size dashed vars.$hl-blue-dark;
+    outline-offset: vars.$outline-offset;
+    transition: vars.$button-transition-hover;
+
+    &:hover {
+      background-color: vars.$color-href-hover;
+      border: vars.$border-size solid vars.$color-href-hover;
+    }
+
+    &:active {
+      background-color: vars.$color-href-active;
+      border: vars.$border-size solid vars.$color-href-active;
+    }
+  }
+
+  // Button Variants
+
+  &.buttonMedium {
+    min-height: calc(vars.$button-min-height - 0.5rem);
+    padding: calc(vars.$button-padding-height - 0.15rem) calc(vars.$button-padding-width - 0.1rem);
+  }
+
+  &.buttonSmall {
+    font-size: calc(vars.$font-size-p - 0.15rem);
+    min-height: calc(vars.$button-min-height - 0.925rem);
+    padding: calc(vars.$button-padding-height - 0.25rem) calc(vars.$button-padding-width - 0.5rem);
+  }
+
+  &.buttonInactive,
+  &:disabled,
+  &.disabled,
+  &[disabled] {
+    background-color: vars.$color-gray-6;
+    border: vars.$border-size solid vars.$color-gray-6;
+    color: vars.$color-gray-1;
+
+    &.buttonSecondary {
+      border-color: vars.$color-gray-2;
+    }
+
+    &:hover {
+      background-color: vars.$color-gray-6;
+      color: vars.$color-gray-1;
+    }
+
+    &:focus,
+    &:focus-visible {
+      background-color: vars.$color-gray-6;
+      outline: vars.$outline-size dashed vars.$color-gray-2;
+      outline-offset: vars.$outline-offset;
+
+      &:hover {
+        background-color: vars.$color-gray-4;
+        color: vars.$color-gray-1;
+      }
+    }
+  }
+}
+
+@mixin buttonMedium {
+  min-height: calc(vars.$button-min-height - 0.5rem);
+  padding: calc(vars.$button-padding-height - 0.15rem) calc(vars.$button-padding-width - 0.1rem);
+}
+
+@mixin buttonSmall {
+  font-size: calc(vars.$font-size-p - 0.15rem);
+  min-height: calc(vars.$button-min-height - 0.925rem);
+  padding: calc(vars.$button-padding-height - 0.25rem) calc(vars.$button-padding-width - 0.5rem);
+}
+
+@mixin buttonSecondary {
+  background-color: white;
+  border: vars.$border-size solid vars.$color-border;
+  color: vars.$color-body;
+  cursor: pointer;
+
+  &:hover {
+    background-color: vars.$color-href-hover;
+    border: vars.$border-size solid vars.$color-href-hover;
+    color: white;
+  }
+
+  &:active {
+    background-color: vars.$color-href-active;
+    border: vars.$border-size solid vars.$color-href;
+    color: white;
+    transition: 0s;
+  }
+
+  &:focus {
+    background-color: white;
+    border: vars.$border-size solid vars.$color-border;
+    color: vars.$color-body;
+
+    &:hover {
+      background-color: vars.$color-href-hover;
+      border: vars.$border-size solid vars.$color-href-hover;
+      color: white;
+    }
+  }
+}
+
+@mixin popOverArrowUp {
+  position: relative;
+
+  &::before {
+    animation: popoverPopUp 0.3s ease-in-out;
+    color: $hl-blue-outline;
+    content: '\25B4';
+    font-family: vars.$font-family-system;
+    font-size: 45px;
+    line-height: 10px;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    transform: scaleX(2) translateY(0);
+    z-index: -1;
+  }
+
+  @keyframes popoverPopUp {
+    0% {
+      transform: scaleX(2) translateY(15px);
+    }
+    80% {
+      transform: scaleX(2) translateY(-1px);
+    }
+    100% {
+      transform: scaleX(2) translateY(0);
+    }
+  }
+}
+
+@mixin buttonBack {
+  background: unset;
+  border: unset;
+  color: vars.$color-body;
+  cursor: pointer;
+  margin: 0;
+  padding: 0 0 0 2rem;
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    background: transparent url('/icons/buttonBack.svg') no-repeat top left;
+    content: '';
+    position: absolute;
+    height: 1.4rem;
+    left: 0;
+    top: -0.25rem;
+    width: 1.4rem;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+
+  &:focus {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Default box styling
+
+@mixin box-default {
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$box-shadow-1;
+  overflow: hidden;
+  transform: scale(1);
+  transition: vars.$button-icon-transition, vars.$button-transition;
+
+  > * {
+    transition: vars.$button-icon-transition, vars.$button-transition;
+  }
+
+  &:hover,
+  &:focus-within {
+    transition: vars.$button-icon-transition-hover, vars.$button-transition-hover;
+
+  }
+
+  &:active {
+    box-shadow: vars.$box-shadow-1;
+    transition: vars.$button-icon-transition-active, vars.$button-transition-active;
+
+    > * {
+      transform: scale(1);
+      transition: vars.$button-icon-transition-active, vars.$button-transition-active;
+    }
+  }
+}
+
+// Default margins
+
+@mixin margin-card-default {
+  @include mq('small', max) {
+    margin: vars.$margin-card-short auto 0 auto;
+  }
+
+  @include mq('small') {
+    margin: vars.$margin-card-tall auto 0 auto;
+  }
+}
+
+@mixin margin-framing-default {
+  @include mq('small', max) {
+    margin: vars.$margin-framing-short auto 0 auto;
+  }
+
+  @include mq('small') {
+    margin: vars.$margin-framing-tall auto 0 auto;
+  }
+}
+
+// Default padding
+
+@mixin padding-card-default {
+  @include mq('large', max) {
+    padding: vars.$padding-card-small;
+  }
+
+  @include mq('large') {
+    padding: vars.$padding-card-big;
+  }
+}
+
+// Global styles
+
+header.header {
+  box-shadow: vars.$box-shadow-2;
+  isolation: isolate;
+  position: relative;
+  z-index: 2;
+
+  &:has(+ main > div[class^='breadcrumb_wrapper']),
+  &:has(+ main > div[class^='MuiGrid-root MuiGrid-container'] > div[class^='breadcrumb_wrapper']) {
+    box-shadow: unset;
+  }
+}
+
+.hlSelectBox {
+  :global(.MuiPaper-elevation1.MuiPaper-root.MuiMenu-paper) {
+    height: 300px;
+    border: 1.25px solid #003087;
+    border-radius: 0px 0px 5px 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &:-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    ul {
+      height: 290px;
+    }
+
+    :global(.MuiMenuItem-gutters.Mui-selected) {
+      background: #003087;
+      color: #ffffff;
+    }
+  }
+
+  ul {
+    height: 300px;
+  }
+
+  :global(.MuiMenuItem-gutters.Mui-selected) {
+    background: #003087;
+    color: #ffffff;
+  }
+}
+
+.card {
+  background: white;
+  border-radius: vars.$border-radius;
+  max-width: 100%;
+  width: 100%;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.marginFramingShort {
+  margin-top: vars.$margin-framing-short;
+}

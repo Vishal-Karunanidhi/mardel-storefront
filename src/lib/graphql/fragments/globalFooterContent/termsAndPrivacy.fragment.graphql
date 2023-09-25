@@ -1,0 +1,11 @@
+
+fragment TermsAndPrivacy on TermsAndPrivacy {
+    link {
+        label
+        value
+        openInNewTab
+    }
+    _meta {
+        name
+    }
+}

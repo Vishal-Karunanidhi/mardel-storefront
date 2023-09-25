@@ -1,0 +1,13 @@
+query GetStoreDirectoryState($state: String!) {
+  getStoreDirectoryState(state: $state) {
+    stateAbbr
+    state
+    count
+    status
+    executionTime
+    directory {
+      city
+      count
+    }
+  }
+}

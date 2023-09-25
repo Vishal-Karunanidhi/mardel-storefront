@@ -1,0 +1,35 @@
+fragment CardList on CardList {
+  _meta {
+    name
+  }
+  Cards {
+      _meta {
+          name
+      }
+      cardImage {
+          cardName
+          imageAltText
+          seoText
+      }
+      cardName
+      link
+      media {
+          image {
+              _meta {
+              name
+              }
+              defaultHost
+              endpoint
+              id
+              name
+          }
+          imageAltText
+      }
+      title
+      URL
+  }
+  numberToCardsToShowOnDesktop
+  numberToCardsToShowOnMobile
+  theme
+  Title
+}

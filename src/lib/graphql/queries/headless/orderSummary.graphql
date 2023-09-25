@@ -1,0 +1,89 @@
+query OrderSummaryContent {
+  fullCartContent {
+    productTile {
+      warningNotices {
+        excludeFreeShipping
+        additionalShipping
+        noAirShipping
+        maximumStockLimit
+      }
+      labels {
+        myCart
+        saveForLater
+        sku
+      }
+    }
+    helpInfo {
+      needHelpTitle
+      contactTitle
+      contactUs {
+        openInNewTab
+        value
+        label
+      }
+      cartReferenceTitle
+      checkoutLabel
+      checkoutCta {
+        openInNewTab
+        value
+        label
+      }
+    }
+    orderSummary {
+      bulkOrderThreshold
+      shippingTooltips {
+        standard {
+          title
+          tooltip
+          tooltipLink {
+            openInNewTab
+            value
+            label
+          }
+        }
+        additional {
+          title
+          tooltip
+          tooltipLink {
+            openInNewTab
+            value
+            label
+          }
+        }
+        carrier {
+          title
+          tooltip
+          tooltipLink {
+            openInNewTab
+            value
+            label
+          }
+        }
+        shipping {
+          title
+          tooltip
+          tooltipLink {
+            openInNewTab
+            value
+            label
+          }
+        }
+      }
+      noticeAndWarnings {
+        giftCardFee
+        bulkOrderThreshold
+        taxCalculation
+      }
+      labels {
+        title
+        merchandiseTotal
+        discounts
+        giftCardFee
+        subtotal
+        total
+        saved
+        tax
+      }
+    }
+  }
+}

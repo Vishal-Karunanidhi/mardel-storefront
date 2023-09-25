@@ -1,0 +1,14 @@
+fragment FreeShippingContent on FreeShippingContent {
+    _meta {
+        name
+    }
+    title
+    subtitle
+    policies
+    image {
+        id
+        name
+        endpoint
+        defaultHost
+    }
+}

@@ -1,0 +1,17 @@
+fragment WhatsOnSaleContent on WhatsOnSaleContent {
+  _meta {
+    name
+    schema
+    deliveryId
+    deliveryKey
+    hierarchy {
+      parentId
+      root
+    }
+  }
+  heading
+  link {
+    title
+    url
+  }
+}

@@ -1,0 +1,43 @@
+query GetProductPageContent {
+  pdpPageContent {
+    _meta {
+      name
+      schema
+      deliveryId
+      deliveryKey
+    }
+    addToCart {
+      buttonTitle
+      cartCountPlaceholder
+    }
+    warningIcon {
+      defaultHost
+      endpoint
+      id
+      name
+      url
+    }
+    discalimer
+    shareProduct {
+      buttonTitle
+    }
+    productDescriptionTitle
+    productSpecsTitle
+    returns {
+      label
+      richTextData
+      richTextDataType
+    }
+    shipping {
+      label
+      richTextData
+      richTextDataType
+    }
+    inventoryInfo {
+      outOfStockMessage
+      inStockNotificationMessage
+      emailPlaceholder
+      emailNotifyButton
+    }
+  }
+}

@@ -1,0 +1,181 @@
+@import '../../variables';
+@import '../../breakpoints';
+@import '../../globals';
+
+.shareButton {
+  margin-top: 32px;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: 1px solid $hl-black;
+  background-color: $hl-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  width: 272px;
+  height: 38px;
+  @include hl-font-700;
+  font-size: 16px;
+
+  &:hover {
+    border-color: $hl-blue-light;
+    background-color: $hl-blue-light;
+    color: $hl-white;
+    cursor: pointer;
+  }
+}
+
+.modal {
+  padding: 0px;
+  width: 438px;
+  border-radius: 5px;
+
+  &ShareStore {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+
+    &SocialMedia {
+      display: flex;
+      gap: 17px;
+
+      &Icon {
+        width: 47px;
+
+        > img {
+          width: 100%;
+        }
+      }
+    }
+
+    &Copy {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: underline;
+      color: $hl-blue;
+
+      &:hover {
+        color: $hl-black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    &Link {
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-gray;
+      max-width: 235px;
+      height: 25px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &Message {
+        color: green;
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+        &Text {
+          @include hl-font-700;
+          font-size: 16px;
+          line-height: 24px;
+          margin-left: 10px;
+        }
+      }
+
+      &Container {
+        &Row {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        padding-bottom: 24px;
+        border-bottom: 1px solid $hl-gray-line;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+      }
+    }
+
+    &Header {
+      margin: 0;
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &Name {
+      display: flex;
+      align-items: center;
+
+      &Image {
+        width: 48px;
+        display: flex;
+      }
+
+      &Text {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        @include hl-font-700;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &Close {
+    height: 32px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: $hl-blue;
+
+    &Icon {
+      margin-right: 13px;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .modal {
+    width: 288px;
+
+    &ShareStore {
+      &Link {
+        width: 148px;
+      }
+
+      &Copy {
+        font-size: 14px;
+
+        svg {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@include mobileAndTablet {
+  .shareButton {
+    margin: 0 auto;
+  }
+}
+
+@include desktop {
+  .shareButton {
+    width: 124px;
+  }
+}

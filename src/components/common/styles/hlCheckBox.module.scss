@@ -1,0 +1,70 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/globals';
+
+.checkboxWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mobile {
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+
+  .checkboxInput {
+    width: 20px;
+    height: 20px;
+    background: $hl-white;
+    border: 1.25px solid $hl-darkest-gray;
+    border-radius: 2.5px;
+    margin-left: 0px;
+
+    &:focus-visible {
+      outline: 1.215px dashed $hl-blue;
+      outline-offset: 5px;
+    }
+
+    @include desktop {
+      &:hover {
+        background: $hl-thin-blue;
+
+        &:after {
+          color: $hl-thin-blue;
+        }
+      }
+    }
+
+    &:active {
+      color: $hl-thin-blue;
+
+      &:after {
+        color: $hl-blue;
+      }
+
+      @include mobile {
+        box-shadow: 0px 0px 6px 6px $hl-light-gray-shadow;
+      }
+    }
+
+    &:checked {
+      background: $hl-white;
+
+      &:after {
+        color: $hl-blue;
+      }
+    }
+  }
+
+  .checkboxLabel {
+    position: absolute;
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 2opx;
+    display: flex;
+    align-items: center;
+    color: $hl-black;
+    margin-left: 28px;
+    margin-right: 24px;
+    margin-top: 2px;
+  }
+}

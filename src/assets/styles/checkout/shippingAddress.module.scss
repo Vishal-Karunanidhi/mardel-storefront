@@ -1,0 +1,367 @@
+@import '../variables';
+@import '../globals';
+
+.editContactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .giftSectionWrapper {
+    display: flex;
+    flex-direction: column;
+
+    .divider {
+      border: 1px solid $color-gray-1;
+      align-self: stretch;
+      margin-top: 14px;
+    }
+
+    .giftMessageTitle {
+      margin-top: 22px;
+    }
+
+    .giftMessageTitle,
+    .giftMessageTitleNotChecked {
+      @include hl-font-700;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      color: $hl-black;
+      margin-top: 12px;
+    }
+
+    .giftInfoLabel {
+      margin-bottom: 10px;
+    }
+
+    .giftInfoLabel,
+    .giftInfoLabelNotChecked {
+      @include hl-font-300;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      color: $hl-black;
+      margin-top: 16px;
+    }
+
+    .checkboxWrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .giftCheckbox {
+        width: 20px;
+        height: 20px;
+        background: $hl-white;
+        border: 1.25px solid $hl-darkest-gray;
+        border-radius: 2.5px;
+        margin-left: 0px;
+
+        &:focus-visible {
+          outline: 1.215px dashed $hl-blue;
+          outline-offset: 5px;
+        }
+
+        @include desktop {
+          &:hover {
+            background: $hl-thin-blue;
+
+            &:after {
+              color: $hl-thin-blue;
+            }
+          }
+        }
+
+        &:active {
+          color: $hl-thin-blue;
+
+          &:after {
+            color: $hl-blue;
+          }
+
+          @include mobile {
+            box-shadow: 0px 0px 6px 6px $hl-light-gray-shadow;
+          }
+        }
+
+        &:checked {
+          background: $hl-white;
+
+          &:after {
+            color: $hl-blue;
+          }
+        }
+      }
+
+      .giftCheckboxLabel {
+        position: absolute;
+        @include hl-font-300;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        color: $hl-black;
+        margin-left: 28px;
+        margin-top: 2px;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+}
+
+.giftSection {
+  display: flex;
+  flex-direction: column;
+
+  .subSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    label {
+      @include hl-font-700;
+      color: $hl-black;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: uppercase;
+      align-items: center;
+
+      @include mobileAndTablet {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    a {
+      float: right;
+      text-decoration: underline;
+      cursor: pointer;
+
+      @include hl-font-300;
+      font-size: 14px;
+      line-height: 20px;
+
+      @include mobileAndTablet {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      &:hover {
+        color: $hl-blue;
+        text-decoration: none;
+      }
+
+      &:active {
+        color: $hl-black;
+        text-decoration: underline;
+      }
+
+      &:focus-visible {
+        outline: 2px dashed $hl-blue;
+        outline-offset: 5px;
+      }
+    }
+  }
+
+  .orderGiftLabel {
+    @include hl-font-300;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: $hl-black;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    @include mobileAndTablet {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.senderRecipientSection {
+  display: flex;
+  flex-direction: column;
+  .giftSection {
+    display: flex;
+    flex-direction: row;
+    .giftValue,
+    .giftLabel {
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-black;
+    }
+    .giftLabel {
+      margin-right: 4px;
+      float: left;
+    }
+    .giftValue {
+      @include hl-font-300;
+      padding-right: 24px;
+      overflow-wrap: break-word;
+    }
+  }
+
+  @include desktop {
+    .giftSection {
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-black;
+    }
+  }
+
+  @include mobileAndTablet {
+    .giftSection {
+      font-size: 14px;
+      line-height: 20px;
+      color: $hl-black;
+    }
+  }
+}
+
+.avsSuggestionSpan {
+  @media only screen and (min-width: 475px) {
+    width: 406px;
+  }
+
+  .title {
+    @include hl-font-700;
+    color: $hl-black;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  .description {
+    @include hl-font-300;
+    color: $hl-black;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 1rem 0 0 0;
+  }
+
+  .radioTitle {
+    @include hl-font-700;
+    color: $hl-black;
+    font-size: 12px;
+    grid-row: legend;
+    line-height: 16px;
+    margin: 1rem 0 0 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  .lineBreak {
+    border: 1px solid $hl-gray-line;
+    height: 1px;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .addressGroup {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+
+    fieldset {
+      align-items: flex-start;
+      border: unset;
+      display: grid;
+      gap: $font-size-cite;
+      grid-template-columns: [input] 1fr [edit] auto;
+      grid-template-rows: [legend] auto [input] 1fr;
+      margin: 0;
+      padding: 0;
+    }
+
+    .editButtonDiv {
+      grid-row: input;
+      margin: 0;
+    }
+
+    .editButton {
+      @include hl-font-500;
+      background: none;
+      border: unset;
+      border-bottom: 1px solid $hl-black;
+      color: $hl-black;
+      cursor: pointer;
+      font-size: 14px;
+      grid-row: input;
+      line-height: 20px;
+      outline: none;
+
+      &:hover {
+        color: $hl-blue;
+        border: unset;
+      }
+
+      &:active {
+        color: $hl-black;
+        border-bottom: 1px solid $hl-black;
+      }
+    }
+
+    .addressRadio {
+      border: 1.25px solid #444444;
+      grid-column: radio;
+      height: 20px;
+      margin: 0;
+      padding: 0;
+      width: 20px;
+    }
+
+    .addressArea {
+      display: grid;
+      gap: $font-size-cite;
+      grid-row: input;
+      grid-template-columns: [radio] auto [lines] 1fr;
+      margin: 0;
+      width: 100%;
+    }
+
+    .addressLines {
+      grid-column: lines;
+    }
+  }
+}
+.shippingSection {
+  margin-bottom: 16px;
+  .shippingAddress {
+    @include hl-font-700;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $hl-black;
+  }
+}
+
+.notAGiftSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: $font-size-p;
+  .giftMessageTitle {
+    @include hl-font-700;
+    text-transform: uppercase;
+  }
+  .giftMessage,
+  .giftMessageTitle {
+    font-size: 14px;
+    line-height: 20px;
+    color: $hl-black;
+  }
+}
+
+.addressSpinner {
+  width: 50%;
+  position: absolute;
+}

@@ -1,0 +1,62 @@
+query GetDiyLandingPage {
+  getDiyLandingPage {
+    title
+    banner {
+      title
+      description
+      bannerImage {
+        ...MediaImageWithAltFragment
+      }
+    }
+    videoComponent {
+      cta {
+        label
+        value
+      }
+      description
+      video {
+        videotitle
+        videolink
+        image {
+          url
+        }
+        altimagetext
+      }
+    }
+    twoColumnCategories {
+      title
+      deliveryKey
+      image {
+        ...MediaImageWithAltFragment
+      }
+    }
+    threeColumnCategories {
+      title
+      deliveryKey
+      image {
+        ...MediaImageWithAltFragment
+      }
+    }
+    youMayAlsoLike {
+      deliveryKey
+      hasVideo
+      projectCard {
+        name
+        description
+        title
+        summary
+        urlSlug
+        thumbnail {
+          ...MediaImageWithAltFragment
+        }
+      }
+    }
+  }
+}
+
+fragment MediaImageWithAltFragment on MediaImageWithAlt {
+  image {
+    url
+  }
+  imageAltText
+}

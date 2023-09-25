@@ -1,0 +1,161 @@
+@import '../variables';
+@import '../globals';
+
+.billingAddress {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: $hl-gray-line;
+  padding: 10px;
+  margin: 10px;
+
+  .billingAddressHeader {
+    display: flex;
+    gap: 10px;
+
+    .billingAddressHeadline {
+      @include hl-font-700;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .billingAddressBody {
+    margin: 20px 0;
+
+    .billingAddressBodyKey {
+      @include hl-font-700;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .tickIcon {
+    border-radius: 50%;
+    background-color: $hl-black;
+    color: $hl-white;
+    font-size: 11px;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 2px;
+  }
+}
+.giftMessage {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: $hl-gray-line;
+  padding: 10px;
+  margin: 10px;
+
+  .giftMessageHeader {
+    display: flex;
+    gap: 10px;
+
+    .giftMessageHeadline {
+      @include hl-font-700;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .giftMessageBody {
+    margin: 20px 0;
+
+    .giftMessageBody {
+      @include hl-font-700;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .tickIcon {
+    border-radius: 50%;
+    background-color: $hl-black;
+    color: $hl-white;
+    font-size: 11px;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 2px;
+  }
+}
+
+.paymentMethod {
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 10px;
+
+  .paymentMethodHeader {
+    display: flex;
+    gap: 10px;
+
+    .paymentMethodHeadline {
+      @include hl-font-700;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .paymentMethodBody {
+    margin: 20px 0;
+  }
+
+  .tickIcon {
+    border-radius: 50%;
+    background-color: $hl-black;
+    color: $hl-white;
+    font-size: 11px;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 2px;
+  }
+}
+
+.shippingAddress {
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: $hl-gray-line;
+  padding: 10px;
+  margin: 10px;
+
+  .shippingAddressHeader {
+    display: flex;
+    gap: 10px;
+
+    .shippingAddressHeadline {
+      @include hl-font-700;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .shippingAddressBody {
+    margin: 20px 0;
+
+    .shippingAddressBodyKey {
+      @include hl-font-700;
+      line-height: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .tickIcon {
+    border-radius: 50%;
+    background-color: $hl-black;
+    color: $hl-white;
+    font-size: 11px;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    margin-top: 2px;
+  }
+}

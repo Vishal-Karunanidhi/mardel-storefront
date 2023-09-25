@@ -1,0 +1,113 @@
+@import '../variables';
+@import '../globals';
+
+.orderSummaryTitle,
+.orderTitle {
+  @include hl-font-700;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: center;
+  text-transform: uppercase;
+  color: $hl-black;
+  margin-bottom: 24px;
+  @include mobileAndTablet {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.orderSummaryTitle {
+  display: none;
+  @include mobileAndTablet {
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+
+.divider {
+  display: none;
+  @include mobileAndTablet {
+    display: block;
+    border: 1px solid $hl-gray-line;
+    margin-top: -8px;
+    margin-bottom: 16px;
+  }
+}
+.orderSummarySection {
+  @include mobileAndTablet {
+    div[class*='orderSummarySection'] {
+      display: block;
+      div[class*='summaryBorder'] {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  }
+  @include desktop {
+    div[class*='orderSummarySection'] {
+      display: none;
+    }
+  }
+  div[class*='infoSection'] {
+    display: none;
+  }
+  div[class*='productTileTitle'] {
+    display: none;
+  }
+  div[class*='productTileWrapper'] {
+    display: none;
+  }
+}
+
+.orderDescription {
+  @include hl-font-300;
+  font-size: 16px;
+  line-height: 24px;
+  color: $hl-black;
+  margin-top: 24px;
+
+  @include mobileAndTablet {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.orderHelperText {
+  @include hl-font-300;
+  font-size: 12px;
+  line-height: 16px;
+  color: $hl-black;
+  margin-top: 16px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  .orderPlacingText {
+    margin-right: 4px;
+  }
+  a {
+    text-decoration-line: underline;
+    color: $hl-blue;
+    margin-right: 4px;
+    &:hover {
+      color: $hl-black;
+      text-decoration: none;
+      text-decoration-line: none;
+    }
+
+    &:focus-visible {
+      text-decoration: none;
+      text-decoration-line: none;
+      outline: 2px dashed $hl-blue;
+      outline-offset: 1px;
+      color: $hl-black;
+    }
+  }
+  span + span {
+    &:before {
+      content: 'and ';
+    }
+  }
+}

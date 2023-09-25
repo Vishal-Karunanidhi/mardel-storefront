@@ -1,0 +1,60 @@
+#import '@GqlFragments/metaData.fragment.graphql';
+
+query Query($deliveryKey: String!) {
+  weeklyAdPage(deliveryKey: $deliveryKey) {
+    metaData {
+      ...MetaData
+    }
+    title
+    endDate
+    note
+    disclaimer
+    thumbnail {
+      image {
+        url
+      }
+      imageAltText
+    }
+    highlightedAd {
+      adImage {
+        imageAltText
+        image {
+          url
+        }
+      }
+      blueTitle
+      redTitle
+      titleTwo
+      subtitle
+      disclaimer
+      descriptionColumnOne
+      descriptionColumnTwo
+      disclaimerTwo
+      ruleContext
+    }
+    messageBox
+    adTiles {
+      discountInfo
+      media {
+        imageAltText
+      }
+      tilePosition
+      pageNumber
+      link
+      blueTitle
+      redTitle
+      subTitle
+      disclaimer
+      description
+      image {
+        imageAltText
+        image {
+          url
+        }
+      }
+      order
+      ruleContext
+    }
+    generalDisclaimer
+  }
+}

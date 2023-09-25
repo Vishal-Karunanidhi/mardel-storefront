@@ -1,0 +1,14 @@
+fragment ContentPageImage on ContentPageImage {
+  _meta {
+    name
+    schema
+    deliveryId
+  }
+  ContentImage {
+    defaultHost
+    endpoint
+    id
+    name
+    url
+  }
+}

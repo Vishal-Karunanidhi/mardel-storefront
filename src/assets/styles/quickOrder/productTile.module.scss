@@ -1,0 +1,225 @@
+@import '../variables';
+@import '../globals';
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+
+  .productMainSection {
+    display: flex;
+    flex-direction: row;
+
+    .imageSection {
+      border-radius: 3px;
+      width: 85px;
+      height: 85px;
+      cursor: pointer;
+      margin-right: 18px;
+      a {
+        display: inline-block;
+      }
+    }
+
+    .cartSection {
+      @include mobileAndTablet {
+        margin-right: 10px;
+        width: 100%;
+      }
+      .cartDescription {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include hl-font-700;
+
+        .cartTitleDiv {
+          margin-top: 8px;
+          @include mobileAndTablet {
+            margin-bottom: 0px;
+            margin-top: 0px;
+            text-decoration: underline;
+          }
+
+          @include mobileAndTablet {
+            a {
+              &:focus-visible {
+                text-decoration: transparent;
+                outline: 2px dashed $hl-blue;
+                outline-offset: 5px;
+                color: $hl-blue;
+              }
+            }
+          }
+
+          .cartTitle {
+            font-size: 12px;
+            line-height: 16px;
+            color: $hl-black;
+            margin-top: 10px;
+            width: 460px;
+            cursor: pointer;
+            @include mobileAndTablet {
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+
+      .cartProperty {
+        @include desktop {
+          padding-right: 183px;
+
+          .colorTitle {
+            font-size: 10px;
+            margin-bottom: 10px;
+            @include hl-font-700;
+            line-height: 14px;
+            color: $hl-black;
+          }
+
+          .colorValue {
+            font-size: 10px;
+            margin-bottom: 10px;
+            line-height: 14px;
+            color: $hl-black;
+          }
+        }
+        @include mobileAndTablet {
+          display: flex;
+          flex-direction: column;
+
+          .flexRow {
+            display: flex;
+            flex-direction: column;
+            .colorSpan {
+              height: 16px;
+            }
+            .quantitySpan {
+              height: 16px;
+            }
+            .colorTitle {
+              font-size: 10px;
+              line-height: 14px;
+              color: $hl-black;
+              @include hl-font-700;
+            }
+
+            .colorValue {
+              font-size: 10px;
+              line-height: 14px;
+              color: $hl-black;
+            }
+          }
+        }
+      }
+
+      .cartAmountSection {
+        @include desktop {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 14px;
+          @include hl-font-700;
+          font-size: 12px;
+          line-height: 16px;
+          color: $hl-black;
+
+          .cartAmountWrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 440px;
+
+            .amount {
+              font-size: 12px;
+              line-height: 16px;
+              color: $hl-black;
+              margin-top: 10px;
+            }
+          }
+
+          .deleteButtonSpan {
+            font-size: 20px;
+            margin-top: 10px;
+            margin-right: 6px;
+            margin-left: 10px;
+            -webkit-tap-highlight-color: transparent;
+
+            .deleteButton {
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+
+              &:focus-visible {
+                outline-offset: 1px;
+              }
+            }
+          }
+        }
+        @include mobileAndTablet {
+          display: flex;
+          justify-content: space-between;
+          .amount {
+            font-size: 12px;
+            line-height: 16px;
+            color: $hl-black;
+            display: flex;
+            flex-direction: row;
+            margin-top: 16px;
+            @include hl-font-700;
+          }
+          .deleteButtonSpan {
+            font-size: 20px;
+            margin-top: 7px;
+            margin-right: 7px;
+            margin-left: 15px;
+            -webkit-tap-highlight-color: transparent;
+
+            .deleteButton {
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+
+              &:focus-visible {
+                outline-offset: 1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .notice {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    .imageDimension {
+      width: 14px;
+      height: 10px;
+      margin-left: 15px;
+      margin-top: 2px;
+    }
+
+    .badgeTitle {
+      margin-left: 9px;
+      font-size: 10px;
+      line-height: 14px;
+      color: $hl-black;
+      margin-top: -2px;
+      width: 468px;
+    }
+  }
+}
+
+.cartItems {
+  .itemQuantity {
+    width: 40px;
+    text-align: center;
+    border: 1px solid $hl-dark-gray;
+  }
+}
+
+:export {
+  hlError: $hl-error;
+}

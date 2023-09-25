@@ -1,0 +1,246 @@
+@import '../breakpoints';
+@import '../variables';
+@import '../globals';
+
+.container {
+  align-items: start;
+  display: grid;
+  gap: $font-size-p;
+  grid-auto-rows: auto;
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  @include tabletAndDesktop {
+    grid-template-columns: [text] 1fr [image] 1fr;
+  }
+}
+
+.title {
+  @include hl-font-700;
+  align-self: center;
+  padding: 0;
+
+  @include mobile {
+    margin: $font-size-h2 0 0 0;
+  }
+
+  @include tabletAndDesktop {
+    margin: 0;
+  }
+}
+
+.image {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  @include mobile {
+    grid-row: 1 / 1;
+  }
+
+  @include tabletAndDesktop {
+    align-self: start;
+    grid-column: image / image;
+    grid-row: 1 / 10;
+    position: sticky;
+    top: $font-size-p;
+  }
+  
+  > img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.confirmation {
+  align-self: center;
+  margin: 0;
+  padding: 0;
+
+  @include tabletAndDesktop {
+    grid-column: text / text;
+  }
+}
+
+.orderInformation {
+  margin: 0;
+  padding: 0;
+
+  @include tabletAndDesktop {
+    grid-column: text / text;
+  }
+
+  dt, dd {
+    display: inline;
+  }
+
+  dt {
+    @include hl-font-700;
+    line-height: 1.25;
+
+    &:before {
+      content: '';
+      display: block;
+    }
+  }
+
+  dd {
+    margin: 0 0 0 calc($font-size-p * 0.25);
+  }
+}
+
+.shippingTitle {
+  @include hl-font-700;
+  padding: 0;
+
+  @include mobileAndTablet {
+    margin: $font-size-h4 0 0 0;
+  }
+
+  @include desktop {
+    margin: 0;
+  }
+}
+
+.shippingAddress {
+  align-self: center;
+  margin: 0;
+  padding: 0;
+
+  @include tabletAndDesktop {
+    grid-column: text / text;
+  }
+}
+
+.shippingForm {
+  align-self: center;
+
+  form {
+    margin: $font-size-h3 0 0 0;
+  }
+
+  @include tabletAndDesktop {
+    grid-column: text / text;
+  }
+}
+
+
+.orderConfirmationParentGrid {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: $hl-xxl;
+    width: 100%;
+
+    @include mobileAndTablet {
+    padding: 8px;
+    margin-top: 32px;
+    }
+
+    .orderDetailsGrid {
+        padding: 24px;
+    
+        @include desktop {
+          padding: 80px;
+        }
+    
+        @include mobileAndTablet {
+          width: 99vw;
+        }
+    
+        .individualFormBoxes {
+          display: flex;
+          flex-direction: column;
+          background: $hl-white;
+          padding: 24px;
+          box-shadow: 0px 2.6155px 7.24134px rgba(0, 0, 0, 0.15);
+          border-radius: 10px;
+          margin-bottom: 24px;
+    
+          .paymentSection {
+            margin-bottom: 24px;
+    
+            .editPaymentForm {
+              margin-top: 26px;
+              margin-bottom: 24px;
+    
+              .paymentFieldWrapper {
+                display: flex;
+                flex-direction: row;
+              }
+            }
+    
+            .creditCardTitleSection {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+          }
+    
+          .formBoxHeader {
+            width: 100%;
+            height: 32px;
+            background: $hl-blue;
+            border-radius: 10px 10px 0px 0px;
+    
+            padding: 0px;
+          }
+          .signUpWrapper {
+            padding: 24px;
+            form[class*='signUpForm'] {
+              margin-top: 24px;
+            }
+          }
+    
+          .selectOptionDescription {
+            padding-top: 8px;
+          }
+          .secureOptionsDescription {
+            padding-top: 24px;
+            font-size: 14px;
+          }
+          .paymentOptionDivider {
+            padding-top: 16px;
+          }
+        }
+    }
+}
+
+.orderSummaryGrid {
+  background-color: $hl-white;
+
+  div[class*='orderSummarySection'] {
+    margin-right: 0px;
+  }
+
+  div[class*='errorSection'] {
+    margin: 24px 0px;
+  }
+
+  @include desktop {
+    display: block;
+    width: 38%;
+    padding: 24px;
+    max-width: 520px;
+    background: transparent;
+  }
+
+  @include mobileAndTablet {
+    display: none;
+  }
+
+  .productTileWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .productTileTitle {
+    @include hl-font-500;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 16px;
+    text-transform: uppercase;
+    color: $hl-black;
+  }
+}

@@ -1,0 +1,8 @@
+
+fragment LinkContent on LinkContent {
+    _meta {
+        name
+    }
+    theme
+    title
+}

@@ -1,0 +1,246 @@
+@import '../variables';
+@import '../breakpoints';
+@import '../globals';
+
+.storeDirectoryPage {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+  padding: 35px 80px 72px 80px;
+}
+
+.allLocations {
+  display: flex;
+  gap: 25px;
+  &Headers {
+    display: flex;
+    gap: 25px;
+    border-bottom: 1px solid $hl-gray;
+  }
+  &Header {
+    flex: 1 1 0;
+    line-height: 49px;
+    @include hl-font-700;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+  &Link {
+    &:hover {
+      color: $hl-blue;
+      .allLocationsColumnState {
+        text-decoration: none;
+      }
+    }
+  }
+  &Column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    &State {
+      &Container {
+        border-bottom: 1px solid $hl-gray-line;
+        font-size: 16px;
+        line-height: 49px;
+        @include hl-font-300;
+      }
+      text-decoration: underline;
+    }
+    &Header {
+      &Mobile {
+        display: none;
+      }
+    }
+    &Count {
+      margin-left: 5px;
+      text-decoration: none;
+    }
+  }
+}
+
+.state {
+  column-count: 4;
+  column-gap: 27px;
+
+  &City {
+    line-height: 49px;
+    font-size: 16px;
+    @include hl-font-300;
+    border-bottom: 1px solid $hl-gray-line;
+
+    &Letter {
+      line-height: 49px;
+      font-size: 16px;
+      @include hl-font-700;
+      border-bottom: 1px solid $hl-gray;
+    }
+
+    &Link {
+      &:hover {
+        color: $hl-blue;
+        .stateCityName {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &Name {
+      text-decoration: underline;
+      text-decoration-color: $hl-gray-line;
+    }
+
+    &Count {
+      margin-left: 5px;
+    }
+  }
+}
+
+.city {
+  &Header {
+    @include hl-font-300;
+    font-size: 24px;
+    line-height: 34px;
+    color: $hl-black;
+  }
+  &Stores {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &Store {
+    display: flex;
+    padding: 32px 0px 32px 0px;
+    border-bottom: 1px solid $hl-gray-line;
+    &Label {
+      width: 25%;
+      color: $hl-blue;
+      font-size: 16px;
+      line-height: 24px;
+      @include hl-font-700;
+      &Name {
+        text-decoration: underline;
+      }
+    }
+    &Location {
+      width: 25%;
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-black;
+      &Phone {
+        text-decoration: underline;
+      }
+    }
+    &Open {
+      width: 25%;
+      &Hours {
+        @include hl-font-700;
+      }
+      &Directions {
+        display: flex;
+        align-items: center;
+        &Link {
+          margin-left: 3px;
+          text-decoration: underline;
+          color: $hl-black;
+        }
+      }
+    }
+    &Button {
+      height: 38px;
+      width: 140px;
+      border-radius: 20px;
+      border: 1px solid $hl-black;
+      background: $hl-white;
+      @include hl-font-700;
+      font-size: 16px;
+      line-height: 24px;
+      &:hover {
+        background: $hl-blue-light;
+        color: $hl-white;
+        border: none;
+        cursor: pointer;
+      }
+      &Link {
+        height: 38px;
+        width: 140px;
+        border-radius: 20px;
+      }
+      &Container {
+        display: flex;
+        justify-content: center;
+        width: 25%;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .storeDirectoryPage {
+    padding: 0px;
+  }
+
+  .allLocations {
+    padding: 0px 0px 24px 0px;
+    flex-direction: column;
+    gap: 0;
+    &Column {
+      &Header {
+        &Mobile {
+          display: block;
+          line-height: 49px;
+          @include hl-font-700;
+          font-size: 16px;
+          padding-left: 24px;
+          margin-top: 24px;
+          border-bottom: 1px solid $hl-gray;
+        }
+      }
+      &State {
+        &Container {
+          margin-left: 24px;
+          margin-right: 24px;
+        }
+      }
+    }
+    &Headers {
+      display: none;
+    }
+  }
+
+  .state {
+    column-count: auto;
+    padding-bottom: 24px;
+
+    &City {
+      margin-left: 24px;
+      margin-right: 24px;
+      &Letter {
+        margin-top: 24px;
+        padding-left: 24px;
+      }
+    }
+  }
+
+  .city {
+    padding: 24px;
+    &Store {
+      gap: 16px;
+      border: none;
+      flex-direction: column;
+      &Label {
+        width: auto;
+      }
+      &Location {
+        width: auto;
+      }
+      &Open {
+        width: auto;
+      }
+      &Button {
+        &Container {
+          display: none;
+        }
+      }
+    }
+  }
+}

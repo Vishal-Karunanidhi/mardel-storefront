@@ -1,0 +1,94 @@
+@use '../_variables' as vars;
+@import '../globals';
+@import '../_breakpoints';
+
+.MuiAccordionSummary-content .Mui-expanded {
+  margin: 0;
+}
+
+.accordianSlot {
+  margin: 0 auto;
+  max-width: $hl-xxl;
+  padding: 0 24px;
+
+  &Header {
+    box-shadow: none;
+  }
+
+  &Title {
+    @include vars.hl-font-700;
+    color: vars.$hl-black;
+    font-size: clamp(20px, 22px, 24px);
+    line-height: clamp(24px, 28px, 32px);
+
+    &Icon {
+      color: vars.$hl-black;
+    }
+  }
+
+  &Content {
+    color: vars.$hl-black;
+    font-size: clamp(14px, 15px, 16px);
+    line-height: clamp(20px, 22px, 24px);
+    margin: 0 auto;
+    max-width: 846px;
+    min-width: 272px;
+    padding: 0;
+    padding-top: 40px;
+
+    @include mobile {
+      padding-top: 24px;
+    }
+
+    a {
+      color: vars.$hl-blue;
+      text-decoration: underline;
+
+      &:focus {
+        text-decoration: none;
+        color: vars.$hl-black;
+        outline-offset: 5px;
+        outline: 2px dashed vars.$hl-blue;
+      }
+
+      &:hover {
+        text-decoration: none;
+        color: vars.$hl-black;
+      }
+    }
+
+    .markdownTable {
+      table {
+        border-collapse: collapse;
+        border: 1px solid vars.$hl-black;
+      }
+      th,
+      td {
+        padding: 8px;
+        border: 1px solid vars.$hl-black;
+      }
+
+      @include mobile {
+        table {
+          table-layout: fixed;
+          width: 100%;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}
+
+@include tabletAndDesktop {
+  .accordianSlot {
+    &Title {
+      &Icon {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+:export {
+  hlGrayLine: vars.$hl-gray-line;
+}

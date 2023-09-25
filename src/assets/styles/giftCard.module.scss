@@ -1,0 +1,96 @@
+@import './variables';
+@import './globals';
+
+.parentGcWrapper {
+  .giftCardDesc {
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    padding-top: 35px;
+    padding-bottom: 24px;
+    padding-right: 80px;
+    @include mobile {
+      margin: 24px;
+      padding: 0px;
+      margin-bottom: 0px;
+    }
+    .gcHeader {
+      @include hl-font-700;
+      font-size: 24px;
+      line-height: 32px;
+      color: $hl-black;
+      padding-bottom: 2px;
+    }
+    .gcBalanceTitle,
+    .gcAssistanceTitle {
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 14px;
+    }
+    .gcAssistanceTitle {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      .gcMail {
+        color: $hl-blue;
+      }
+    }
+    .divider {
+      border: 1px solid $color-gray-3;
+    }
+  }
+  .imageContainer {
+    margin: auto;
+
+    div[class*='giftCardLookup_giftCardBalance'] {
+      label[class*='giftCardLookup_gcBalanceTitle'] {
+        display: none;
+      }
+    }
+
+    div[class*='giftCardLookup_parentGcWrapper'] {
+      padding: 24px;
+      label[class*='giftCardLookup_gclookUpTitle'] {
+        display: none;
+      }
+
+      div[class*='giftCardLookup_inputFields'] {
+        @include tabletAndDesktop {
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+        }
+        span[class*='giftCardLookup_gcInputBox'] {
+          padding-top: 64px;
+          gap: 28px;
+          padding-bottom: 20px;
+          @include mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-bottom: 12px;
+            padding-top: 24px;
+          }
+        }
+      }
+
+      div[class*='common_submitWrapper'] {
+        margin: auto;
+        width: 150px;
+        @include tabletAndDesktop {
+          margin-top: 20px;
+        }
+        @include mobile {
+          width: 100%;
+          margin-top: 20px;
+        }
+
+        button[class*='common_submitButton'] {
+          @include tablet {
+            height: 48px;
+          }
+        }
+      }
+    }
+  }
+}

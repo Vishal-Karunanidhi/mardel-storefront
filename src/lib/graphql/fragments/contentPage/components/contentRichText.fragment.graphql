@@ -1,0 +1,8 @@
+fragment ContentRichText on ContentRichText {
+  _meta {
+    name
+    schema
+    deliveryId
+  }
+  richText
+}

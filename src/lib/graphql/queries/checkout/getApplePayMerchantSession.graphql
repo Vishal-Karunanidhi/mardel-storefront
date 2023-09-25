@@ -1,0 +1,5 @@
+query GetApplePayMerchantSession($request: ApplePayMerchantSessionRequest) {
+  getApplePayMerchantSession(request: $request) {
+    token
+  }
+}

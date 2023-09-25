@@ -1,0 +1,90 @@
+query GetStoreDetailsContent($deliveryKey: String) {
+  getStoreDetailsContent(deliveryKey: $deliveryKey) {
+    careersText
+    storeTemplate1
+    storeTemplate2
+    storeTemplate3
+    storeTemplate4
+    storeTemplate5
+    nearbyStores
+    storeDescription
+    holidayHours
+    careersHeader
+    departmentsHeader
+    dealsPromotions
+    dealsAndPromotionsText
+    dealsAndPromotionsLink {
+      openTab
+      priority
+      title
+      url
+      _meta {
+        deliveryId
+        deliveryKey
+        name
+        schema
+      }
+    }
+    departmentList {
+      Title
+      numberToCardsToShowOnDesktop
+      numberToCardsToShowOnMobile
+      _meta {
+        name
+        schema
+        deliveryId
+        deliveryKey
+      }
+      Cards {
+        link
+        media {
+          image {
+            endpoint
+            defaultHost
+            id
+            name
+            url
+          }
+          imageAltText
+        }
+        title
+        _meta {
+          deliveryId
+          deliveryKey
+          name
+          schema
+        }
+      }
+    }
+    careersLink {
+      priority
+      title
+      url
+      openTab
+      _meta {
+        deliveryKey
+        deliveryId
+        name
+        schema
+      }
+    }
+    careersImage {
+      endpoint
+      defaultHost
+      id
+      name
+      _meta {
+        deliveryId
+        deliveryKey
+        name
+        schema
+      }
+    }
+    _meta {
+      deliveryId
+      deliveryKey
+      name
+      schema
+    }
+  }
+}

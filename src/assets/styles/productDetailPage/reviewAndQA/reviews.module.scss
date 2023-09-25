@@ -1,0 +1,258 @@
+@import '../../variables';
+@import '../../globals';
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 24px;
+
+  &Overall {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1;
+    gap: 16px;
+    height: 162px;
+    margin-right: 115px;
+    padding: 0px;
+    width: 213px;
+
+    &Rating {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: 58px;
+      justify-content: center;
+      padding: 0px;
+
+      &Number {
+        @include hl-font-700;
+        color: $hl-black;
+        font-size: 28px;
+        line-height: 35px;
+      }
+      &Stars {
+        color: $hl-blue;
+        font-size: 14px;
+        stroke-width: 0.5px;
+        stroke: $hl-blue;
+      }
+    }
+    &Display {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      div {
+        align-items: center;
+        display: flex;
+        height: 16px;
+        justify-content: space-between;
+        width: 213px;
+      }
+    }
+  }
+
+  &Slots {
+    width: 100%;
+
+    &Create {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 0 25px 25px 25px;
+      max-width: 832px;
+
+      &Info {
+        display: flex;
+        flex-direction: column;
+        @include hl-font-700;
+        gap: 1rem;
+        margin: 1rem 0 0 0;
+        padding: 0;
+
+        figcaption {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+
+        img {
+          width: 250px;
+          height: auto;
+        }
+      }
+      &Form {
+        max-width: 507px;
+        width: 100%;
+
+        h3,
+        h5 {
+          @include hl-font-700;
+        }
+        h5 {
+          margin-bottom: 0;
+        }
+        ul {
+          margin-top: 0;
+          padding-left: 1rem;
+        }
+        li {
+          list-style-type: disc;
+        }
+
+        &Inputs {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: max-content repeat(6, auto);
+          gap: 16px;
+          grid-template-areas:
+            'rating rating'
+            // changing this from name email to name name for now. it will be reverted later
+            'name name'
+            'title title'
+            'text text'
+            'text text'
+            'submit submit'
+            'error error';
+
+          &Rating {
+            color: $hl-blue;
+            grid-area: rating;
+            width: max-content;
+            align-self: flex-end;
+          }
+          &Name {
+            grid-area: name;
+          }
+          &Email {
+            grid-area: email;
+          }
+          &Title {
+            grid-area: title;
+          }
+          &Text {
+            grid-area: text;
+            textarea {
+              width: 100%;
+              height: 100%;
+              resize: none;
+              padding: 13px 12px;
+              border-radius: 5px;
+            }
+          }
+          &Characters {
+            grid-area: text;
+          }
+          &Error {
+            color: $hl-orange-dark;
+            grid-area: error;
+          }
+          button {
+            grid-area: submit;
+            @include button;
+            @include hl-font-700;
+            width: 100% !important;
+          }
+        }
+      }
+
+      &Confirmation {
+        h3 {
+          @include hl-font-700;
+        }
+      }
+    }
+
+    .submitReview,
+    .loadMoreReviews,
+    .weeklyAd,
+    .addReview {
+      margin-top: 18px !important;
+      @include button;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+      }
+    }
+
+    .submitReview,
+    .weeklyAd {
+      width: 100%;
+    }
+  }
+}
+
+.loadMoreReviews {
+  margin-right: $font-size-p !important;
+}
+
+.modalBackdrop {
+  overflow: scroll;
+}
+
+.modal {
+  width: calc(100% - 20px);
+  max-width: 832px;
+  height: max-content;
+  max-height: none !important;
+  z-index: 1000;
+}
+
+@include tabletAndDesktop {
+  .reviews {
+    &Slots {
+      flex: 1 0 500px;
+    }
+  }
+}
+
+@include mobile {
+  .reviews {
+    &Slots {
+      &Create {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        &Info {
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          border-bottom: 2px solid $hl-gray-line;
+
+          img {
+            width: 70px;
+            height: auto;
+          }
+        }
+
+        &FormInputs {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            'rating'
+            'name'
+            'email'
+            'title'
+            'text'
+            'text'
+            'submit';
+        }
+      }
+
+      .submitReview,
+      .loadMoreReviews,
+      .weeklyAd,
+      .addReview {
+        @include buttonSmall;
+      }
+    }
+  }
+}
+
+:export {
+  hlGrayShadow: $hl-gray-shadow;
+}

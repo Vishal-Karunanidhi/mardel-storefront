@@ -1,0 +1,45 @@
+@use '../../variables' as vars;
+@import '../../globals';
+
+.questions {
+  button {
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    font-size: 14px;
+    @include vars.hl-font-700;
+    height: 28px;
+    justify-content: center;
+    line-height: 20px;
+    margin: 24px 0;
+    padding: 10px 25px;
+    width: 272px;
+
+    &:first-of-type {
+      background: vars.$hl-blue-dark;
+      border: none;
+      color: vars.$hl-white;
+    }
+    &:last-of-type {
+      background: vars.$hl-white;
+      border: 1px solid vars.$hl-black;
+      color: vars.$hl-black;
+    }
+  }
+}
+
+@include tabletAndDesktop {
+  .questions {
+    row-gap: 15px;
+    button {
+      border-radius: 25px;
+      float: left;
+      height: 48px;
+      width: auto;
+
+      &:first-of-type {
+        margin-right: 16px;
+      }
+    }
+  }
+}

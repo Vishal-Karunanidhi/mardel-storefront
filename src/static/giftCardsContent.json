@@ -1,0 +1,12 @@
+{
+  "getGiftCardsContent": {
+    "giftCards": {
+      "minPurchaseAmount": 20,
+      "maxPurchaseAmount": 150
+    },
+    "balance": {
+      "description": "",
+      "email": ""
+    }
+  }
+}

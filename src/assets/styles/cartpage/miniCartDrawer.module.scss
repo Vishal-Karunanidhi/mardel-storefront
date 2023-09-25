@@ -1,0 +1,717 @@
+@use '../variables' as vars;
+@use '../breakpoints' as brPoint;
+@import '../globals';
+
+%focus-visible-property {
+  &:focus-visible {
+    text-decoration: transparent;
+    outline: 2px dashed vars.$hl-blue;
+    outline-offset: 5px;
+    color: vars.$hl-blue;
+  }
+}
+
+.miniCartDrawerBox {
+  height: 100%;
+  width: 320px;
+
+  @media only screen and (max-width: brPoint.$hl-mobile-end) {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .renderButtonStyles {
+    @media only screen and (max-width: brPoint.$hl-mobile-end) {
+      width: 100%;
+    }
+  }
+
+  .badgeCartItems {
+    border: 1px solid transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 27px;
+    margin-left: 24px;
+    margin-right: 24px;
+    transform: translate(0%, 100%);
+
+    .badgeTitle {
+      @include vars.hl-font-700;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      align-items: flex-end;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-left: 24px;
+      margin-top: 5px;
+    }
+  }
+
+  .miniCartBody {
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+
+    // MiniCart Product Tile Section
+    .productCardSection {
+      display: flex;
+      flex-direction: column;
+      padding-left: 24px;
+      padding-right: 24px;
+      margin-bottom: 176px;
+      gap: 16px;
+      margin-top: 1rem;
+      span[class*='productTileAttribute'] {
+        font-size: 10px;
+        line-height: 14px;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        span {
+          margin-left: 0px;
+        }
+      }
+    }
+
+    .miniCartProgressBarStyles {
+      margin-top: -46px;
+      margin-right: 24px;
+      margin-left: 24px;
+
+      @media only screen and (max-width: brPoint.$hl-mobile-end) {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+
+        div[class*='progressContainer'] {
+          border-bottom: 0px solid #444444;
+        }
+      }
+
+      @media only screen and (min-width: brPoint.$hl-tab-start) and (max-width: brPoint.$hl-tab-end) {
+        div[class*='progressWithoutNoteDetails'] {
+          width: 100%;
+          margin-right: 0px;
+
+          div[class*='progress'] {
+            width: 0px;
+          }
+        }
+
+        div[class*='progress'] {
+          width: 100%;
+          margin-right: 0px;
+        }
+
+        div[class*='noteDetails'] {
+          width: 100%;
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
+  .grayBorderBox {
+    bottom: 0px;
+    position: fixed;
+    @include mobileAndTablet {
+      a {
+        width: 100%;
+      }
+    }
+    div[class*='submitWrapper'] {
+      margin-top: 0px;
+      width: 100%;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.05);
+    background-color: vars.$hl-gray-shadow;
+    width: 320px;
+    height: 156px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @media only screen and (max-width: brPoint.$hl-mobile-end) {
+      width: 100vw;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .totalEstimation {
+      flex-direction: row;
+      font-size: 14px;
+      display: flex;
+      color: vars.$hl-black;
+      margin-top: 24px;
+      gap: 4px;
+      @include vars.hl-font-300;
+    }
+
+    // MiniCart Checkout button
+    .miniCartCheckout {
+      &Content {
+        &Info {
+          color: vars.$hl-black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: vars.$hl-white;
+          margin: 0 auto;
+
+          &Outline {
+            &Link {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              color: vars.$hl-white;
+              @include vars.hl-font-700;
+              background: vars.$hl-blue-dark;
+              font-size: 14px;
+              line-height: 20px;
+              border-radius: 15px;
+              border: none;
+              cursor: pointer;
+              -webkit-tap-highlight-color: transparent;
+
+              &:hover {
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+              }
+
+              &:focus {
+                outline: none;
+                background: vars.$hl-blue-light;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .miniCartCheckoutContentInfo {
+      background-color: unset;
+
+      &OutlineLink {
+        font-size: 14px;
+        line-height: 20px;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 28px;
+        width: 272px;
+
+        @media only screen and (max-width: brPoint.$hl-mobile-end) {
+          width: 100%;
+        }
+      }
+    }
+
+    // MiniCart ContinueShopping button
+    .miniCartShopping {
+      &Content {
+        &Info {
+          color: vars.$hl-black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: vars.$hl-white;
+          margin: 0 auto;
+
+          &Outline {
+            &Link {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              color: vars.$hl-black;
+              @include vars.hl-font-700;
+              background-color: vars.$hl-white;
+              font-size: 14px;
+              line-height: 20px;
+              border-radius: 15px;
+              border: 1px solid #000000;
+              cursor: pointer;
+              -webkit-tap-highlight-color: transparent;
+
+              &:hover {
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+              }
+
+              &:focus {
+                outline: none;
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .miniCartShoppingContentInfo {
+      background-color: unset;
+
+      &OutlineLink {
+        font-size: 14px;
+        line-height: 20px;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 28px;
+        width: 272px;
+
+        @media only screen and (max-width: brPoint.$hl-mobile-end) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .drawerBody {
+    padding-right: 24px;
+    padding-left: 24px;
+    width: 100%;
+
+    @media only screen and (max-width: brPoint.$hl-mobile-end) {
+      padding-right: 24px;
+    }
+
+    div[class*='submitWrapper'] {
+      padding-right: 24px;
+      padding-left: 24px;
+      margin-top: 16px;
+    }
+
+    .cartEmptyMessage,
+    .startShoppingMessage {
+      display: flex;
+      font-size: 14px;
+      line-height: 20px;
+      color: vars.$hl-black;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .cartEmptyMessage {
+      @include vars.hl-font-700;
+    }
+
+    .startShoppingMessage {
+      @include vars.hl-font-300;
+    }
+
+    .infoSection {
+      @include vars.hl-font-300;
+      font-size: 12px;
+      line-height: 16px;
+      color: #000000;
+      margin: 16px 24px 16px 24px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .divider {
+      border-top: 1px solid #bfbfbf;
+      margin-left: 24px;
+      margin-right: 24px;
+
+      @media only screen and (max-width: brPoint.$hl-mobile-end) {
+        margin-right: -24px;
+      }
+    }
+
+    // MiniCart SignIn button
+    .miniCartSignIn {
+      &Content {
+        &Info {
+          color: vars.$hl-black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: vars.$hl-white;
+          margin: 0 auto;
+
+          &Outline {
+            &Link {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              color: vars.$hl-black;
+              @include vars.hl-font-700;
+              background-color: vars.$hl-white;
+              font-size: 14px;
+              line-height: 20px;
+              border: 1px solid #000000;
+              cursor: pointer;
+              -webkit-tap-highlight-color: transparent;
+              height: 38px;
+              border-radius: 20px;
+              width: 100%;
+
+              @media only screen and (max-width: brPoint.$hl-mobile-end) {
+                height: 28px;
+                border-radius: 15px;
+                width: 100%;
+              }
+
+              &:hover {
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+              }
+
+              &:focus {
+                outline: none;
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .miniCartSignInontentInfo {
+      background-color: unset;
+
+      &OutlineLink {
+        font-size: 14px;
+        line-height: 20px;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    // MiniCart ContinueShopping button
+    .miniCartShopping {
+      &Content {
+        &Info {
+          color: vars.$hl-black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: vars.$hl-white;
+          margin: 0 auto;
+
+          &Outline {
+            &Link {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              color: vars.$hl-black;
+              @include vars.hl-font-700;
+              background-color: vars.$hl-white;
+              font-size: 14px;
+              line-height: 20px;
+              border: 1px solid #000000;
+              cursor: pointer;
+              -webkit-tap-highlight-color: transparent;
+              margin-top: 16px;
+
+              &:hover {
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+              }
+
+              &:focus {
+                outline: none;
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .miniCartShoppingContentInfo {
+      background-color: unset;
+
+      &OutlineLink {
+        font-size: 14px;
+        line-height: 20px;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 38px;
+        border-radius: 20px;
+        width: 100%;
+        margin-top: 16px;
+
+        @media only screen and (max-width: brPoint.$hl-mobile-end) {
+          height: 28px;
+          border-radius: 15px;
+          width: 100%;
+        }
+      }
+    }
+
+    // MiniCart weeklyAd button
+    .miniCartWeeklyAd {
+      &Content {
+        &Info {
+          color: vars.$hl-black;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: vars.$hl-white;
+          margin: 0 auto;
+
+          &Outline {
+            &Link {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              color: vars.$hl-white;
+              @include vars.hl-font-700;
+              background: vars.$hl-blue-dark;
+              font-size: 14px;
+              line-height: 20px;
+              border: none;
+              cursor: pointer;
+              -webkit-tap-highlight-color: transparent;
+
+              &:hover {
+                background: vars.$hl-blue-light;
+                color: vars.$hl-white;
+              }
+
+              &:focus {
+                outline: none;
+                background: vars.$hl-blue-light;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .miniCartWeeklyAdContentInfo {
+      background-color: unset;
+
+      &OutlineLink {
+        font-size: 14px;
+        line-height: 20px;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 38px;
+        border-radius: 20px;
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 32px;
+
+        @media only screen and (max-width: brPoint.$hl-mobile-end) {
+          height: 28px;
+          border-radius: 15px;
+          width: 100%;
+        }
+      }
+    }
+
+    @media only screen and (min-width: brPoint.$hl-tab-start) {
+      width: 320px;
+    }
+
+    @media only screen and (max-width: brPoint.$hl-mobile-end) {
+      width: 100vw;
+    }
+  }
+}
+
+// Drawer Header Section
+
+.miniCartHeaderSection {
+  background-color: vars.$hl-blue;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  .minicartTitle {
+    @include vars.hl-font-700;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: flex-end;
+    text-transform: uppercase;
+    color: #ffffff;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    margin-left: 24px;
+  }
+
+  .closeButton {
+    background: transparent;
+    border: none;
+
+    &:focus-visible {
+      border: none;
+      outline: 2px dashed vars.$hl-white;
+    }
+    .closeIcon {
+      float: right;
+      color: vars.$hl-white;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      margin-right: 24px;
+    }
+  }
+}
+
+// This forces the product card to remain at a smaller size in tablet and desktop mode. Default product card settings return in mobile mode.
+
+@media only screen and (min-width: brPoint.$hl-tab-start) {
+  .miniCartDrawerBox {
+    button[class*='common_submitButton'] {
+      font-size: 14px !important;
+      height: 28px !important;
+      line-height: 20px !important;
+    }
+
+    h3[class*='featuredItems_header'] {
+      font-size: 24px;
+      margin-left: 24px;
+    }
+
+    div[class*='featuredItemCard_card'] {
+      column-gap: 14px;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: 25px 158px 28px;
+      height: 261px;
+      min-width: 272px;
+      row-gap: 24px;
+      width: 272px;
+    }
+
+    section[class*='featuredItemCard_promoAlert'] {
+      grid-row: 1;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    section[class*='featuredItemCard_top'] {
+      grid-row: 2;
+      grid-column: 1;
+    }
+
+    div[class*='featuredItemCard_productImageContainer'] {
+      height: 90px;
+      width: 90px;
+    }
+
+    svg[class*='featuredItemCard_favoriteIcon'] {
+      height: 16px;
+      width: 16px;
+      margin-left: 0;
+      margin-top: 0;
+      position: absolute;
+      right: 15px;
+    }
+
+    section[class*='featuredItemCard_middle'] {
+      grid-row: 2;
+      grid-column: 2;
+      padding: 0;
+      width: 137px;
+    }
+
+    div[class*='featuredItemCard_productDescription'] {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    div[class*='featuredItemCard_productRating'] {
+      margin-top: 6.17px;
+      align-items: center;
+
+      > span {
+        font-size: 1.125rem !important;
+      }
+    }
+
+    section[class*='featuredItemCard_bottom'] {
+      grid-row: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      display: flex;
+      flex-direction: column;
+      padding: 0 15px 15px;
+    }
+
+    div[class*='featuredItemCard_productPrice'] {
+      align-self: center;
+    }
+
+    div[class*='slider_sliderContainer'] {
+      margin: 0;
+      padding: 0 24px 24px 24px;
+      width: 100%;
+
+      div[id*='slider_leftArrow'] {
+        left: -15px !important;
+      }
+
+      div[id*='slider_rightArrow'] {
+        right: -15px !important;
+      }
+    }
+
+    div[class*='miniCartBody'] {
+      span[class*='miniCartProgressBarStyles'] {
+        margin-top: 0px;
+
+        div[class*='progressContainer'] {
+          div[class*='progress'] {
+            margin-top: 24px;
+            div[class*='progressDone'] {
+              margin-top: -28px;
+            }
+          }
+          div[class*='progressWithoutNoteDetails'] {
+            margin-top: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+:export {
+  hlBlueDark: vars.$hl-blue-dark;
+  hlBlueLight: vars.$hl-blue-light;
+  hlWhite: vars.$hl-white;
+  hlBlue: vars.$hl-blue;
+  hlBlack: vars.$hl-black;
+  hlOrangeDark: vars.$hl-orange-dark;
+  hlError: vars.$hl-error;
+}

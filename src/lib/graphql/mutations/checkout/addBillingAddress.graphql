@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+mutation AddBillingAddress($request: AddressRequest!) {
+  addBillingAddress(request: $request) {
+       ...CartResponseFragment
+  }
+}

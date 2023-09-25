@@ -1,0 +1,38 @@
+query GetStoresDetails($storeNumber: Int!) {
+  getStoreDetails(storeNumber: $storeNumber) {
+    status
+    executionTime
+    data {
+      storeNumber
+      streetAddress
+      city
+      state
+      zipCode
+      phoneNumber
+      latitude
+      longitude
+      status
+      statusLabel
+      distance
+      nextWeek {
+        hours {
+          date
+          day
+          startTime
+          endTime
+          legend
+        }
+      }
+      thisWeek {
+        hours {
+          date
+          day
+          startTime
+          endTime
+          legend
+        }
+      }
+      commonName
+    }
+  }
+}

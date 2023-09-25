@@ -1,0 +1,36 @@
+#import '@GqlFragments/pdp/productAttributes.fragment.graphql';
+
+fragment VariantFragment on Variant {
+  name
+  id
+  sku
+  key
+  url
+  inStock
+  imageSet
+  swatchUrl
+  isMasterVariant
+  isMatchingVariant
+  attributes {
+    ...VariantAttributesFragment
+  }
+  price {
+    ...VariantPriceFragment
+  }
+  variantPicker
+}
+
+fragment VariantPriceFragment on VariantPrice {
+  variantPrice
+  marketPrice
+  discountedPrice {
+    ...VariantDiscountPriceFragment
+  }
+}
+
+fragment VariantDiscountPriceFragment on VariantDiscountPrice {
+  discountedPrice
+  discountName
+  discountKey
+  discountId
+}

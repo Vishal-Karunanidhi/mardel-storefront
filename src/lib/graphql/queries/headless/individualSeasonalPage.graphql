@@ -1,0 +1,57 @@
+#import '@GqlFragments/homePage/heroSlotContent.fragment.graphql';
+#import '@GqlFragments/homePage/whatsOnSaleContent.fragment.graphql';
+#import '@GqlFragments/homePage/freeShippingContent.fragment.graphql';
+#import '@GqlFragments/homePage/videoComponent.fragment.graphql';
+#import '@GqlFragments/homePage/cardList.fragment.graphql';
+#import '@GqlFragments/homePage/secondaryPromotion.fragment.graphql';
+#import '@GqlFragments/homePage/productSelector.fragment.graphql';
+#import '@GqlFragments/seasonalPage/themeTilePair.fragment.graphql';
+
+query IndividualSeasonalPage($deliveryKey: String!) {
+  individualSeasonalPage(deliveryKey: $deliveryKey) {
+    _meta {
+      name
+      deliveryKey
+      deliveryId
+      schema
+    }
+    breadcrumbs {
+      links {
+        label
+        openInNewTab
+        value
+      }
+    }
+    bannerImage {
+      defaultHost
+      endpoint
+      id
+      name
+      _meta {
+        name
+        deliveryKey
+        deliveryId
+      }
+    }
+    featuredItems {
+      label
+      products
+      _meta {
+        deliveryKey
+        deliveryId
+        name
+        schema
+      }
+    }
+    content {
+      ...HeroSlot
+      ...WhatsOnSaleContent
+      ...FreeShippingContent
+      ...VideoComponent
+      ...CardList
+      ...SecondaryPromoComponent
+      ...ProductSelector
+      ...ThemeTilePair
+    }
+  }
+}

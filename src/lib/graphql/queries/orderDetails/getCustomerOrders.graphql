@@ -1,0 +1,11 @@
+#import '@GqlFragments/myAccount/orderList.fragment.graphql';
+
+query GetCustomerOrders($pageNumber: Int, $sortDirection: String) {
+  getCustomerOrders(pageNumber: $pageNumber, sortDirection: $sortDirection) {
+    errorMessages
+    orderList {
+      ...OrderListFragment
+    }
+    totalCount
+  }
+}

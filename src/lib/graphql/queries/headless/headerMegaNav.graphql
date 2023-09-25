@@ -1,0 +1,19 @@
+#import '@GqlFragments/globalHeaderContent/meganav.fragment.graphql';
+
+query GetMegaNav {
+  MegaNav {
+    _root {
+      label
+      isLeaf
+      children {
+        ...MegaNavCategoryChild
+        children {
+          ...MegaNavCategoryChild
+          children {
+            ...MegaNavCategoryChild
+          }
+        }
+      }
+    }
+  }
+}

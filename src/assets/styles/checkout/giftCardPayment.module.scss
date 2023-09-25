@@ -1,0 +1,54 @@
+.viewGCPayment {
+  margin-bottom: 10px;
+
+  .amountSpan {
+    float: right;
+  }
+
+  .gcRowSpan {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+  }
+}
+
+.editGcPayment {
+  margin-bottom: 24px;
+  .gcAlreadyAdded {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .deleteButton {
+    border: none;
+    background: none;
+    top: 3px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .addAnotherGc {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+
+  .gcInputFields {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .errorMsg {
+    color: red;
+    margin-top: 5px;
+  }
+
+  .applyGCButton {
+    width: 100%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,57 @@
+@import '../variables';
+@import '../globals';
+
+/* HL AnchorTag styles */
+.hlAnchorTagWrapper {
+  display: inline-flex;
+
+  .linkType1,
+  .linkType2,
+  .linkType3,
+  .linkType4 {
+    &:focus-visible {
+      outline: 2px dashed $hl-blue;
+      outline-offset: 1px;
+      color: $hl-black;
+    }
+  }
+
+  .linkType1,
+  .linkType2 {
+    text-decoration: underline;
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+      text-decoration-line: none;
+    }
+  }
+
+  .linkType3,
+  .linkType4 {
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+    &:active,
+    &:visited {
+      text-decoration: none;
+      text-decoration-line: none;
+    }
+  }
+
+  .linkType1,
+  .linkType4 {
+    color: $hl-black;
+    &:hover {
+      color: $hl-blue;
+    }
+  }
+
+  .linkType2,
+  .linkType3 {
+    color: $hl-blue;
+    &:hover {
+      color: $hl-black;
+    }
+  }
+}

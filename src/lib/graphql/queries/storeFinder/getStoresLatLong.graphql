@@ -1,0 +1,45 @@
+query GetStoresLatLong($lat: Float!, $long: Float!) {
+  getStoresLatLong(lat: $lat, long: $long) {
+    status
+    executionTime
+    data {
+      storeNumber
+      streetAddress
+      city
+      state
+      zipCode
+      phoneNumber
+      latitude
+      longitude
+      status
+      statusLabel
+      distance
+      nextWeek {
+        hours {
+          date
+          day
+          startTime
+          endTime
+          legend
+        }
+      }
+      thisWeek {
+        hours {
+          date
+          day
+          startTime
+          endTime
+          legend
+        }
+      }
+      commonName
+    }
+    centerpoint {
+      lat
+      lng
+      dist
+      limit
+      address
+    }
+  }
+}

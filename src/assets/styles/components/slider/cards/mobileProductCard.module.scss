@@ -1,0 +1,155 @@
+@use '../../../variables' as vars;
+@import '../../../breakpoints';
+
+.card {
+  -webkit-tap-highlight-color: transparent;
+  background: #ffffff;
+  border-radius: 10px 10px 20px 20px;
+  border: 1px solid #555555;
+  display: grid;
+  grid-template-columns: [card] 100%;
+  grid-template-rows: [top] 23px [middle] 1fr [bottom] 58px;
+  max-width: 271px;
+  min-height: 100%;
+  min-width: 271px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease-out;
+
+  &:hover {
+    img {
+      transform: scale(1.01);
+      transition: transform 0.2s ease-out;
+    }
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.2s ease-out;
+  }
+}
+
+.top {
+  @include vars.hl-font-700;
+  background: #003087;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  line-height: 14px;
+  padding: 5.13px 0px 3.87px 10.82px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.middle {
+  // min-height: 100%;
+  position: relative;
+}
+
+.bottom {
+  padding: 15px;
+}
+
+.flexWrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.imageContainer {
+  margin: 22px 15px 0px 15px;
+  max-height: 90px;
+  max-width: 90px;
+  min-height: 90px;
+  min-width: 90px;
+}
+
+.image {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 22px 16px 0px 0px;
+}
+
+.name {
+  @include vars.hl-font-500;
+  color: #000000;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 6.38px;
+  margin-top: 5px;
+}
+
+.nameRatingWrapper {
+  height: 100%;
+}
+
+.totalReviews {
+  font-size: 10px;
+  line-height: 12px;
+  margin-left: 4px;
+  margin-top: 2px;
+}
+
+.ratingReviews {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.productPrice {
+  @include vars.hl-font-700;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.regularPrice {
+  color: vars.$hl-red;
+}
+
+.discountPrice {
+  color: vars.$hl-black;
+}
+
+.nameRatingWrapper {
+  height: 100%;
+}
+
+.availability {
+  @include vars.hl-font-700;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+
+.button {
+  background-color: vars.$hl-blue-dark;
+  border-radius: 15px;
+  max-height: 28px;
+  min-height: 28px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: vars.$hl-blue-light;
+  }
+  span {
+    @include vars.hl-font-700;
+    color: vars.$hl-white;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: none;
+  }
+}
+
+.favoriteIcon {
+  cursor: pointer;
+  height: 15.29px;
+  position: absolute;
+  right: 17.67px;
+  top: 14.35px;
+  width: 16.67px;
+}

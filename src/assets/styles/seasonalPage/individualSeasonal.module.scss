@@ -1,0 +1,224 @@
+@import '../variables';
+@import '../breakpoints';
+@import '../globals';
+
+.themeTile {
+  display: flex;
+  @include mobile {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  &Pair {
+    @include mobileAndTablet {
+      padding: 40px;
+    }
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 24px 40px 24px;
+    }
+    flex-wrap: wrap;
+    row-gap: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 80px 70px 80px;
+  }
+  &Description {
+    &Container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 250px;
+      margin-left: 32px;
+      @include mobile {
+        margin-left: 0px;
+        text-align: center;
+        width: 100%;
+        margin-top: 16px;
+      }
+    }
+    @include mobile {
+      justify-content: initial;
+      min-height: auto;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 224px;
+    max-height: 224px;
+  }
+  &Header {
+    margin: 0px;
+    @include hl-font-700;
+    font-size: 32px;
+    line-height: 40px;
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+  &SubHeader {
+    font-size: 16px;
+    @include mobile {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+  }
+  &SubHeader {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &Image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    &Container {
+      @include mobile {
+        width: 272px;
+        height: 160px;
+      }
+      width: 320px;
+      height: 320px;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+  }
+  &Button {
+    height: 48px;
+    width: 131px;
+    border-radius: 25px;
+    border: none;
+    background-color: $hl-blue-dark;
+    color: $hl-white;
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 24px;
+    @include mobile {
+      width: 100%;
+      height: 28px;
+      margin-top: 24px;
+    }
+    &:hover {
+      background-color: $hl-blue-light;
+      cursor: pointer;
+    }
+    &Link {
+      height: 48px;
+      width: 131px;
+      border-radius: 25px;
+      @include mobile {
+        width: 100%;
+        height: 28px;
+      }
+    }
+  }
+}
+
+.featuredItems {
+  & > div {
+    margin-top: 35px;
+  }
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &Container {
+    width: 100%;
+  }
+}
+
+.secondaryPromotion {
+  @include desktop {
+    & > span > div {
+      width: 100%;
+    }
+
+    & > span > div > button > img {
+      height: 480px;
+    }
+  }
+
+  @include mobileAndTablet {
+    & > span > div {
+      width: 100%;
+    }
+  }
+}
+
+.shopByCategory {
+  margin-top: $margin-card-tall;
+  overflow: hidden;
+
+  div[class*='shopByCategoryCard_imageContainer'] {
+    min-width: 260px;
+    width: unset;
+  }
+}
+
+.categories {
+  padding: 24px 80px 0px 80px;
+  @include mobileAndTablet {
+    padding: 24px 40px 0px 40px;
+  }
+  @include mobile {
+    padding: 24px 24px 0px 24px;
+  }
+}
+
+.secondaryPromotion3x {
+  div[class*='secondaryPromotion_promoCard__'] {
+    button:hover {
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+      filter: unset;
+
+      img {
+        filter: unset;
+      }
+    }
+    img:hover {
+      filter: unset;
+    }
+  }
+
+  img {
+    aspect-ratio: unset;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    width: auto;
+  }
+
+  @include mobile {
+    & > span {
+      display: block;
+
+      & > button {
+        align-content: center;
+        align-items: center;
+        display: flex;
+      }
+
+      & > div {
+        width: 100%;
+      }
+    }
+  }
+
+  @include tabletAndDesktop {
+    & > span {
+      display: grid;
+      grid-template-columns: repeat(3, calc(33% - 12px));
+      grid-template-rows: 100%;
+      height: auto;
+      max-height: 350px;
+    }
+
+    button {
+      height: 100%;
+    }
+  }
+}

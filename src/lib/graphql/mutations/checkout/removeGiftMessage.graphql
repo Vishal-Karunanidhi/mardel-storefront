@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/giftMessage.fragment.graphql';
+
+mutation RemoveGiftMessage {
+  removeGiftMessage {
+    ...GiftMessageFragment
+  }
+}

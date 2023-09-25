@@ -1,0 +1,85 @@
+query GetDiyProjectPage($deliveryKey: String!) {
+  getDiyProjectPage(deliveryKey: $deliveryKey) {
+    projectPage {
+      title
+      summary
+      thumbnail {
+        ...MediaImageWithAltFragment
+      }
+      dates
+      skillLevel
+      duration
+      name
+      urlSlug
+      description
+      shopTheItems
+      banner {
+        inspirationPdfTutorial {
+          openInNewTab
+          url
+        }
+        video {
+          altimagetext
+          videotitle
+          videolink
+        }
+        image {
+          url
+        }
+        imageAltText
+      }
+      preRequisites {
+        ...YouWillNeedPreRequisitesFragment
+      }
+      stepByStepInstruction {
+        ...YouWillNeedPreRequisitesFragment
+      }
+      youMayAlsoLike {
+        ...ProjectDetailsFragment
+      }
+      exploreCategories {
+        title
+        thumbnail {
+          url
+        }
+        _meta {
+          deliveryKey
+        }
+      }
+    }
+    parentCategoryInfo {
+      title
+      deliveryKey
+    }
+  }
+}
+
+fragment ProjectDetailsFragment on ProjectDetails {
+  hasVideo
+  deliveryKey
+  projectCard {
+    name
+    description
+    summary
+    thumbnail {
+      ...MediaImageWithAltFragment
+    }
+    title
+    urlSlug
+  }
+}
+
+fragment YouWillNeedPreRequisitesFragment on YouWillNeedPreRequisites {
+  description
+  title
+  image {
+    ...MediaImageWithAltFragment
+  }
+}
+
+fragment MediaImageWithAltFragment on MediaImageWithAlt {
+  image {
+    url
+  }
+  imageAltText
+}

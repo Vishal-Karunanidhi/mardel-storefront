@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+mutation AddPayPalShippingAddress($request: PayPalAddressRequest!) {
+  addPayPalShippingAddress(request: $request) {
+    ...CartResponseFragment
+  }
+}

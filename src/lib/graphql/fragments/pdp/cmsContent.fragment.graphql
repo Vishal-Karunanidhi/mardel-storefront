@@ -1,0 +1,42 @@
+#import '@GqlFragments/common/index.fragment.graphql';
+
+fragment PdpRootTypeC on PdpRootType {
+  _meta {
+    ...MetaFragment
+  }
+  discalimer
+  productDescriptionTitle
+  productSpecsTitle
+  addToCart {
+    buttonTitle
+    cartCountPlaceholder
+  }
+  warningIcon {
+    ...MediaImageFragment
+  }
+  shareProduct {
+    buttonTitle
+  }
+  returns {
+    ...RichTextFragment
+  }
+  shipping {
+    ...RichTextFragment
+  }
+  inventoryInfo {
+    ...InventoryFragment
+  }
+}
+
+fragment RichTextFragment on RichTextComponent {
+  label
+  richTextData
+  richTextDataType
+}
+
+fragment InventoryFragment on InventoryInfo {
+  outOfStockMessage
+  inStockNotificationMessage
+  emailPlaceholder
+  emailNotifyButton
+}

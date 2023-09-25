@@ -1,0 +1,10 @@
+fragment ProductSelector on ProductSelector {
+  _meta {
+    name
+    schema
+    deliveryId
+    deliveryKey
+  }
+  label
+  products
+}

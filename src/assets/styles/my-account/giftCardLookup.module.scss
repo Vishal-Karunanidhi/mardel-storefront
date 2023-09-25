@@ -1,0 +1,176 @@
+@import '../variables';
+@import '../globals';
+
+.parentGcWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .errorSection {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    background: $hl-gray-shadow;
+    border-radius: 5px;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+
+    label {
+      @include hl-font-300;
+      font-size: 16px;
+      line-height: 24px;
+      color: $hl-black;
+      margin-left: 12px;
+    }
+  }
+  .gclookUpTitle {
+    @include hl-font-700;
+    font-size: 24px;
+    line-height: 32px;
+    color: $hl-black;
+  }
+
+  .inputFields {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    input {
+      width: 100%;
+    }
+    .gcInputBox {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 10px;
+    }
+  }
+
+  .gcImage {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+.giftCardBalance {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 80px;
+
+  @include tablet {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  @include mobile {
+    padding: 0;
+  }
+
+  .gcBalanceTitle {
+    @include hl-font-700;
+    font-size: 20px;
+    line-height: 24px;
+    color: $hl-black;
+  }
+  .gcAssistanceTitle {
+    @include hl-font-300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .gcAssistanceTitle {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    .gcMail {
+      color: $hl-blue;
+    }
+  }
+  .divider {
+    border: 1px solid $color-gray-3;
+  }
+
+  a {
+    cursor: pointer;
+    color: $hl-blue;
+  }
+
+  .balanceView {
+    height: 100%;
+    background: #ededed;
+    border-radius: 10px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+
+    h1,
+    h2,
+    h3,
+    label {
+      text-align: center;
+    }
+
+    div[class*='common_submitWrapper'] {
+      text-align: center;
+      padding-bottom: 35px;
+
+      button {
+        max-width: 233px;
+
+        @include mobile {
+          max-width: 90%;
+        }
+      }
+    }
+
+    @include mobileAndTablet {
+      margin-top: 20px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    span {
+      padding-left: 25%;
+
+      @include mobileAndTablet {
+        padding-left: 6%;
+      }
+    }
+  }
+
+  .transactionWrapper {
+    display: flex;
+    flex-direction: column;
+
+    .individualRecord {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .labelSeparator {
+        @include tabletAndDesktop {
+          display: none;
+        }
+      }
+
+      @include mobile {
+        flex-direction: column;
+      }
+
+      span {
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+          flex-direction: row;
+          gap: 10px;
+        }
+      }
+    }
+    .divider {
+      margin: 10px 0px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../globals';
+@import '../../variables';
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 24px;
+}
+
+.modal {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: $hl-white;
+  border-radius: 20px;
+  text-align: left;
+  overflow-y: scroll;
+  min-width: 272px;
+  height: fit-content;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &Top {
+    background: $hl-blue;
+    color: $hl-white;
+    font-size: 20px;
+    height: 32px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+      cursor: pointer;
+      font-size: 22px;
+      stroke: $hl-white;
+      margin-right: 24px;
+    }
+  }
+}
+
+:export {
+  hlOrangeDark: $hl-orange-dark;
+}

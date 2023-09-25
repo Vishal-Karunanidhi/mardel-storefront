@@ -1,0 +1,11 @@
+query GetCategoryDetails($key: String!) {
+  getCategoryDetails(key: $key) {
+    metaTitle
+    metaDescription
+    metaKeywords
+    description
+    key
+    name
+    slug
+  }
+}

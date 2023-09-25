@@ -1,0 +1,40 @@
+query GetStoreDirectoryCity($state: String!, $city: String!) {
+  getStoreDirectoryCity(state: $state, city: $city) {
+    city
+    count
+    data {
+      distance
+      commonName
+      city
+      latitude
+      longitude
+      nextWeek {
+        hours {
+          date
+          day
+          endTime
+          legend
+          startTime
+        }
+      }
+      phoneNumber
+      state
+      status
+      statusLabel
+      storeNumber
+      streetAddress
+      thisWeek {
+        hours {
+          date
+          day
+          endTime
+          legend
+          startTime
+        }
+      }
+      zipCode
+    }
+    state
+    stateAbbr
+  }
+}

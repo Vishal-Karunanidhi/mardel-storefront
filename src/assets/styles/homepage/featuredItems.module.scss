@@ -1,0 +1,67 @@
+@use '../variables' as vars;
+@import '../breakpoints';
+@import '../globals';
+
+.container {
+  margin: vars.$margin-framing-tall auto 0 auto;
+  max-width: $hl-xxl;
+}
+
+.header {
+  @include vars.hl-font-700;
+  font-size: 40px;
+  line-height: 50px;
+  margin-left: 80px;
+  margin-top: 0px;
+}
+
+.headerWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 80px;
+}
+
+.viewAllWrapper {
+  display: flex;
+  visibility: visible;
+}
+
+.viewAll {
+  @include vars.hl-font-700;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  line-height: 45px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.viewAllArrow {
+  margin-left: 17px;
+}
+
+@include mobileAndTablet {
+  .header {
+    margin-left: 40px;
+  }
+
+  .headerWrapper {
+    padding-right: 40px;
+  }
+}
+
+@include mobile {
+  .header {
+    margin-left: 24px;
+  }
+
+  .headerWrapper {
+    margin-top: 35px;
+    padding-right: 24px;
+  }
+
+  .viewAllWrapper {
+    visibility: hidden;
+  }
+}

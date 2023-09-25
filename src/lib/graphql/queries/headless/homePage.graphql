@@ -1,0 +1,32 @@
+#import '@GqlFragments/homePage/heroSlotContent.fragment.graphql';
+#import '@GqlFragments/homePage/whatsOnSaleContent.fragment.graphql';
+#import '@GqlFragments/homePage/freeShippingContent.fragment.graphql';
+#import '@GqlFragments/homePage/videoComponent.fragment.graphql';
+#import '@GqlFragments/homePage/cardList.fragment.graphql';
+#import '@GqlFragments/homePage/secondaryPromotion.fragment.graphql';
+#import '@GqlFragments/homePage/productSelector.fragment.graphql';
+
+query HomePage {
+  homePage {
+    _meta {
+      name
+    }
+    metaData {
+     title
+     ogImage {
+       url
+     }
+     keywords
+     description
+    },
+    content {
+      ...HeroSlot
+      ...WhatsOnSaleContent
+      ...FreeShippingContent
+      ...VideoComponent
+      ...CardList
+      ...SecondaryPromoComponent
+      ...ProductSelector
+    }
+  }
+}

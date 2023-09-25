@@ -1,0 +1,41 @@
+query MegaNavMobile($deliveryKey: String!) {
+  megaNavMobile(deliveryKey: $deliveryKey) {
+    signInButton {
+      signInButtonText
+      signInButtonURL
+    }
+    createAccountButton {
+      createAccountButtonText
+      createAccountButtonURL
+    }
+    topNavigationList {
+      tNLStoreFinder {
+        myStoreFinderText
+        myStoreFinderURL
+      }
+      tNLMyAccount {
+        myAccountText
+        myAccountURL
+      }
+      tNLMyLists {
+        myListsText
+        myListsLIURL
+        myListsGURL
+      }
+      tNLCart {
+        myCartText
+        myCartURL
+      }
+    }
+    bottomNavigationList {
+      bNLText
+      bNLURL
+    }
+    _meta {
+      name
+      schema
+      deliveryKey
+      deliveryId
+    }
+  }
+}

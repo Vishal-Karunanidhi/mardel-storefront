@@ -1,0 +1,8 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+fragment ApplePayOrderResponseFragment on ApplePayAuthorizeResponse {
+    order {
+        ...CartResponseFragment
+    }
+    status
+}

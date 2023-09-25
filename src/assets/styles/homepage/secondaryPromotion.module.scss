@@ -1,0 +1,201 @@
+@use '../globals' as glob;
+@use '../variables' as vars;
+@import '../breakpoints';
+
+.promoGrid {
+  gap: 24px;
+  margin: 0 auto;
+  max-width: $hl-xxl;
+
+  @include vars.hl-font-500;
+  display: flex;
+  justify-content: center;
+
+  /*Top & bottom Padding has 2different categories*/
+  @include glob.desktop {
+    padding-bottom: 35px;
+    padding-top: 35px;
+  }
+
+  @include glob.mobileAndTablet {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  /*Top & bottom Padding has 2different categories*/
+
+  /*Left & Right Padding has 4different categories*/
+  @include glob.desktop {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @include glob.tablet {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  /*Left & Right Padding has 4different categories*/
+
+  .promoCard {
+    box-shadow: none;
+    overflow: visible;
+
+    .cardActions {
+      padding: 5px 0 0 0;
+
+      &Buttons {
+        height: 0;
+        position: relative;
+        bottom: 70px;
+        left: 10px;
+
+        button {
+          background-color: transparent;
+          border: none;
+          padding: 0;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      button {
+        color: #000000;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        &:focus-visible {
+          outline: 1.25px dashed vars.$hl-blue;
+        }
+      }
+
+      .highlight {
+        color: #b53315;
+        @include vars.hl-font-700;
+      }
+
+      .cartButton {
+        &:focus-visible {
+          outline: 1.25px dashed vars.$hl-blue;
+          outline-offset: -4px;
+        }
+      }
+    }
+
+    .labelContainer {
+      width: 75%;
+      display: inline-block;
+    }
+
+    label {
+      align-items: center;
+
+      /*fontsize & lineheight has 2 different varieties*/
+      @include glob.desktop {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      @include glob.mobileAndTablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      /*fontsize & lineheight has 2 different varieties*/
+
+      &:hover {
+        text-decoration-line: underline;
+      }
+    }
+
+    .discountDescription {
+      vertical-align: top;
+      width: initial;
+
+      a {
+        &:focus-visible {
+          outline-offset: 2px;
+          outline: 1.25px dashed vars.$hl-blue;
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+}
+
+.promoCard {
+  img {
+    transition: all 500ms ease-out;
+
+    &:hover {
+      background: transparent;
+      filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
+      transform: scale(1.005);
+      transition: all 200ms ease-out;
+    }
+  }
+
+  .rightArrowImage {
+    &:hover {
+      background: none;
+      filter: none;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+.cardActionArea {
+  &:hover {
+    border: none;
+    filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.25));
+    transition: all 200ms ease-out;
+  }
+  overflow: hidden;
+  border-radius: 20px;
+  @media screen and (max-width: $hl-break-xs-m) {
+    border-radius: 0px;
+  }
+}
+
+.rightArrow {
+  &:hover {
+    border: none;
+  }
+}
+
+/*Desktop & above Resolution*/
+@include glob.tabletAndDesktop {
+  .promoImage {
+    border-radius: 20px;
+    height: auto;
+
+    @media screen and (max-width: $hl-break-xs-m) {
+      border-radius: 0px;
+    }
+  }
+}
+
+/*Tablet & Mobile Resolution*/
+@include glob.mobile {
+  .promoGrid {
+    flex-wrap: wrap;
+
+    .promoCard {
+      margin-top: 15px;
+
+      .labelContainer {
+        margin-left: 20px;
+        width: 60%;
+      }
+    }
+  }
+}
+
+.promoImage {
+  aspect-ratio: 16/9;
+}

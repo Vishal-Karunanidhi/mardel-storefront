@@ -1,0 +1,7 @@
+#import '@GqlFragments/cart/cartResponse.fragment.graphql';
+
+mutation AddPaypalPaymentToCart($paypalOrderId: String!) {
+  addPayPalPaymentToCart(paypalOrderId: $paypalOrderId) {
+    ...CartResponseFragment
+  }
+}

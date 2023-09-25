@@ -1,0 +1,40 @@
+query GetDiyCategoryPage($deliveryKey: String!) {
+  getDiyCategoryPage(deliveryKey: $deliveryKey) {
+    title
+    youMayAlsoLike {
+      ...ProjectDetailsFragment
+    }
+    image {
+      ...MediaImageWithAltFragment
+    }
+    imLookingFor {
+      title
+      image {
+        ...MediaImageWithAltFragment
+      }
+      deliveryKey
+    }
+  }
+}
+
+fragment MediaImageWithAltFragment on MediaImageWithAlt {
+  image {
+    url
+  }
+  imageAltText
+}
+
+fragment ProjectDetailsFragment on ProjectDetails {
+  hasVideo
+  deliveryKey
+  projectCard {
+    name
+    description
+    summary
+    thumbnail {
+      ...MediaImageWithAltFragment
+    }
+    title
+    urlSlug
+  }
+}

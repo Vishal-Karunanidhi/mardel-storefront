@@ -1,0 +1,33 @@
+#import '@GqlFragments/contentPage/components/contentPageBreadcrumb.fragment.graphql';
+
+query GetContactUsPage($deliveryKey: String!) {
+  getContactUsPage(deliveryKey: $deliveryKey) {
+    breadcrumbs {
+      ...ContentPageBreadcrumb
+    }
+    pageDescription {
+      pageDescriptionText
+      pageDescriptionLink {
+        label
+        value
+      }
+    }
+    topicSelection {
+      description
+      dropdownLabel
+      warningSection {
+        warningIcon {
+          defaultHost
+          _meta {
+            schema
+          }
+          endpoint
+          id
+          name
+          url
+        }
+        warningDisclaimer
+      }
+    }
+  }
+}

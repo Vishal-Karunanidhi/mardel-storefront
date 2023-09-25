@@ -1,0 +1,40 @@
+query MiniCartContent {
+  miniCartContent {
+    cartTitle
+    emptyCartMessage {
+      highlightTitle
+      description
+    }
+    signIn {
+      signInCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+      registerMessage
+      registerLink {
+        label
+        value
+        openInNewTab
+      }
+    }
+    estimatedTotal
+    miniCartCta {
+      checkoutCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+      continueShoppingCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+      shopWeeklyAdCtaLabel {
+        label
+        value
+        openInNewTab
+      }
+    }
+  }
+}

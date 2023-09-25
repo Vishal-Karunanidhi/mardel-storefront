@@ -1,0 +1,113 @@
+@import '../../variables';
+@import '../../globals';
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 10px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+
+  @include mobileAndTablet {
+    padding-bottom: 30px;
+  }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    background: $hl-white;
+    border: 1.25px solid $hl-darkest-gray;
+    border-radius: 2.5px;
+    margin-left: 0px;
+
+    @include checkboxProperties;
+  }
+  .checkboxLabel {
+    position: absolute;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: $hl-black;
+    margin-left: 28px;
+    margin-top: 2px;
+    vertical-align: text-bottom;
+  }
+}
+
+.submitWrapper {
+  margin-top: 14px;
+  width: 100%;
+
+  &:active {
+    outline: none;
+  }
+
+  .submitButton {
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    height: 48px;
+
+    @include hl-font-700;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include mobileAndTablet {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include mobile {
+      height: 28px;
+    }
+
+    color: $hl-white;
+    background: $hl-blue-dark;
+
+    &:active {
+      background: $hl-blue-dark;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: $hl-blue-light;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.paymentErrorWrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+
+  .errorImage {
+    display: flex;
+  }
+
+  .errorLabel {
+    padding-left: 8px;
+    color: $hl-error;
+  }
+}
+
+.billingAddressError {
+  margin: 16px 0px;
+}
+
+.addressSpinner {
+  width: 50%;
+  position: absolute;
+  margin-top: 45%;
+}

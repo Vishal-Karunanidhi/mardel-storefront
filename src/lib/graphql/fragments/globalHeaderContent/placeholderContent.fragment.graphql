@@ -1,0 +1,7 @@
+
+fragment PlaceholderContent on PlaceholderContent {
+    _meta {
+        name
+    }
+    placeholder_type
+}

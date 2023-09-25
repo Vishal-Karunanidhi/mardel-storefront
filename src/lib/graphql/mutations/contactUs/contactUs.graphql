@@ -1,0 +1,6 @@
+mutation contactUs($request: ContactUsRequest!) {
+  contactUs(request: $request) {
+    Status
+    Message
+  }
+}

@@ -1,0 +1,37 @@
+#import '@GqlFragments/contentPage/components/contentCTA.fragment.graphql';
+
+query GetCustomerSupportPage {
+  getCustomerSupportPage {
+    breadcrumbs {
+      _meta {
+        schema
+      }
+      links {
+        label
+        value
+        openInNewTab
+      }
+    }
+    content {
+      ...ContentCTA
+      ... on Card {
+        _meta {
+          name
+          schema
+          deliveryId
+        }
+        media {
+          image {
+            defaultHost
+            endpoint
+            id
+            name
+            url
+          }
+          imageAltText
+        }
+        title
+      }
+    }
+  }
+}

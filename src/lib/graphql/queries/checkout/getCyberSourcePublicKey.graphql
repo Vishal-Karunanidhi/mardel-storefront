@@ -1,0 +1,9 @@
+query GetCardPublicKey {
+  getCardPublicKey {
+    token
+    paymentTransactionResponse {
+      transactionSuccess
+      transactionMessage
+    }
+  }
+}
