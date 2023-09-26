@@ -316,19 +316,19 @@
   }
 
   label[class*='ais-ToggleRefinement-label']:hover::before {
-    background-color: $hl-thin-blue;
+    background-color: $mardel-primary-green-light;
   }
 
   svg[class*='MuiSvgIcon']:hover {
     cursor: pointer;
-    color: $hl-thin-blue;
+    color: $mardel-primary-green-light;
   }
 
   li[class$='ais-RefinementList-item'] {
     input:hover {
-      background-color: $hl-thin-blue;
+      background-color: $mardel-primary-green-light;
       &::after {
-        color: $hl-thin-blue;
+        color: $mardel-primary-green-light;
       }
     }
   }
