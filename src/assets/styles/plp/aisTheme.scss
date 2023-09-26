@@ -374,7 +374,7 @@ a[class^='ais-'] {
   &:has(.ais-ToggleRefinement-checkbox:checked) {
     &::after {
       right: 3px;
-      background-color: $hl-blue;
+      background-color: $mardel-dark-green;
     }
   }
 }
@@ -634,7 +634,7 @@ input[type='checkbox'] {
       background: #ffffff;
 
       .ais-CurrentRefinements-categoryLabel {
-        border: 1px solid $hl-blue;
+        border: 1px solid $mardel-dark-green;
         border-bottom-left-radius: 20px;
         border-top-left-radius: 20px;
         padding: 5px;
@@ -648,7 +648,7 @@ input[type='checkbox'] {
       .ais-CurrentRefinements-delete {
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
-        background: $hl-blue;
+        background: $mardel-dark-green;
         color: #ffffff;
         cursor: pointer;
         border: 0px solid;
