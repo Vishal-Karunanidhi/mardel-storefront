@@ -29,7 +29,7 @@ const componentMaterialStyle = {
   },
   papersx: {
     height: '100%',
-    backgroundColor: '#EF4317',
+    backgroundColor: '#42966D',
     borderRadius: '10px 10px 0 0'
   },
   accordion: {
@@ -54,7 +54,7 @@ const componentHtmlStyle = {
   accordionStyle: {
     expandBoxStyle: {
       borderRadius: '0px 0px 20px 20px',
-      backgroundColor: '#003087',
+      backgroundColor: '#063225',
       marginTop: -15
     }
   }
@@ -101,7 +101,7 @@ export default function FreeShipping(props: FreeShippingContentData | any): JSX.
                 alt="Hobby Lobby delivery truck with 'Live a Creative Life' logo on its side"
                 sx={imagesx}
                 className={styles.truckImage}
-                src={imageUrl}
+                src={'mardel/icons/freeshipping.svg'}
               />
             ) : (
               ''
