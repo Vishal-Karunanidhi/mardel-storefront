@@ -1,5 +1,5 @@
-@use 'breakpoints' as resol;
-@use 'variables' as vars;
+@use "breakpoints" as resol;
+@use "variables" as vars;
 
 @mixin hlFontStyle($fontSize: 16px, $lineHeight: 24px) {
   @include vars.hl-font-300;
@@ -55,7 +55,7 @@
 $breakpoints: (
   small: 32em,
   medium: 48em,
-  large: 65em
+  large: 65em,
 );
 
 // This breakpoint mixin is for use when only one breakpoint is being referenced
@@ -265,32 +265,12 @@ $breakpoints: (
   }
 }
 
-@mixin href-green {
+@mixin mardel-href-green {
   cursor: pointer;
 
   &:not(.button) {
     color: vars.$color-body;
     text-decoration: none;
-
-    &:link {
-      color: vars.$color-body;
-      text-decoration: none;
-    }
-
-    &:visited {
-      color: vars.$color-body;
-      text-decoration: none;
-
-      &:hover {
-        color: vars.$color-href;
-        text-decoration: underline;
-      }
-
-      &:active {
-        color: vars.$color-body;
-        text-decoration: none;
-      }
-    }
 
     &:hover {
       color: vars.$mardel-primary-green-dark;
@@ -378,7 +358,7 @@ $breakpoints: (
   vertical-align: middle;
   width: 100%;
 
-  @include mq('small') {
+  @include mq("small") {
     margin: 0;
     width: max-content;
   }
@@ -427,13 +407,15 @@ $breakpoints: (
 
   &.buttonMedium {
     min-height: calc(vars.$button-min-height - 0.5rem);
-    padding: calc(vars.$button-padding-height - 0.15rem) calc(vars.$button-padding-width - 0.1rem);
+    padding: calc(vars.$button-padding-height - 0.15rem)
+      calc(vars.$button-padding-width - 0.1rem);
   }
 
   &.buttonSmall {
     font-size: calc(vars.$font-size-p - 0.15rem);
     min-height: calc(vars.$button-min-height - 0.925rem);
-    padding: calc(vars.$button-padding-height - 0.25rem) calc(vars.$button-padding-width - 0.5rem);
+    padding: calc(vars.$button-padding-height - 0.25rem)
+      calc(vars.$button-padding-width - 0.5rem);
   }
 
   &.buttonInactive,
@@ -469,13 +451,15 @@ $breakpoints: (
 
 @mixin buttonMedium {
   min-height: calc(vars.$button-min-height - 0.5rem);
-  padding: calc(vars.$button-padding-height - 0.15rem) calc(vars.$button-padding-width - 0.1rem);
+  padding: calc(vars.$button-padding-height - 0.15rem)
+    calc(vars.$button-padding-width - 0.1rem);
 }
 
 @mixin buttonSmall {
   font-size: calc(vars.$font-size-p - 0.15rem);
   min-height: calc(vars.$button-min-height - 0.925rem);
-  padding: calc(vars.$button-padding-height - 0.25rem) calc(vars.$button-padding-width - 0.5rem);
+  padding: calc(vars.$button-padding-height - 0.25rem)
+    calc(vars.$button-padding-width - 0.5rem);
 }
 
 @mixin buttonSecondary {
@@ -516,7 +500,7 @@ $breakpoints: (
   &::before {
     animation: popoverPopUp 0.3s ease-in-out;
     color: $hl-blue-outline;
-    content: '\25B4';
+    content: "\25B4";
     font-family: vars.$font-family-system;
     font-size: 45px;
     line-height: 10px;
@@ -551,8 +535,8 @@ $breakpoints: (
   text-decoration: none;
 
   &::before {
-    background: transparent url('/icons/buttonBack.svg') no-repeat top left;
-    content: '';
+    background: transparent url("/icons/buttonBack.svg") no-repeat top left;
+    content: "";
     position: absolute;
     height: 1.4rem;
     left: 0;
@@ -592,17 +576,19 @@ $breakpoints: (
 
   &:hover,
   &:focus-within {
-    transition: vars.$button-icon-transition-hover, vars.$button-transition-hover;
-
+    transition: vars.$button-icon-transition-hover,
+      vars.$button-transition-hover;
   }
 
   &:active {
     box-shadow: vars.$box-shadow-1;
-    transition: vars.$button-icon-transition-active, vars.$button-transition-active;
+    transition: vars.$button-icon-transition-active,
+      vars.$button-transition-active;
 
     > * {
       transform: scale(1);
-      transition: vars.$button-icon-transition-active, vars.$button-transition-active;
+      transition: vars.$button-icon-transition-active,
+        vars.$button-transition-active;
     }
   }
 }
@@ -610,21 +596,21 @@ $breakpoints: (
 // Default margins
 
 @mixin margin-card-default {
-  @include mq('small', max) {
+  @include mq("small", max) {
     margin: vars.$margin-card-short auto 0 auto;
   }
 
-  @include mq('small') {
+  @include mq("small") {
     margin: vars.$margin-card-tall auto 0 auto;
   }
 }
 
 @mixin margin-framing-default {
-  @include mq('small', max) {
+  @include mq("small", max) {
     margin: vars.$margin-framing-short auto 0 auto;
   }
 
-  @include mq('small') {
+  @include mq("small") {
     margin: vars.$margin-framing-tall auto 0 auto;
   }
 }
@@ -632,11 +618,11 @@ $breakpoints: (
 // Default padding
 
 @mixin padding-card-default {
-  @include mq('large', max) {
+  @include mq("large", max) {
     padding: vars.$padding-card-small;
   }
 
-  @include mq('large') {
+  @include mq("large") {
     padding: vars.$padding-card-big;
   }
 }
@@ -649,8 +635,10 @@ header.header {
   position: relative;
   z-index: 2;
 
-  &:has(+ main > div[class^='breadcrumb_wrapper']),
-  &:has(+ main > div[class^='MuiGrid-root MuiGrid-container'] > div[class^='breadcrumb_wrapper']) {
+  &:has(+ main > div[class^="breadcrumb_wrapper"]),
+  &:has(+ main
+      > div[class^="MuiGrid-root MuiGrid-container"]
+      > div[class^="breadcrumb_wrapper"]) {
     box-shadow: unset;
   }
 }
