@@ -179,7 +179,7 @@ a[class^="ais-"] {
   letter-spacing: 0.08rem;
   line-height: 1.6;
   text-transform: uppercase;
-  outline-color: $mardel-dark-green;
+  outline-color: $mardel-primary-green-main;
 }
 
 /* Search box */
@@ -375,7 +375,7 @@ a[class^="ais-"] {
   &:has(.ais-ToggleRefinement-checkbox:checked) {
     &::after {
       right: 3px;
-      background-color: $mardel-dark-green;
+      background-color: $mardel-primary-green-main;
     }
   }
 }
@@ -526,7 +526,7 @@ a[class^="ais-"] {
   font-size: 12px;
 
   a {
-    outline-color: $mardel-dark-green;
+    outline-color: $mardel-primary-green-main;
   }
 
   &.ais-Pagination-item--page {
@@ -571,7 +571,7 @@ ul,
   margin-top: 0px;
   background: none;
   border: none;
-  outline-color: $mardel-dark-green;
+  outline-color: $mardel-primary-green-main;
   @include hl-font-700;
 
   &:before {
@@ -581,7 +581,7 @@ ul,
 
 .ais-RefinementList-checkbox {
   border: 1.25px solid #333333;
-  outline-color: $mardel-dark-green;
+  outline-color: $mardel-primary-green-main;
 }
 
 input[type='checkbox'] {
@@ -641,7 +641,7 @@ input[type='checkbox'] {
       background: #ffffff;
 
       .ais-CurrentRefinements-categoryLabel {
-        border: 1px solid $mardel-dark-green;
+        border: 1px solid $mardel-primary-green-main;
         border-bottom-left-radius: 20px;
         border-top-left-radius: 20px;
         padding: 5px;
@@ -655,8 +655,8 @@ input[type='checkbox'] {
       .ais-CurrentRefinements-delete {
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
-        background: $mardel-dark-green;
-        outline-color: $mardel-extra-dark-green;
+        background: $mardel-primary-green-main;
+        outline-color: $mardel-primary-green-dark;
         color: #ffffff;
         cursor: pointer;
         border: 0px solid;

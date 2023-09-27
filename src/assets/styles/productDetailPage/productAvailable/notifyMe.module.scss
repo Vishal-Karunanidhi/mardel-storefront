@@ -77,13 +77,13 @@
     gap: 16px;
 
     &Submit {
-      background: $mardel-dark-green;
+      background: $mardel-primary-green-main;
       border-radius: 15px;
       height: 28px;
       justify-content: center;
       display: flex;
       width: 100%;
-      outline: $mardel-dark-green;
+      outline: $mardel-primary-green-main;
 
       button {
         cursor: pointer;
@@ -95,21 +95,21 @@
         font-size: 14px;
 
         &:focus-visible {
-          outline: $mardel-dark-green dashed 2px;
+          outline: $mardel-primary-green-main dashed 2px;
           outline-offset: 2px;
         }
       }
 
       &:active {
-        background-color: $mardel-dark-green;
+        background-color: $mardel-primary-green-main;
 
         &:hover {
-          background-color: $mardel-dark-green;
+          background-color: $mardel-primary-green-main;
         }
       }
 
       &:hover {
-        background-color: $mardel-light-green;
+        background-color: $mardel-primary-green-light;
       }
     }
   }

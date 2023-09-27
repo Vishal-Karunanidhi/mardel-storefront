@@ -119,7 +119,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $mardel-dark-green;
+      background-color: $mardel-primary-green-main;
       border-radius: 20px;
     }
 
@@ -174,7 +174,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $mardel-dark-green;
+      background-color: $mardel-primary-green-main;
       border-radius: 20px;
       visibility: hidden;
     }
@@ -244,7 +244,7 @@
       }
 
       a {
-        outline-color: $mardel-dark-green;
+        outline-color: $mardel-primary-green-main;
       }
 
       a[class*="ais-Pagination-link"] {
@@ -613,7 +613,7 @@
         }
 
         a {
-          outline-color: $mardel-dark-green;
+          outline-color: $mardel-primary-green-main;
         }
 
         img {
@@ -643,7 +643,7 @@
         }
 
         a {
-          outline-color: $mardel-dark-green;
+          outline-color: $mardel-primary-green-main;
         }
       }
 
@@ -787,11 +787,11 @@
 
 /*Notify Me Modal*/
 .modalTitle {
-  background-color: $mardel-dark-green;
+  background-color: $mardel-primary-green-main;
   border-radius: 10px 10px 0px 0px;
   height: 35px;
-  outline: $mardel-dark-green;
-  outline-color: $mardel-dark-green;
+  outline: $mardel-primary-green-main;
+  outline-color: $mardel-primary-green-main;
 
   .closeIcon {
     float: right;
@@ -905,11 +905,11 @@
       }
 
       button[class*='Mui-selected'] {
-        color: $mardel-dark-green;
+        color: $mardel-primary-green-main;
       }
     }
     span[class*='MuiTabs-indicator'] {
-      background: $mardel-dark-green;
+      background: $mardel-primary-green-main;
     }
   }
 }
