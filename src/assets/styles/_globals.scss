@@ -340,8 +340,8 @@ $breakpoints: (
 // Default button styling
 
 @mixin button {
-  background-color: vars.$hl-blue-dark;
-  border: vars.$border-size solid vars.$hl-blue-dark;
+  background-color: vars.$mardel-primary-green1-main;
+  border: vars.$border-size solid vars.$mardel-primary-green1-main;
   border-radius: vars.$button-border-radius;
   color: white;
   cursor: pointer;
