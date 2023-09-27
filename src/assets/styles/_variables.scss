@@ -1,84 +1,84 @@
 // MONOTYPE FONT
 //// Museo Sans
 
-@import "5a9bf8e0-2251-11ed-aaf7-06b70d83f6b0";
+@import '5a9bf8e0-2251-11ed-aaf7-06b70d83f6b0';
 
 @mixin hl-font-100 {
-  font-family: MuseoSans100, "Museo Sans", -apple-system-body, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans100, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: normal;
 }
 
 @mixin hl-font-100-italic {
-  font-family: MuseoSans100Italic, "Museo Sans", -apple-system-body,
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans100Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: italic;
 }
 
 @mixin hl-font-300 {
-  font-family: MuseoSans300, "Museo Sans", -apple-system-body, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans300, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: normal;
 }
 
 @mixin hl-font-300-italic {
-  font-family: MuseoSans300Italic, "Museo Sans", -apple-system-body,
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans300Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: italic;
 }
 
 @mixin hl-font-500 {
-  font-family: MuseoSans500, "Museo Sans", -apple-system-body, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans500, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: normal;
 }
 
 @mixin hl-font-500-italic {
-  font-family: MuseoSans500Italic, "Museo Sans", -apple-system-body,
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans500Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: italic;
 }
 
 @mixin hl-font-700 {
-  font-family: MuseoSans700, "Museo Sans", -apple-system-body, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans700, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: normal;
 }
 
 @mixin hl-font-700-italic {
-  font-family: MuseoSans700Italic, "Museo Sans", -apple-system-body,
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans700Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: italic;
 }
 
 @mixin hl-font-900 {
-  font-family: MuseoSans900, "Museo Sans", -apple-system-body, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans900, 'Museo Sans', -apple-system-body, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: normal;
 }
 
 @mixin hl-font-900-italic {
-  font-family: MuseoSans900Italic, "Museo Sans", -apple-system-body,
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
-  font-feature-settings: "pnum" on, "lnum" on;
+  font-family: MuseoSans900Italic, 'Museo Sans', -apple-system-body, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Liberation Sans', sans-serif;
+  font-feature-settings: 'pnum' on, 'lnum' on;
   font-stretch: normal;
   font-style: italic;
 }
@@ -103,15 +103,15 @@ $button-icon-arrow-right-black: url(../icons/button-arrow-right-black.svg);
 $button-icon-arrow-right-white: url(../icons/button-arrow-right-white.svg);
 $button-icon-cart-black: url(../icons/cart-black.svg);
 $button-icon-cart-white: url(../icons/cart-white.svg);
-$button-icon-transition-active: #{"background-position 0.5s, background-size 0.25s"};
-$button-icon-transition-hover: #{"background-position 0.5s, background-size 0.25s"};
-$button-icon-transition: #{" background-position 0.5s, background-size 0.25s"};
+$button-icon-transition-active: #{'background-position 0.5s, background-size 0.25s'};
+$button-icon-transition-hover: #{'background-position 0.5s, background-size 0.25s'};
+$button-icon-transition: #{' background-position 0.5s, background-size 0.25s'};
 $button-min-height: 3rem;
 $button-padding-height: 0.25rem;
 $button-padding-width: 1.5rem;
-$button-transition-active: #{"background-color 0.1s, background-position 0.1s, box-shadow 0.1s, transform 0.1s"};
-$button-transition-hover: #{"background-color 0.1s, background-position 0.1s, box-shadow 0.25s, transform 0.1s"};
-$button-transition: #{"background-color 0.15s, box-shadow 0.1s, transform 0.5s"};
+$button-transition-active: #{'background-color 0.1s, background-position 0.1s, box-shadow 0.1s, transform 0.1s'};
+$button-transition-hover: #{'background-color 0.1s, background-position 0.1s, box-shadow 0.25s, transform 0.1s'};
+$button-transition: #{'background-color 0.15s, box-shadow 0.1s, transform 0.5s'};
 $font-family-emoji: #{'"Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji"'};
 $font-family-mono: #{'ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace'};
 $font-family-sans-100-italic: #{'MuseoSans100Italic, "Museo Sans", -apple-system-body, -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif'};
@@ -332,7 +332,7 @@ $mardel-primary-green3-light: #dae8e3;
 }
 
 @mixin productFavoriteModal {
-  div[class*="modal_modal__"] {
+  div[class*='modal_modal__'] {
     overflow-y: scroll;
     position: relative;
 
@@ -344,8 +344,8 @@ $mardel-primary-green3-light: #dae8e3;
       max-height: 80vh;
     }
   }
-
-  div[class*="modal_modalTop__"] {
+  
+  div[class*='modal_modalTop__'] {
     position: fixed;
     z-index: 3;
 
@@ -358,7 +358,7 @@ $mardel-primary-green3-light: #dae8e3;
     }
   }
 
-  div[class*="productFavoriteComponent_modalBody__"] {
+  div[class*='productFavoriteComponent_modalBody__'] {
     padding-top: calc($font-size-p * 3.54);
   }
 }
