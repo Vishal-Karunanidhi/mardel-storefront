@@ -1,6 +1,6 @@
-@import '../variables';
-@import '../globals';
-@import '../breakpoints';
+@import "../variables";
+@import "../globals";
+@import "../breakpoints";
 
 .heading {
     height: 0;
@@ -243,7 +243,11 @@
         margin-top: 40px;
       }
 
-      a[class*='ais-Pagination-link'] {
+      a {
+        outline-color: $mardel-dark-green;
+      }
+
+      a[class*="ais-Pagination-link"] {
         color: $hl-black;
       }
 
@@ -272,7 +276,7 @@
         }
       }
 
-      li[class*='ais-Pagination-item--lastPage'] {
+      li[class*="ais-Pagination-item--lastPage"] {
         padding-left: 10px;
 
         a {
@@ -333,7 +337,7 @@
     }
   }
 
-  li[class$='ais-RefinementList-item--selected'] {
+  li[class$="ais-RefinementList-item--selected"] {
     input:hover:checked {
       background-color: $mardel-primary-green-light;
     }
@@ -457,7 +461,7 @@
         padding: 0px;
         justify-content: center;
         align-items: center;
-        span[class*='emptyBookTitle'] {
+        span[class*="emptyBookTitle"] {
           padding-left: 0%;
         }
       }
