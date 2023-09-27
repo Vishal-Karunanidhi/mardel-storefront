@@ -35,7 +35,7 @@
   &Title {
     @include hl-font-700;
     align-items: center;
-    background-color: $hl-blue;
+    background-color: $mardel-primary-green-dark;
     color: $hl-white;
     display: flex;
     font-size: clamp($font-size-cite, 1.5vw, $font-size-h4);
@@ -74,7 +74,7 @@
       button {
         align-items: center;
         background: transparent;
-        color: $hl-blue;
+        color: $mardel-primary-green-dark;
         border: none;
         display: inherit;
 
@@ -134,7 +134,7 @@
         line-height: $line-height;
 
         a {
-          @include href-black;
+          @include mardel-href-green;
           white-space: nowrap;
           -webkit-tap-highlight-color: transparent;
       

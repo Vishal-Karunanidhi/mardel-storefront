@@ -35,7 +35,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: vars.$hl-blue;
+    background-color: vars.$mardel-primary-green-main;
     border-radius: 20px;
   }
 
@@ -102,7 +102,7 @@
 
 .arrow {
   align-items: center;
-  background-color: #003087;
+  background-color: vars.$mardel-primary-green-main;
   border-radius: 100%;
   border: none;
   cursor: pointer;
