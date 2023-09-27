@@ -72,24 +72,24 @@ export default function NotificationBar(props: NotificationBarSlotData) {
     }
   }, [props.notifications]);
 
-  // useEffect(() => {
-  //   let interval: NodeJS.Timer;
-  //   const timeDelay = rotationDelay * 1000;
+  useEffect(() => {
+    let interval: NodeJS.Timer;
+    const timeDelay = rotationDelay * 1000;
 
-  //   if (notifications.length > 1) {
-  //     interval = setInterval(() => {
-  //       if (!paused) {
-  //         nextNotification();
-  //       }
-  //     }, timeDelay);
-  //   }
+    if (notifications.length > 1) {
+      interval = setInterval(() => {
+        if (!paused) {
+          nextNotification();
+        }
+      }, timeDelay);
+    }
 
-  //   return () => {
-  //     if (interval) {
-  //       clearInterval(interval);
-  //     }
-  //   };
-  // });
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
 
   useEffect(() => {
     if (notifications[index]) {
