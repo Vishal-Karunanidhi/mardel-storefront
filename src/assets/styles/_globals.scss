@@ -319,7 +319,7 @@ $breakpoints: (
     text-decoration: none;
 
     &:hover {
-      color: vars.$mardel-primary-green-dark;
+      color: vars.$mardel-primary-green2-main;
       text-decoration: underline;
     }
 
@@ -329,7 +329,7 @@ $breakpoints: (
     }
 
     &:focus {
-      color: vars.$mardel-primary-green-dark;
+      color: vars.$mardel-primary-green2-main;
       outline: vars.$outline-size dashed vars.$hl-blue;
       outline-offset: vars.$outline-offset;
       text-decoration: underline;
