@@ -1,13 +1,13 @@
 /* Global */
-@import '../variables';
-@import '../globals';
+@import "../variables";
+@import "../globals";
 
-[class^='ais-'] {
+[class^="ais-"] {
   box-sizing: border-box;
   font-size: 0.9rem;
 }
 
-a[class^='ais-'] {
+a[class^="ais-"] {
   color: #21243d;
   text-decoration: none;
 }
@@ -17,7 +17,7 @@ a[class^='ais-'] {
     creates web components which are not targetable with the `*` selector.
   */
 
-[class^='ais-'][class$='--disabled'] {
+[class^="ais-"][class$="--disabled"] {
   cursor: not-allowed;
 
   * {
@@ -179,6 +179,7 @@ a[class^='ais-'] {
   letter-spacing: 0.08rem;
   line-height: 1.6;
   text-transform: uppercase;
+  outline-color: $mardel-dark-green;
 }
 
 /* Search box */
@@ -195,7 +196,7 @@ a[class^='ais-'] {
   border: none;
   border-radius: 3px;
   color: rgba(33, 36, 61, 0.8);
-  font-family: 'Museo Sans';
+  font-family: "Museo Sans";
   min-height: 54px;
   outline: none;
   padding-left: 56px;
@@ -524,6 +525,10 @@ a[class^='ais-'] {
   @include hl-font-700;
   font-size: 12px;
 
+  a {
+    outline-color: $mardel-dark-green;
+  }
+
   &.ais-Pagination-item--page {
     margin-right: 4px;
   }
@@ -566,6 +571,7 @@ ul,
   margin-top: 0px;
   background: none;
   border: none;
+  outline-color: $mardel-dark-green;
   @include hl-font-700;
 
   &:before {
@@ -650,6 +656,7 @@ input[type='checkbox'] {
         border-bottom-right-radius: 20px;
         border-top-right-radius: 20px;
         background: $mardel-dark-green;
+        outline-color: $mardel-extra-dark-green;
         color: #ffffff;
         cursor: pointer;
         border: 0px solid;
