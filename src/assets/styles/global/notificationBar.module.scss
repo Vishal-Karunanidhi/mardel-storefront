@@ -16,15 +16,6 @@
   margin-top: 10px;
   text-align: center;
   width: 100%;
-  a:-webkit-any-link:focus-visible {
-    text-decoration: underline;
-    outline: 2px dashed vars.$hl-white;
-    outline-offset: 2px;
-  }
-
-  a:-webkit-any-link:hover {
-    text-decoration: underline;
-  }
 
   .buttonText {
     color: #fff;

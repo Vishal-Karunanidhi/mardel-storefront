@@ -114,12 +114,12 @@
   width: 60px;
 
   &:hover {
-    background-color: #4a59b8;
+    background-color: vars.$mardel-primary-green3-main;
     border: none;
   }
 
   &:focus {
-    background-color: #4a59b8;
+    background-color: vars.$mardel-primary-green3-main;
   }
 }
 
