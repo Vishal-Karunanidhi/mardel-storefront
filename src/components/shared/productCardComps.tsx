@@ -122,7 +122,7 @@ const PriceRange = (priceProps) => {
 
 const AvailabilityComp = (availProps) => {
   const { availability, isInStock, isMultiVariant } = availProps;
-  const defaultStyle = { color: colors.hlGreen };
+  const defaultStyle = { color: colors.mardelGreen };
   const ooSStyle = { color: colors.hlRed };
 
   let comp = (
@@ -171,7 +171,7 @@ const AvailabilityComp = (availProps) => {
 
 const PromoComp = (promoProps) => {
   let comp = <></>;
-  const { hlRed, hlGreen, transparent } = colors;
+  const { hlRed, mardelGreen, transparent } = colors;
   const { original, discountedPrice, daysSinceOnline, isMobileView = false } = promoProps;
   if (discountedPrice && original !== discountedPrice) {
     comp = <span>SALE</span>;
@@ -188,7 +188,7 @@ const PromoComp = (promoProps) => {
         borderRadius: '10px 10px 0px 0px',
         margin: '-1px',
         backgroundColor:
-          original !== discountedPrice ? hlRed : daysSinceOnline < 60 ? hlGreen : transparent
+          original !== discountedPrice ? hlRed : daysSinceOnline < 60 ? mardelGreen : transparent
       }}
     >
       {comp}

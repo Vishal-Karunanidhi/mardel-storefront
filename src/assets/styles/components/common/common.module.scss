@@ -26,10 +26,10 @@
   }
 
   color: $hl-white;
-  background: $hl-blue-dark;
+  background: $mardel-dark-green;
 
   &:active {
-    background: $hl-blue-dark;
+    background: $mardel-dark-green;
   }
 
   &:hover {
@@ -38,7 +38,7 @@
 
   &:hover,
   &:focus-visible {
-    background: $hl-blue-light;
+    background: $mardel-light-green;
   }
 
   &:focus-visible {
@@ -55,4 +55,6 @@
 :export {
   hlBlueDark: $hl-blue-dark;
   hlBlueLight: $hl-blue-light;
+  mardelGreenDark: $mardel-dark-green;
+  mardelGreenLight: $mardel-light-green;
 }
