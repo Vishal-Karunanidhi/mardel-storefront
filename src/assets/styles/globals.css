@@ -107,7 +107,7 @@ input[type='checkbox']:after {
 
 input[type='checkbox']:checked:after {
   content: '\2713';
-  color: #003087;
+  color: #1D5844;
 }
 
 body div .MuiDialog-paper.MuiDialog-paperScrollPaper {
