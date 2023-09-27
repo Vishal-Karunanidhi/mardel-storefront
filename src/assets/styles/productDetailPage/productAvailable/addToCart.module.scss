@@ -91,6 +91,11 @@
 
 .toasterTitle {
   padding: 10px 18px 8px 24px;
+  background-color:  vars.$mardel-dark-green;
+  outline:  vars.$mardel-dark-green;
+  outline-color:  vars.$mardel-dark-green;
+  outline-style: solid;
+  outline-width: 8px;
 }
 
 .toasterCloseButton {
