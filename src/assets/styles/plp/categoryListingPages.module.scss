@@ -787,11 +787,11 @@
 
 /*Notify Me Modal*/
 .modalTitle {
-  background-color: #003087;
+  background-color: $mardel-dark-green;
   border-radius: 10px 10px 0px 0px;
   height: 35px;
-  outline: #003087;
-  outline-color: #003087;
+  outline: $mardel-dark-green;
+  outline-color: $mardel-dark-green;
 
   .closeIcon {
     float: right;

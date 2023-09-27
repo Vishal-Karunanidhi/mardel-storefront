@@ -77,12 +77,13 @@
     gap: 16px;
 
     &Submit {
-      background: $hl-blue-dark;
+      background: $mardel-dark-green;
       border-radius: 15px;
       height: 28px;
       justify-content: center;
       display: flex;
       width: 100%;
+      outline: $mardel-dark-green;
 
       button {
         cursor: pointer;
@@ -94,21 +95,21 @@
         font-size: 14px;
 
         &:focus-visible {
-          outline: $hl-blue dashed 2px;
+          outline: $mardel-dark-green dashed 2px;
           outline-offset: 2px;
         }
       }
 
       &:active {
-        background-color: $hl-blue-dark;
+        background-color: $mardel-dark-green;
 
         &:hover {
-          background-color: $hl-blue-dark;
+          background-color: $mardel-dark-green;
         }
       }
 
       &:hover {
-        background-color: $hl-blue-light;
+        background-color: $mardel-light-green;
       }
     }
   }
