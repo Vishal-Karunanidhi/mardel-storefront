@@ -11,6 +11,7 @@ const colors = {
   hlGray: '#5F5F5F',
   hlGrayLight: '#EDEDED',
   hlRed: '#B53315',
+  hlGreen: '#1D5844',
 
   transparent: 'transparent'
 };
