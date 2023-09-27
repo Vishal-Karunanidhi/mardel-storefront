@@ -20,7 +20,7 @@ export const CarouselIcon = ({
       id={id}
       className={`${arrowStyles.arrowContainer} ${iconDivClass}`}
       style={{
-        outline: focused ? 'dashed 2px #003087' : 'none',
+        outline: focused ? 'dashed 2px #1d5844' : 'none',
         visibility: visibility,
         opacity: opacity,
         top: arrowPosition

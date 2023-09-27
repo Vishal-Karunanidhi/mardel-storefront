@@ -369,8 +369,8 @@ $breakpoints: (
   }
 
   &:hover {
-    background-color: vars.$color-href-hover;
-    border: vars.$border-size solid vars.$color-href-hover;
+    background-color: vars.$mardel-primary-green3-main;
+    border: vars.$border-size solid vars.$mardel-primary-green3-main;
   }
 
   &:active {
@@ -386,9 +386,9 @@ $breakpoints: (
 
   &:focus,
   &:focus-visible {
-    background-color: vars.$color-href-hover;
-    border-color: vars.$color-href-hover;
-    outline: vars.$outline-size dashed vars.$hl-blue-dark;
+    background-color: vars.$mardel-primary-green3-main;
+    border-color: vars.$mardel-primary-green3-main;
+    outline: vars.$outline-size dashed vars.$mardel-primary-green1-main;
     outline-offset: vars.$outline-offset;
     transition: vars.$button-transition-hover;
 

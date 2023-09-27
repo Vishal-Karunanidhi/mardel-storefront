@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import styles from '@Styles/components/common/common.module.scss';
 
-const divStyle = { outlineOffset: '5px', outline: `2px dashed ${styles.hlBlueDark}` };
+const divStyle = { outlineOffset: '5px', outline: `2px dashed ${styles.mardelprimaryGreen1}` };
 const buttonDisabledStyle = { color: '#5F5F5F', background: '#EDEDED', cursor: 'auto' };
 
 const preventDefault = (e) => e.preventDefault();

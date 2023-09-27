@@ -38,7 +38,7 @@
 
   &:hover,
   &:focus-visible {
-    background: $hl-blue-light;
+    background: $mardel-primary-green3-main;
   }
 
   &:focus-visible {
@@ -55,4 +55,5 @@
 :export {
   hlBlueDark: $hl-blue-dark;
   hlBlueLight: $hl-blue-light;
+  mardelprimaryGreen1: $mardel-primary-green1-main;
 }
