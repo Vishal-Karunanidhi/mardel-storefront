@@ -265,6 +265,52 @@ $breakpoints: (
   }
 }
 
+@mixin href-green {
+  cursor: pointer;
+
+  &:not(.button) {
+    color: vars.$color-body;
+    text-decoration: none;
+
+    &:link {
+      color: vars.$color-body;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: vars.$color-body;
+      text-decoration: none;
+
+      &:hover {
+        color: vars.$color-href;
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: vars.$color-body;
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      color: vars.$mardel-primary-green-dark;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: vars.$color-body;
+      text-decoration: none;
+    }
+
+    &:focus {
+      color: vars.$mardel-primary-green-dark;
+      outline: vars.$outline-size dashed vars.$hl-blue;
+      outline-offset: vars.$outline-offset;
+      text-decoration: underline;
+    }
+  }
+}
+
 @mixin href-blue {
   cursor: pointer;
 
