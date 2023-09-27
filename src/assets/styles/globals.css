@@ -39,6 +39,7 @@ body.print #onetrust-consent-sdk {
 a {
   color: inherit;
   text-decoration: none;
+  outline-color: #1D5844;
 }
 
 h1,
