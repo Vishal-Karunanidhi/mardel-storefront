@@ -91,6 +91,11 @@
 
 .toasterTitle {
   padding: 10px 18px 8px 24px;
+  background-color:  vars.$mardel-primary-green1-main;
+  outline:  vars.$mardel-primary-green1-main;
+  outline-color:  vars.$mardel-primary-green1-main;
+  outline-style: solid;
+  outline-width: 8px;
 }
 
 .toasterCloseButton {
@@ -425,13 +430,13 @@
   }
 
   &:hover {
-    background: vars.$hl-blue-light;
+    background: vars.$mardel-primary-green3-main;
     border: none;
     color: vars.$hl-white;
   }
 
   &:focus {
-    background: vars.$hl-blue-light;
+    background: vars.$mardel-primary-green3-main;
     outline: none;
     color: vars.$hl-white;
     border: none;
