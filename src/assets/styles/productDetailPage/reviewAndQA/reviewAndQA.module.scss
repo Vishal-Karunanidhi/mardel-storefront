@@ -13,8 +13,13 @@
     padding: 0;
     text-transform: capitalize;
   }
+
+  span[class*='MuiTabs-indicator'] {
+    background: vars.$mardel-primary-green1-main;
+  }
 }
 
 :export {
   hlBlue: vars.$hl-blue;
+  hlGreen: vars.$mardel-primary-green1-main;
 }

@@ -31,8 +31,8 @@ export default function ReviewAndQA({
   const REVIEWS: buttonOptions = 'reviews';
   // const QUESTIONS: buttonOptions = 'questions';
   const buttonStyle: React.CSSProperties = {
-    color: styles.hlBlue,
-    borderBottom: `2px solid ${styles.hlBlue}`
+    color: styles.hlGreen,
+    borderBottom: `2px solid ${styles.hlGreen}`
   };
 
   const [reviewOrQA, setReviewOrQA] = useState<showOptions>({
@@ -58,7 +58,7 @@ export default function ReviewAndQA({
   return (
     <AccordionSlot
       title={
-        <Tabs variant="fullWidth" value={'reviews'}>
+        <Tabs variant="fullWidth" value={'reviews'} className={styles.tabs}>
           <Tab
             className={styles.tabsButtons}
             onClick={() => setReviewOrQA({ selectedButton: REVIEWS, reviewStyle: buttonStyle })}
