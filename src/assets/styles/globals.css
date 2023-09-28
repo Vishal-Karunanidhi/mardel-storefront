@@ -76,6 +76,10 @@ textarea {
   font-family: inherit;
 }
 
+button {
+  outline-color: #1D5844;
+}
+
 input,
 select,
 textarea {
