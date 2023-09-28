@@ -1,3 +1,4 @@
+@import '../variables';
 .toggleLabel {
   background-color: transparent;
 
@@ -14,6 +15,7 @@
   opacity: unset;
   position: unset;
   margin-right: 0 !important;
+  outline-color: $mardel-primary-green1-main;
 
   &::after {
     content: none !important;
