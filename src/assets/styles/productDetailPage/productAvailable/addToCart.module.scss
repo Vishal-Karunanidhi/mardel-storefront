@@ -71,7 +71,7 @@
     &:focus-within,
     &:focus-visible,
     &:focus {
-      outline: 2px dashed vars.$hl-blue-dark;
+      outline: 2px dashed vars.$mardel-primary-green1-main;
       outline-offset: 2px;
 
       &:active {
@@ -376,7 +376,7 @@
   color: #ffffff;
   @include vars.hl-font-700;
   font-size: 16px;
-  background: vars.$hl-blue-dark;
+  background: vars.$mardel-primary-green1-main;
   border: none;
   cursor: pointer;
 
@@ -391,11 +391,11 @@
   }
 
   &:hover {
-    background: vars.$hl-blue-light;
+    background: vars.$mardel-primary-green3-light;
   }
 
   &:focus {
-    background: vars.$hl-blue-light;
+    background: vars.$mardel-primary-green3-light;
     outline: none;
     color: vars.$hl-white;
     border: none;
