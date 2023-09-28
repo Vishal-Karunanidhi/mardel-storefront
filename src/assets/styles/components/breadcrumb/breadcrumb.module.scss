@@ -3,7 +3,7 @@
 @import '../../breakpoints';
 
 .wrapper {
-  background-color: $hl-breadcrumb-background;
+  background-color: $mardel-primary-green3-light;
   width: 100%;
 
   .breadcrumbs {
@@ -64,7 +64,7 @@
     }
 
     a {
-      color: $hl-blue;
+      color: $mardel-primary-green1-main;
       text-decoration: underline;
 
       &:first-of-type {
@@ -100,7 +100,7 @@
       &:focus {
         color: $hl-black;
         outline-offset: 5px;
-        outline: 2px dashed $hl-blue;
+        outline: 2px dashed $mardel-primary-green1-main;
         text-decoration: none;
       }
 
