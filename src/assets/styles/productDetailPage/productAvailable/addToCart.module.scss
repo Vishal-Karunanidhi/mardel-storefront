@@ -21,7 +21,7 @@
     &:focus-within,
     &:focus-visible,
     &:focus {
-      outline: 2px dashed vars.$hl-blue-dark;
+      outline: 2px dashed vars.$mardel-primary-green1-main;
       outline-offset: 2px;
 
       &:active {
@@ -51,7 +51,7 @@
       cursor: pointer;
       @include vars.hl-font-700;
       align-items: center;
-      background: vars.$hl-blue-dark;
+      background: vars.$mardel-primary-green1-main;
       border-radius: 25px;
       border: none;
       color: vars.$hl-white;
