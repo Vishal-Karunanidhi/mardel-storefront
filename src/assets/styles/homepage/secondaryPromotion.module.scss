@@ -69,7 +69,7 @@
         }
 
         &:focus-visible {
-          outline: 1.25px dashed vars.$hl-blue;
+          outline: 1.25px dashed vars.$mardel-primary-green1-main;
         }
       }
 
@@ -119,7 +119,7 @@
       a {
         &:focus-visible {
           outline-offset: 2px;
-          outline: 1.25px dashed vars.$hl-blue;
+          outline: 1.25px dashed vars.$mardel-primary-green1-main;
           text-decoration-line: underline;
         }
       }

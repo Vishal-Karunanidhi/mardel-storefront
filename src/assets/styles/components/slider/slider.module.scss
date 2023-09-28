@@ -35,12 +35,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: vars.$mardel-primary-green-main;
+    background-color: vars.$mardel-primary-green1-main;
     border-radius: 20px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background-color: vars.$hl-blue-light;
+    background-color: vars.$mardel-primary-green3-main;
   }
 }
 
@@ -68,12 +68,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: vars.$hl-blue;
+    background-color: vars.$mardel-primary-green1-main;
     border-radius: 20px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background-color: vars.$hl-blue-light;
+    background-color: vars.$mardel-primary-green3-main;
   }
 }
 
@@ -102,7 +102,7 @@
 
 .arrow {
   align-items: center;
-  background-color: vars.$mardel-primary-green-main;
+  background-color: vars.$mardel-primary-green1-main;
   border-radius: 100%;
   border: none;
   cursor: pointer;
@@ -114,12 +114,12 @@
   width: 60px;
 
   &:hover {
-    background-color: #4a59b8;
+    background-color: vars.$mardel-primary-green3-main;
     border: none;
   }
 
   &:focus {
-    background-color: #4a59b8;
+    background-color: vars.$mardel-primary-green3-main;
   }
 }
 

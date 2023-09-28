@@ -35,7 +35,7 @@
   &Title {
     @include hl-font-700;
     align-items: center;
-    background-color: $mardel-primary-green-dark;
+    background-color: $mardel-primary-green2-main;
     color: $hl-white;
     display: flex;
     font-size: clamp($font-size-cite, 1.5vw, $font-size-h4);
@@ -74,7 +74,7 @@
       button {
         align-items: center;
         background: transparent;
-        color: $mardel-primary-green-dark;
+        color: $mardel-primary-green1-main;
         border: none;
         display: inherit;
 
@@ -325,4 +325,5 @@
 
 :export {
   hlBlue: $hl-blue;
+  mardelprimaryGreen1: $mardel-primary-green1-main
 }
