@@ -346,7 +346,7 @@
   @media only screen and (min-width: brPoint.$hl-cart-toaster-desk-start) {
     justify-content: space-between;
     padding-top: 16px;
-    color: #1d5844;
+    color: vars.$mardel-primary-green1-main;
     @include vars.hl-font-700;
   }
 }
