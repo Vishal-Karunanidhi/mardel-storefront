@@ -783,11 +783,11 @@
 
 /*Notify Me Modal*/
 .modalTitle {
-  background-color: #003087;
+  background-color: $mardel-primary-green1-main;
   border-radius: 10px 10px 0px 0px;
   height: 35px;
-  outline: #003087;
-  outline-color: #003087;
+  outline: $mardel-primary-green1-main;
+  outline-color: $mardel-primary-green1-main;
 
   .closeIcon {
     float: right;
@@ -901,11 +901,11 @@
       }
 
       button[class*='Mui-selected'] {
-        color: $hl-blue;
+        color: $mardel-primary-green1-main;
       }
     }
     span[class*='MuiTabs-indicator'] {
-      background: $hl-blue;
+      background: $mardel-primary-green1-main;
     }
   }
 }
