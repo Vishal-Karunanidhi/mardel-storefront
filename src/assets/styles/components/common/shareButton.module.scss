@@ -8,6 +8,7 @@
   border-radius: 25px;
   border: 1px solid $hl-black;
   background-color: $hl-white;
+  outline-color: $mardel-primary-green1-main;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +19,8 @@
   font-size: 16px;
 
   &:hover {
-    border-color: $hl-blue-light;
-    background-color: $hl-blue-light;
+    border-color: $mardel-primary-green3-main;
+    background-color: $mardel-primary-green3-main;
     color: $hl-white;
     cursor: pointer;
   }
@@ -54,7 +55,7 @@
       align-items: center;
       gap: 10px;
       text-decoration: underline;
-      color: $hl-blue;
+      color: $mardel-primary-green1-main;
 
       &:hover {
         color: $hl-black;
@@ -135,7 +136,7 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    background-color: $hl-blue;
+    background-color: $mardel-primary-green1-main;
 
     &Icon {
       margin-right: 13px;
