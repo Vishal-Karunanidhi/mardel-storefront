@@ -29,7 +29,7 @@
   background: $mardel-primary-green1-main;
 
   &:active {
-    background: $hl-blue-dark;
+    background: $mardel-primary-green3-main;
   }
 
   &:hover {
@@ -56,4 +56,5 @@
   hlBlueDark: $hl-blue-dark;
   hlBlueLight: $hl-blue-light;
   mardelprimaryGreen1: $mardel-primary-green1-main;
+  mardelprimaryGreen3: $mardel-primary-green3-main;
 }
