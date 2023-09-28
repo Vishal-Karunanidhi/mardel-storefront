@@ -248,7 +248,7 @@
       }
 
       li[class*='ais-Pagination-item--selected'] {
-        background-color: rgb(74, 89, 184, 0.15);
+        background-color: $mardel-primary-green3-light;
         box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.15);
         border-radius: 3px;
 
@@ -608,6 +608,10 @@
           margin-bottom: 10px;
         }
 
+        a {
+          outline-color: $mardel-primary-green1-main;
+        }
+
         img {
           align-self: center;
           display: flex;
@@ -632,6 +636,10 @@
         .ratingDiv {
           display: flex;
           flex-direction: row;
+        }
+
+        a {
+          outline-color: $mardel-primary-green1-main;
         }
       }
 
