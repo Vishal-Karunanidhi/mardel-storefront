@@ -174,13 +174,13 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $hl-blue;
+      background-color: $mardel-primary-green1-main;
       border-radius: 20px;
       visibility: hidden;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background-color: $hl-blue-light;
+      background-color: $mardel-primary-green3-main;
     }
 
     @include mobileAndTablet {
@@ -316,26 +316,26 @@
   }
 
   label[class*='ais-ToggleRefinement-label']:hover::before {
-    background-color: $hl-thin-blue;
+    background-color: $mardel-primary-green3-light;
   }
 
   svg[class*='MuiSvgIcon']:hover {
     cursor: pointer;
-    color: $hl-thin-blue;
+    color: $mardel-primary-green3-light;
   }
 
   li[class$='ais-RefinementList-item'] {
     input:hover {
-      background-color: $hl-thin-blue;
+      background-color: $mardel-primary-green3-light;
       &::after {
-        color: $hl-thin-blue;
+        color: $mardel-primary-green3-light;
       }
     }
   }
 
   li[class$='ais-RefinementList-item--selected'] {
     input:hover:checked {
-      background-color: $hl-thin-blue;
+      background-color: $mardel-primary-green3-light;
     }
   }
 
