@@ -465,8 +465,8 @@ $breakpoints: (
   cursor: pointer;
 
   &:hover {
-    background-color: vars.$color-href-hover;
-    border: vars.$border-size solid vars.$color-href-hover;
+    background-color: vars.$mardel-primary-green3-main;
+    border: vars.$border-size solid vars.$mardel-primary-green3-main;
     color: white;
   }
 
